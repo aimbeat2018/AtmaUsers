@@ -25,7 +25,6 @@ class DeleteAccountDialog extends StatelessWidget {
     MainScreenController mainScreenController = Get.put(MainScreenController());
 
     log("Gender is :: ${registrationController.gender}");
-    log("Test :: ${registrationController.gender}");
 
     return SizedBox(
       height: Get.height * 0.50,
