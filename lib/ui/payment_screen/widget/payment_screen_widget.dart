@@ -50,6 +50,8 @@ class PaymentView extends StatelessWidget {
         isRazorPay == true ? const RazorpayPaymentView() : const SizedBox(),
         isStripePay == true ? const StripePaymentView() : const SizedBox(),
         isFlutterWave == true ? const FlutterWavePaymentView() : const SizedBox(),
+
+        CashView()
       ],
     );
   }
@@ -290,6 +292,88 @@ class FlutterWavePaymentView extends StatelessWidget {
                             shape: BoxShape.circle,
                           ),
                         )
+                      : const SizedBox.shrink(),
+                )
+              ],
+            ).paddingOnly(left: 15, right: 18),
+          ).paddingOnly(bottom: 13, left: 15, right: 15),
+        );
+      },
+    );
+  }
+}
+
+class CashView extends StatelessWidget {
+  const CashView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return GetBuilder<PaymentScreenController>(
+      id: Constant.idSelectPayment,
+      builder: (logic) {
+        return InkWell(
+          overlayColor: WidgetStatePropertyAll(AppColors.transparent),
+          onTap: () {
+            logic.onSelectPayment(3);
+          },
+          child: Container(
+            height: Get.height * 0.085,
+            width: Get.width,
+            decoration: BoxDecoration(
+              color: AppColors.white,
+              borderRadius: BorderRadius.circular(14),
+              boxShadow: [
+                BoxShadow(
+                  color: AppColors.black.withOpacity(0.1),
+                  offset: const Offset(
+                    0.0,
+                    0.0,
+                  ),
+                  blurRadius: 1,
+                ), //BoxShadow
+              ],
+            ),
+            child: Row(
+              children: [
+                Container(
+                  height: Get.height * 0.06,
+                  width: Get.height * 0.06,
+                  decoration: BoxDecoration(
+                    color: AppColors.specialistBox,
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: Image.asset(AppAsset.icCash).paddingAll(7),
+                ).paddingOnly(right: 15),
+                Text(
+                  "Cash",
+                  style: FontStyle.fontStyleW600(
+                    fontSize: 15,
+                    fontColor: AppColors.sortByBorder,
+                  ),
+                ),
+                const Spacer(),
+                Container(
+                  height: Get.height * 0.06,
+                  width: Get.width * 0.06,
+                  decoration: BoxDecoration(
+                    border: Border.all(
+                      color: logic.selectPayment == 3 ? AppColors.sortByBorder : AppColors.border,
+                      width: 1,
+                    ),
+                    shape: BoxShape.circle,
+                  ),
+                  padding: const EdgeInsets.all(1.5),
+                  child: logic.selectPayment == 3
+                      ? Container(
+                    height: Get.height * 0.05,
+                    width: Get.width * 0.05,
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        colors: [AppColors.primaryAppColor1, AppColors.primaryAppColor2],
+                      ),
+                      shape: BoxShape.circle,
+                    ),
+                  )
                       : const SizedBox.shrink(),
                 )
               ],

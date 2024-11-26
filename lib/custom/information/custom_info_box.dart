@@ -27,11 +27,13 @@ class CustomInfoBox extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(
-          title,
-          style: FontStyle.fontStyleW400(
-            fontSize: 15,
-            fontColor: AppColors.degreeText,
+        Flexible(
+          child: Text(
+            title,
+            style: FontStyle.fontStyleW400(
+              fontSize: 15,
+              fontColor: AppColors.degreeText,
+            ),
           ),
         ),
         isIndex == true

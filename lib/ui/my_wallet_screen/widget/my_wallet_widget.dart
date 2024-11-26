@@ -39,7 +39,7 @@ class MyWalletBalanceView extends StatelessWidget {
       id: Constant.idProgressView,
       builder: (logic) {
         return Container(
-          height: Get.height * 0.12,
+          // height: Get.height * 0.12,
           width: Get.width,
           margin: const EdgeInsets.all(15),
           padding: const EdgeInsets.all(15),

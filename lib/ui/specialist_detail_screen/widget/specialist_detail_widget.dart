@@ -1217,14 +1217,16 @@ class AwardScreen extends StatelessWidget {
                             height: Get.height * 0.025,
                             width: Get.width * 0.072,
                           ).paddingOnly(bottom: 3),
-                          SizedBox(
-                            width: Get.width * 0.85,
-                            child: Text(
-                              logic.getDoctorDetailModel?.data?.awards?[index].trim() ?? "",
-                              overflow: TextOverflow.ellipsis,
-                              style: FontStyle.fontStyleW400(
-                                fontSize: 12,
-                                fontColor: AppColors.degreeText,
+                          Expanded(
+                            child: SizedBox(
+                              width: Get.width * 0.85,
+                              child: Text(
+                                logic.getDoctorDetailModel?.data?.awards?[index].trim() ?? "",
+                                overflow: TextOverflow.ellipsis,
+                                style: FontStyle.fontStyleW400(
+                                  fontSize: 12,
+                                  fontColor: AppColors.degreeText,
+                                ),
                               ),
                             ),
                           )

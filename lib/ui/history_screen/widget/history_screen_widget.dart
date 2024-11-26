@@ -142,7 +142,7 @@ class HistoryListItemView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: Get.height * 0.1,
+      // height: Get.height * 0.1,
       width: Get.width,
       decoration: BoxDecoration(
         color: AppColors.white,

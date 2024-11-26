@@ -59,10 +59,14 @@ class HomeAppBarView extends StatelessWidget {
                   imageUrl: Constant.storage.read("userImage") ?? "",
                   fit: BoxFit.cover,
                   placeholder: (context, url) {
-                    return Image.asset(AppAsset.icUserPlaceholder, color: AppColors.user).paddingAll(10);
+                    return Image.asset(AppAsset.icUserPlaceholder,
+                            color: AppColors.user)
+                        .paddingAll(10);
                   },
                   errorWidget: (context, url, error) {
-                    return Image.asset(AppAsset.icUserPlaceholder, color: AppColors.user).paddingAll(10);
+                    return Image.asset(AppAsset.icUserPlaceholder,
+                            color: AppColors.user)
+                        .paddingAll(10);
                   },
                 ),
               ),
@@ -116,7 +120,8 @@ class HomeAppBarView extends StatelessWidget {
           child: Container(
             height: Get.height * 0.063,
             width: Get.width,
-            margin: EdgeInsets.only(left: 15, right: 15, top: Get.height * 0.155),
+            margin:
+                EdgeInsets.only(left: 15, right: 15, top: Get.height * 0.155),
             decoration: BoxDecoration(
               color: AppColors.white,
               borderRadius: BorderRadius.circular(10),
@@ -215,13 +220,17 @@ class MyAppointmentItemView extends StatelessWidget {
           child: logic.isLoading
               ? Shimmers.upcomingAppointmentShimmer()
               : PageView.builder(
-                  itemCount: (logic.getUpcomingAppointmentModel?.data?.length ?? 0) > 5
-                      ? 5
-                      : logic.getUpcomingAppointmentModel?.data?.length ?? 0,
+                  itemCount:
+                      (logic.getUpcomingAppointmentModel?.data?.length ?? 0) > 5
+                          ? 5
+                          : logic.getUpcomingAppointmentModel?.data?.length ??
+                              0,
                   scrollDirection: Axis.horizontal,
                   controller: logic.pageController,
                   itemBuilder: (context, index) {
-                    DateTime date = DateTime.parse(logic.getUpcomingAppointmentModel?.data?[index].date ?? "");
+                    DateTime date = DateTime.parse(
+                        logic.getUpcomingAppointmentModel?.data?[index].date ??
+                            "");
                     String formattedDate = DateFormat('dd MMMM').format(date);
 
                     return GestureDetector(
@@ -231,24 +240,43 @@ class MyAppointmentItemView extends StatelessWidget {
                           context: context,
                           builder: (BuildContext context) {
                             return UpcomingAppointmentBottomSheet(
-                              image: logic.getUpcomingAppointmentModel?.data?[index].doctor?.image ?? "",
-                              doctorName: logic.getUpcomingAppointmentModel?.data?[index].doctor?.name ?? "",
-                              designation: logic.getUpcomingAppointmentModel?.data?[index].doctor?.designation ?? "",
-                              degree: logic.getUpcomingAppointmentModel?.data?[index].doctor?.degree?.join(", ") ?? "",
-                              appointmentType: logic.getUpcomingAppointmentModel?.data?[index].type?.toInt() ?? 0,
+                              image: logic.getUpcomingAppointmentModel
+                                      ?.data?[index].doctor?.image ??
+                                  "",
+                              doctorName: logic.getUpcomingAppointmentModel
+                                      ?.data?[index].doctor?.name ??
+                                  "",
+                              designation: logic.getUpcomingAppointmentModel
+                                      ?.data?[index].doctor?.designation ??
+                                  "",
+                              degree: logic.getUpcomingAppointmentModel
+                                      ?.data?[index].doctor?.degree
+                                      ?.join(", ") ??
+                                  "",
+                              appointmentType: logic.getUpcomingAppointmentModel
+                                      ?.data?[index].type
+                                      ?.toInt() ??
+                                  0,
                               formattedDate: formattedDate,
-                              time: logic.getUpcomingAppointmentModel?.data?[index].time ?? "",
-                              appointmentId: logic.getUpcomingAppointmentModel?.data?[index].id ?? "",
-                              doctorId: logic.getUpcomingAppointmentModel?.data?[index].doctor?.id ?? "",
+                              time: logic.getUpcomingAppointmentModel
+                                      ?.data?[index].time ??
+                                  "",
+                              appointmentId: logic.getUpcomingAppointmentModel
+                                      ?.data?[index].id ??
+                                  "",
+                              doctorId: logic.getUpcomingAppointmentModel
+                                      ?.data?[index].doctor?.id ??
+                                  "",
                               isViewAll: false,
                             );
                           },
                         );
                       },
                       child: Container(
-                        height: 195,
+                        // height: 295,
                         width: Get.width,
-                        margin: const EdgeInsets.only(top: 12, left: 12, right: 12),
+                        margin:
+                            const EdgeInsets.only(top: 12, left: 12, right: 12),
                         decoration: BoxDecoration(
                           color: AppColors.white,
                           borderRadius: BorderRadius.circular(18),
@@ -258,73 +286,103 @@ class MyAppointmentItemView extends StatelessWidget {
                           ),
                         ),
                         child: Column(
+                          mainAxisSize: MainAxisSize.min,
                           children: [
-                            Row(
-                              children: [
-                                Container(
-                                  height: Get.height * 0.125,
-                                  width: Get.width * 0.27,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(15),
-                                    color: AppColors.placeholder,
-                                  ),
-                                  clipBehavior: Clip.hardEdge,
-                                  child: CachedNetworkImage(
-                                    imageUrl: logic.getUpcomingAppointmentModel?.data?[index].doctor?.image ?? "",
-                                    fit: BoxFit.cover,
-                                    placeholder: (context, url) {
-                                      return Image.asset(AppAsset.icDoctorPlaceholder).paddingAll(10);
-                                    },
-                                    errorWidget: (context, url, error) {
-                                      return Image.asset(AppAsset.icDoctorPlaceholder).paddingAll(10);
-                                    },
-                                  ),
-                                ).paddingOnly(right: 12),
-                                Container(
-                                  height: Get.height * 0.125,
-                                  padding: const EdgeInsets.only(top: 8, bottom: 8),
-                                  child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Text(
-                                        logic.getUpcomingAppointmentModel?.data?[index].doctor?.name ?? "",
-                                        style: FontStyle.fontStyleW700(
-                                          fontSize: 15,
-                                          fontColor: AppColors.title,
+                            Flexible(
+                              child: Row(
+                                children: [
+                                  Container(
+                                    // height: Get.height * 0.125,
+                                    width: Get.width * 0.27,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(15),
+                                      color: AppColors.placeholder,
+                                    ),
+                                    clipBehavior: Clip.hardEdge,
+                                    child: CachedNetworkImage(
+                                      imageUrl: logic
+                                              .getUpcomingAppointmentModel
+                                              ?.data?[index]
+                                              .doctor
+                                              ?.image ??
+                                          "",
+                                      fit: BoxFit.cover,
+                                      placeholder: (context, url) {
+                                        return Image.asset(
+                                                AppAsset.icDoctorPlaceholder)
+                                            .paddingAll(10);
+                                      },
+                                      errorWidget: (context, url, error) {
+                                        return Image.asset(
+                                                AppAsset.icDoctorPlaceholder)
+                                            .paddingAll(10);
+                                      },
+                                    ),
+                                  ).paddingOnly(right: 12),
+                                  Container(
+                                    // height: Get.height * 0.125,
+                                    padding: const EdgeInsets.only(
+                                        top: 8, bottom: 8),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Text(
+                                          logic.getUpcomingAppointmentModel
+                                                  ?.data?[index].doctor?.name ??
+                                              "",
+                                          style: FontStyle.fontStyleW700(
+                                            fontSize: 15,
+                                            fontColor: AppColors.title,
+                                          ),
                                         ),
-                                      ),
-                                      Container(
-                                        decoration: BoxDecoration(
-                                          color: AppColors.specialistBox,
-                                          borderRadius: BorderRadius.circular(4),
-                                        ),
-                                        child: Padding(
-                                          padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 10),
-                                          child: Text(
-                                            logic.getUpcomingAppointmentModel?.data?[index].doctor?.designation ?? "",
-                                            style: FontStyle.fontStyleW500(
-                                              fontSize: 12,
-                                              fontColor: AppColors.specialist,
+                                        Container(
+                                          decoration: BoxDecoration(
+                                            color: AppColors.specialistBox,
+                                            borderRadius:
+                                                BorderRadius.circular(4),
+                                          ),
+                                          child: Padding(
+                                            padding: const EdgeInsets.symmetric(
+                                                vertical: 8, horizontal: 10),
+                                            child: Text(
+                                              logic
+                                                      .getUpcomingAppointmentModel
+                                                      ?.data?[index]
+                                                      .doctor
+                                                      ?.designation ??
+                                                  "",
+                                              style: FontStyle.fontStyleW500(
+                                                fontSize: 12,
+                                                fontColor: AppColors.specialist,
+                                              ),
                                             ),
                                           ),
                                         ),
-                                      ),
-                                      Text(
-                                        logic.getUpcomingAppointmentModel?.data?[index].doctor?.degree?.join(", ") ?? "",
-                                        style: FontStyle.fontStyleW500(
-                                          fontSize: 14,
-                                          fontColor: AppColors.degreeText,
+                                        Text(
+                                          logic.getUpcomingAppointmentModel
+                                                  ?.data?[index].doctor?.degree
+                                                  ?.join(", ") ??
+                                              "",
+                                          style: FontStyle.fontStyleW500(
+                                            fontSize: 14,
+                                            fontColor: AppColors.degreeText,
+                                          ),
                                         ),
-                                      ),
-                                    ],
-                                  ),
-                                )
-                              ],
-                            ).paddingOnly(top: 12, left: 12),
-                            const Spacer(),
+                                      ],
+                                    ),
+                                  )
+                                ],
+                              ).paddingOnly(top: 12, left: 12),
+                            ),
+                            // const Spacer(),
+                            SizedBox(
+                              height: 10,
+                            ),
                             Container(
-                              height: 75,
+                              // height: 75,
                               width: Get.width,
                               decoration: BoxDecoration(
                                 color: AppColors.placeholder,
@@ -335,79 +393,108 @@ class MyAppointmentItemView extends StatelessWidget {
                               ),
                               padding: const EdgeInsets.all(12),
                               child: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Container(
                                     height: 45,
                                     width: 45,
                                     decoration: BoxDecoration(
-                                        color: logic.getUpcomingAppointmentModel?.data?[index].type == 1
+                                        color: logic.getUpcomingAppointmentModel
+                                                    ?.data?[index].type ==
+                                                1
                                             ? AppColors.call1
                                             : AppColors.message1,
                                         shape: BoxShape.circle),
                                     padding: const EdgeInsets.all(9),
-                                    child: Image.asset(logic.getUpcomingAppointmentModel?.data?[index].type == 1
+                                    child: Image.asset(logic
+                                                .getUpcomingAppointmentModel
+                                                ?.data?[index]
+                                                .type ==
+                                            1
                                         ? AppAsset.icSend
                                         : AppAsset.icHome),
                                   ).paddingOnly(right: 6),
-                                  Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Text(
-                                        logic.getUpcomingAppointmentModel?.data?[index].type == 1
-                                            ? EnumLocale.txtOnline.name.tr
-                                            : EnumLocale.txtAtClinic.name.tr,
-                                        style: FontStyle.fontStyleW700(
-                                          fontSize: 14,
-                                          fontColor: logic.getUpcomingAppointmentModel?.data?[index].type == 1
-                                              ? AppColors.call1
-                                              : AppColors.message1,
+                                  Expanded(
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Text(
+                                          logic.getUpcomingAppointmentModel
+                                                      ?.data?[index].type ==
+                                                  1
+                                              ? EnumLocale.txtOnline.name.tr
+                                              : EnumLocale.txtAtClinic.name.tr,
+                                          style: FontStyle.fontStyleW700(
+                                            fontSize: 14,
+                                            fontColor:
+                                                logic.getUpcomingAppointmentModel
+                                                            ?.data?[index].type ==
+                                                        1
+                                                    ? AppColors.call1
+                                                    : AppColors.message1,
+                                          ),
                                         ),
-                                      ),
-                                      Text(
-                                        EnumLocale.txtAppointmentType.name.tr,
-                                        style: FontStyle.fontStyleW500(
-                                          fontSize: 12,
-                                          fontColor: AppColors.degreeText,
+                                        Text(
+                                          EnumLocale.txtAppointmentType.name.tr,
+                                          maxLines: 1,
+                                          overflow: TextOverflow.ellipsis,
+                                          style: FontStyle.fontStyleW500(
+                                            fontSize: 12,
+                                            fontColor: AppColors.degreeText,
+                                          ),
                                         ),
-                                      ),
-                                    ],
+                                      ],
+                                    ),
                                   ),
-                                  const Spacer(),
-                                  Container(
-                                    height: 36,
-                                    width: 2,
-                                    color: AppColors.divider,
-                                  ),
-                                  const Spacer(),
+
+                                  // Container(
+                                  //   height: 36,
+                                  //   width: 2,
+                                  //   color: AppColors.divider,
+                                  // ),
+                                  // const Spacer(),
                                   Container(
                                     height: 45,
                                     width: 45,
-                                    decoration: BoxDecoration(color: AppColors.primaryAppColor1, shape: BoxShape.circle),
+                                    decoration: BoxDecoration(
+                                        color: AppColors.primaryAppColor1,
+                                        shape: BoxShape.circle),
                                     padding: const EdgeInsets.all(11),
-                                    child: Image.asset(AppAsset.icAppointmentFilled, color: AppColors.white),
+                                    child: Image.asset(
+                                        AppAsset.icAppointmentFilled,
+                                        color: AppColors.white),
                                   ).paddingOnly(right: 6),
-                                  Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Text(
-                                        "$formattedDate ${logic.getUpcomingAppointmentModel?.data?[index].time}",
-                                        style: FontStyle.fontStyleW700(
-                                          fontSize: 13,
-                                          fontColor: AppColors.primaryAppColor1,
+                                  Expanded(
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Text(
+                                          "$formattedDate ${logic.getUpcomingAppointmentModel?.data?[index].time}",
+                                          style: FontStyle.fontStyleW700(
+                                            fontSize: 13,
+                                            fontColor:
+                                                AppColors.primaryAppColor1,
+                                          ),
                                         ),
-                                      ),
-                                      Text(
-                                        "Appointment Time",
-                                        style: FontStyle.fontStyleW500(
-                                          fontSize: 12,
-                                          fontColor: AppColors.degreeText,
+                                        Text(
+                                          "Appointment Time",
+                                          maxLines: 1,
+                                          overflow: TextOverflow.ellipsis,
+                                          style: FontStyle.fontStyleW500(
+                                            fontSize: 12,
+                                            fontColor: AppColors.degreeText,
+                                          ),
                                         ),
-                                      ),
-                                    ],
+                                      ],
+                                    ),
                                   ),
                                 ],
                               ).paddingOnly(top: 5),
@@ -437,9 +524,11 @@ class MyAppointmentIndicator extends StatelessWidget {
             : Center(
                 child: SmoothPageIndicator(
                   controller: logic.pageController,
-                  count: (logic.getUpcomingAppointmentModel?.data?.length ?? 0) > 5
-                      ? 5
-                      : logic.getUpcomingAppointmentModel?.data?.length ?? 0,
+                  count:
+                      (logic.getUpcomingAppointmentModel?.data?.length ?? 0) > 5
+                          ? 5
+                          : logic.getUpcomingAppointmentModel?.data?.length ??
+                              0,
                   axisDirection: Axis.horizontal,
                   effect: SwapEffect(
                     spacing: 8,
@@ -494,7 +583,9 @@ class HomeCategoryView extends StatelessWidget {
                 physics: const ScrollPhysics(),
                 padding: EdgeInsets.zero,
                 shrinkWrap: true,
-                itemCount: (logic.addMoreData?.length ?? 0) > 8 ? 8 : logic.addMoreData?.length,
+                itemCount: (logic.addMoreData?.length ?? 0) > 8
+                    ? 8
+                    : logic.addMoreData?.length,
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 4,
                   childAspectRatio: 0.72,
@@ -540,7 +631,8 @@ class HomeCategoryItemView extends StatelessWidget {
                 );
               } else {
                 logic.categoryDoctorList = logic.getDoctorsByServiceId(
-                    getFilteredDoctorModel: logic.getAllDoctorServiceModel, serviceId: logic.addMoreData?[index].id);
+                    getFilteredDoctorModel: logic.getAllDoctorServiceModel,
+                    serviceId: logic.addMoreData?[index].id);
 
                 Get.toNamed(
                   AppRoutes.categoryDetail,
@@ -570,10 +662,12 @@ class HomeCategoryItemView extends StatelessWidget {
                   imageUrl: logic.addMoreData?[index].image ?? "",
                   // fit: BoxFit.cover,
                   placeholder: (context, url) {
-                    return Image.asset(AppAsset.icCategoryPlaceholder).paddingAll(10);
+                    return Image.asset(AppAsset.icCategoryPlaceholder)
+                        .paddingAll(10);
                   },
                   errorWidget: (context, url, error) {
-                    return Image.asset(AppAsset.icCategoryPlaceholder).paddingAll(10);
+                    return Image.asset(AppAsset.icCategoryPlaceholder)
+                        .paddingAll(10);
                   },
                 ),
               ).paddingOnly(bottom: 10),
@@ -602,9 +696,11 @@ class HomeBannerView extends StatelessWidget {
     return GetBuilder<HomeScreenController>(
       id: Constant.idProgressView,
       builder: (logic) {
-        logic.bannersImages = (logic.getAllBannerModel?.data?.map((item) => item.image).toList());
+        logic.bannersImages =
+            (logic.getAllBannerModel?.data?.map((item) => item.image).toList());
 
-        logic.type = (logic.getAllBannerModel?.data?.map((item) => item.type).toList());
+        logic.type =
+            (logic.getAllBannerModel?.data?.map((item) => item.type).toList());
 
         return logic.getAllBannerModel?.data?.isEmpty == true
             ? const SizedBox.shrink()
@@ -631,19 +727,28 @@ class HomeBannerView extends StatelessWidget {
 
                               return GestureDetector(
                                 onTap: () {
-                                  if (logic.type!.isNotEmpty && index < logic.type!.length) {
+                                  if (logic.type!.isNotEmpty &&
+                                      index < logic.type!.length) {
                                     if (logic.type?[index] == 2) {
-                                      Utils.launchURL(logic.getAllBannerModel?.data?[index].url ?? "");
+                                      Utils.launchURL(logic.getAllBannerModel
+                                              ?.data?[index].url ??
+                                          "");
                                     } else if (logic.type?[index] == 1) {
-                                      logic.categoryDoctorList = logic.getDoctorsByServiceId(
-                                          getFilteredDoctorModel: logic.getAllDoctorServiceModel,
-                                          serviceId: logic.addMoreData?[index].id);
+                                      logic.categoryDoctorList =
+                                          logic.getDoctorsByServiceId(
+                                              getFilteredDoctorModel: logic
+                                                  .getAllDoctorServiceModel,
+                                              serviceId:
+                                                  logic.addMoreData?[index].id);
 
-                                      Get.toNamed(AppRoutes.categoryDetail, arguments: [
-                                        logic.getAllBannerModel?.data?[index].service?.name,
-                                        logic.getAllBannerModel?.data?[index].service?.id,
-                                        logic.categoryDoctorList,
-                                      ]);
+                                      Get.toNamed(AppRoutes.categoryDetail,
+                                          arguments: [
+                                            logic.getAllBannerModel
+                                                ?.data?[index].service?.name,
+                                            logic.getAllBannerModel
+                                                ?.data?[index].service?.id,
+                                            logic.categoryDoctorList,
+                                          ]);
                                     }
                                   }
                                 },
@@ -741,8 +846,10 @@ class HomeTabBarView extends StatelessWidget {
                     fontSize: 13.5,
                     fontColor: AppColors.white,
                   ),
-                  physics: const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
-                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+                  physics: const BouncingScrollPhysics(
+                      parent: AlwaysScrollableScrollPhysics()),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
                   indicatorPadding: const EdgeInsets.all(5),
                   indicator: BoxDecoration(
                     borderRadius: BorderRadius.circular(8),
@@ -806,43 +913,47 @@ class GeneralSpecialistView extends StatelessWidget {
     return GetBuilder<HomeScreenController>(
       id: Constant.idProgressView,
       builder: (logic) {
-        return logic.isLoading1
-            ? Shimmers.homeTabBarShimmer()
-            : logic.tabController?.index == 0
-                ? logic.getAllDoctorList.isEmpty == true
-                    ? NoDataFound(
-                        image: AppAsset.icNoDoctorFound,
-                        imageHeight: 80,
-                        text: EnumLocale.noDataFoundDoctor.name.tr,
-                      )
-                    : ListView.builder(
-                        physics: const NeverScrollableScrollPhysics(),
-                        padding: EdgeInsets.zero,
-                        itemCount: logic.getAllDoctorList.length,
-                        itemBuilder: (context, index) {
-                          return SpecialistListItemView(
-                            getAllDoctors: logic.getAllDoctorList[index],
-                            isAllDoctor: true,
-                          );
-                        },
-                      )
-                : logic.doctorList?.isEmpty == true
-                    ? NoDataFound(
-                        image: AppAsset.icNoDoctorFound,
-                        imageHeight: 80,
-                        text: EnumLocale.noDataFoundDoctor.name.tr,
-                      )
-                    : ListView.builder(
-                        physics: const NeverScrollableScrollPhysics(),
-                        padding: EdgeInsets.zero,
-                        itemCount: logic.doctorList?.length,
-                        itemBuilder: (context, index) {
-                          return SpecialistListItemView(
-                            doctors: logic.doctorList?[index],
-                            isAllDoctor: false,
-                          );
-                        },
-                      );
+        return SingleChildScrollView(
+          child: logic.isLoading1
+              ? Shimmers.homeTabBarShimmer()
+              : logic.tabController?.index == 0
+                  ? logic.getAllDoctorList.isEmpty == true
+                      ? NoDataFound(
+                          image: AppAsset.icNoDoctorFound,
+                          imageHeight: 80,
+                          text: EnumLocale.noDataFoundDoctor.name.tr,
+                        )
+                      : ListView.builder(
+                          physics: const NeverScrollableScrollPhysics(),
+                          padding: EdgeInsets.zero,
+                          shrinkWrap: true,
+                          itemCount: logic.getAllDoctorList.length,
+                          itemBuilder: (context, index) {
+                            return SpecialistListItemView(
+                              getAllDoctors: logic.getAllDoctorList[index],
+                              isAllDoctor: true,
+                            );
+                          },
+                        )
+                  : logic.doctorList?.isEmpty == true
+                      ? NoDataFound(
+                          image: AppAsset.icNoDoctorFound,
+                          imageHeight: 80,
+                          text: EnumLocale.noDataFoundDoctor.name.tr,
+                        )
+                      : ListView.builder(
+                          physics: const NeverScrollableScrollPhysics(),
+                          padding: EdgeInsets.zero,
+                          shrinkWrap: true,
+                          itemCount: logic.doctorList?.length,
+                          itemBuilder: (context, index) {
+                            return SpecialistListItemView(
+                              doctors: logic.doctorList?[index],
+                              isAllDoctor: false,
+                            );
+                          },
+                        ),
+        );
       },
     );
   }
@@ -853,7 +964,8 @@ class SpecialistListItemView extends StatelessWidget {
   GetAllDoctors? getAllDoctors;
   final bool isAllDoctor;
 
-  SpecialistListItemView({super.key, this.doctors, this.getAllDoctors, required this.isAllDoctor});
+  SpecialistListItemView(
+      {super.key, this.doctors, this.getAllDoctors, required this.isAllDoctor});
 
   @override
   Widget build(BuildContext context) {
@@ -885,8 +997,10 @@ class SpecialistListItemView extends StatelessWidget {
                       width: 1.3,
                     ),
                   ),
-                  margin: const EdgeInsets.only(left: 10, right: 10, bottom: 10),
-                  padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                  margin:
+                      const EdgeInsets.only(left: 10, right: 10, bottom: 10),
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -902,10 +1016,12 @@ class SpecialistListItemView extends StatelessWidget {
                           imageUrl: getAllDoctors?.image ?? "",
                           fit: BoxFit.cover,
                           placeholder: (context, url) {
-                            return Image.asset(AppAsset.icDoctorPlaceholder).paddingAll(10);
+                            return Image.asset(AppAsset.icDoctorPlaceholder)
+                                .paddingAll(10);
                           },
                           errorWidget: (context, url, error) {
-                            return Image.asset(AppAsset.icDoctorPlaceholder).paddingAll(10);
+                            return Image.asset(AppAsset.icDoctorPlaceholder)
+                                .paddingAll(10);
                           },
                         ),
                       ),
@@ -933,7 +1049,8 @@ class SpecialistListItemView extends StatelessWidget {
                               ),
                               Container(
                                 width: Get.width * 0.56,
-                                margin: const EdgeInsets.only(top: 5, bottom: 5),
+                                margin:
+                                    const EdgeInsets.only(top: 5, bottom: 5),
                                 decoration: BoxDecoration(
                                   border: Border.all(
                                     color: AppColors.divider,
@@ -1022,8 +1139,10 @@ class SpecialistListItemView extends StatelessWidget {
                       width: 1.3,
                     ),
                   ),
-                  margin: const EdgeInsets.only(left: 10, right: 10, bottom: 10),
-                  padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                  margin:
+                      const EdgeInsets.only(left: 10, right: 10, bottom: 10),
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -1039,10 +1158,12 @@ class SpecialistListItemView extends StatelessWidget {
                           imageUrl: doctors?.image ?? "",
                           fit: BoxFit.cover,
                           placeholder: (context, url) {
-                            return Image.asset(AppAsset.icDoctorPlaceholder).paddingAll(10);
+                            return Image.asset(AppAsset.icDoctorPlaceholder)
+                                .paddingAll(10);
                           },
                           errorWidget: (context, url, error) {
-                            return Image.asset(AppAsset.icDoctorPlaceholder).paddingAll(10);
+                            return Image.asset(AppAsset.icDoctorPlaceholder)
+                                .paddingAll(10);
                           },
                         ),
                       ),
@@ -1070,7 +1191,8 @@ class SpecialistListItemView extends StatelessWidget {
                               ),
                               Container(
                                 width: Get.width * 0.56,
-                                margin: const EdgeInsets.only(top: 5, bottom: 5),
+                                margin:
+                                    const EdgeInsets.only(top: 5, bottom: 5),
                                 decoration: BoxDecoration(
                                   border: Border.all(
                                     color: AppColors.divider,
@@ -1126,8 +1248,9 @@ class SpecialistListItemView extends StatelessWidget {
                             shape: BoxShape.circle,
                             color: AppColors.categoryCircle,
                           ),
-                          child:
-                              doctors?.isSaved == true ? Image.asset(AppAsset.icSaveFilled) : Image.asset(AppAsset.icSaveOutline),
+                          child: doctors?.isSaved == true
+                              ? Image.asset(AppAsset.icSaveFilled)
+                              : Image.asset(AppAsset.icSaveOutline),
                         ),
                       )
                     ],

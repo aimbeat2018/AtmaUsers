@@ -66,7 +66,7 @@ class PaymentConfirmDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: Get.height * 0.63,
+      height: Get.height * 0.73,
       child: Material(
         shape: const SquircleBorder(
           radius: BorderRadius.all(

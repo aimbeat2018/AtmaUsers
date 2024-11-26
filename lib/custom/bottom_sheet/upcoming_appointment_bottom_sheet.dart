@@ -83,7 +83,7 @@ class UpcomingAppointmentBottomSheet extends StatelessWidget {
           ),
           Divider(height: 1.2, color: AppColors.bottomSheetDivider),
           Container(
-            height: Get.height * 0.35,
+            // height: Get.height * 0.35,
             width: Get.width,
             margin: const EdgeInsets.only(top: 12, left: 12, right: 12),
             decoration: BoxDecoration(
@@ -118,7 +118,7 @@ class UpcomingAppointmentBottomSheet extends StatelessWidget {
                       ),
                     ).paddingOnly(right: 12),
                     Container(
-                      height: Get.height * 0.125,
+                      // height: Get.height * 0.125,
                       padding: const EdgeInsets.only(top: 8, bottom: 8),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -159,7 +159,8 @@ class UpcomingAppointmentBottomSheet extends StatelessWidget {
                     )
                   ],
                 ).paddingOnly(top: 12, left: 12),
-                const Spacer(),
+                // const Spacer(),
+                SizedBox(height: 10,),
                 Container(
                   width: Get.width,
                   decoration: BoxDecoration(
@@ -186,33 +187,35 @@ class UpcomingAppointmentBottomSheet extends StatelessWidget {
                             padding: const EdgeInsets.all(9),
                             child: Image.asset(appointmentType == 1 ? AppAsset.icSend : AppAsset.icHome),
                           ).paddingOnly(right: 6),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                appointmentType == 1 ? EnumLocale.txtOnline.name.tr : EnumLocale.txtAtClinic.name.tr,
-                                style: FontStyle.fontStyleW700(
-                                  fontSize: 14,
-                                  fontColor: appointmentType == 1 ? AppColors.call1 : AppColors.message1,
+                          Flexible(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  appointmentType == 1 ? EnumLocale.txtOnline.name.tr : EnumLocale.txtAtClinic.name.tr,
+                                  style: FontStyle.fontStyleW700(
+                                    fontSize: 14,
+                                    fontColor: appointmentType == 1 ? AppColors.call1 : AppColors.message1,
+                                  ),
                                 ),
-                              ),
-                              Text(
-                                EnumLocale.txtAppointmentType.name.tr,
-                                style: FontStyle.fontStyleW500(
-                                  fontSize: 12,
-                                  fontColor: AppColors.degreeText,
+                                Text(
+                                  EnumLocale.txtAppointmentType.name.tr,
+                                  style: FontStyle.fontStyleW500(
+                                    fontSize: 12,
+                                    fontColor: AppColors.degreeText,
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
-                          const Spacer(),
+                          // const Spacer(),
                           Container(
                             height: 36,
                             width: 2,
                             color: AppColors.divider,
                           ),
-                          const Spacer(),
+                          // const Spacer(),
                           Container(
                             height: 45,
                             width: 45,
@@ -223,25 +226,27 @@ class UpcomingAppointmentBottomSheet extends StatelessWidget {
                             padding: const EdgeInsets.all(11),
                             child: Image.asset(AppAsset.icAppointmentFilled, color: AppColors.white),
                           ).paddingOnly(right: 6),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                "$formattedDate $time",
-                                style: FontStyle.fontStyleW700(
-                                  fontSize: 13,
-                                  fontColor: AppColors.primaryAppColor1,
+                          Flexible(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  "$formattedDate $time",
+                                  style: FontStyle.fontStyleW700(
+                                    fontSize: 13,
+                                    fontColor: AppColors.primaryAppColor1,
+                                  ),
                                 ),
-                              ),
-                              Text(
-                                "Appointment Time",
-                                style: FontStyle.fontStyleW500(
-                                  fontSize: 12,
-                                  fontColor: AppColors.degreeText,
+                                Text(
+                                  "Appointment Time",
+                                  style: FontStyle.fontStyleW500(
+                                    fontSize: 12,
+                                    fontColor: AppColors.degreeText,
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                         ],
                       ).paddingOnly(top: 5),

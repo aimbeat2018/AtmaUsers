@@ -13,7 +13,8 @@ class NotificationServices {
   static FirebaseMessaging? messaging;
   static FlutterLocalNotificationsPlugin? flutterLocalNotificationsPlugin;
   static bool notificationVisit = false;
-  static SplashScreenController splashScreenController = Get.find<SplashScreenController>();
+  static SplashScreenController splashScreenController =
+      Get.find<SplashScreenController>();
 
   ///--------------- In Main Screen ---------------///
   static Future<void> backgroundNotification(RemoteMessage message) async {
@@ -36,7 +37,8 @@ class NotificationServices {
       log('Message Contained a Notification :: ${message.notification?.body}');
     }
 
-    const AndroidInitializationSettings initializationSettingsAndroid = AndroidInitializationSettings('@drawable/ic_launcher');
+    const AndroidInitializationSettings initializationSettingsAndroid =
+        AndroidInitializationSettings('@drawable/ic_launcher');
     flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
     flutterLocalNotificationsPlugin?.initialize(
       const InitializationSettings(android: initializationSettingsAndroid),
@@ -90,7 +92,8 @@ class NotificationServices {
       log("This is FCM token :: $value");
     });
 
-    RemoteMessage? initialMessage = await FirebaseMessaging.instance.getInitialMessage();
+    RemoteMessage? initialMessage =
+        await FirebaseMessaging.instance.getInitialMessage();
 
     if (initialMessage != null) {
       log("NotificationVisit with start :: $notificationVisit");
@@ -98,7 +101,8 @@ class NotificationServices {
       log("NotificationVisit with SetState :: $notificationVisit");
 
       if (Constant.storage.read("notification") == true) {
-        if (id != initialMessage.data["senderId"] || initialMessage.data["senderId"] == null) {
+        if (id != initialMessage.data["senderId"] ||
+            initialMessage.data["senderId"] == null) {
           handleMessage(initialMessage);
         }
       } else {
@@ -130,12 +134,15 @@ class NotificationServices {
         const AndroidInitializationSettings initializationSettingsAndroid =
             AndroidInitializationSettings('@drawable/ic_launcher');
         flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
-        flutterLocalNotificationsPlugin?.initialize(const InitializationSettings(android: initializationSettingsAndroid),
+        flutterLocalNotificationsPlugin?.initialize(
+            const InitializationSettings(
+                android: initializationSettingsAndroid),
             onDidReceiveNotificationResponse: (payload) {
           log("payload is:- $payload");
 
           if (Constant.storage.read("notification") == true) {
-            if (id != message.data["senderId"] || message.data["senderId"] == null) {
+            if (id != message.data["senderId"] ||
+                message.data["senderId"] == null) {
               handleMessage(message);
             }
           } else {
@@ -144,7 +151,8 @@ class NotificationServices {
         });
 
         if (Constant.storage.read("notification") == true) {
-          if (id != message.data["senderId"] || message.data["senderId"] == null) {
+          if (id != message.data["senderId"] ||
+              message.data["senderId"] == null) {
             showNotificationWithSound(message);
           } else {
             log("Enter in else");

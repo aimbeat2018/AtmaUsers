@@ -14,7 +14,7 @@ class NoVideoMeetingDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: Get.height * 0.45,
+      height: Get.height * 0.55,
       child: Material(
         shape: const SquircleBorder(
           radius: BorderRadius.all(
@@ -23,6 +23,8 @@ class NoVideoMeetingDialog extends StatelessWidget {
         ),
         color: AppColors.white,
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Image.asset(AppAsset.icVideoOff, height: 100),
             Text(
@@ -40,7 +42,7 @@ class NoVideoMeetingDialog extends StatelessWidget {
                 fontColor: AppColors.degreeText,
               ),
             ).paddingOnly(top: 8, bottom: 13, left: 15, right: 15),
-            const Spacer(),
+            // const Spacer(),
             PrimaryAppButton(
               onTap: () {
                 Get.offAllNamed(AppRoutes.bottom);

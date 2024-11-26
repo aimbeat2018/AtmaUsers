@@ -229,6 +229,7 @@ class PendingAppointment extends StatelessWidget {
                     Expanded(
                       child: ListView.builder(
                         scrollDirection: Axis.vertical,
+                        shrinkWrap: true,
                         itemCount: logic.getPending.length,
                         controller: logic.pendingScrollController,
                         physics: const BouncingScrollPhysics(),
@@ -286,7 +287,7 @@ class PendingAppointmentListItemView extends StatelessWidget {
             child: Column(
               children: [
                 SizedBox(
-                  height: Get.height * 0.125,
+                  // height: Get.height * 0.125,
                   child: Row(
                     children: [
                       Container(
@@ -404,9 +405,9 @@ class PendingAppointmentListItemView extends StatelessWidget {
                   ),
                 ),
                 Divider(
-                  height: 1.5,
+                  // height: 1.5,
                   color: AppColors.divider,
-                ).paddingOnly(top: 12, bottom: 12),
+                )/*.paddingOnly(top: 12, bottom: 12)*/,
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -852,7 +853,7 @@ class CompleteAppointmentListItemView extends StatelessWidget {
             );
           },
           child: Container(
-            height: Get.height * 0.29,
+            height: Get.height * 0.34,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(18),
               border: Border.all(
@@ -863,11 +864,11 @@ class CompleteAppointmentListItemView extends StatelessWidget {
             child: Column(
               children: [
                 SizedBox(
-                  height: Get.height * 0.125,
+                  // height: Get.height * 0.125,
                   child: Row(
                     children: [
                       Container(
-                        height: Get.height * 0.125,
+                        // height: Get.height * 0.125,
                         width: Get.width * 0.27,
                         decoration: BoxDecoration(
                           color: AppColors.placeholder,

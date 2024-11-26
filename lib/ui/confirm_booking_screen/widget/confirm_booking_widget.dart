@@ -890,7 +890,7 @@ class ConfirmBookingPaymentView extends StatelessWidget {
           child: Column(
             children: [
               Container(
-                height: Get.height * 0.065,
+                height: Get.height * 0.055,
                 width: Get.width,
                 decoration: BoxDecoration(
                   color: AppColors.scheduleBox,

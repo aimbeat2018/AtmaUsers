@@ -46,6 +46,7 @@ class AppAsset {
   static const icEyeUnVisible = "${getIconsPath}eyeUnVisible.png";
   static const icEyeVisible = "${getIconsPath}eyeVisible.png";
   static const icFlutterWave = "${getIconsPath}flutterWave.png";
+  static const icCash = "${getIconsPath}money.png";
   static const icGoogle = "${getIconsPath}google.png";
   static const icHappy = "${getIconsPath}happy.png";
   static const icHelp = "${getIconsPath}help.png";

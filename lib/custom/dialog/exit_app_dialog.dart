@@ -15,7 +15,7 @@ class ExitAppDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: Get.height * 0.45,
+      height: Get.height * 0.50,
       child: Material(
         shape: const SquircleBorder(radius: BorderRadius.all(Radius.circular(115))),
         color: AppColors.white,
@@ -37,7 +37,7 @@ class ExitAppDialog extends StatelessWidget {
                 fontColor: AppColors.degreeText,
               ),
             ).paddingOnly(top: 8, bottom: 13),
-            const Spacer(),
+            // const Spacer(),
             PrimaryAppButton(
               onTap: () {
                 exit(0);

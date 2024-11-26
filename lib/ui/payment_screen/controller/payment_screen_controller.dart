@@ -126,7 +126,30 @@ class PaymentScreenController extends GetxController {
       update([Constant.idProgressView]);
 
       // FlutterWaveService().handlePaymentInitialization(context);
+    }else if (selectPayment == 3) {
+      isLoading = true;
+      update([Constant.idProgressView]);
+
+      await onLoadWalletApiCall(
+        userId: Constant.storage.read("userId"),
+        amount: amount!,
+        paymentGateway: '1',
+        couponId: /*couponId!*/"",
+      );
+
+      if (loadWalletModel?.status == true) {
+       onPayment();
+        Utils.showToast(Get.context!, loadWalletModel?.message ?? "");
+      } else {
+        Utils.showToast(Get.context!, loadWalletModel?.message ?? "");
+      }
+
+      1.seconds.delay;
+      isLoading = false;
+      update([Constant.idProgressView]);
+
     }
+
   }
 
   /// =================== API Calling =================== ///
