@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
-  static Color primaryAppColor1 = const Color(0xff444D7D);
-  static Color primaryAppColor2 = const Color(0xff38406B);
+  static Color primaryAppColor1 = const Color(0xff004D89);
+  static Color primaryAppColor2 = const Color(0xff004D89);
   static Color bottomLabel = const Color(0xff3B436F);
   static Color categoryText = const Color(0xff38408B);
   static Color title = const Color(0xff2F377A);
@@ -29,10 +29,10 @@ class AppColors {
   static Color dialogDes = const Color(0xffAEB5C5);
   static Color switchBorder = const Color(0xffDEE5F4);
   static Color switchBox = const Color(0xffEFF1F9);
-  static Color loginBox = const Color(0xffF5F7FF);
-  static Color loginBorder = const Color(0xffCACDDC);
+  static Color loginBox = const Color(0xffE8F5FF);
+  static Color loginBorder = const Color(0xffA7A7A7);
   static Color loginText = const Color(0xff3E4673);
-  static Color google = const Color(0xffE9EDFE);
+  static Color google = const Color(0xffBDDFF9);
   static Color user = const Color(0xffD5D7EC);
   static Color message1 = const Color(0xff2C8DE6);
   static Color message2 = const Color(0xff4173F3);
@@ -51,7 +51,7 @@ class AppColors {
   static Color rating = const Color(0xffFFA722);
   static Color review = const Color(0xffF19914);
   static Color yellowBg = const Color(0xffFEF0D4);
-  static Color appBarBg = const Color(0xffF0F3FE);
+  static Color appBarBg = const Color(0xffDBEFFF);
   static Color notificationBox = const Color(0xffF4FFF3);
   static Color notificationBox2 = const Color(0xffFEF7F7);
   static Color ratingCircle = const Color(0xffFFF7E9);
@@ -88,4 +88,5 @@ class AppColors {
   static Color bottomSheetDivider = const Color(0xffEBEEF5);
   static Color black = const Color(0xff000000);
   static Color transparent = Colors.transparent;
+  static Color atmaTextColor = const Color(0xffFFC1C7);
 }

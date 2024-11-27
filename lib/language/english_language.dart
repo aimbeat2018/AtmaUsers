@@ -1,7 +1,7 @@
 import 'package:doctor/utils/enums.dart';
 
 final Map<String, String> enUS = {
-  EnumLocale.txtAppName.name: 'Atma',
+  EnumLocale.txtAppName.name: 'ATMA',
   EnumLocale.txtHome.name: 'Home',
   EnumLocale.txtAppointment.name: 'Appointment',
   EnumLocale.txtChat.name: 'Chat',
@@ -200,6 +200,7 @@ final Map<String, String> enUS = {
   EnumLocale.txtMedClips.name: 'Med Clips',
   EnumLocale.txtAppointmentRequired.name: 'Appointment Required',
   EnumLocale.txtNotVideoMeeting.name: 'Not Video Meeting',
+  EnumLocale.txtMembership.name: 'Membership',
   EnumLocale.desToday.name: 'How are you feeling today?',
   EnumLocale.desEnoughFundsWallet.name: 'There is not enough funds in wallet',
   EnumLocale.desRechargeForBooking.name: 'Please Recharge\nYour wallet to continue booking',
@@ -262,4 +263,5 @@ final Map<String, String> enUS = {
   EnumLocale.noDataFoundChat.name: 'No chat history !!',
   EnumLocale.noDataFound.name: 'No Data Found !!',
   EnumLocale.noDataFoundNotification.name: 'Notification drawer is empty !!',
+  EnumLocale.desAppDesApp.name: 'Any Time Medical Assistance',
 };

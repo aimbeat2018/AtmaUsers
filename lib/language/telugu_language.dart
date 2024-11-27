@@ -1,7 +1,7 @@
 import 'package:doctor/utils/enums.dart';
 
 final Map<String, String> teIN = <String, String>{
-  EnumLocale.txtAppName.name: "డా.ప్లస్",
+  EnumLocale.txtAppName.name: "ATMA",
   EnumLocale.txtHome.name: "హోమ్",
   EnumLocale.txtAppointment.name: "అపాయింట్‌మెంట్",
   EnumLocale.txtChat.name: "చాట్",
@@ -200,6 +200,7 @@ final Map<String, String> teIN = <String, String>{
   EnumLocale.txtMedClips.name: 'మెడ్ క్లిప్‌లు',
   EnumLocale.txtAppointmentRequired.name: 'అపాయింట్‌మెంట్ అవసరం',
   EnumLocale.txtNotVideoMeeting.name: 'వీడియో మీటింగ్ కాదు',
+  EnumLocale.txtMembership.name: 'సభ్యత్వం',
   EnumLocale.desToday.name: "ఈ రోజు మీకు ఎలా అనిపిస్తుంది?",
   EnumLocale.desEnoughFundsWallet.name: "వాలెట్‌లో తగినంత నిధులు లేవు",
   EnumLocale.desRechargeForBooking.name: "బుకింగ్‌ను కొనసాగించడానికి దయచేసి\nమీ వాలెట్‌ని రీఛార్జ్ చేయండి",
@@ -262,4 +263,5 @@ final Map<String, String> teIN = <String, String>{
   EnumLocale.noDataFoundChat.name: "చాట్ చరిత్ర లేదు !!",
   EnumLocale.noDataFound.name: "డేటా కనుగొనబడలేదు !!",
   EnumLocale.noDataFoundNotification.name: "నోటిఫికేషన్ డ్రాయర్ ఖాళీగా ఉంది !!",
+  EnumLocale.desAppDesApp.name: 'ఏ సమయంలోనైనా వైద్య సహాయం',
 };

@@ -11,7 +11,6 @@ class EditProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-
     return PopScope(
       canPop: Constant.storage.read("isMobileLogin") == true ? false : true,
       onPopInvoked: (bool didPop) {

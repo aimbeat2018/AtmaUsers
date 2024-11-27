@@ -37,11 +37,13 @@ class ProfileMenu extends StatelessWidget {
             height: 26,
             color: iconColor ?? AppColors.title,
           ).paddingOnly(right: 13),
-          Text(
-            text,
-            style: FontStyle.fontStyleW600(
-              fontSize: 14,
-              fontColor: textColor ?? AppColors.title,
+          Expanded(
+            child: Text(
+              text,
+              style: FontStyle.fontStyleW600(
+                fontSize: 14,
+                fontColor: textColor ?? AppColors.title,
+              ),
             ),
           ),
           const Spacer(),

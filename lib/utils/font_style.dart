@@ -43,4 +43,12 @@ class FontStyle {
       fontWeight: FontWeight.w700,
     );
   }
+
+  static fontStyleW400Balthazar({required double fontSize, required Color fontColor}) {
+    return GoogleFonts.balthazar(
+      fontSize: fontSize,
+      color: fontColor,
+      fontWeight: FontWeight.w400,
+    );
+  }
 }

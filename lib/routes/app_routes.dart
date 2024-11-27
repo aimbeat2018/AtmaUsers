@@ -43,6 +43,7 @@ class AppRoutes {
   static const String complain = '/complain';
   static const String language = '/language';
   static const String myWallet = '/myWallet';
+  static const String memberShip = '/membership';
   static const String history = '/history';
   static const String payment = '/payment';
 }

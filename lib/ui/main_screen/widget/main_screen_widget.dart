@@ -18,17 +18,49 @@ class MainDescriptionView extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
         Expanded(
-          child: Container(
-            width: Get.width,
-            color: AppColors.primaryAppColor1,
-            alignment: Alignment.bottomCenter,
-            child: Image.asset(AppAsset.imDoctor, width: Get.height / 2.5),
+          child: Stack(
+            children: [
+              Container(
+                width: Get.width,
+                color: AppColors.primaryAppColor1,
+                alignment: Alignment.bottomCenter,
+                child: Image.asset(
+                    AppAsset.imDoctor /*, width: Get.height / 0.1*/),
+              ),
+              Positioned.fill(
+                  top: 50,
+                  child: Column(
+                    children: [
+                      Text(
+                        EnumLocale.txtAppName.name.tr.toUpperCase(),
+                        textAlign: TextAlign.center,
+                        style: FontStyle.fontStyleW700(
+                          fontSize: 18,
+                          fontColor: AppColors.atmaTextColor,
+                        ),
+                      ),
+                      Text(
+                        EnumLocale.desAppDesApp.name.tr,
+                        textAlign: TextAlign.center,
+                        style: FontStyle.fontStyleW400Balthazar(
+                          fontSize: 16,
+                          fontColor: AppColors.white,
+                        ),
+                      ),
+                    ],
+                  )),
+            ],
           ),
         ),
-        SizedBox(height: Get.height * 0.03),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15),
+        // SizedBox(height: Get.height * 0.03),
+        Container(
+          padding: EdgeInsets.only(left: 15,right: 15),
+          margin: EdgeInsets.only(top: Get.height * 0.06,),
+          decoration: BoxDecoration(
+            color: Colors.white,
+          ),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Text(
                 EnumLocale.desMultiVendorApp.name.tr,
@@ -77,7 +109,8 @@ class MainDescriptionView extends StatelessWidget {
                                     color: AppColors.google,
                                     borderRadius: BorderRadius.circular(8),
                                   ),
-                                  child: Image.asset(AppAsset.icGoogle).paddingAll(8),
+                                  child: Image.asset(AppAsset.icGoogle)
+                                      .paddingAll(8),
                                 ).paddingOnly(left: 5),
                                 const Spacer(),
                                 Text(
@@ -119,7 +152,8 @@ class MainDescriptionView extends StatelessWidget {
                                   color: AppColors.google,
                                   borderRadius: BorderRadius.circular(8),
                                 ),
-                                child: Image.asset(AppAsset.icMobile).paddingAll(8),
+                                child: Image.asset(AppAsset.icMobile)
+                                    .paddingAll(8),
                               ).paddingOnly(left: 5),
                               const Spacer(),
                               Text(

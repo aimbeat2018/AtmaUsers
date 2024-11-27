@@ -1,7 +1,7 @@
 import 'package:doctor/utils/enums.dart';
 
 final Map<String, String> urPK = <String, String>{
-  EnumLocale.txtAppName.name: "ڈاکٹر پلس",
+  EnumLocale.txtAppName.name: "ATMA",
   EnumLocale.txtHome.name: "گھر",
   EnumLocale.txtAppointment.name: "تقرری",
   EnumLocale.txtChat.name: "چیٹ",
@@ -200,32 +200,44 @@ final Map<String, String> urPK = <String, String>{
   EnumLocale.txtMedClips.name: 'میڈ کلپس',
   EnumLocale.txtAppointmentRequired.name: 'تقرری درکار ہے۔',
   EnumLocale.txtNotVideoMeeting.name: 'ویڈیو میٹنگ نہیں۔',
+  EnumLocale.txtMembership.name: 'رکنیت',
   EnumLocale.desToday.name: "آج آپ کیسا محسوس کر رہے ہیں؟",
   EnumLocale.desEnoughFundsWallet.name: "بٹوے میں کافی رقم نہیں ہے۔",
-  EnumLocale.desRechargeForBooking.name: "براہ کرم بکنگ جاری رکھنے کے لیے\nاپنا والٹ ری چارج کریں۔",
-  EnumLocale.desConfirmAppointment.name: "کیا آپ اس ملاقات کی تصدیق کرنا چاہتے ہیں؟",
-  EnumLocale.desConditionAccept.name: "*اگر آپ اس ملاقات کی تصدیق کرنا چاہتے ہیں تو اسے قبول کیا جائے۔",
-  EnumLocale.desDoCancelAppointment.name: "کیا آپ اس ملاقات کو منسوخ کرنا چاہتے ہیں؟",
-  EnumLocale.desIfConfirmAccept.name: "*اگر آپ اس ملاقات کو منسوخ کرنا چاہتے ہیں تو اسے قبول کیا جائے۔",
+  EnumLocale.desRechargeForBooking.name:
+      "براہ کرم بکنگ جاری رکھنے کے لیے\nاپنا والٹ ری چارج کریں۔",
+  EnumLocale.desConfirmAppointment.name:
+      "کیا آپ اس ملاقات کی تصدیق کرنا چاہتے ہیں؟",
+  EnumLocale.desConditionAccept.name:
+      "*اگر آپ اس ملاقات کی تصدیق کرنا چاہتے ہیں تو اسے قبول کیا جائے۔",
+  EnumLocale.desDoCancelAppointment.name:
+      "کیا آپ اس ملاقات کو منسوخ کرنا چاہتے ہیں؟",
+  EnumLocale.desIfConfirmAccept.name:
+      "*اگر آپ اس ملاقات کو منسوخ کرنا چاہتے ہیں تو اسے قبول کیا جائے۔",
   EnumLocale.desThisAppointmentCancelled.name: "یہ ملاقات منسوخ کر دی گئی ہے۔",
   EnumLocale.desThisAppointmentPending.name: "یہ ملاقات زیر التواء ہے...",
   EnumLocale.desWantExitApp.name: "کیا آپ اس ایپ سے باہر نکلنا چاہتے ہیں؟",
-  EnumLocale.desWantLogOut.name: "کیا آپ واقعی اپنے اکاؤنٹ سے فوری طور پر لاگ آؤٹ کرنا چاہتے ہیں؟",
-  EnumLocale.desWantDeleteAccount.name: "کیا آپ واقعی اپنا اکاؤنٹ حذف کرنا چاہتے ہیں؟",
-  EnumLocale.desMultiVendorApp.name: "ملاقات، آن لائن تشخیص، بکنگ، مینجمنٹ ملٹی وینڈر ایپ",
+  EnumLocale.desWantLogOut.name:
+      "کیا آپ واقعی اپنے اکاؤنٹ سے فوری طور پر لاگ آؤٹ کرنا چاہتے ہیں؟",
+  EnumLocale.desWantDeleteAccount.name:
+      "کیا آپ واقعی اپنا اکاؤنٹ حذف کرنا چاہتے ہیں؟",
+  EnumLocale.desMultiVendorApp.name:
+      "ملاقات، آن لائن تشخیص، بکنگ، مینجمنٹ ملٹی وینڈر ایپ",
   EnumLocale.desFindDoctors.name:
       "ڈاکٹر تلاش کریں، بک اپائنٹمنٹ میں ڈیجیٹل مشاورت حاصل کریں، نسخہ حاصل کریں اور صحت مند زندگی گزاریں۔",
   EnumLocale.desAlreadyAccount.name: "پہلے سے ہی اکاؤنٹ ہے؟",
   EnumLocale.desPleaseFillDetail.name:
       "براہ کرم اپنی تفصیلات پُر کریں اور ڈاکٹروں کو شروع کرنے کے لیے مکمل رجسٹریشن کریں، بک اپائنٹمنٹ میں ڈیجیٹل مشاورت، نسخہ حاصل کریں اور صحت مند زندگی گزاریں۔",
   EnumLocale.desSendOtpNumber.name: "OTP بھیجیں۔",
-  EnumLocale.desByProceedingForward.name: "آگے بڑھ کر، آپ اس سے اتفاق کرتے ہیں۔",
-  EnumLocale.desEnterValidEmailAddress.name: "برائے مہربانی قابل قبول ای میل ایڈریس لکھیں",
+  EnumLocale.desByProceedingForward.name:
+      "آگے بڑھ کر، آپ اس سے اتفاق کرتے ہیں۔",
+  EnumLocale.desEnterValidEmailAddress.name:
+      "برائے مہربانی قابل قبول ای میل ایڈریس لکھیں",
   EnumLocale.desEnterFullName.name: "براہ کرم پورا نام درج کریں۔",
   EnumLocale.desEnterEmail.name: "براہ کرم ای میل درج کریں۔",
   EnumLocale.desEnterPassword.name: "براہ کرم پاس ورڈ درج کریں۔",
   EnumLocale.desReEnterPassword.name: "براہ کرم دوبارہ پاس ورڈ درج کریں۔",
-  EnumLocale.desPasswordCharacters.name: "پاس ورڈ کم از کم 6 حروف کا ہونا چاہیے۔",
+  EnumLocale.desPasswordCharacters.name:
+      "پاس ورڈ کم از کم 6 حروف کا ہونا چاہیے۔",
   EnumLocale.desPasswordNotMatch.name: "پاس ورڈ میچ نہیں کرتا",
   EnumLocale.desEnterMobile.name: "براہ کرم موبائل نمبر درج کریں۔",
   EnumLocale.desAlreadyUser.name: "صارف پہلے سے موجود ہے !!",
@@ -236,30 +248,39 @@ final Map<String, String> urPK = <String, String>{
   EnumLocale.desEnterProblem.name: "براہ کرم اپنا مسئلہ بیان کریں۔",
   EnumLocale.desEnterSuggestion.name: "براہ کرم اپنی شکایت یا تجویز درج کریں۔",
   EnumLocale.desEnterAppointmentId.name: "براہ کرم ملاقات کی شناخت درج کریں۔",
-  EnumLocale.desEnterGiveReview.name: "براہ کرم اپنا جائزہ درج کریں اور خدمات کے لیے اپنے تجربے کا اشتراک کریں۔",
-  EnumLocale.desEnterUnderAppMaintenance.name: "سسٹم کی بحالی جاری ہے: براہ کرم بعد میں دوبارہ کوشش کریں۔",
+  EnumLocale.desEnterGiveReview.name:
+      "براہ کرم اپنا جائزہ درج کریں اور خدمات کے لیے اپنے تجربے کا اشتراک کریں۔",
+  EnumLocale.desEnterUnderAppMaintenance.name:
+      "سسٹم کی بحالی جاری ہے: براہ کرم بعد میں دوبارہ کوشش کریں۔",
   EnumLocale.desRateUs.name:
       "اگر آپ کو یہ ایپ پسند ہے، تو براہ کرم اس کا جائزہ لینے کے لیے اپنا تھوڑا سا وقت نکالیں! یہ واقعی ہماری مدد کرتا ہے اور اس میں آپ کو ایک منٹ سے زیادہ نہیں لگنا چاہیے۔",
-  EnumLocale.desAppointmentRequired.name: "آپ ابھی کال نہیں کر سکتے کیونکہ آپ کے پاس کوئی ملاقات کا وقت بک نہیں ہے۔",
-  EnumLocale.desVideoNotMeeting.name: "ویڈیو میٹنگ ملاقات کے وقت پر دستیاب ہوگی۔",
+  EnumLocale.desAppointmentRequired.name:
+      "آپ ابھی کال نہیں کر سکتے کیونکہ آپ کے پاس کوئی ملاقات کا وقت بک نہیں ہے۔",
+  EnumLocale.desVideoNotMeeting.name:
+      "ویڈیو میٹنگ ملاقات کے وقت پر دستیاب ہوگی۔",
   EnumLocale.toastCheckMailBox.name: "براہ کرم اپنا میل باکس چیک کریں۔",
   EnumLocale.toastSelectTime.name: "براہ کرم اپنی ملاقات کا وقت منتخب کریں۔",
   EnumLocale.toastSelectImage.name: "براہ کرم تصاویر اپ لوڈ کریں۔",
-  EnumLocale.toastAlreadyBooked.name: "یہ وقت اس ڈاکٹر کے لیے پہلے سے ہی بُک ہے۔",
+  EnumLocale.toastAlreadyBooked.name:
+      "یہ وقت اس ڈاکٹر کے لیے پہلے سے ہی بُک ہے۔",
   EnumLocale.toastPreviousTime.name: "آپ پچھلی بار منتخب نہیں کر سکتے",
-  EnumLocale.toastInvalidTime.name: "یہ وقت درست نہیں ہے، براہ کرم دوسرا وقت منتخب کریں۔",
+  EnumLocale.toastInvalidTime.name:
+      "یہ وقت درست نہیں ہے، براہ کرم دوسرا وقت منتخب کریں۔",
   EnumLocale.toastEnterNumber.name: "براہ کرم موبائل نمبر درج کریں۔",
   EnumLocale.toastEnterDetails.name: "براہ کرم تمام تفصیلات درج کریں۔",
   EnumLocale.noDataFoundDoctor.name: "اس خدمت کے لیے کوئی ڈاکٹر نہیں ملا!!",
   EnumLocale.noDataFoundReview.name: "اس ڈاکٹر کے لیے کوئی جائزے نہیں ملے!!",
   EnumLocale.noDataFoundCoupon.name: "فی الحال، کوپن دستیاب نہیں ہے!!",
-  EnumLocale.noDataFoundHistory.name: "اس مہینے کے لیے پرس کی کوئی تاریخ نہیں !!",
+  EnumLocale.noDataFoundHistory.name:
+      "اس مہینے کے لیے پرس کی کوئی تاریخ نہیں !!",
   EnumLocale.noDataFoundPendingAppointment.name: "زیر التواء ملاقات نہیں ملی!!",
   EnumLocale.noDataFoundCancelAppointment.name: "ملاقات منسوخ نہیں ہوئی!!",
   EnumLocale.noDataFoundCompleteAppointment.name: "مکمل ملاقات نہیں ملی!!",
-  EnumLocale.noDataFoundAppointment.name: "اس تاریخ کے درمیان کوئی ملاقات نہیں ملی!!",
+  EnumLocale.noDataFoundAppointment.name:
+      "اس تاریخ کے درمیان کوئی ملاقات نہیں ملی!!",
   EnumLocale.noDataFoundHoliday.name: "ڈاکٹر دستیاب نہیں!!",
   EnumLocale.noDataFoundChat.name: "کوئی چیٹ ہسٹری نہیں !!",
   EnumLocale.noDataFound.name: "کوئی ڈیٹا نہیں ملا !!",
   EnumLocale.noDataFoundNotification.name: "نوٹیفکیشن کی دراز خالی ہے!!",
+  EnumLocale.desAppDesApp.name: 'کسی بھی وقت طبی معاونت',
 };

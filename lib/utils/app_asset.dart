@@ -23,7 +23,8 @@ class AppAsset {
   static const icCameraTurn = "${getIconsPath}camera_turn.png";
   static const icCancel = "${getIconsPath}cancel.png";
   static const icCategory = "${getIconsPath}category.png";
-  static const icCategoryPlaceholder = "${getIconsPath}category_placeholder.png";
+  static const icCategoryPlaceholder =
+      "${getIconsPath}category_placeholder.png";
   static const icChatFilled = "${getIconsPath}chat_filled.png";
   static const icChatOutline = "${getIconsPath}chat_outline.png";
   static const icCheck = "${getIconsPath}check.png";
@@ -78,7 +79,8 @@ class AppAsset {
   static const icNoReviewFound = "${getIconsPath}no_review_found.png";
   static const icNotification = "${getIconsPath}notification.png";
   static const icNotificationAdd = "${getIconsPath}notification_add.png";
-  static const icNotificationOutline = "${getIconsPath}notification_outline.png";
+  static const icNotificationOutline =
+      "${getIconsPath}notification_outline.png";
   static const icPaypal = "${getIconsPath}paypal.png";
   static const icPlus = "${getIconsPath}plus.png";
   static const icPolicy = "${getIconsPath}policy.png";
@@ -113,6 +115,7 @@ class AppAsset {
   static const icWalletAdd = "${getIconsPath}wallet_add.png";
   static const icWalletMinus = "${getIconsPath}wallet_minus.png";
   static const icWalletOutline = "${getIconsPath}wallet_outline.png";
+  static const icMembershipOutline = "${getIconsPath}membership.png";
   static const icWorkingTime = "${getIconsPath}working_time.png";
 
   /// =================== Images =================== ///

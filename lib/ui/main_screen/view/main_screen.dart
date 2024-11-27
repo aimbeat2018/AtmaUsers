@@ -16,6 +16,7 @@ class MainScreen extends StatelessWidget {
         return ProgressDialog(
           inAsyncCall: logic.isLoading,
           child: const Scaffold(
+            backgroundColor: Colors.white,
             body: MainDescriptionView(),
           ),
         );

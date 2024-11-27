@@ -39,7 +39,7 @@ class CustomAppBar extends StatelessWidget {
               colors: gradientColor ??
                   [
                     AppColors.primaryAppColor1,
-                    AppColors.primaryAppColor2,
+                    AppColors.primaryAppColor1,
                   ],
               begin: Alignment.centerLeft,
               end: Alignment.centerRight,

@@ -77,10 +77,14 @@ class ProfileInfoView extends StatelessWidget {
                       "${ApiConstant.BASE_URL}storage/male.png",
                   fit: BoxFit.cover,
                   placeholder: (context, url) {
-                    return Image.asset(AppAsset.icUserPlaceholder, color: AppColors.user).paddingAll(10);
+                    return Image.asset(AppAsset.icUserPlaceholder,
+                            color: AppColors.user)
+                        .paddingAll(10);
                   },
                   errorWidget: (context, url, error) {
-                    return Image.asset(AppAsset.icUserPlaceholder, color: AppColors.user).paddingAll(10);
+                    return Image.asset(AppAsset.icUserPlaceholder,
+                            color: AppColors.user)
+                        .paddingAll(10);
                   },
                 ),
               ),
@@ -92,21 +96,26 @@ class ProfileInfoView extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      Constant.storage.read("userName") ?? logic.getUserProfileModel?.user?.name ?? "",
+                      Constant.storage.read("userName") ??
+                          logic.getUserProfileModel?.user?.name ??
+                          "",
                       style: FontStyle.fontStyleW700(
                         fontSize: 16,
                         fontColor: AppColors.title,
                       ),
                     ),
                     Text(
-                      Constant.storage.read("userEmail") ?? logic.getUserProfileModel?.user?.email ?? "",
+                      Constant.storage.read("userEmail") ??
+                          logic.getUserProfileModel?.user?.email ??
+                          "",
                       style: FontStyle.fontStyleW500(
                         fontSize: 14,
                         fontColor: AppColors.degreeText,
                       ),
                     ),
                     InkWell(
-                      overlayColor: WidgetStatePropertyAll(AppColors.transparent),
+                      overlayColor:
+                          WidgetStatePropertyAll(AppColors.transparent),
                       onTap: () {
                         Get.toNamed(AppRoutes.editProfile, arguments: [
                           logic.getUserProfileModel?.user?.name,
@@ -122,7 +131,8 @@ class ProfileInfoView extends StatelessWidget {
                           color: AppColors.specialistBox,
                           borderRadius: BorderRadius.circular(46),
                         ),
-                        padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 10),
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 8, horizontal: 10),
                         child: IntrinsicHeight(
                           child: Row(
                             children: [
@@ -168,6 +178,16 @@ class ProfileGeneralView extends StatelessWidget {
       widget: Column(
         children: [
           ProfileMenu(
+            image: AppAsset.icMembershipOutline,
+            text: EnumLocale.txtMembership.name.tr,
+            isArrow: true,
+            onTap: () {
+              Get.toNamed(AppRoutes.memberShip);
+            },
+          ),
+          Divider(height: 1.5, color: AppColors.white)
+              .paddingOnly(top: 15, bottom: 15),
+          ProfileMenu(
             image: AppAsset.icWalletOutline,
             text: EnumLocale.txtMyWallet.name.tr,
             isArrow: true,
@@ -175,7 +195,8 @@ class ProfileGeneralView extends StatelessWidget {
               Get.toNamed(AppRoutes.myWallet);
             },
           ),
-          Divider(height: 1.5, color: AppColors.white).paddingOnly(top: 15, bottom: 15),
+          Divider(height: 1.5, color: AppColors.white)
+              .paddingOnly(top: 15, bottom: 15),
           ProfileMenu(
             image: AppAsset.icSaved,
             text: EnumLocale.txtSavedDoctor.name.tr,
@@ -184,7 +205,8 @@ class ProfileGeneralView extends StatelessWidget {
               Get.toNamed(AppRoutes.savedDoctor);
             },
           ),
-          Divider(height: 1.5, color: AppColors.white).paddingOnly(top: 15, bottom: 15),
+          Divider(height: 1.5, color: AppColors.white)
+              .paddingOnly(top: 15, bottom: 15),
           ProfileMenu(
             image: AppAsset.icAppointmentOutline,
             text: EnumLocale.txtMyAppointment.name.tr,
@@ -193,7 +215,8 @@ class ProfileGeneralView extends StatelessWidget {
               Get.toNamed(AppRoutes.myAppointment);
             },
           ),
-          Divider(height: 1.5, color: AppColors.white).paddingOnly(top: 15, bottom: 15),
+          Divider(height: 1.5, color: AppColors.white)
+              .paddingOnly(top: 15, bottom: 15),
           ProfileMenu(
             image: AppAsset.icAddPatient,
             text: "Add Patients",
@@ -231,7 +254,8 @@ class ProfileAccountView extends StatelessWidget {
                   activeTrackColor: AppColors.categoryCircle,
                   inactiveThumbColor: AppColors.notificationTitle2,
                   inactiveTrackColor: AppColors.categoryCircle,
-                  trackOutlineColor: WidgetStatePropertyAll(AppColors.switchBorder),
+                  trackOutlineColor:
+                      WidgetStatePropertyAll(AppColors.switchBorder),
                   trackColor: WidgetStatePropertyAll(AppColors.switchBox),
                   onChanged: (value) {
                     logic.onSwitch(value);
@@ -240,7 +264,8 @@ class ProfileAccountView extends StatelessWidget {
               );
             },
           ),
-          Divider(height: 1.5, color: AppColors.white).paddingOnly(top: 15, bottom: 15),
+          Divider(height: 1.5, color: AppColors.white)
+              .paddingOnly(top: 15, bottom: 15),
           ProfileMenu(
             image: AppAsset.icLanguage,
             text: EnumLocale.txtLanguage.name.tr,
@@ -249,7 +274,8 @@ class ProfileAccountView extends StatelessWidget {
               Get.toNamed(AppRoutes.language);
             },
           ),
-          Divider(height: 1.5, color: AppColors.white).paddingOnly(top: 15, bottom: 15),
+          Divider(height: 1.5, color: AppColors.white)
+              .paddingOnly(top: 15, bottom: 15),
           GetBuilder<ProfileScreenController>(
             builder: (logic) {
               return ProfileMenu(
@@ -282,28 +308,35 @@ class ProfileAccountView extends StatelessWidget {
                         return true;
                       },
                       dialogStyle: DialogStyle(
-                        messageStyle: FontStyle.fontStyleW500(fontSize: 15, fontColor: AppColors.primaryAppColor1),
-                        titleStyle: FontStyle.fontStyleW600(fontSize: 20, fontColor: AppColors.primaryAppColor1),
+                        messageStyle: FontStyle.fontStyleW500(
+                            fontSize: 15,
+                            fontColor: AppColors.primaryAppColor1),
+                        titleStyle: FontStyle.fontStyleW600(
+                            fontSize: 20,
+                            fontColor: AppColors.primaryAppColor1),
                         titleAlign: TextAlign.center,
                         dialogShape: ContinuousRectangleBorder(
                           borderRadius: BorderRadius.circular(100),
                         ),
                       ),
-                      onDismissed: () => logic.rateMyApp.callEvent(RateMyAppEventType.laterButtonPressed),
+                      onDismissed: () => logic.rateMyApp
+                          .callEvent(RateMyAppEventType.laterButtonPressed),
                     );
                   });
                 },
               );
             },
           ),
-          Divider(height: 1.5, color: AppColors.white).paddingOnly(top: 15, bottom: 15),
+          Divider(height: 1.5, color: AppColors.white)
+              .paddingOnly(top: 15, bottom: 15),
           ProfileMenu(
             image: AppAsset.icShare,
             text: EnumLocale.txtShareApp.name.tr,
             isArrow: true,
             onTap: () {
               if (Platform.isAndroid) {
-                Share.share('http://play.google.com/store/apps/details?id=com.atma.patient');
+                Share.share(
+                    'http://play.google.com/store/apps/details?id=com.atma.patient');
               } else {}
             },
           ),
@@ -331,7 +364,8 @@ class ProfileAboutView extends StatelessWidget {
               Utils.launchURL(tnc ?? "");
             },
           ),
-          Divider(height: 1.5, color: AppColors.white).paddingOnly(top: 15, bottom: 15),
+          Divider(height: 1.5, color: AppColors.white)
+              .paddingOnly(top: 15, bottom: 15),
           ProfileMenu(
             image: AppAsset.icPolicy,
             text: EnumLocale.txtPrivacyPolicy.name.tr,
@@ -340,7 +374,8 @@ class ProfileAboutView extends StatelessWidget {
               Utils.launchURL(privacyPolicyLink ?? "");
             },
           ),
-          Divider(height: 1.5, color: AppColors.white).paddingOnly(top: 15, bottom: 15),
+          Divider(height: 1.5, color: AppColors.white)
+              .paddingOnly(top: 15, bottom: 15),
           GestureDetector(
             onTap: () {
               Get.toNamed(AppRoutes.helpDesk);
@@ -351,7 +386,8 @@ class ProfileAboutView extends StatelessWidget {
               isArrow: true,
             ),
           ),
-          Divider(height: 1.5, color: AppColors.white).paddingOnly(top: 15, bottom: 15),
+          Divider(height: 1.5, color: AppColors.white)
+              .paddingOnly(top: 15, bottom: 15),
           ProfileMenu(
             image: AppAsset.icLogOut,
             text: EnumLocale.txtLogOut.name.tr,
@@ -369,7 +405,8 @@ class ProfileAboutView extends StatelessWidget {
               );
             },
           ),
-          Divider(height: 1.5, color: AppColors.white).paddingOnly(top: 15, bottom: 15),
+          Divider(height: 1.5, color: AppColors.white)
+              .paddingOnly(top: 15, bottom: 15),
           GetBuilder<ProfileScreenController>(
             id: Constant.idProgressView,
             builder: (logic) {

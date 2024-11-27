@@ -127,7 +127,7 @@ class AddNumberView extends StatelessWidget {
               ),
             ),
             filled: true,
-            fillColor: AppColors.categoryCircle,
+            fillColor: AppColors.appBarBg,
             errorStyle: FontStyle.fontStyleW500(
               fontSize: 10,
               fontColor: AppColors.notificationTitle2,
@@ -190,7 +190,10 @@ class AddNumberBottomView extends StatelessWidget {
                 height: Get.height * 0.06,
                 width: Get.width * 0.90,
                 borderRadius: 11,
-                gradientColor: [AppColors.primaryAppColor1, AppColors.primaryAppColor2],
+                gradientColor: [
+                  AppColors.primaryAppColor1,
+                  AppColors.primaryAppColor1
+                ],
                 text: EnumLocale.txtContinue.name.tr,
                 textStyle: FontStyle.fontStyleW600(
                   fontSize: 16,

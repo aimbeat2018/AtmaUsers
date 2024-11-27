@@ -17,7 +17,7 @@ class BottomBarController extends GetxController {
   final pages = [
     const HomeScreen(),
     const AppointmentScreen(),
-    const MedClipsScreen(),
+    // const MedClipsScreen(),
     const ChatScreen(),
     const ProfileScreen(),
   ];

@@ -563,6 +563,10 @@ class EditProfileBirthDateView extends StatelessWidget {
                 logic.formatBirthDate = DateFormat('dd MMM yyyy').format(value.first!);
                 logic.finalBirthDate = DateFormat('yyyy-MM-dd').format(value.first!);
 
+                if(logic.finalBirthDate!="") {
+                  logic.age = calculateAgeFromString(logic.finalBirthDate!).toString();
+                }
+
                 logic.onSelectBirthDate(logic.formatBirthDate.toString());
                 log("Selected BirthDate :: ${logic.birthDate}");
                 log("Final Selected BirthDate :: ${logic.finalBirthDate}");

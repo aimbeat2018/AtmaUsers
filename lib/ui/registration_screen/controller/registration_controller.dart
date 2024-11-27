@@ -14,6 +14,7 @@ import 'package:doctor/utils/utils.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
 import 'package:get/get.dart';
+import 'package:intl/intl.dart';
 
 class RegistrationController extends GetxController {
   final formKey = GlobalKey<FormState>();
@@ -33,7 +34,8 @@ class RegistrationController extends GetxController {
   TextEditingController rePasswordController = TextEditingController();
   TextEditingController numberController = TextEditingController();
 
-  ProfileScreenController profileScreenController = Get.find<ProfileScreenController>();
+  ProfileScreenController profileScreenController =
+      Get.find<ProfileScreenController>();
 
   List gender = ["Female", "Male"];
 
@@ -118,14 +120,19 @@ class RegistrationController extends GetxController {
             await profileScreenController.onGetUserProfileApiCall();
 
             if (profileScreenController.getUserProfileModel?.status == true) {
-              Constant.storage.write("userName", profileScreenController.getUserProfileModel?.user?.name);
-              Constant.storage.write("userEmail", profileScreenController.getUserProfileModel?.user?.email);
-              Constant.storage.write("userImage", profileScreenController.getUserProfileModel?.user?.image);
-              Constant.storage.write("mobileNumber", profileScreenController.getUserProfileModel?.user?.mobile);
+              Constant.storage.write("userName",
+                  profileScreenController.getUserProfileModel?.user?.name);
+              Constant.storage.write("userEmail",
+                  profileScreenController.getUserProfileModel?.user?.email);
+              Constant.storage.write("userImage",
+                  profileScreenController.getUserProfileModel?.user?.image);
+              Constant.storage.write("mobileNumber",
+                  profileScreenController.getUserProfileModel?.user?.mobile);
 
               Get.offAllNamed(AppRoutes.bottom);
             } else {
-              Utils.showToast(Get.context!, profileScreenController.getUserProfileModel?.message ?? "");
+              Utils.showToast(Get.context!,
+                  profileScreenController.getUserProfileModel?.message ?? "");
             }
           } catch (e) {
             log("Error in Registration Profile :: $e");
@@ -150,6 +157,8 @@ class RegistrationController extends GetxController {
   RegistrationModel? registrationModel;
   bool isLoading = false;
 
+
+
   onRegistrationApiCall({
     required String fcmToken,
     required int loginType,
@@ -164,6 +173,10 @@ class RegistrationController extends GetxController {
     try {
       isLoading = true;
       update([Constant.idProgressView]);
+      int age = 0;
+      if(dob!="") {
+         age = calculateAgeFromString(dob);
+      }
 
       final body = json.encode({
         "email": email,
@@ -175,14 +188,19 @@ class RegistrationController extends GetxController {
         "country": country,
         "gender": gender,
         "dob": dob,
+        "age": age==0?age.toString():"",
       });
 
       log("Registration User Body :: $body");
 
-      final url = Uri.parse(ApiConstant.BASE_URL + ApiConstant.registrationUser);
+      final url =
+          Uri.parse(ApiConstant.BASE_URL + ApiConstant.registrationUser);
       log("Registration User Url :: $url");
 
-      final headers = {"key": ApiConstant.SECRET_KEY, 'Content-Type': 'application/json'};
+      final headers = {
+        "key": ApiConstant.SECRET_KEY,
+        'Content-Type': 'application/json'
+      };
       log("Registration User Headers :: $headers");
 
       final response = await http.post(url, headers: headers, body: body);

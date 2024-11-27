@@ -19,7 +19,7 @@ class BottomBarView extends StatelessWidget {
       id: Constant.idBottomBar,
       builder: (logic) {
         return Container(
-          height: Platform.isIOS ?85:65,
+          height: Platform.isIOS ? 85 : 65,
           decoration: BoxDecoration(
             color: AppColors.white,
             boxShadow: [
@@ -43,7 +43,8 @@ class BottomBarView extends StatelessWidget {
                 logic.onClick(value);
               },
               curve: Curves.easeInOut,
-              margin: EdgeInsets.only(left: 10, right: 10, top: Platform.isIOS ? 10 : 0),
+              margin: EdgeInsets.only(
+                  left: 10, right: 10, top: Platform.isIOS ? 10 : 0),
               items: [
                 bottomBarItemView(
                   index: 0,
@@ -59,22 +60,22 @@ class BottomBarView extends StatelessWidget {
                   selectedImage: AppAsset.icAppointmentFilled,
                   unSelectedImage: AppAsset.icAppointmentOutline,
                 ),
+                // bottomBarItemView(
+                //   index: 2,
+                //   selectIndex: logic.selectIndex,
+                //   text: EnumLocale.txtMedClips.name.tr,
+                //   selectedImage: AppAsset.icMedClipFilled,
+                //   unSelectedImage: AppAsset.icMedClipOutline,
+                // ),
                 bottomBarItemView(
                   index: 2,
-                  selectIndex: logic.selectIndex,
-                  text: EnumLocale.txtMedClips.name.tr,
-                  selectedImage: AppAsset.icMedClipFilled,
-                  unSelectedImage: AppAsset.icMedClipOutline,
-                ),
-                bottomBarItemView(
-                  index: 3,
                   selectIndex: logic.selectIndex,
                   text: EnumLocale.txtChat.name.tr,
                   selectedImage: AppAsset.icChatFilled,
                   unSelectedImage: AppAsset.icChatOutline,
                 ),
                 bottomBarItemView(
-                  index: 4,
+                  index: 3,
                   selectIndex: logic.selectIndex,
                   text: EnumLocale.txtProfile.name.tr,
                   selectedImage: AppAsset.icProfileFilled,
