@@ -264,4 +264,5 @@ final Map<String, String> enUS = {
   EnumLocale.noDataFound.name: 'No Data Found !!',
   EnumLocale.noDataFoundNotification.name: 'Notification drawer is empty !!',
   EnumLocale.desAppDesApp.name: 'Any Time Medical Assistance',
+  EnumLocale.txtBuyNow.name: 'Buy Now',
 };

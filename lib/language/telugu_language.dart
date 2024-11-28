@@ -181,7 +181,8 @@ final Map<String, String> teIN = <String, String>{
   EnumLocale.txtHelpDesk.name: "హెల్ప్ డెస్క్",
   EnumLocale.txtComplainSuggestion.name: "ఫిర్యాదు లేదా సూచన",
   EnumLocale.txtEnterAppointmentId.name: "మీ అపాయింట్‌మెంట్ ఐడిని నమోదు చేయండి",
-  EnumLocale.txtAttachImage.name: "మీ చిత్రం లేదా స్క్రీన్‌షాట్‌ను అటాచ్ చేయండి",
+  EnumLocale.txtAttachImage.name:
+      "మీ చిత్రం లేదా స్క్రీన్‌షాట్‌ను అటాచ్ చేయండి",
   EnumLocale.txtBrowse.name: "బ్రౌజ్ చేయండి",
   EnumLocale.txtSelectDesk.name: "డెస్క్‌ని ఎంచుకోండి",
   EnumLocale.txtComplain.name: "ఫిర్యాదు చేయండి",
@@ -203,30 +204,43 @@ final Map<String, String> teIN = <String, String>{
   EnumLocale.txtMembership.name: 'సభ్యత్వం',
   EnumLocale.desToday.name: "ఈ రోజు మీకు ఎలా అనిపిస్తుంది?",
   EnumLocale.desEnoughFundsWallet.name: "వాలెట్‌లో తగినంత నిధులు లేవు",
-  EnumLocale.desRechargeForBooking.name: "బుకింగ్‌ను కొనసాగించడానికి దయచేసి\nమీ వాలెట్‌ని రీఛార్జ్ చేయండి",
-  EnumLocale.desConfirmAppointment.name: "మీరు ఈ అపాయింట్‌మెంట్‌ని నిర్ధారించాలనుకుంటున్నారా?",
-  EnumLocale.desConditionAccept.name: "*మీరు ఈ అపాయింట్‌మెంట్‌ని ధృవీకరించాలనుకుంటే అంగీకరించాలి",
-  EnumLocale.desDoCancelAppointment.name: "మీరు ఈ అపాయింట్‌మెంట్‌ని రద్దు చేయాలనుకుంటున్నారా?",
-  EnumLocale.desIfConfirmAccept.name: "*మీరు ఈ అపాయింట్‌మెంట్‌ని రద్దు చేయాలనుకుంటే అంగీకరించాలి",
-  EnumLocale.desThisAppointmentCancelled.name: "ఈ అపాయింట్‌మెంట్ రద్దు చేయబడింది",
+  EnumLocale.desRechargeForBooking.name:
+      "బుకింగ్‌ను కొనసాగించడానికి దయచేసి\nమీ వాలెట్‌ని రీఛార్జ్ చేయండి",
+  EnumLocale.desConfirmAppointment.name:
+      "మీరు ఈ అపాయింట్‌మెంట్‌ని నిర్ధారించాలనుకుంటున్నారా?",
+  EnumLocale.desConditionAccept.name:
+      "*మీరు ఈ అపాయింట్‌మెంట్‌ని ధృవీకరించాలనుకుంటే అంగీకరించాలి",
+  EnumLocale.desDoCancelAppointment.name:
+      "మీరు ఈ అపాయింట్‌మెంట్‌ని రద్దు చేయాలనుకుంటున్నారా?",
+  EnumLocale.desIfConfirmAccept.name:
+      "*మీరు ఈ అపాయింట్‌మెంట్‌ని రద్దు చేయాలనుకుంటే అంగీకరించాలి",
+  EnumLocale.desThisAppointmentCancelled.name:
+      "ఈ అపాయింట్‌మెంట్ రద్దు చేయబడింది",
   EnumLocale.desThisAppointmentPending.name: "ఈ నియామకం పెండింగ్‌లో ఉంది...",
-  EnumLocale.desWantExitApp.name: "మీరు ఈ యాప్ నుండి నిష్క్రమించాలనుకుంటున్నారా?",
-  EnumLocale.desWantLogOut.name: "మీరు ఖచ్చితంగా మీ ఖాతా నుండి వెంటనే లాగ్ అవుట్ చేయాలనుకుంటున్నారా?",
-  EnumLocale.desWantDeleteAccount.name: "మీరు ఖచ్చితంగా మీ ఖాతాను తొలగించాలనుకుంటున్నారా?",
-  EnumLocale.desMultiVendorApp.name: "అపాయింట్‌మెంట్, ఆన్‌లైన్ డయాగ్నోస్టిక్, బుకింగ్, మేనేజ్‌మెంట్ మల్టీ-వెండర్ యాప్",
+  EnumLocale.desWantExitApp.name:
+      "మీరు ఈ యాప్ నుండి నిష్క్రమించాలనుకుంటున్నారా?",
+  EnumLocale.desWantLogOut.name:
+      "మీరు ఖచ్చితంగా మీ ఖాతా నుండి వెంటనే లాగ్ అవుట్ చేయాలనుకుంటున్నారా?",
+  EnumLocale.desWantDeleteAccount.name:
+      "మీరు ఖచ్చితంగా మీ ఖాతాను తొలగించాలనుకుంటున్నారా?",
+  EnumLocale.desMultiVendorApp.name:
+      "అపాయింట్‌మెంట్, ఆన్‌లైన్ డయాగ్నోస్టిక్, బుకింగ్, మేనేజ్‌మెంట్ మల్టీ-వెండర్ యాప్",
   EnumLocale.desFindDoctors.name:
       "వైద్యులను కనుగొనండి, అపాయింట్‌మెంట్ బుక్ చేసుకోండి డిజిటల్ సంప్రదింపులు, ప్రిస్క్రిప్షన్ పొందండి మరియు ఆరోగ్యకరమైన జీవితాన్ని గడపండి.",
   EnumLocale.desAlreadyAccount.name: "ఖాతా కలిగి ఉన్నారా?",
   EnumLocale.desPleaseFillDetail.name:
       "దయచేసి మీ వివరాలను పూరించండి మరియు ఫిడ్ డాక్టర్లను ప్రారంభించడానికి పూర్తి నమోదు చేయండి, అపాయింట్‌మెంట్‌లను బుక్ చేసుకోండి డిజిటల్ సంప్రదింపులు, ప్రిస్క్రిప్షన్ పొందండి మరియు ఆరోగ్యకరమైన జీవితాన్ని గడపండి.",
   EnumLocale.desSendOtpNumber.name: "OTP పంపండి",
-  EnumLocale.desByProceedingForward.name: "ముందుకు కొనసాగడం ద్వారా, మీరు అంగీకరిస్తున్నారు",
-  EnumLocale.desEnterValidEmailAddress.name: "దయచేసి చెల్లుబాటు అయ్యే ఇమెయిల్ చిరునామాను నమోదు చేయండి",
+  EnumLocale.desByProceedingForward.name:
+      "ముందుకు కొనసాగడం ద్వారా, మీరు అంగీకరిస్తున్నారు",
+  EnumLocale.desEnterValidEmailAddress.name:
+      "దయచేసి చెల్లుబాటు అయ్యే ఇమెయిల్ చిరునామాను నమోదు చేయండి",
   EnumLocale.desEnterFullName.name: "దయచేసి పూర్తి పేరును నమోదు చేయండి",
   EnumLocale.desEnterEmail.name: "దయచేసి ఇమెయిల్‌ని నమోదు చేయండి",
   EnumLocale.desEnterPassword.name: "దయచేసి పాస్‌వర్డ్‌ని నమోదు చేయండి",
   EnumLocale.desReEnterPassword.name: "దయచేసి మళ్లీ పాస్‌వర్డ్‌ని నమోదు చేయండి",
-  EnumLocale.desPasswordCharacters.name: "పాస్‌వర్డ్ తప్పనిసరిగా కనీసం 6 అక్షరాల పొడవు ఉండాలి",
+  EnumLocale.desPasswordCharacters.name:
+      "పాస్‌వర్డ్ తప్పనిసరిగా కనీసం 6 అక్షరాల పొడవు ఉండాలి",
   EnumLocale.desPasswordNotMatch.name: "పాస్‌వర్డ్ సరిపోలలేదు",
   EnumLocale.desEnterMobile.name: "దయచేసి మొబైల్ నంబర్‌ని నమోదు చేయండి",
   EnumLocale.desAlreadyUser.name: "వినియోగదారు ఇప్పటికే ఉన్నారు !!",
@@ -235,33 +249,48 @@ final Map<String, String> teIN = <String, String>{
   EnumLocale.desEnterGender.name: "దయచేసి లింగాన్ని నమోదు చేయండి",
   EnumLocale.desEnterRelation.name: "దయచేసి సంబంధాన్ని నమోదు చేయండి",
   EnumLocale.desEnterProblem.name: "దయచేసి మీ సమస్యను వివరించండి",
-  EnumLocale.desEnterSuggestion.name: "దయచేసి మీ ఫిర్యాదు లేదా సూచనను నమోదు చేయండి",
-  EnumLocale.desEnterAppointmentId.name: "దయచేసి అపాయింట్‌మెంట్ IDని నమోదు చేయండి",
-  EnumLocale.desEnterGiveReview.name: "దయచేసి మీ సమీక్షను నమోదు చేయండి మరియు సేవల కోసం మీ అనుభవాన్ని పంచుకోండి.",
-  EnumLocale.desEnterUnderAppMaintenance.name: "సిస్టమ్ నిర్వహణ ప్రోగ్రెస్‌లో ఉంది: దయచేసి తర్వాత మళ్లీ ప్రయత్నించండి.",
+  EnumLocale.desEnterSuggestion.name:
+      "దయచేసి మీ ఫిర్యాదు లేదా సూచనను నమోదు చేయండి",
+  EnumLocale.desEnterAppointmentId.name:
+      "దయచేసి అపాయింట్‌మెంట్ IDని నమోదు చేయండి",
+  EnumLocale.desEnterGiveReview.name:
+      "దయచేసి మీ సమీక్షను నమోదు చేయండి మరియు సేవల కోసం మీ అనుభవాన్ని పంచుకోండి.",
+  EnumLocale.desEnterUnderAppMaintenance.name:
+      "సిస్టమ్ నిర్వహణ ప్రోగ్రెస్‌లో ఉంది: దయచేసి తర్వాత మళ్లీ ప్రయత్నించండి.",
   EnumLocale.desRateUs.name:
       "మీరు ఈ యాప్‌ను ఇష్టపడితే, దయచేసి దీన్ని సమీక్షించడానికి కొంత సమయం కేటాయించండి !ఇది నిజంగా మాకు సహాయపడుతుంది మరియు ఇది మీకు ఒక్క నిమిషం కంటే ఎక్కువ సమయం పట్టదు.",
-  EnumLocale.desAppointmentRequired.name: "మీకు అపాయింట్‌మెంట్ బుక్ చేయనందున మీరు ఇప్పుడు కాల్ చేయలేరు.",
-  EnumLocale.desVideoNotMeeting.name: "అపాయింట్‌మెంట్ సమయంలో వీడియో మీటింగ్ అందుబాటులో ఉంటుంది.",
+  EnumLocale.desAppointmentRequired.name:
+      "మీకు అపాయింట్‌మెంట్ బుక్ చేయనందున మీరు ఇప్పుడు కాల్ చేయలేరు.",
+  EnumLocale.desVideoNotMeeting.name:
+      "అపాయింట్‌మెంట్ సమయంలో వీడియో మీటింగ్ అందుబాటులో ఉంటుంది.",
   EnumLocale.toastCheckMailBox.name: "దయచేసి మీ మెయిల్ బాక్స్‌ను తనిఖీ చేయండి",
-  EnumLocale.toastSelectTime.name: "దయచేసి మీ అపాయింట్‌మెంట్ సమయాన్ని ఎంచుకోండి",
+  EnumLocale.toastSelectTime.name:
+      "దయచేసి మీ అపాయింట్‌మెంట్ సమయాన్ని ఎంచుకోండి",
   EnumLocale.toastSelectImage.name: "దయచేసి ఫోటోలను అప్‌లోడ్ చేయండి",
-  EnumLocale.toastAlreadyBooked.name: "ఈ డాక్టర్ కోసం ఈ సమయం ఇప్పటికే బుక్ చేయబడింది",
+  EnumLocale.toastAlreadyBooked.name:
+      "ఈ డాక్టర్ కోసం ఈ సమయం ఇప్పటికే బుక్ చేయబడింది",
   EnumLocale.toastPreviousTime.name: "మీరు మునుపటి సమయాన్ని ఎంచుకోలేరు",
-  EnumLocale.toastInvalidTime.name: "ఈ సమయం సరైనది కాదు, దయచేసి ఇతర సమయాన్ని ఎంచుకోండి",
+  EnumLocale.toastInvalidTime.name:
+      "ఈ సమయం సరైనది కాదు, దయచేసి ఇతర సమయాన్ని ఎంచుకోండి",
   EnumLocale.toastEnterNumber.name: "దయచేసి మొబైల్ నంబర్‌ని నమోదు చేయండి",
   EnumLocale.toastEnterDetails.name: "దయచేసి అన్ని వివరాలను నమోదు చేయండి",
   EnumLocale.noDataFoundDoctor.name: "ఈ సేవ కోసం డాక్టర్ దొరకలేదు !!",
-  EnumLocale.noDataFoundReview.name: "ఈ వైద్యునికి సమీక్షలు ఏవీ కనుగొనబడలేదు !!",
+  EnumLocale.noDataFoundReview.name:
+      "ఈ వైద్యునికి సమీక్షలు ఏవీ కనుగొనబడలేదు !!",
   EnumLocale.noDataFoundCoupon.name: "ప్రస్తుతం, కూపన్ అందుబాటులో లేదు !!",
   EnumLocale.noDataFoundHistory.name: "ఈ నెల వాలెట్ చరిత్ర లేదు !!",
-  EnumLocale.noDataFoundPendingAppointment.name: "పెండింగ్‌లో ఉన్న అపాయింట్‌మెంట్ దొరకలేదు !!",
-  EnumLocale.noDataFoundCancelAppointment.name: "అపాయింట్‌మెంట్‌ని రద్దు చేయి కనుగొనబడలేదు !!",
-  EnumLocale.noDataFoundCompleteAppointment.name: "పూర్తి అపాయింట్‌మెంట్ కనుగొనబడలేదు !!",
-  EnumLocale.noDataFoundAppointment.name: "ఈ తేదీ మధ్య అపాయింట్‌మెంట్ కనుగొనబడలేదు !!",
+  EnumLocale.noDataFoundPendingAppointment.name:
+      "పెండింగ్‌లో ఉన్న అపాయింట్‌మెంట్ దొరకలేదు !!",
+  EnumLocale.noDataFoundCancelAppointment.name:
+      "అపాయింట్‌మెంట్‌ని రద్దు చేయి కనుగొనబడలేదు !!",
+  EnumLocale.noDataFoundCompleteAppointment.name:
+      "పూర్తి అపాయింట్‌మెంట్ కనుగొనబడలేదు !!",
+  EnumLocale.noDataFoundAppointment.name:
+      "ఈ తేదీ మధ్య అపాయింట్‌మెంట్ కనుగొనబడలేదు !!",
   EnumLocale.noDataFoundHoliday.name: "డాక్టర్ అందుబాటులో లేరు!!",
   EnumLocale.noDataFoundChat.name: "చాట్ చరిత్ర లేదు !!",
   EnumLocale.noDataFound.name: "డేటా కనుగొనబడలేదు !!",
   EnumLocale.noDataFoundNotification.name: "నోటిఫికేషన్ డ్రాయర్ ఖాళీగా ఉంది !!",
   EnumLocale.desAppDesApp.name: 'ఏ సమయంలోనైనా వైద్య సహాయం',
+  EnumLocale.txtBuyNow.name: 'ఇప్పుడే కొనండి',
 };

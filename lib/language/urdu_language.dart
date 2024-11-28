@@ -283,4 +283,5 @@ final Map<String, String> urPK = <String, String>{
   EnumLocale.noDataFound.name: "کوئی ڈیٹا نہیں ملا !!",
   EnumLocale.noDataFoundNotification.name: "نوٹیفکیشن کی دراز خالی ہے!!",
   EnumLocale.desAppDesApp.name: 'کسی بھی وقت طبی معاونت',
+  EnumLocale.txtBuyNow.name: 'ابھی خریدیں',
 };

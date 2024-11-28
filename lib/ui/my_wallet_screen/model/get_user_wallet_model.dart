@@ -19,9 +19,11 @@ class GetUserWalletModel {
     _message = json['message'];
     _data = json['data'] != null ? Data.fromJson(json['data']) : null;
   }
+
   bool? _status;
   String? _message;
   Data? _data;
+
   GetUserWalletModel copyWith({
     bool? status,
     String? message,

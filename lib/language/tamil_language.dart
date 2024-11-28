@@ -265,4 +265,5 @@ final Map<String, String> taIN = <String, String>{
   EnumLocale.noDataFound.name: "வேறு தகவல்கள் இல்லை !!",
   EnumLocale.noDataFoundNotification.name: "அறிவிப்பு டிராயர் காலியாக உள்ளது !!",
   EnumLocale.desAppDesApp.name: 'எப்போது வேண்டுமானாலும் மருத்துவ உதவி',
+  EnumLocale.txtBuyNow.name: 'இப்போது வாங்கவும்',
 };

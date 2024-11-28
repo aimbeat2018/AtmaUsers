@@ -1,6 +1,8 @@
 class ApiConstant {
-  static const BASE_URL = "https://app.atmaprimehealthcare.com/";  // Enter your base URL like :: http://182.168.20.243:5000/
-  static const SECRET_KEY = "JIICGbfFkpwq01wQOfDNGEaKAdqGjJDC";  // Enter your key like :: ssf45sd1fs5d1sdf1s56165s15sdf1s
+  static const BASE_URL =
+      "https://app.atmaprimehealthcare.com/"; // Enter your base URL like :: http://182.168.20.243:5000/
+  static const SECRET_KEY =
+      "JIICGbfFkpwq01wQOfDNGEaKAdqGjJDC"; // Enter your key like :: ssf45sd1fs5d1sdf1s56165s15sdf1s
 
   /// =================== User =================== ///
   static const registrationUser = "user/loginSignup";
@@ -83,4 +85,8 @@ class ApiConstant {
 
   /// =================== Setting =================== ///
   static const getSetting = "user/setting/get";
+
+  /// =================== Membership =================== ///
+  static const getMembershipPackage = "user/package/get";
+  static const buyMembershipPackage = "user/package/buy_membership";
 }

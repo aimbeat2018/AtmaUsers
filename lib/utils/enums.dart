@@ -140,6 +140,7 @@ enum EnumLocale {
   txtSaveProfile,
   txtAvailableBalance,
   txtAddAmount,
+  txtBuyNow,
   txtHistory,
   txtPaymentHistory,
   txtAppointmentDetails,

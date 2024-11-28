@@ -5,7 +5,7 @@ import 'package:doctor/custom/app_button/primary_app_button.dart';
 import 'package:doctor/routes/app_routes.dart';
 import 'package:doctor/ui/confirm_booking_screen/controller/confirm_booking_controller.dart';
 import 'package:doctor/ui/confirm_booking_screen/widget/confirm_booking_widget.dart';
-import 'package:doctor/ui/my_wallet_screen/controller/my_wallet_controller.dart';
+import 'package:doctor/ui/membership_screen/controller/membership_controller.dart';
 import 'package:doctor/utils/app_asset.dart';
 import 'package:doctor/utils/app_color.dart';
 import 'package:doctor/utils/constant.dart';
@@ -14,7 +14,11 @@ import 'package:doctor/utils/font_style.dart';
 import 'package:doctor/utils/global_variables.dart';
 import 'package:doctor/utils/shimmers.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_html/flutter_html.dart';
+import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:get/get.dart';
+
+import '../../../custom/no_data_found/no_data_found.dart';
 
 /// =================== App Bar =================== ///
 class MembershipBarView extends StatelessWidget {
@@ -29,54 +33,142 @@ class MembershipBarView extends StatelessWidget {
   }
 }
 
-/// =================== Membership packages =================== ///
-class MembershipPackagesWidget extends StatelessWidget {
-  const MembershipPackagesWidget({super.key});
+/// =================== List View =================== ///
+class MembershipPackagesListView extends StatelessWidget {
+  const MembershipPackagesListView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<MyWalletController>(
+    return GetBuilder<MembershipController>(
       id: Constant.idProgressView,
       builder: (logic) {
-        return Container(
-          // height: Get.height * 0.12,
-          width: Get.width,
-          margin: const EdgeInsets.all(15),
-          padding: const EdgeInsets.all(15),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(16),
-            color: AppColors.categoryCircle,
-            border: Border.all(
-              width: 1.2,
-              color: AppColors.border.withOpacity(0.3),
-            ),
-            image: const DecorationImage(
-              image: AssetImage(AppAsset.imWalletBox),
-              fit: BoxFit.fill,
-            ),
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                EnumLocale.txtAvailableBalance.name.tr,
-                style: FontStyle.fontStyleW500(
-                  fontSize: 16,
-                  fontColor: AppColors.tabUnselectText,
-                ),
+        return logic.getMembershipList.isEmpty
+            ? logic.isLoading
+                ? Shimmers.cancelAppointmentShimmer()
+                : NoDataFound(
+                    image: AppAsset.icNoDataFound,
+                    imageHeight: 150,
+                    text: EnumLocale.noDataFoundAppointment.name.tr,
+                    padding: const EdgeInsets.only(top: 7),
+                  ).paddingOnly(bottom: Get.height * 0.05, left: 15, right: 15)
+            : Column(
+                children: [
+                  ListView.builder(
+                    shrinkWrap: true,
+                    padding: EdgeInsets.only(top: 20, bottom: 20),
+                    scrollDirection: Axis.vertical,
+                    itemCount: logic.getMembershipList.length,
+                    physics: const BouncingScrollPhysics(),
+                    itemBuilder: (context, index) {
+                      return AnimationConfiguration.staggeredGrid(
+                        position: index,
+                        duration: const Duration(milliseconds: 800),
+                        columnCount: logic.getMembershipList.length,
+                        child: MembershipPackagesListItemView(index: index),
+                      );
+                    },
+                  ),
+                  // logic.isLoading1
+                  //     ? CircularProgressIndicator(
+                  //   color: AppColors.primaryAppColor1,
+                  // ).paddingOnly(bottom: 10)
+                  //     : const SizedBox()
+                ],
+              );
+      },
+    );
+  }
+}
+
+class MembershipPackagesListItemView extends StatelessWidget {
+  final int index;
+
+  const MembershipPackagesListItemView({super.key, required this.index});
+
+  @override
+  Widget build(BuildContext context) {
+    return GetBuilder<MembershipController>(
+      builder: (logic) {
+        // DateTime parsedDate = DateFormat("yyyy-MM-dd").parse(
+        //     logic.getMyAppointment[index].date ?? "");
+        // logic.expiryDate = DateFormat("dd MMM yyyy").format(parsedDate);
+        // logic.date.add(logic.expiryDate);
+
+        return GestureDetector(
+          onTap: () {
+            // Get.toNamed(
+            //   AppRoutes.bookingInformation,
+            //   arguments: [
+            //     logic.getMyAppointment[index].id,
+            //   ],
+            // );
+          },
+          child: Container(
+            // height: Get.height * 0.3,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(18),
+              gradient: LinearGradient(colors: [
+                AppColors.receiverBox,
+                AppColors.appBarBg,
+                AppColors.notificationBox,
+              ]),
+              border: Border.all(
+                width: 1.5,
+                color: AppColors.appointmentBorder,
               ),
-              logic.isLoading
-                  ? Shimmers.getAmountShimmer()
-                  : Text(
-                      "$currency $walletAmount",
-                      style: FontStyle.fontStyleW700(
-                        fontSize: 27,
-                        fontColor: AppColors.title,
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
+                  logic.getMembershipList[index].title ?? "",
+                  style: FontStyle.fontStyleW700(
+                    fontSize: 14,
+                    fontColor: AppColors.title,
+                  ),
+                ),
+                Align(
+                  alignment: Alignment.center,
+                  child: Html(
+                    data:
+                        logic.getMembershipList[index].desc?.isNotEmpty == true
+                            ? logic.getMembershipList[index].desc!
+                            : "<p>No description available</p>",
+                    style: {
+                      "body": Style(
+                        fontSize: FontSize(13),
+                        color: AppColors.title,
+                        fontWeight: FontWeight.w400,
+                        textAlign: TextAlign.center,
                       ),
-                    ),
-            ],
-          ),
+                    },
+                  ),
+                ),
+                Text(
+                  "$currency ${logic.getMembershipList[index].price}",
+                  style: FontStyle.fontStyleW700(
+                    fontSize: 20,
+                    fontColor: AppColors.primaryAppColor1,
+                  ),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                PrimaryAppButton(
+                  onTap: () {},
+                  width: Get.width * 0.5,
+                  height: Get.height * 0.045,
+                  color: AppColors.primaryAppColor1,
+                  borderRadius: 5,
+                  text: EnumLocale.txtBuyNow.name.tr,
+                  textStyle: FontStyle.fontStyleW600(
+                    fontSize: 14,
+                    fontColor: AppColors.white,
+                  ),
+                ),
+              ],
+            ).paddingAll(12),
+          ).paddingOnly(left: 18, right: 18, bottom: 18),
         );
       },
     );

@@ -13,12 +13,13 @@ class MembershipScreen extends StatelessWidget {
         automaticallyImplyLeading: false,
         flexibleSpace: const MembershipBarView(),
       ),
-      body: Column(
-        children: [
-          // const MyWalletBalanceView(),
-          // MyWalletButtonView(),
-          // Divider(height: Get.height * 0.05, color: AppColors.description.withOpacity(0.1)),
-        ],
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            MembershipPackagesListView(),
+
+          ],
+        ),
       ),
     );
   }

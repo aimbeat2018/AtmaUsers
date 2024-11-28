@@ -31,6 +31,7 @@ class GetMyAppointmentModel {
   String? _message;
   num? _total;
   List<GetMyAppointmentData>? _data;
+
   GetMyAppointmentModel copyWith({
     bool? status,
     String? message,
