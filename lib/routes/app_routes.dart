@@ -46,4 +46,5 @@ class AppRoutes {
   static const String memberShip = '/membership';
   static const String history = '/history';
   static const String payment = '/payment';
+  static const String membershipCard = '/membershipCard';
 }

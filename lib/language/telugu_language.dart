@@ -293,4 +293,5 @@ final Map<String, String> teIN = <String, String>{
   EnumLocale.noDataFoundNotification.name: "నోటిఫికేషన్ డ్రాయర్ ఖాళీగా ఉంది !!",
   EnumLocale.desAppDesApp.name: 'ఏ సమయంలోనైనా వైద్య సహాయం',
   EnumLocale.txtBuyNow.name: 'ఇప్పుడే కొనండి',
+  EnumLocale.noDataFoundPackage.name: 'ప్యాకేజ్ కనుగొనబడలేదు',
 };

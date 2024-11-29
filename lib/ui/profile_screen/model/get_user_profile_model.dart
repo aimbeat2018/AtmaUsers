@@ -1,29 +1,36 @@
 import 'dart:convert';
 
-GetUserProfileModel getUserProfileModelFromJson(String str) => GetUserProfileModel.fromJson(json.decode(str));
+GetUserProfileModel getUserProfileModelFromJson(String str) =>
+    GetUserProfileModel.fromJson(json.decode(str));
 
-String getUserProfileModelToJson(GetUserProfileModel data) => json.encode(data.toJson());
+String getUserProfileModelToJson(GetUserProfileModel data) =>
+    json.encode(data.toJson());
 
 class GetUserProfileModel {
   bool? status;
+  int? membership;
   String? message;
   User? user;
 
   GetUserProfileModel({
     this.status,
     this.message,
+    this.membership,
     this.user,
   });
 
-  factory GetUserProfileModel.fromJson(Map<String, dynamic> json) => GetUserProfileModel(
+  factory GetUserProfileModel.fromJson(Map<String, dynamic> json) =>
+      GetUserProfileModel(
         status: json["status"],
         message: json["message"],
+        membership: json["membership"],
         user: json["user"] == null ? null : User.fromJson(json["user"]),
       );
 
   Map<String, dynamic> toJson() => {
         "status": status,
         "message": message,
+        "membership": membership,
         "user": user?.toJson(),
       };
 }
@@ -99,13 +106,21 @@ class User {
         latitude: json["latitude"],
         longitude: json["longitude"],
         country: json["country"],
-        doctors: json["doctors"] == null ? [] : List<String>.from(json["doctors"]!.map((x) => x)),
+        doctors: json["doctors"] == null
+            ? []
+            : List<String>.from(json["doctors"]!.map((x) => x)),
         password: json["password"],
         loginType: json["loginType"],
-        createdAt: json["createdAt"] == null ? null : DateTime.parse(json["createdAt"]),
-        updatedAt: json["updatedAt"] == null ? null : DateTime.parse(json["updatedAt"]),
+        createdAt: json["createdAt"] == null
+            ? null
+            : DateTime.parse(json["createdAt"]),
+        updatedAt: json["updatedAt"] == null
+            ? null
+            : DateTime.parse(json["updatedAt"]),
         age: json["age"],
-        subPatient: json["subPatient"] == null ? [] : List<String>.from(json["subPatient"]!.map((x) => x)),
+        subPatient: json["subPatient"] == null
+            ? []
+            : List<String>.from(json["subPatient"]!.map((x) => x)),
       );
 
   Map<String, dynamic> toJson() => {
@@ -127,12 +142,15 @@ class User {
         "latitude": latitude,
         "longitude": longitude,
         "country": country,
-        "doctors": doctors == null ? [] : List<dynamic>.from(doctors!.map((x) => x)),
+        "doctors":
+            doctors == null ? [] : List<dynamic>.from(doctors!.map((x) => x)),
         "password": password,
         "loginType": loginType,
         "createdAt": createdAt?.toIso8601String(),
         "updatedAt": updatedAt?.toIso8601String(),
         "age": age,
-        "subPatient": subPatient == null ? [] : List<dynamic>.from(subPatient!.map((x) => x)),
+        "subPatient": subPatient == null
+            ? []
+            : List<dynamic>.from(subPatient!.map((x) => x)),
       };
 }

@@ -65,6 +65,7 @@ class Constant {
   static var idChangePage = 'idChangePage';
   static var idPagination = 'idPagination';
   static var idChatBoat = 'idChatBoat';
+  static var idClickBuyMembership = 'idClickBuyMembership';
 
   /// =================== App Name =================== ///
   static const stripeUrl = "https://api.stripe.com/v1/payment_intents";

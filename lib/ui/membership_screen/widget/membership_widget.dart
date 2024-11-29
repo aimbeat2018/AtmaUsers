@@ -44,7 +44,7 @@ class MembershipPackagesListView extends StatelessWidget {
       builder: (logic) {
         return logic.getMembershipList.isEmpty
             ? logic.isLoading
-                ? Shimmers.cancelAppointmentShimmer()
+                ? Shimmers.membershipPackageShimmer()
                 : NoDataFound(
                     image: AppAsset.icNoDataFound,
                     imageHeight: 150,
@@ -83,79 +83,102 @@ class MembershipPackagesListView extends StatelessWidget {
 class MembershipPackagesListItemView extends StatelessWidget {
   final int index;
 
-  const MembershipPackagesListItemView({super.key, required this.index});
+  MembershipPackagesListItemView({super.key, required this.index});
 
   @override
   Widget build(BuildContext context) {
     return GetBuilder<MembershipController>(
+      id: Constant.idProgressView,
       builder: (logic) {
         // DateTime parsedDate = DateFormat("yyyy-MM-dd").parse(
         //     logic.getMyAppointment[index].date ?? "");
         // logic.expiryDate = DateFormat("dd MMM yyyy").format(parsedDate);
         // logic.date.add(logic.expiryDate);
 
-        return GestureDetector(
-          onTap: () {
-            // Get.toNamed(
-            //   AppRoutes.bookingInformation,
-            //   arguments: [
-            //     logic.getMyAppointment[index].id,
-            //   ],
-            // );
-          },
-          child: Container(
-            // height: Get.height * 0.3,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(18),
-              gradient: LinearGradient(colors: [
-                AppColors.receiverBox,
-                AppColors.appBarBg,
-                AppColors.notificationBox,
-              ]),
-              border: Border.all(
-                width: 1.5,
-                color: AppColors.appointmentBorder,
-              ),
+        return Container(
+          // height: Get.height * 0.3,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(18),
+            gradient: LinearGradient(colors: [
+              AppColors.receiverBox,
+              AppColors.appBarBg,
+              AppColors.notificationBox,
+            ]),
+            border: Border.all(
+              width: 1.5,
+              color: AppColors.appointmentBorder,
             ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text(
-                  logic.getMembershipList[index].title ?? "",
-                  style: FontStyle.fontStyleW700(
-                    fontSize: 14,
-                    fontColor: AppColors.title,
-                  ),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(
+                logic.getMembershipList[index].title ?? "",
+                style: FontStyle.fontStyleW700(
+                  fontSize: 14,
+                  fontColor: AppColors.title,
                 ),
-                Align(
-                  alignment: Alignment.center,
-                  child: Html(
-                    data:
-                        logic.getMembershipList[index].desc?.isNotEmpty == true
-                            ? logic.getMembershipList[index].desc!
-                            : "<p>No description available</p>",
-                    style: {
-                      "body": Style(
-                        fontSize: FontSize(13),
-                        color: AppColors.title,
-                        fontWeight: FontWeight.w400,
-                        textAlign: TextAlign.center,
-                      ),
-                    },
-                  ),
+              ),
+              Align(
+                alignment: Alignment.center,
+                child: Html(
+                  data: logic.getMembershipList[index].desc?.isNotEmpty == true
+                      ? logic.getMembershipList[index].desc!
+                      : "<p>No description available</p>",
+                  style: {
+                    "body": Style(
+                      fontSize: FontSize(13),
+                      color: AppColors.title,
+                      fontWeight: FontWeight.w400,
+                      textAlign: TextAlign.center,
+                    ),
+                  },
                 ),
-                Text(
-                  "$currency ${logic.getMembershipList[index].price}",
-                  style: FontStyle.fontStyleW700(
-                    fontSize: 20,
-                    fontColor: AppColors.primaryAppColor1,
-                  ),
+              ),
+              Text(
+                "$currency ${logic.getMembershipList[index].price}",
+                style: FontStyle.fontStyleW700(
+                  fontSize: 20,
+                  fontColor: AppColors.primaryAppColor1,
                 ),
-                SizedBox(
-                  height: 10,
-                ),
-                PrimaryAppButton(
-                  onTap: () {},
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              MembershipCardWidget(index: index)
+            ],
+          ).paddingAll(12),
+        ).paddingOnly(left: 18, right: 18, bottom: 18);
+      },
+    );
+  }
+}
+
+/// =================== Button =================== ///
+class MembershipCardWidget extends StatelessWidget {
+  final int index;
+
+  MembershipCardWidget({super.key, required this.index});
+
+  @override
+  Widget build(BuildContext context) {
+    return GetBuilder<MembershipController>(
+        id: Constant.idClickBuyMembership,
+        builder: (logic) {
+          return logic.isLoading && logic.selectedIndex == index
+              ? Center(
+                  child: CircularProgressIndicator(),
+                )
+              : PrimaryAppButton(
+                  onTap: () {
+                    // print("index : " + index.toString());
+                    logic.updateIndex(index);
+
+                    logic.onBuyMembership(
+                        context,
+                        logic.getMembershipList[index].sId!.toString(),
+                        "12345");
+                  },
                   width: Get.width * 0.5,
                   height: Get.height * 0.045,
                   color: AppColors.primaryAppColor1,
@@ -165,68 +188,7 @@ class MembershipPackagesListItemView extends StatelessWidget {
                     fontSize: 14,
                     fontColor: AppColors.white,
                   ),
-                ),
-              ],
-            ).paddingAll(12),
-          ).paddingOnly(left: 18, right: 18, bottom: 18),
-        );
-      },
-    );
-  }
-}
-
-/// =================== Button =================== ///
-class MembershipCardWidget extends StatelessWidget {
-  MembershipCardWidget({super.key});
-
-  ConfirmBookingController confirmBookingController =
-      Get.put(ConfirmBookingController());
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Expanded(
-          child: PrimaryAppButton(
-            onTap: () {
-              showModalBottomSheet(
-                isScrollControlled: true,
-                context: context,
-                builder: (BuildContext context) {
-                  return const ConfirmBookingBottomSheetView(isRecharge: true);
-                },
-              );
-            },
-            height: Get.height * 0.065,
-            color: AppColors.notificationTitle2,
-            borderRadius: 10,
-            text: EnumLocale.txtAddAmount.name.tr,
-            textStyle: FontStyle.fontStyleW600(
-              fontSize: 15,
-              fontColor: AppColors.white,
-            ),
-          ),
-        ),
-        const SizedBox(width: 15),
-        Expanded(
-          child: PrimaryAppButton(
-            onTap: () {
-              Get.toNamed(AppRoutes.history);
-            },
-            height: Get.height * 0.065,
-            gradientColor: [
-              AppColors.primaryAppColor1,
-              AppColors.primaryAppColor2,
-            ],
-            borderRadius: 10,
-            text: EnumLocale.txtHistory.name.tr,
-            textStyle: FontStyle.fontStyleW600(
-              fontSize: 15,
-              fontColor: AppColors.white,
-            ),
-          ),
-        )
-      ],
-    ).paddingOnly(left: 15, right: 15);
+                );
+        });
   }
 }

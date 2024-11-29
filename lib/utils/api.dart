@@ -89,4 +89,5 @@ class ApiConstant {
   /// =================== Membership =================== ///
   static const getMembershipPackage = "user/package/get";
   static const buyMembershipPackage = "user/package/buy_membership";
+  static const getMembershipData = "user/package/user-membership";
 }

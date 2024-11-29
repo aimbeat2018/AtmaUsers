@@ -3,6 +3,7 @@ import 'package:doctor/utils/app_color.dart';
 import 'package:doctor/utils/constant.dart';
 import 'package:doctor/utils/font_style.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_html/flutter_html.dart';
 import 'package:get/get.dart';
 import 'package:shimmer/shimmer.dart';
 
@@ -46,7 +47,8 @@ class Shimmers {
                 height: 12,
                 width: 50,
                 alignment: Alignment.center,
-                decoration: BoxDecoration(borderRadius: BorderRadius.circular(4), color: Colors.red),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(4), color: Colors.red),
               ),
             ],
           );
@@ -322,7 +324,9 @@ class Shimmers {
       child: Container(
         height: Get.height * 0.35,
         width: Get.width,
-        decoration: BoxDecoration(borderRadius: BorderRadius.circular(0), color: Colors.red.withOpacity(0.2)),
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(0),
+            color: Colors.red.withOpacity(0.2)),
         child: Image.asset(AppAsset.icDoctorPlaceholder).paddingAll(30),
       ),
     );
@@ -342,24 +346,28 @@ class Shimmers {
               Container(
                 height: 18,
                 width: 120,
-                decoration: BoxDecoration(borderRadius: BorderRadius.circular(5), color: Colors.red),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5), color: Colors.red),
               ),
               Container(
                 height: 18,
                 width: 100,
-                decoration: BoxDecoration(borderRadius: BorderRadius.circular(7), color: Colors.red),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(7), color: Colors.red),
               ),
             ],
           ),
           Container(
             height: 18,
             width: 100,
-            decoration: BoxDecoration(borderRadius: BorderRadius.circular(5), color: Colors.red),
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(5), color: Colors.red),
           ).paddingOnly(top: 7, bottom: 7),
           Container(
             height: 18,
             width: 200,
-            decoration: BoxDecoration(borderRadius: BorderRadius.circular(5), color: Colors.red),
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(5), color: Colors.red),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -377,7 +385,9 @@ class Shimmers {
                   Container(
                     height: 12,
                     width: 50,
-                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(5), color: Colors.red),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5),
+                        color: Colors.red),
                   ),
                 ],
               ),
@@ -394,7 +404,9 @@ class Shimmers {
                   Container(
                     height: 12,
                     width: 50,
-                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(5), color: Colors.red),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5),
+                        color: Colors.red),
                   ),
                 ],
               ),
@@ -411,7 +423,9 @@ class Shimmers {
                   Container(
                     height: 12,
                     width: 50,
-                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(5), color: Colors.red),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5),
+                        color: Colors.red),
                   ),
                 ],
               ),
@@ -428,7 +442,9 @@ class Shimmers {
                   Container(
                     height: 12,
                     width: 50,
-                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(5), color: Colors.red),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5),
+                        color: Colors.red),
                   ),
                 ],
               ),
@@ -458,22 +474,26 @@ class Shimmers {
             Container(
               height: 13,
               width: 150,
-              decoration: BoxDecoration(borderRadius: BorderRadius.circular(5), color: Colors.red),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(5), color: Colors.red),
             ),
             Container(
               height: 13,
               width: 200,
-              decoration: BoxDecoration(borderRadius: BorderRadius.circular(5), color: Colors.red),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(5), color: Colors.red),
             ),
             Container(
               height: 13,
               width: 220,
-              decoration: BoxDecoration(borderRadius: BorderRadius.circular(5), color: Colors.red),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(5), color: Colors.red),
             ),
             Container(
               height: 13,
               width: 150,
-              decoration: BoxDecoration(borderRadius: BorderRadius.circular(5), color: Colors.red),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(5), color: Colors.red),
             ),
           ],
         ).paddingAll(12),
@@ -497,11 +517,13 @@ class Shimmers {
                 height: 15,
                 width: 15,
                 margin: const EdgeInsets.only(right: 10),
-                decoration: const BoxDecoration(color: Colors.red, shape: BoxShape.circle)),
+                decoration: const BoxDecoration(
+                    color: Colors.red, shape: BoxShape.circle)),
             Container(
               height: 13,
               width: 150,
-              decoration: BoxDecoration(borderRadius: BorderRadius.circular(3), color: Colors.red),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(3), color: Colors.red),
             ),
           ],
         ),
@@ -554,7 +576,9 @@ class Shimmers {
                               Container(
                                 height: 13,
                                 width: 80,
-                                decoration: BoxDecoration(borderRadius: BorderRadius.circular(3), color: Colors.red),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(3),
+                                    color: Colors.red),
                               ),
                               Container(
                                 decoration: BoxDecoration(
@@ -564,7 +588,9 @@ class Shimmers {
                                 child: Container(
                                   height: 20,
                                   width: 50,
-                                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(3), color: Colors.red),
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(3),
+                                      color: Colors.red),
                                 ),
                               ),
                             ],
@@ -572,7 +598,9 @@ class Shimmers {
                           Container(
                             height: 13,
                             width: 150,
-                            decoration: BoxDecoration(borderRadius: BorderRadius.circular(3), color: Colors.red),
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(3),
+                                color: Colors.red),
                           ),
                         ],
                       ),
@@ -582,7 +610,9 @@ class Shimmers {
                 Container(
                   height: 12,
                   width: 150,
-                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(3), color: Colors.red),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(3),
+                      color: Colors.red),
                 ).paddingOnly(bottom: 10)
               ],
             ),
@@ -609,7 +639,8 @@ class Shimmers {
         itemCount: 12,
         itemBuilder: (context, index) {
           return Padding(
-            padding: const EdgeInsets.only(top: 4, bottom: 4, left: 3, right: 3),
+            padding:
+                const EdgeInsets.only(top: 4, bottom: 4, left: 3, right: 3),
             child: Container(
               height: 30,
               width: 50,
@@ -736,7 +767,8 @@ class Shimmers {
                             color: AppColors.placeholder.withOpacity(0.2),
                             borderRadius: BorderRadius.circular(15),
                           ),
-                          child: Image.asset(AppAsset.icDoctorPlaceholder).paddingAll(10),
+                          child: Image.asset(AppAsset.icDoctorPlaceholder)
+                              .paddingAll(10),
                         ),
                         Expanded(
                           child: Column(
@@ -758,7 +790,8 @@ class Shimmers {
                                   borderRadius: BorderRadius.circular(4),
                                 ),
                                 child: Padding(
-                                  padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 10),
+                                  padding: const EdgeInsets.symmetric(
+                                      vertical: 8, horizontal: 10),
                                   child: Text(
                                     "",
                                     style: FontStyle.fontStyleW500(
@@ -769,7 +802,8 @@ class Shimmers {
                                 ),
                               ),
                               Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
                                   Container(
                                     height: 16,
@@ -785,7 +819,8 @@ class Shimmers {
                                       borderRadius: BorderRadius.circular(4),
                                     ),
                                     child: Padding(
-                                      padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 10),
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 8, horizontal: 10),
                                       child: Text(
                                         "At Clinic",
                                         style: FontStyle.fontStyleW500(
@@ -903,7 +938,8 @@ class Shimmers {
                             color: AppColors.placeholder.withOpacity(0.2),
                             borderRadius: BorderRadius.circular(15),
                           ),
-                          child: Image.asset(AppAsset.icDoctorPlaceholder).paddingAll(10),
+                          child: Image.asset(AppAsset.icDoctorPlaceholder)
+                              .paddingAll(10),
                         ),
                         Expanded(
                           child: Column(
@@ -925,7 +961,8 @@ class Shimmers {
                                   borderRadius: BorderRadius.circular(4),
                                 ),
                                 child: Padding(
-                                  padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 10),
+                                  padding: const EdgeInsets.symmetric(
+                                      vertical: 8, horizontal: 10),
                                   child: Text(
                                     "",
                                     style: FontStyle.fontStyleW500(
@@ -936,7 +973,8 @@ class Shimmers {
                                 ),
                               ),
                               Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
                                   Container(
                                     height: 16,
@@ -952,7 +990,8 @@ class Shimmers {
                                       borderRadius: BorderRadius.circular(4),
                                     ),
                                     child: Padding(
-                                      padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 10),
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 8, horizontal: 10),
                                       child: Text(
                                         "At Clinic",
                                         style: FontStyle.fontStyleW500(
@@ -1131,9 +1170,11 @@ class Shimmers {
                     Container(
                       height: Get.height * 0.15,
                       width: Get.width * 0.15,
-                      decoration: BoxDecoration(color: AppColors.placeholder, shape: BoxShape.circle),
+                      decoration: BoxDecoration(
+                          color: AppColors.placeholder, shape: BoxShape.circle),
                       clipBehavior: Clip.hardEdge,
-                      child: Image.asset(AppAsset.icDoctorPlaceholder).paddingAll(10),
+                      child: Image.asset(AppAsset.icDoctorPlaceholder)
+                          .paddingAll(10),
                     ).paddingOnly(left: 13),
                     Expanded(
                       child: Column(
@@ -1146,19 +1187,25 @@ class Shimmers {
                               Container(
                                 height: 13,
                                 width: 75,
-                                decoration: BoxDecoration(color: Colors.red, borderRadius: BorderRadius.circular(5)),
+                                decoration: BoxDecoration(
+                                    color: Colors.red,
+                                    borderRadius: BorderRadius.circular(5)),
                               ),
                               Container(
                                 height: 13,
                                 width: 45,
-                                decoration: BoxDecoration(color: Colors.red, borderRadius: BorderRadius.circular(5)),
+                                decoration: BoxDecoration(
+                                    color: Colors.red,
+                                    borderRadius: BorderRadius.circular(5)),
                               ),
                             ],
                           ).paddingOnly(bottom: 2),
                           Container(
                             height: 13,
                             width: 130,
-                            decoration: BoxDecoration(color: Colors.red, borderRadius: BorderRadius.circular(5)),
+                            decoration: BoxDecoration(
+                                color: Colors.red,
+                                borderRadius: BorderRadius.circular(5)),
                           )
                         ],
                       ).paddingOnly(left: 12, right: 13),
@@ -1166,7 +1213,8 @@ class Shimmers {
                   ],
                 ),
               ),
-              Divider(height: 1.2, color: AppColors.border.withOpacity(0.3)).paddingOnly(top: 10, bottom: 10)
+              Divider(height: 1.2, color: AppColors.border.withOpacity(0.3))
+                  .paddingOnly(top: 10, bottom: 10)
             ],
           );
         },
@@ -1194,7 +1242,8 @@ class Shimmers {
                     alignment: Alignment.centerRight,
                     children: [
                       Container(
-                        padding: const EdgeInsets.only(left: 12, right: 30, top: 6, bottom: 18),
+                        padding: const EdgeInsets.only(
+                            left: 12, right: 30, top: 6, bottom: 18),
                         decoration: BoxDecoration(
                           color: AppColors.senderBox,
                           borderRadius: const BorderRadius.only(
@@ -1246,7 +1295,8 @@ class Shimmers {
                         alignment: Alignment.centerLeft,
                         children: [
                           Container(
-                            padding: const EdgeInsets.only(left: 12, right: 30, top: 6, bottom: 18),
+                            padding: const EdgeInsets.only(
+                                left: 12, right: 30, top: 6, bottom: 18),
                             decoration: BoxDecoration(
                               color: AppColors.receiverBox,
                               borderRadius: const BorderRadius.only(
@@ -1722,7 +1772,10 @@ class Shimmers {
                 ),
               ),
             ),
-            Positioned(right: 12, bottom: 30, child: Image.asset(AppAsset.icShare1, height: 25)),
+            Positioned(
+                right: 12,
+                bottom: 30,
+                child: Image.asset(AppAsset.icShare1, height: 25)),
             Positioned(
               right: 12,
               bottom: 75,
@@ -1735,7 +1788,10 @@ class Shimmers {
                 ),
               ),
             ),
-            Positioned(right: 12, bottom: 90, child: Image.asset(AppAsset.icComment, height: 25)),
+            Positioned(
+                right: 12,
+                bottom: 90,
+                child: Image.asset(AppAsset.icComment, height: 25)),
             Positioned(
               right: 12,
               bottom: 135,
@@ -1748,7 +1804,10 @@ class Shimmers {
                 ),
               ),
             ),
-            Positioned(right: 12, bottom: 150, child: Image.asset(AppAsset.icLike, height: 25)),
+            Positioned(
+                right: 12,
+                bottom: 150,
+                child: Image.asset(AppAsset.icLike, height: 25)),
           ],
         ),
       ),
@@ -1782,7 +1841,8 @@ class Shimmers {
                       color: AppColors.placeholder.withOpacity(0.2),
                       borderRadius: BorderRadius.circular(15),
                     ),
-                    child: Image.asset(AppAsset.icDoctorPlaceholder).paddingAll(10),
+                    child: Image.asset(AppAsset.icDoctorPlaceholder)
+                        .paddingAll(10),
                   ),
                   Expanded(
                     child: Column(
@@ -1804,7 +1864,8 @@ class Shimmers {
                             borderRadius: BorderRadius.circular(4),
                           ),
                           child: Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 10),
+                            padding: const EdgeInsets.symmetric(
+                                vertical: 8, horizontal: 10),
                             child: Text(
                               "",
                               style: FontStyle.fontStyleW500(
@@ -1860,6 +1921,75 @@ class Shimmers {
           ],
         ).paddingAll(12),
       ).paddingOnly(left: 12, right: 12, bottom: 18),
+    );
+  }
+
+  static Shimmer membershipPackageShimmer() {
+    return Shimmer.fromColors(
+      baseColor: Constant.baseColor,
+      highlightColor: Constant.highlightColor,
+      period: Constant.period,
+      child: SizedBox(
+        height: Get.height,
+        width: Get.width,
+        child: ListView.builder(
+          itemCount: 8,
+          scrollDirection: Axis.vertical,
+          itemBuilder: (context, index) {
+            return Container(
+              // height: Get.height * 0.3,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(18),
+                gradient: LinearGradient(colors: [
+                  AppColors.receiverBox,
+                  AppColors.appBarBg,
+                  AppColors.notificationBox,
+                ]),
+                border: Border.all(
+                  width: 1.5,
+                  color: AppColors.appointmentBorder,
+                ),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text(
+                    "",
+                    style: FontStyle.fontStyleW700(
+                      fontSize: 14,
+                      fontColor: AppColors.title,
+                    ),
+                  ),
+                  Align(
+                    alignment: Alignment.center,
+                    child: Html(
+                      data: "",
+                      style: {
+                        "body": Style(
+                          fontSize: FontSize(13),
+                          color: AppColors.title,
+                          fontWeight: FontWeight.w400,
+                          textAlign: TextAlign.center,
+                        ),
+                      },
+                    ),
+                  ),
+                  Text(
+                    "",
+                    style: FontStyle.fontStyleW700(
+                      fontSize: 20,
+                      fontColor: AppColors.primaryAppColor1,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                ],
+              ).paddingAll(12),
+            ).paddingOnly(left: 18, right: 18, bottom: 18);
+          },
+        ),
+      ),
     );
   }
 }

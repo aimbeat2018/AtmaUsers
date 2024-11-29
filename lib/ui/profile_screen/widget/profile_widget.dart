@@ -173,61 +173,68 @@ class ProfileGeneralView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ProfileCustomTitle(
-      title: EnumLocale.txtGeneral.name.tr,
-      widget: Column(
-        children: [
-          ProfileMenu(
-            image: AppAsset.icMembershipOutline,
-            text: EnumLocale.txtMembership.name.tr,
-            isArrow: true,
-            onTap: () {
-              Get.toNamed(AppRoutes.memberShip);
-            },
-          ),
-          Divider(height: 1.5, color: AppColors.white)
-              .paddingOnly(top: 15, bottom: 15),
-          ProfileMenu(
-            image: AppAsset.icWalletOutline,
-            text: EnumLocale.txtMyWallet.name.tr,
-            isArrow: true,
-            onTap: () {
-              Get.toNamed(AppRoutes.myWallet);
-            },
-          ),
-          Divider(height: 1.5, color: AppColors.white)
-              .paddingOnly(top: 15, bottom: 15),
-          ProfileMenu(
-            image: AppAsset.icSaved,
-            text: EnumLocale.txtSavedDoctor.name.tr,
-            isArrow: true,
-            onTap: () {
-              Get.toNamed(AppRoutes.savedDoctor);
-            },
-          ),
-          Divider(height: 1.5, color: AppColors.white)
-              .paddingOnly(top: 15, bottom: 15),
-          ProfileMenu(
-            image: AppAsset.icAppointmentOutline,
-            text: EnumLocale.txtMyAppointment.name.tr,
-            isArrow: true,
-            onTap: () {
-              Get.toNamed(AppRoutes.myAppointment);
-            },
-          ),
-          Divider(height: 1.5, color: AppColors.white)
-              .paddingOnly(top: 15, bottom: 15),
-          ProfileMenu(
-            image: AppAsset.icAddPatient,
-            text: "Add Patients",
-            isArrow: true,
-            onTap: () {
-              Get.toNamed(AppRoutes.addPatient);
-            },
-          ),
-        ],
-      ),
-    ).paddingOnly(bottom: 20);
+    return GetBuilder<ProfileScreenController>(
+        id: Constant.idProgressView,
+        builder: (logic) {
+          return ProfileCustomTitle(
+            title: EnumLocale.txtGeneral.name.tr,
+            widget: Column(
+              children: [
+                ProfileMenu(
+                  image: AppAsset.icMembershipOutline,
+                  text: EnumLocale.txtMembership.name.tr,
+                  isArrow: true,
+                  onTap: () {
+                    logic.getUserProfileModel!.membership! == 0 ||
+                            logic.getUserProfileModel!.membership! == 2
+                        ? Get.toNamed(AppRoutes.memberShip)
+                        : Get.toNamed(AppRoutes.membershipCard);
+                  },
+                ),
+                Divider(height: 1.5, color: AppColors.white)
+                    .paddingOnly(top: 15, bottom: 15),
+                ProfileMenu(
+                  image: AppAsset.icWalletOutline,
+                  text: EnumLocale.txtMyWallet.name.tr,
+                  isArrow: true,
+                  onTap: () {
+                    Get.toNamed(AppRoutes.myWallet);
+                  },
+                ),
+                Divider(height: 1.5, color: AppColors.white)
+                    .paddingOnly(top: 15, bottom: 15),
+                ProfileMenu(
+                  image: AppAsset.icSaved,
+                  text: EnumLocale.txtSavedDoctor.name.tr,
+                  isArrow: true,
+                  onTap: () {
+                    Get.toNamed(AppRoutes.savedDoctor);
+                  },
+                ),
+                Divider(height: 1.5, color: AppColors.white)
+                    .paddingOnly(top: 15, bottom: 15),
+                ProfileMenu(
+                  image: AppAsset.icAppointmentOutline,
+                  text: EnumLocale.txtMyAppointment.name.tr,
+                  isArrow: true,
+                  onTap: () {
+                    Get.toNamed(AppRoutes.myAppointment);
+                  },
+                ),
+                Divider(height: 1.5, color: AppColors.white)
+                    .paddingOnly(top: 15, bottom: 15),
+                ProfileMenu(
+                  image: AppAsset.icAddPatient,
+                  text: "Add Patients",
+                  isArrow: true,
+                  onTap: () {
+                    Get.toNamed(AppRoutes.addPatient);
+                  },
+                ),
+              ],
+            ),
+          ).paddingOnly(bottom: 20);
+        });
   }
 }
 

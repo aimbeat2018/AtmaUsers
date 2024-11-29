@@ -53,6 +53,8 @@ import 'package:doctor/ui/med_clips_screen/binding/med_clips_binding.dart';
 import 'package:doctor/ui/med_clips_screen/view/med_clips_screen.dart';
 import 'package:doctor/ui/membership_screen/binding/membership_binding.dart';
 import 'package:doctor/ui/membership_screen/view/membership_screen.dart';
+import 'package:doctor/ui/membership_screen/view/user_membership_card.dart';
+import 'package:doctor/ui/membership_screen/widget/membership_card.dart';
 import 'package:doctor/ui/my_appointment_screen/binding/my_appointment_binding.dart';
 import 'package:doctor/ui/my_appointment_screen/view/my_appointment_screen.dart';
 import 'package:doctor/ui/my_wallet_screen/binding/my_wallet_binding.dart';
@@ -330,6 +332,11 @@ class AppPages {
     GetPage(
       name: AppRoutes.memberShip,
       page: () => const MembershipScreen(),
+      binding: MembershipBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.membershipCard,
+      page: () => const UserMembershipCard(),
       binding: MembershipBinding(),
     ),
   ];

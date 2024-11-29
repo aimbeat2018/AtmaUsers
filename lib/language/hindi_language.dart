@@ -265,4 +265,5 @@ final Map<String, String> hiIN = <String, String>{
   EnumLocale.noDataFoundNotification.name: "अधिसूचना दराज खाली है!!",
   EnumLocale.desAppDesApp.name: 'कभी भी चिकित्सा सहायता',
   EnumLocale.txtBuyNow.name: 'अभी खरीदें',
+  EnumLocale.noDataFoundPackage.name: 'पैकेज नहीं मिला',
 };

@@ -1,8 +1,10 @@
-import 'package:doctor/ui/membership_screen/widget/membership_widget.dart';
 import 'package:flutter/material.dart';
 
-class MembershipScreen extends StatelessWidget {
-  const MembershipScreen({super.key});
+import '../widget/membership_card.dart';
+import '../widget/membership_widget.dart';
+
+class UserMembershipCard extends StatelessWidget {
+  const UserMembershipCard({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +16,7 @@ class MembershipScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            MembershipPackagesListView(),
+            MembershipCard(),
 
           ],
         ),

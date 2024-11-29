@@ -268,4 +268,5 @@ final Map<String, String> bnIN = <String, String>{
   EnumLocale.noDataFoundNotification.name: "নোটিফিকেশন ড্রয়ার খালি!!",
   EnumLocale.desAppDesApp.name: 'যেকোনো সময়ের চিকিৎসা সহায়তা',
   EnumLocale.txtBuyNow.name: 'এখনই কিনুন',
+  EnumLocale.noDataFoundPackage.name: 'প্যাকেজ পাওয়া যায়নি',
 };

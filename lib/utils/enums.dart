@@ -267,4 +267,5 @@ enum EnumLocale {
   noDataFoundChat,
   noDataFound,
   noDataFoundNotification,
+  noDataFoundPackage,
 }
