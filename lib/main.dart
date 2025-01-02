@@ -8,6 +8,7 @@ import 'package:doctor/services/notification_services/notification_services.dart
 import 'package:doctor/services/permission_handler/permission_handler.dart';
 import 'package:doctor/socket/socket_constants.dart';
 import 'package:doctor/socket/socket_manager.dart';
+import 'package:doctor/utils/app_color.dart';
 import 'package:doctor/utils/constant.dart';
 import 'package:doctor/utils/global_variables.dart';
 import 'package:doctor/utils/preference.dart';
@@ -139,6 +140,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
           appBarTheme: Theme.of(context).appBarTheme.copyWith(
                 systemOverlayStyle: SystemUiOverlayStyle.light,
               ),
+          scaffoldBackgroundColor: AppColors.white, //added bg color
         ),
         debugShowCheckedModeBanner: false,
         locale: const Locale("en"),

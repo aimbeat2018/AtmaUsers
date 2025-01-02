@@ -36,16 +36,19 @@ class SpecialistDetailAppBarView extends StatelessWidget {
                 : Container(
                     height: Get.height * 0.35,
                     width: Get.width,
-                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(0)),
+                    decoration:
+                        BoxDecoration(borderRadius: BorderRadius.circular(0)),
                     clipBehavior: Clip.hardEdge,
                     child: CachedNetworkImage(
                       imageUrl: logic.getDoctorDetailModel?.data?.image ?? "",
                       fit: BoxFit.cover,
                       placeholder: (context, url) {
-                        return Image.asset(AppAsset.icDoctorPlaceholder).paddingAll(10);
+                        return Image.asset(AppAsset.icDoctorPlaceholder)
+                            .paddingAll(10);
                       },
                       errorWidget: (context, url, error) {
-                        return Image.asset(AppAsset.icDoctorPlaceholder).paddingAll(10);
+                        return Image.asset(AppAsset.icDoctorPlaceholder)
+                            .paddingAll(10);
                       },
                     ),
                   ),
@@ -155,7 +158,10 @@ class SpecialistDetailBottomView extends StatelessWidget {
                   height: Get.height * 0.062,
                   width: Get.width * 0.76,
                   borderRadius: 11,
-                  gradientColor: [AppColors.primaryAppColor1, AppColors.primaryAppColor2],
+                  gradientColor: [
+                    AppColors.primaryAppColor1,
+                    AppColors.primaryAppColor2
+                  ],
                   widget: RichText(
                     text: TextSpan(
                       text: '${EnumLocale.txtBookNow.name.tr} ',
@@ -165,7 +171,8 @@ class SpecialistDetailBottomView extends StatelessWidget {
                       ),
                       children: [
                         TextSpan(
-                          text: '$currency ${logic.getDoctorDetailModel?.data?.charge ?? 0.0}',
+                          text:
+                              '$currency ${logic.getDoctorDetailModel?.data?.charge ?? 0.0}',
                           style: FontStyle.fontStyleW700(
                             fontSize: 16,
                             fontColor: AppColors.white,
@@ -200,7 +207,8 @@ class SpecialistDetailBottomView extends StatelessWidget {
                   borderRadius: 11,
                   widget: Image.asset(AppAsset.icMessage, height: 35),
                   iconPadding: 10,
-                  gradientColor: [AppColors.message1, AppColors.message2],
+                  color: AppColors.black,
+                  // gradientColor: [AppColors.message1, AppColors.message2],
                 ),
               ),
             ],
@@ -232,21 +240,22 @@ class SpecialistDetailInfoView extends StatelessWidget {
                         logic.getDoctorDetailModel?.data?.name ?? "",
                         style: FontStyle.fontStyleW700(
                           fontSize: 18,
-                          fontColor: AppColors.title,
+                          fontColor: AppColors.primaryAppColor1,
                         ),
                       ),
                       Container(
                         decoration: BoxDecoration(
-                          color: AppColors.specialistBox,
-                          borderRadius: BorderRadius.circular(4),
+                          color: AppColors.containerBg,
+                          borderRadius: BorderRadius.circular(20.0),
                         ),
                         child: Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 10),
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 8, horizontal: 10),
                           child: Text(
                             logic.getDoctorDetailModel?.data?.designation ?? "",
                             style: FontStyle.fontStyleW500(
                               fontSize: 11.5,
-                              fontColor: AppColors.specialist,
+                              fontColor: AppColors.primaryAppColorTitle2,
                             ),
                           ),
                         ),
@@ -257,14 +266,14 @@ class SpecialistDetailInfoView extends StatelessWidget {
                     logic.getDoctorDetailModel?.data?.degree?.join(", ") ?? "",
                     style: FontStyle.fontStyleW500(
                       fontSize: 15,
-                      fontColor: AppColors.degreeText,
+                      fontColor: AppColors.primaryAppColorTitle2,
                     ),
                   ).paddingOnly(left: 15, bottom: 5),
                   Text(
                     "${logic.getDoctorDetailModel?.data?.clinicName}, ${logic.getDoctorDetailModel?.data?.address}",
                     style: FontStyle.fontStyleW500(
                       fontSize: 13,
-                      fontColor: AppColors.degreeText,
+                      fontColor: AppColors.primaryAppColorTitle2,
                     ),
                   ).paddingOnly(left: 15),
                   Row(
@@ -280,25 +289,28 @@ class SpecialistDetailInfoView extends StatelessWidget {
                               height: Get.height * 0.055,
                               width: Get.height * 0.055,
                               decoration: BoxDecoration(
-                                color: AppColors.categoryCircle,
+                                color: AppColors.containerBg,
                                 shape: BoxShape.circle,
                               ),
                               padding: const EdgeInsets.all(11.5),
-                              child: Image.asset(AppAsset.icExperience),
+                              child: Image.asset(AppAsset.icExperience,
+                                  color: AppColors.primaryAppColor2),
                             ),
                             RichText(
                               text: TextSpan(
-                                text: logic.getDoctorDetailModel?.data?.experience.toString(),
+                                text: logic
+                                    .getDoctorDetailModel?.data?.experience
+                                    .toString(),
                                 style: FontStyle.fontStyleW700(
                                   fontSize: 16,
-                                  fontColor: AppColors.title,
+                                  fontColor: AppColors.black,
                                 ),
                                 children: [
                                   TextSpan(
                                     text: EnumLocale.txtYear.name.tr,
                                     style: FontStyle.fontStyleW500(
                                       fontSize: 12,
-                                      fontColor: AppColors.title,
+                                      fontColor: AppColors.black,
                                     ),
                                   ),
                                 ],
@@ -308,7 +320,7 @@ class SpecialistDetailInfoView extends StatelessWidget {
                               EnumLocale.txtExperiences.name.tr,
                               style: FontStyle.fontStyleW500(
                                 fontSize: 11,
-                                fontColor: AppColors.degreeText,
+                                fontColor: AppColors.black,
                               ),
                             ),
                           ],
@@ -324,17 +336,19 @@ class SpecialistDetailInfoView extends StatelessWidget {
                               height: Get.height * 0.055,
                               width: Get.height * 0.055,
                               decoration: BoxDecoration(
-                                color: AppColors.categoryCircle,
+                                color: AppColors.containerBg,
                                 shape: BoxShape.circle,
                               ),
                               padding: const EdgeInsets.all(11.5),
-                              child: Image.asset(AppAsset.icHappy),
+                              child: Image.asset(AppAsset.icHappy,
+                                  color: AppColors.primaryAppColor2),
                             ),
                             Text(
-                              logic.getDoctorDetailModel?.patients.toString() ?? "",
+                              logic.getDoctorDetailModel?.patients.toString() ??
+                                  "",
                               style: FontStyle.fontStyleW700(
                                 fontSize: 16,
-                                fontColor: AppColors.title,
+                                fontColor: AppColors.black,
                               ),
                             ),
                             Text(
@@ -342,7 +356,7 @@ class SpecialistDetailInfoView extends StatelessWidget {
                               overflow: TextOverflow.ellipsis,
                               style: FontStyle.fontStyleW500(
                                 fontSize: 11,
-                                fontColor: AppColors.degreeText,
+                                fontColor: AppColors.black,
                               ),
                             ),
                           ],
@@ -358,27 +372,29 @@ class SpecialistDetailInfoView extends StatelessWidget {
                               height: Get.height * 0.055,
                               width: Get.height * 0.055,
                               decoration: BoxDecoration(
-                                color: AppColors.categoryCircle,
+                                color: AppColors.containerBg,
                                 shape: BoxShape.circle,
                               ),
                               padding: const EdgeInsets.all(11.5),
                               child: Image.asset(
                                 AppAsset.icRating,
-                                color: AppColors.title,
+                                color: AppColors.primaryAppColor2,
                               ),
                             ),
                             Text(
-                              logic.getDoctorDetailModel?.data?.rating?.toStringAsFixed(1) ?? "",
+                              logic.getDoctorDetailModel?.data?.rating
+                                      ?.toStringAsFixed(1) ??
+                                  "",
                               style: FontStyle.fontStyleW700(
                                 fontSize: 16,
-                                fontColor: AppColors.title,
+                                fontColor: AppColors.black,
                               ),
                             ),
                             Text(
                               EnumLocale.txtRatings.name.tr,
                               style: FontStyle.fontStyleW500(
                                 fontSize: 11,
-                                fontColor: AppColors.degreeText,
+                                fontColor: AppColors.black,
                               ),
                             ),
                           ],
@@ -394,24 +410,26 @@ class SpecialistDetailInfoView extends StatelessWidget {
                               height: Get.height * 0.055,
                               width: Get.height * 0.055,
                               decoration: BoxDecoration(
-                                color: AppColors.categoryCircle,
+                                color: AppColors.containerBg,
                                 shape: BoxShape.circle,
                               ),
                               padding: const EdgeInsets.all(11.5),
-                              child: Image.asset(AppAsset.icReview),
+                              child: Image.asset(AppAsset.icReview, color: AppColors.primaryAppColor2,),
                             ),
                             Text(
-                              logic.getDoctorDetailModel?.data?.reviewCount.toString() ?? "",
+                              logic.getDoctorDetailModel?.data?.reviewCount
+                                      .toString() ??
+                                  "",
                               style: FontStyle.fontStyleW700(
                                 fontSize: 16,
-                                fontColor: AppColors.title,
+                                fontColor: AppColors.black,
                               ),
                             ),
                             Text(
                               EnumLocale.txtReviews.name.tr,
                               style: FontStyle.fontStyleW500(
                                 fontSize: 11,
-                                fontColor: AppColors.degreeText,
+                                fontColor: AppColors.black,
                               ),
                             ),
                           ],
@@ -475,7 +493,8 @@ class SpecialistDetailTabBarView extends StatelessWidget {
               fontSize: 14,
               fontColor: AppColors.white,
             ),
-            physics: const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
+            physics: const BouncingScrollPhysics(
+                parent: AlwaysScrollableScrollPhysics()),
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
             indicatorPadding: const EdgeInsets.all(5),
             indicator: BoxDecoration(
@@ -491,9 +510,9 @@ class SpecialistDetailTabBarView extends StatelessWidget {
             ),
             indicatorSize: TabBarIndicatorSize.tab,
             labelColor: AppColors.white,
-            unselectedLabelStyle: FontStyle.fontStyleW500(
+            unselectedLabelStyle: FontStyle.fontStyleW400(
               fontSize: 14,
-              fontColor: AppColors.tabUnselectText,
+              fontColor: AppColors.tabUnselectText1,
             ),
             isScrollable: true,
             tabAlignment: TabAlignment.start,
@@ -552,7 +571,9 @@ class DetailScreen extends StatelessWidget {
             child: Column(
               children: [
                 const DetailAboutView(),
-                logic.getDoctorDetailModel?.data?.service?.isEmpty == true ? const SizedBox.shrink() : const DetailServiceView(),
+                logic.getDoctorDetailModel?.data?.service?.isEmpty == true
+                    ? const SizedBox.shrink()
+                    : const DetailServiceView(),
                 logic.getDoctorDetailModel?.data?.expertise?.isEmpty == true
                     ? const SizedBox.shrink()
                     : const DetailExpertiseView(),
@@ -561,9 +582,7 @@ class DetailScreen extends StatelessWidget {
                     ? const SizedBox.shrink()
                     : const DetailLanguageView(),
               ],
-            ).paddingOnly(
-              bottom: 90
-            ),
+            ).paddingOnly(bottom: 90),
           );
         },
       ),
@@ -588,12 +607,13 @@ class DetailAboutView extends StatelessWidget {
                   AppAsset.icAboutMe,
                   height: 25,
                   width: 25,
+                  color: AppColors.primaryAppColor2,
                 ).paddingOnly(right: 8),
                 Text(
                   EnumLocale.txtAboutMe.name.tr,
                   style: FontStyle.fontStyleW600(
                     fontSize: 15,
-                    fontColor: AppColors.title,
+                    fontColor: AppColors.primaryAppColor2,
                   ),
                 )
               ],
@@ -602,14 +622,15 @@ class DetailAboutView extends StatelessWidget {
                 ? Shimmers.doctorAboutShimmer()
                 : Container(
                     width: Get.width,
-                    color: AppColors.specialistBox,
-                    padding: const EdgeInsets.only(left: 15, right: 15, top: 10, bottom: 10),
+                    color: AppColors.containerBg,
+                    padding: const EdgeInsets.only(
+                        left: 15, right: 15, top: 10, bottom: 10),
                     margin: const EdgeInsets.only(top: 12, bottom: 12),
                     child: Text(
                       logic.getDoctorDetailModel?.data?.yourSelf?.trim() ?? "",
                       style: FontStyle.fontStyleW400(
                         fontSize: 12.5,
-                        fontColor: AppColors.degreeText,
+                        fontColor: AppColors.degreeText1,
                       ),
                     ),
                   )
@@ -637,17 +658,21 @@ class DetailServiceView extends StatelessWidget {
                   AppAsset.icServices,
                   height: 25,
                   width: 25,
+                  color: AppColors.primaryAppColor2,
                 ).paddingOnly(right: 8),
                 Text(
                   EnumLocale.txtServices.name.tr,
                   style: FontStyle.fontStyleW600(
                     fontSize: 15,
-                    fontColor: AppColors.title,
+                    fontColor: AppColors.primaryAppColor2,
                   ),
                 )
               ],
             ).paddingOnly(left: 15, bottom: 12),
-            for (int i = 0; i < (logic.getDoctorDetailModel?.data?.service?.length ?? 1); i++) DetailServiceItemView(index: i),
+            for (int i = 0;
+                i < (logic.getDoctorDetailModel?.data?.service?.length ?? 1);
+                i++)
+              DetailServiceItemView(index: i),
           ],
         );
       },
@@ -670,7 +695,9 @@ class DetailServiceItemView extends StatelessWidget {
             : Container(
                 height: Get.height * 0.063,
                 decoration: BoxDecoration(
-                  color: index.isOdd ? AppColors.specialistBox2 : AppColors.specialistBox,
+                  color: index.isOdd
+                      ? AppColors.specialistBox2
+                      : AppColors.containerBg,
                 ),
                 margin: const EdgeInsets.only(bottom: 3),
                 padding: const EdgeInsets.only(left: 15, right: 15),
@@ -681,16 +708,17 @@ class DetailServiceItemView extends StatelessWidget {
                       width: Get.height * 0.01,
                       margin: const EdgeInsets.only(right: 10),
                       decoration: BoxDecoration(
-                        color: AppColors.serviceDot,
+                        color: AppColors.degreeText1,
                         shape: BoxShape.circle,
                       ),
                     ),
                     Text(
-                      logic.getDoctorDetailModel?.data?.service?[index].name ?? "",
+                      logic.getDoctorDetailModel?.data?.service?[index].name ??
+                          "",
                       overflow: TextOverflow.ellipsis,
                       style: FontStyle.fontStyleW400(
                         fontSize: 14,
-                        fontColor: AppColors.degreeText,
+                        fontColor: AppColors.degreeText1,
                       ),
                     )
                   ],
@@ -718,17 +746,20 @@ class DetailExpertiseView extends StatelessWidget {
                   AppAsset.icExpertise,
                   height: 25,
                   width: 25,
+                  color: AppColors.primaryAppColor2,
                 ).paddingOnly(right: 8),
                 Text(
                   EnumLocale.txtExpertise.name.tr,
                   style: FontStyle.fontStyleW600(
                     fontSize: 15,
-                    fontColor: AppColors.title,
+                    fontColor: AppColors.primaryAppColor2,
                   ),
                 )
               ],
             ).paddingOnly(left: 15, top: 12, bottom: 12),
-            for (int i = 0; i < (logic.getDoctorDetailModel?.data?.expertise?.length ?? 1); i++)
+            for (int i = 0;
+                i < (logic.getDoctorDetailModel?.data?.expertise?.length ?? 1);
+                i++)
               DetailExpertiseItemView(index: i),
           ],
         );
@@ -752,7 +783,9 @@ class DetailExpertiseItemView extends StatelessWidget {
             : Container(
                 height: Get.height * 0.063,
                 decoration: BoxDecoration(
-                  color: index.isOdd ? AppColors.specialistBox2 : AppColors.specialistBox,
+                  color: index.isOdd
+                      ? AppColors.specialistBox2
+                      : AppColors.containerBg,
                 ),
                 margin: const EdgeInsets.only(bottom: 3),
                 padding: const EdgeInsets.only(left: 15, right: 15),
@@ -763,16 +796,18 @@ class DetailExpertiseItemView extends StatelessWidget {
                       width: Get.height * 0.01,
                       margin: const EdgeInsets.only(right: 10),
                       decoration: BoxDecoration(
-                        color: AppColors.serviceDot,
+                        color: AppColors.degreeText1,
                         shape: BoxShape.circle,
                       ),
                     ),
                     Text(
-                      logic.getDoctorDetailModel?.data?.expertise?[index].trim() ?? "",
+                      logic.getDoctorDetailModel?.data?.expertise?[index]
+                              .trim() ??
+                          "",
                       overflow: TextOverflow.ellipsis,
                       style: FontStyle.fontStyleW400(
                         fontSize: 14,
-                        fontColor: AppColors.degreeText,
+                        fontColor: AppColors.degreeText1,
                       ),
                     )
                   ],
@@ -800,12 +835,13 @@ class DetailWorkingTimeView extends StatelessWidget {
                   AppAsset.icWorkingTime,
                   height: 25,
                   width: 25,
+                  color: AppColors.primaryAppColor2,
                 ).paddingOnly(right: 8),
                 Text(
                   EnumLocale.txtWorkingTime.name.tr,
                   style: FontStyle.fontStyleW600(
                     fontSize: 15,
-                    fontColor: AppColors.title,
+                    fontColor: AppColors.primaryAppColor2,
                   ),
                 )
               ],
@@ -815,8 +851,9 @@ class DetailWorkingTimeView extends StatelessWidget {
                 : Container(
                     height: Get.height * 0.063,
                     width: Get.width,
-                    color: AppColors.specialistBox,
-                    padding: const EdgeInsets.only(left: 15, right: 15, top: 10, bottom: 10),
+                    color: AppColors.containerBg,
+                    padding: const EdgeInsets.only(
+                        left: 15, right: 15, top: 10, bottom: 10),
                     margin: const EdgeInsets.only(top: 12, bottom: 12),
                     child: Row(
                       children: [
@@ -825,7 +862,7 @@ class DetailWorkingTimeView extends StatelessWidget {
                           width: Get.height * 0.01,
                           margin: const EdgeInsets.only(right: 10),
                           decoration: BoxDecoration(
-                            color: AppColors.serviceDot,
+                            color: AppColors.degreeText1,
                             shape: BoxShape.circle,
                           ),
                         ),
@@ -833,7 +870,7 @@ class DetailWorkingTimeView extends StatelessWidget {
                           "${logic.getDoctorDetailModel?.data?.schedule?.first.day} - ${logic.getDoctorDetailModel?.data?.schedule?.last.day}, ${logic.getDoctorDetailModel?.data?.schedule?.first.startTime} - ${logic.getDoctorDetailModel?.data?.schedule?.first.endTime}",
                           style: FontStyle.fontStyleW400(
                             fontSize: 14,
-                            fontColor: AppColors.degreeText,
+                            fontColor: AppColors.degreeText1,
                           ),
                         ),
                       ],
@@ -863,17 +900,21 @@ class DetailLanguageView extends StatelessWidget {
                   AppAsset.icLanguages,
                   height: 25,
                   width: 25,
+                  color: AppColors.primaryAppColor2,
                 ).paddingOnly(right: 8),
                 Text(
                   EnumLocale.txtLanguages.name.tr,
                   style: FontStyle.fontStyleW600(
                     fontSize: 15,
-                    fontColor: AppColors.title,
+                    fontColor: AppColors.primaryAppColor2,
                   ),
                 )
               ],
             ).paddingOnly(left: 15, bottom: 12),
-            for (int i = 0; i < (logic.getDoctorDetailModel?.data?.language?.length ?? 1); i++) DetailLanguageItemView(index: i),
+            for (int i = 0;
+                i < (logic.getDoctorDetailModel?.data?.language?.length ?? 1);
+                i++)
+              DetailLanguageItemView(index: i),
           ],
         );
       },
@@ -896,7 +937,9 @@ class DetailLanguageItemView extends StatelessWidget {
             : Container(
                 height: Get.height * 0.063,
                 decoration: BoxDecoration(
-                  color: index.isOdd ? AppColors.specialistBox2 : AppColors.specialistBox,
+                  color: index.isOdd
+                      ? AppColors.specialistBox2
+                      : AppColors.containerBg,
                 ),
                 margin: const EdgeInsets.only(bottom: 3),
                 padding: const EdgeInsets.only(left: 15, right: 15),
@@ -907,16 +950,18 @@ class DetailLanguageItemView extends StatelessWidget {
                       width: Get.height * 0.01,
                       margin: const EdgeInsets.only(right: 10),
                       decoration: BoxDecoration(
-                        color: AppColors.serviceDot,
+                        color: AppColors.degreeText1,
                         shape: BoxShape.circle,
                       ),
                     ),
                     Text(
-                      logic.getDoctorDetailModel?.data?.language?[index].trim() ?? "",
+                      logic.getDoctorDetailModel?.data?.language?[index]
+                              .trim() ??
+                          "",
                       overflow: TextOverflow.ellipsis,
                       style: FontStyle.fontStyleW400(
                         fontSize: 14,
-                        fontColor: AppColors.degreeText,
+                        fontColor: AppColors.degreeText1,
                       ),
                     )
                   ],
@@ -942,12 +987,13 @@ class AddressScreen extends StatelessWidget {
                 AppAsset.icLocation,
                 height: 25,
                 width: 25,
+                color: AppColors.primaryAppColor2,
               ).paddingOnly(right: 8),
               Text(
                 EnumLocale.txtServicesLocation.name.tr,
                 style: FontStyle.fontStyleW600(
                   fontSize: 15,
-                  fontColor: AppColors.title,
+                  fontColor: AppColors.primaryAppColor2,
                 ),
               )
             ],
@@ -957,8 +1003,9 @@ class AddressScreen extends StatelessWidget {
             builder: (logic) {
               return Container(
                 width: Get.width,
-                color: AppColors.specialistBox,
-                padding: const EdgeInsets.only(left: 15, right: 15, top: 10, bottom: 10),
+                color: AppColors.containerBg,
+                padding: const EdgeInsets.only(
+                    left: 15, right: 15, top: 10, bottom: 10),
                 margin: const EdgeInsets.only(top: 12, bottom: 12),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -970,7 +1017,7 @@ class AddressScreen extends StatelessWidget {
                           width: Get.height * 0.01,
                           margin: const EdgeInsets.only(right: 10),
                           decoration: BoxDecoration(
-                            color: AppColors.serviceDot,
+                            color: AppColors.degreeText1,
                             shape: BoxShape.circle,
                           ),
                         ),
@@ -978,7 +1025,7 @@ class AddressScreen extends StatelessWidget {
                           logic.getDoctorDetailModel?.data?.clinicName ?? "",
                           style: FontStyle.fontStyleW400(
                             fontSize: 14,
-                            fontColor: AppColors.degreeText,
+                            fontColor: AppColors.degreeText1,
                           ),
                         ).paddingOnly(bottom: 3),
                       ],
@@ -987,7 +1034,7 @@ class AddressScreen extends StatelessWidget {
                       logic.getDoctorDetailModel?.data?.address ?? "",
                       style: FontStyle.fontStyleW400(
                         fontSize: 14,
-                        fontColor: AppColors.degreeText,
+                        fontColor: AppColors.degreeText1,
                       ),
                     ).paddingOnly(left: 18),
                   ],
@@ -1018,7 +1065,9 @@ class ReviewScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    logic.getDoctorDetailModel?.data?.rating?.toStringAsFixed(1) ?? "",
+                    logic.getDoctorDetailModel?.data?.rating
+                            ?.toStringAsFixed(1) ??
+                        "",
                     style: FontStyle.fontStyleW700(
                       fontSize: 32,
                       fontColor: AppColors.rating,
@@ -1044,27 +1093,30 @@ class ReviewScreen extends StatelessWidget {
                     "(${logic.getDoctorDetailModel?.data?.rating?.toStringAsFixed(1) ?? ""} ${EnumLocale.txtRatings.name.tr})",
                     style: FontStyle.fontStyleW500(
                       fontSize: 14,
-                      fontColor: AppColors.degreeText,
+                      fontColor: AppColors.degreeText1,
                     ),
                   ).paddingOnly(top: 5),
                   logic.getDoctorDetailModel?.data?.rating == 0.0
                       ? const SizedBox()
                       : GestureDetector(
                           onTap: () {
-                            Get.toNamed(AppRoutes.rating, arguments: [logic.doctorId]);
+                            Get.toNamed(AppRoutes.rating,
+                                arguments: [logic.doctorId]);
                           },
                           child: Container(
-                            height: Get.height * 0.045,
+                            height: Get.height * 0.043,
                             width: Get.width * 0.48,
                             margin: const EdgeInsets.only(top: 10),
                             decoration: BoxDecoration(
-                              color: AppColors.specialistBox,
+                              color: AppColors.containerBg,
                               borderRadius: BorderRadius.circular(10),
                             ),
                             child: Padding(
-                              padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 15),
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 8, horizontal: 15),
                               child: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
                                     EnumLocale.txtViewMoreDetails.name.tr,
@@ -1112,13 +1164,26 @@ class EducationScreen extends StatelessWidget {
                 )
               : Column(
                   children: [
-                    Text(
-                      logic.getDoctorDetailModel?.data?.education?.trim() ?? "",
-                      style: FontStyle.fontStyleW400(
-                        fontSize: 12.5,
-                        fontColor: AppColors.degreeText,
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                      child: Container(
+                        width: double.infinity,
+                        padding: const EdgeInsets.symmetric(vertical: 10.0),
+                        margin: const EdgeInsets.only(top: 10),
+                        decoration: BoxDecoration(
+                          color: AppColors.containerBg,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: Text(
+                          logic.getDoctorDetailModel?.data?.education?.trim() ??
+                              "",
+                          style: FontStyle.fontStyleW400(
+                            fontSize: 12.5,
+                            fontColor: AppColors.degreeText1,
+                          ),
+                        ).paddingOnly(left: 15, right: 15, top: 5),
                       ),
-                    ).paddingOnly(left: 15, right: 15, top: 5)
+                    )
                   ],
                 );
         },
@@ -1137,7 +1202,8 @@ class ExperienceScreen extends StatelessWidget {
       body: GetBuilder<SpecialistDetailController>(
         id: Constant.idProgressView,
         builder: (logic) {
-          return logic.getDoctorDetailModel?.data?.experienceDetails?.isEmpty == true
+          return logic.getDoctorDetailModel?.data?.experienceDetails?.isEmpty ==
+                  true
               ? NoDataFound(
                   image: AppAsset.icNoDataFound,
                   imageHeight: 150,
@@ -1148,34 +1214,47 @@ class ExperienceScreen extends StatelessWidget {
               : SizedBox(
                   child: ListView.builder(
                     physics: const NeverScrollableScrollPhysics(),
-                    padding: EdgeInsets.zero,
-                    itemCount: logic.getDoctorDetailModel?.data?.experienceDetails?.length,
+                    padding: EdgeInsets.symmetric(horizontal: 10.0),
+                    itemCount: logic
+                        .getDoctorDetailModel?.data?.experienceDetails?.length,
                     scrollDirection: Axis.vertical,
                     itemBuilder: (context, index) {
-                      return Row(
-                        children: [
-                          Container(
-                            height: Get.height * 0.01,
-                            width: Get.height * 0.01,
-                            margin: const EdgeInsets.only(right: 10),
-                            decoration: BoxDecoration(
-                              color: AppColors.serviceDot,
-                              shape: BoxShape.circle,
-                            ),
-                          ),
-                          SizedBox(
-                            width: Get.width * 0.83,
-                            child: Text(
-                              logic.getDoctorDetailModel?.data?.experienceDetails?[index].trim() ?? "",
-                              overflow: TextOverflow.ellipsis,
-                              style: FontStyle.fontStyleW400(
-                                fontSize: 12,
-                                fontColor: AppColors.degreeText,
+                      return Container(
+                        width: double.infinity,
+                        padding: const EdgeInsets.symmetric(vertical: 10.0),
+                        margin: const EdgeInsets.only(top: 10),
+                        decoration: BoxDecoration(
+                          color: AppColors.containerBg,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: Row(
+                          children: [
+                            Container(
+                              height: Get.height * 0.01,
+                              width: Get.height * 0.01,
+                              margin: const EdgeInsets.only(right: 10),
+                              decoration: BoxDecoration(
+                                color: AppColors.degreeText1,
+                                shape: BoxShape.circle,
                               ),
                             ),
-                          )
-                        ],
-                      ).paddingOnly(left: 15, right: 15, bottom: 7);
+                            SizedBox(
+                              // width: Get.width * 0.83,
+                              child: Text(
+                                logic.getDoctorDetailModel?.data
+                                        ?.experienceDetails?[index]
+                                        .trim() ??
+                                    "",
+                                overflow: TextOverflow.ellipsis,
+                                style: FontStyle.fontStyleW400(
+                                  fontSize: 12,
+                                  fontColor: AppColors.degreeText1,
+                                ),
+                              ),
+                            )
+                          ],
+                        ).paddingOnly(left: 15, right: 15, bottom: 7),
+                      );
                     },
                   ).paddingOnly(top: 12, bottom: 12),
                 );
@@ -1216,16 +1295,19 @@ class AwardScreen extends StatelessWidget {
                             AppAsset.icAward,
                             height: Get.height * 0.025,
                             width: Get.width * 0.072,
+                            color: AppColors.degreeText1,
                           ).paddingOnly(bottom: 3),
                           Expanded(
                             child: SizedBox(
                               width: Get.width * 0.85,
                               child: Text(
-                                logic.getDoctorDetailModel?.data?.awards?[index].trim() ?? "",
+                                logic.getDoctorDetailModel?.data?.awards?[index]
+                                        .trim() ??
+                                    "",
                                 overflow: TextOverflow.ellipsis,
                                 style: FontStyle.fontStyleW400(
                                   fontSize: 12,
-                                  fontColor: AppColors.degreeText,
+                                  fontColor: AppColors.degreeText1,
                                 ),
                               ),
                             ),

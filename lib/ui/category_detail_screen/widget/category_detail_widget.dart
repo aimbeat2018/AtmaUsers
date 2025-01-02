@@ -243,12 +243,13 @@ class CategoryDetailListItemView extends StatelessWidget {
                 child: Container(
                   width: Get.width,
                   decoration: BoxDecoration(
-                    color: AppColors.white,
+                    color: AppColors.containerBg,
                     borderRadius: BorderRadius.circular(18),
-                    border: Border.all(
-                      color: AppColors.divider,
-                      width: 1.3,
-                    ),
+                    //border removed when changing design
+                    // border: Border.all(
+                    //   color: AppColors.divider,
+                    //   width: 1.3,
+                    // ),
                   ),
                   margin: const EdgeInsets.only(left: 10, right: 10, bottom: 10),
                   padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
@@ -286,14 +287,14 @@ class CategoryDetailListItemView extends StatelessWidget {
                                 doctors?.name ?? "",
                                 style: FontStyle.fontStyleW600(
                                   fontSize: 16,
-                                  fontColor: AppColors.title,
+                                  fontColor: AppColors.primaryAppColor1,
                                 ),
                               ),
                               Text(
                                 doctors?.degree?.join(", ") ?? "",
                                 style: FontStyle.fontStyleW500(
                                   fontSize: 13.5,
-                                  fontColor: AppColors.degreeText,
+                                  fontColor: AppColors.primaryAppColorTitle,
                                 ),
                               ),
                               Container(
@@ -301,8 +302,8 @@ class CategoryDetailListItemView extends StatelessWidget {
                                 margin: const EdgeInsets.only(top: 5, bottom: 5),
                                 decoration: BoxDecoration(
                                   border: Border.all(
-                                    color: AppColors.divider,
-                                    width: 1,
+                                    color: AppColors.divider1,
+                                    width: 0.50,
                                   ),
                                 ),
                               ),
@@ -312,7 +313,7 @@ class CategoryDetailListItemView extends StatelessWidget {
                                   '${doctors?.designation} | ${doctors?.clinicName}',
                                   style: FontStyle.fontStyleW400(
                                     fontSize: 13,
-                                    fontColor: AppColors.degreeText,
+                                    fontColor: AppColors.primaryAppColorTitle,
                                   ),
                                   overflow: TextOverflow.ellipsis,
                                 ),

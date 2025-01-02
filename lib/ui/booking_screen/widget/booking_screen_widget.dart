@@ -163,7 +163,7 @@ class BookingInfoView extends StatelessWidget {
                 blurRadius: 5.0,
               ),
             ],
-            color: AppColors.white,
+            color: AppColors.containerBg,
           ),
           margin: const EdgeInsets.only(bottom: 12),
           child: Row(
@@ -172,7 +172,8 @@ class BookingInfoView extends StatelessWidget {
                 height: Get.height * 0.125,
                 width: Get.width * 0.27,
                 margin: const EdgeInsets.all(13),
-                decoration: BoxDecoration(borderRadius: BorderRadius.circular(15)),
+                decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(15)),
                 clipBehavior: Clip.hardEdge,
                 child: CachedNetworkImage(
                   imageUrl: logic.doctorImage ?? "",
@@ -196,13 +197,13 @@ class BookingInfoView extends StatelessWidget {
                       logic.doctorName.toString(),
                       style: FontStyle.fontStyleW700(
                         fontSize: 15,
-                        fontColor: AppColors.title,
+                        fontColor: AppColors.primaryAppColor1,
                       ),
                     ),
                     Container(
                       decoration: BoxDecoration(
-                        color: AppColors.specialistBox,
-                        borderRadius: BorderRadius.circular(4),
+                        color: AppColors.containerBg1,
+                        borderRadius: BorderRadius.circular(10),
                       ),
                       child: Padding(
                         padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 10),
@@ -210,7 +211,7 @@ class BookingInfoView extends StatelessWidget {
                           logic.doctorDesignation.toString(),
                           style: FontStyle.fontStyleW500(
                             fontSize: 12,
-                            fontColor: AppColors.specialist,
+                            fontColor: AppColors.primaryAppColorTitle2,
                           ),
                         ),
                       ),
@@ -219,7 +220,7 @@ class BookingInfoView extends StatelessWidget {
                       logic.doctorDegree.toString(),
                       style: FontStyle.fontStyleW500(
                         fontSize: 14,
-                        fontColor: AppColors.degreeText,
+                        fontColor: AppColors.primaryAppColorTitle,
                       ),
                     ),
                   ],
@@ -246,7 +247,7 @@ class BookingDateView extends StatelessWidget {
           EnumLocale.txtSelectDate.name.tr,
           style: FontStyle.fontStyleW600(
             fontSize: 16.5,
-            fontColor: AppColors.title,
+            fontColor: AppColors.black,
           ),
         ).paddingOnly(left: 12),
         GetBuilder<BookingScreenController>(
@@ -271,23 +272,24 @@ class BookingDateView extends StatelessWidget {
                 ///TODO
                 // logic.onSelectSlot();
               },
+
               headerProps: EasyHeaderProps(
                 monthPickerType: MonthPickerType.switcher,
                 showMonthPicker: true,
                 dateFormatter: const DateFormatter.fullDateDayAsStrMY(),
                 monthStyle: TextStyle(
-                  color: AppColors.title,
+                  color: AppColors.black,
                   fontFamily: FontFamily.sfProDisplayBold,
                   fontSize: 16,
                 ),
                 selectedDateStyle: TextStyle(
-                  color: AppColors.degreeText,
+                  color: AppColors.primaryAppColor2,
                   fontSize: 16,
                   fontFamily: FontFamily.sfProDisplay,
                 ),
               ),
               dayProps: EasyDayProps(
-                height: 75,
+                height: 85,
                 borderColor: Colors.transparent,
                 todayHighlightColor: Colors.transparent,
                 dayStructure: DayStructure.dayStrDayNum,
@@ -305,7 +307,9 @@ class BookingDateView extends StatelessWidget {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(14),
                     color: AppColors.disableSlot,
+
                   ),
+
                 ),
                 todayStyle: DayStyle(
                   dayNumStyle: TextStyle(
@@ -348,17 +352,17 @@ class BookingDateView extends StatelessWidget {
                 ),
                 inactiveDayStyle: DayStyle(
                   dayNumStyle: TextStyle(
-                    color: AppColors.degreeText,
+                    color: AppColors.black,
                     fontSize: 16,
                     fontFamily: FontFamily.sfProDisplayMedium,
                   ),
                   dayStrStyle: TextStyle(
-                    color: AppColors.degreeText,
+                    color: AppColors.black,
                     fontSize: 16,
                     fontFamily: FontFamily.sfProDisplayMedium,
                   ),
                   decoration: BoxDecoration(
-                    color: AppColors.specialistBox,
+                    color: AppColors.containerBg,
                     borderRadius: BorderRadius.circular(14),
                   ),
                 ),
@@ -384,7 +388,7 @@ class BookingSlotView extends StatelessWidget {
           EnumLocale.txtSelectTime.name.tr,
           style: FontStyle.fontStyleW600(
             fontSize: 16.5,
-            fontColor: AppColors.title,
+            fontColor: AppColors.black,
           ),
         ).paddingOnly(left: 12, top: 5, bottom: 10),
         GetBuilder<BookingScreenController>(
@@ -394,7 +398,7 @@ class BookingSlotView extends StatelessWidget {
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15.0),
-                color: AppColors.specialistBox,
+                color: AppColors.containerBg,
                 boxShadow: [
                   BoxShadow(
                     color: AppColors.black.withOpacity(0.08),
@@ -419,21 +423,21 @@ class BookingSlotView extends StatelessWidget {
                         logic.startTimeShop ?? "--",
                         style: FontStyle.fontStyleW600(
                           fontSize: 17,
-                          fontColor: AppColors.title,
+                          fontColor: AppColors.black,
                         ),
                       ),
                       Text(
                         "TO",
                         style: FontStyle.fontStyleW600(
                           fontSize: 17,
-                          fontColor: AppColors.degreeText,
+                          fontColor: AppColors.degreeText2,
                         ),
                       ),
                       Text(
                         logic.startTimeBreak ?? "--",
                         style: FontStyle.fontStyleW600(
                           fontSize: 17,
-                          fontColor: AppColors.title,
+                          fontColor: AppColors.black,
                         ),
                       ),
                     ],
@@ -442,7 +446,7 @@ class BookingSlotView extends StatelessWidget {
                     AppAsset.icArrowDown,
                     height: 25,
                     width: 25,
-                    color: AppColors.degreeText,
+                    color: AppColors.black,
                   ),
                   children: [
                     Container(
@@ -470,7 +474,7 @@ class BookingSlotView extends StatelessWidget {
                     width: MediaQuery.of(context).size.width,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15.0),
-                      color: AppColors.specialistBox,
+                      color: AppColors.containerBg,
                       boxShadow: [
                         BoxShadow(
                           color: AppColors.black.withOpacity(0.08),
@@ -495,21 +499,21 @@ class BookingSlotView extends StatelessWidget {
                               logic.endTimeBreak ?? "--",
                               style: FontStyle.fontStyleW600(
                                 fontSize: 17,
-                                fontColor: AppColors.title,
+                                fontColor: AppColors.black,
                               ),
                             ),
                             Text(
                               "TO",
                               style: FontStyle.fontStyleW600(
                                 fontSize: 17,
-                                fontColor: AppColors.degreeText,
+                                fontColor: AppColors.degreeText2,
                               ),
                             ),
                             Text(
                               logic.closeTimeShop ?? "--",
                               style: FontStyle.fontStyleW600(
                                 fontSize: 17,
-                                fontColor: AppColors.title,
+                                fontColor: AppColors.black,
                               ),
                             ),
                           ],
@@ -518,7 +522,7 @@ class BookingSlotView extends StatelessWidget {
                           AppAsset.icArrowDown,
                           height: 25,
                           width: 25,
-                          color: AppColors.degreeText,
+                          color: AppColors.black,
                         ),
                         children: [
                           Container(
@@ -698,7 +702,7 @@ Widget buildSlotCategory(List<String> slots, String selectedDate) {
                                         : AppColors.primaryAppColor1
                                     : isSlotTimePassed || isSlotBooked
                                         ? AppColors.disableSlot
-                                        : AppColors.specialistBox,
+                                        : AppColors.greenBox1,
                                 borderRadius: BorderRadius.circular(8),
                               ),
                               child: Center(
@@ -718,7 +722,7 @@ Widget buildSlotCategory(List<String> slots, String selectedDate) {
                                             : AppColors.white
                                         : isSlotTimePassed || isSlotBooked
                                             ? AppColors.disableSlotText
-                                            : AppColors.degreeText,
+                                            : AppColors.greenBoxText,
                                   ),
                                 ),
                               ),
@@ -751,7 +755,7 @@ class BookingAppointmentView extends StatelessWidget {
           EnumLocale.txtAppointmentType.name.tr,
           style: FontStyle.fontStyleW600(
             fontSize: 16.5,
-            fontColor: AppColors.title,
+            fontColor: AppColors.black,
           ),
         ).paddingOnly(left: 12, bottom: 12, top: 5),
         GetBuilder<BookingScreenController>(
@@ -868,7 +872,7 @@ class BookingAppointmentView extends StatelessWidget {
                                   ],
                                 ),
                           border: Border.all(
-                            color: logic.selectAppointmentType == 0 ? AppColors.transparent : AppColors.border,
+                            color: logic.selectAppointmentType == 0 ? AppColors.transparent : AppColors.black,
                             width: logic.selectAppointmentType == 0 ? 0 : 1.2,
                           ),
                         ),
@@ -877,7 +881,7 @@ class BookingAppointmentView extends StatelessWidget {
                             EnumLocale.txtOnline.name.tr,
                             style: FontStyle.fontStyleW500(
                               fontSize: 14.5,
-                              fontColor: logic.selectAppointmentType == 0 ? AppColors.white : AppColors.tabUnselectText,
+                              fontColor: logic.selectAppointmentType == 0 ? AppColors.white : AppColors.black,
                             ),
                           ),
                         ),
@@ -908,7 +912,7 @@ class BookingAppointmentView extends StatelessWidget {
                                   ],
                                 ),
                           border: Border.all(
-                            color: logic.selectAppointmentType == 1 ? AppColors.transparent : AppColors.border,
+                            color: logic.selectAppointmentType == 1 ? AppColors.transparent : AppColors.black,
                             width: logic.selectAppointmentType == 1 ? 0 : 1.2,
                           ),
                         ),
@@ -917,7 +921,7 @@ class BookingAppointmentView extends StatelessWidget {
                             EnumLocale.txtAtClinic.name.tr,
                             style: FontStyle.fontStyleW500(
                               fontSize: 14,
-                              fontColor: logic.selectAppointmentType == 1 ? AppColors.white : AppColors.tabUnselectText,
+                              fontColor: logic.selectAppointmentType == 1 ? AppColors.white : AppColors.black,
                             ),
                           ),
                         ),
@@ -947,14 +951,14 @@ class BookingPatientView extends StatelessWidget {
           EnumLocale.txtPatient.name.tr,
           style: FontStyle.fontStyleW600(
             fontSize: 16.5,
-            fontColor: AppColors.title,
+            fontColor: AppColors.black,
           ),
         ).paddingOnly(left: 12, bottom: 5),
         Container(
           width: MediaQuery.of(context).size.width,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(15.0),
-            color: AppColors.categoryCircle,
+            borderRadius: BorderRadius.circular(10.0),
+            color: AppColors.containerBg,
             boxShadow: [
               BoxShadow(
                 color: AppColors.black.withOpacity(0.08),
@@ -979,14 +983,14 @@ class BookingPatientView extends StatelessWidget {
                     logic.patientName,
                     style: FontStyle.fontStyleW500(
                       fontSize: 15,
-                      fontColor: AppColors.degreeText,
+                      fontColor: AppColors.degreeText2,
                     ),
                   ),
                   trailing: Image.asset(
                     AppAsset.icArrowDown,
                     height: 25,
                     width: 25,
-                    color: AppColors.degreeText,
+                    color: AppColors.black,
                   ),
                   children: [
                     for (int i = 0; i < (logic.getPatientModel?.data?.length ?? 0); i++)
@@ -1078,17 +1082,17 @@ class BookingProblemView extends StatelessWidget {
                 EnumLocale.txtExplainProblem.name.tr,
                 style: FontStyle.fontStyleW600(
                   fontSize: 16.5,
-                  fontColor: AppColors.title,
+                  fontColor: AppColors.black,
                 ),
               ).paddingOnly(left: 12, bottom: 12),
               CustomTextField(
                 filled: true,
-                fillColor: AppColors.categoryCircle,
+                fillColor: AppColors.containerBg,
                 controller: logic.problemController,
                 hintText: EnumLocale.txtEnterHere.name.tr,
-                maxLines: 8,
+                maxLines: 7,
                 hintTextSize: 14,
-                hintTextColor: AppColors.degreeText,
+                hintTextColor: AppColors.degreeText2,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return EnumLocale.desEnterProblem.name.tr;
@@ -1128,34 +1132,34 @@ class BookingUploadPhotoView extends StatelessWidget {
 
                     logic.onMultiplePickImage();
                   },
-                  child: DottedBorder(
-                    color: AppColors.border,
-                    dashPattern: const [3.5, 3.5],
-                    radius: const Radius.circular(16),
-                    strokeWidth: 1,
-                    borderType: BorderType.RRect,
-                    child: Container(
-                      height: Get.height * 0.15,
-                      width: Get.width * 0.3,
-                      decoration: BoxDecoration(borderRadius: BorderRadius.circular(16)),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Image.asset(
-                            AppAsset.icUpload,
-                            height: 40,
-                            width: 40,
+                  child: Container(
+                    height: Get.height * 0.05,
+                    width: Get.width * 0.4,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5),
+                       border: Border.all(
+                      color: AppColors.primaryAppColor2,
+                         width: 1.0,
+                    )),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Image.asset(
+                          AppAsset.icUpload,
+                          height: 40,
+                          width: 40,
+                          color: AppColors.black,
+                        ),
+                        SizedBox(width: 5),
+                        Text(
+                          EnumLocale.txtUploadReport.name.tr,
+                          textAlign: TextAlign.center,
+                          style: FontStyle.fontStyleW500(
+                            fontSize: 11,
+                            fontColor: AppColors.black,
                           ),
-                          Text(
-                            EnumLocale.txtUploadReport.name.tr,
-                            textAlign: TextAlign.center,
-                            style: FontStyle.fontStyleW500(
-                              fontSize: 11,
-                              fontColor: AppColors.border,
-                            ),
-                          )
-                        ],
-                      ),
+                        )
+                      ],
                     ),
                   ).paddingOnly(left: 12),
                 ),

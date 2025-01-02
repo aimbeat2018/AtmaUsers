@@ -88,7 +88,7 @@ class EasyDayWidget extends StatelessWidget {
         duration: const Duration(milliseconds: EasyConstants.animationDuration),
         width: width,
         height: height,
-        margin: margin,
+        margin: const EdgeInsets.all(5),
         decoration: dayDecoration,
         child: _buildDayStructure(
           structure: easyDayProps.dayStructure,

@@ -74,12 +74,12 @@ class RatingListItemView extends StatelessWidget {
 
         return Container(
           decoration: BoxDecoration(
-            color: AppColors.white,
+            color: AppColors.containerBg,
             borderRadius: BorderRadius.circular(20),
-            border: Border.all(
-              color: AppColors.divider,
-              width: 1.3,
-            ),
+            // border: Border.all(
+            //   color: AppColors.divider,
+            //   width: 1.3,
+            // ),
           ),
           margin: const EdgeInsets.only(bottom: 13, left: 15, right: 15),
           padding: const EdgeInsets.only(left: 15, right: 15, top: 10),

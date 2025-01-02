@@ -147,7 +147,7 @@ class HomeAppBarView extends StatelessWidget {
                   EnumLocale.txtSearchDoctor.name.tr,
                   style: FontStyle.fontStyleW400(
                     fontSize: 14.5,
-                    fontColor: AppColors.textFormHintText,
+                    fontColor: AppColors.primaryAppColor1,
                   ),
                 ),
                 const Spacer(),
@@ -556,13 +556,26 @@ class HomeCategoryTitleView extends StatelessWidget {
     return GetBuilder<HomeScreenController>(
       id: Constant.idProgressView,
       builder: (logic) {
-        return Text(
-          EnumLocale.txtCategories.name.tr,
-          style: FontStyle.fontStyleW600(
-            fontSize: 17,
-            fontColor: AppColors.title,
+        return IntrinsicHeight(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              VerticalDivider(
+                indent: 14,
+                endIndent: 2,
+                thickness: 3,
+                color: AppColors.primaryAppColor1,
+              ).paddingOnly(left:15),
+              Text(
+                EnumLocale.txtCategories.name.tr,
+                style: FontStyle.fontStyleW600(
+                  fontSize: 17,
+                  fontColor: AppColors.black,
+                ),
+              ).paddingOnly(top: 15, left: 0, right: 15),
+            ],
           ),
-        ).paddingOnly(top: 15, left: 15, right: 15);
+        );
       },
     );
   }
@@ -776,11 +789,23 @@ class HomeSpecialistTitleView extends StatelessWidget {
         return Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
-              EnumLocale.txtBestSpecialist.name.tr,
-              style: FontStyle.fontStyleW600(
-                fontSize: 17,
-                fontColor: AppColors.title,
+            IntrinsicHeight(
+              child: Row(
+                children: [
+                  VerticalDivider(
+                    indent: 2,
+                    endIndent: 1,
+                    thickness: 3,
+                    color: AppColors.primaryAppColor1,
+                  ),
+                  Text(
+                    EnumLocale.txtBestSpecialist.name.tr,
+                    style: FontStyle.fontStyleW600(
+                      fontSize: 17,
+                      fontColor: AppColors.title,
+                    ),
+                  ),
+                ],
               ),
             ),
             GestureDetector(
@@ -990,12 +1015,13 @@ class SpecialistListItemView extends StatelessWidget {
                 child: Container(
                   width: Get.width,
                   decoration: BoxDecoration(
-                    color: AppColors.white,
+                    color: AppColors.containerBg,
                     borderRadius: BorderRadius.circular(18),
-                    border: Border.all(
-                      color: AppColors.divider,
-                      width: 1.3,
-                    ),
+                    //border removed when changing design
+                    // border: Border.all(
+                    //   color: AppColors.divider,
+                    //   width: 1.3,
+                    // ),
                   ),
                   margin:
                       const EdgeInsets.only(left: 10, right: 10, bottom: 10),
@@ -1037,14 +1063,14 @@ class SpecialistListItemView extends StatelessWidget {
                                 getAllDoctors?.name ?? "",
                                 style: FontStyle.fontStyleW600(
                                   fontSize: 16,
-                                  fontColor: AppColors.title,
+                                  fontColor: AppColors.primaryAppColor1,
                                 ),
                               ),
                               Text(
                                 getAllDoctors?.degree?.join(", ") ?? "",
                                 style: FontStyle.fontStyleW500(
                                   fontSize: 13.5,
-                                  fontColor: AppColors.degreeText,
+                                  fontColor: AppColors.primaryAppColorTitle,
                                 ),
                               ),
                               Container(
@@ -1053,8 +1079,8 @@ class SpecialistListItemView extends StatelessWidget {
                                     const EdgeInsets.only(top: 5, bottom: 5),
                                 decoration: BoxDecoration(
                                   border: Border.all(
-                                    color: AppColors.divider,
-                                    width: 1.2,
+                                    color: AppColors.divider1,
+                                    width: 0.50,
                                   ),
                                 ),
                               ),
@@ -1064,7 +1090,7 @@ class SpecialistListItemView extends StatelessWidget {
                                   '${getAllDoctors?.designation} | ${getAllDoctors?.clinicName}',
                                   style: FontStyle.fontStyleW400(
                                     fontSize: 13,
-                                    fontColor: AppColors.degreeText,
+                                    fontColor: AppColors.primaryAppColorTitle,
                                   ),
                                   overflow: TextOverflow.ellipsis,
                                 ),

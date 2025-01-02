@@ -67,7 +67,7 @@ class AppAsset {
   static const icLogo = "${getIconsPath}logo.png";
   static const icMedClipFilled = "${getIconsPath}med_clip_filled.png";
   static const icMedClipOutline = "${getIconsPath}med_clip_outline.png";
-  static const icMessage = "${getIconsPath}message.png";
+  static const icMessage = "${getIconsPath}message1.png";
   static const icMic = "${getIconsPath}mic.png";
   static const icMicOff = "${getIconsPath}mic_off.png";
   static const icMobile = "${getIconsPath}mobile.png";

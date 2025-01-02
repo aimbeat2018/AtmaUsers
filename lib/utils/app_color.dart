@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 class AppColors {
   static Color primaryAppColor1 = const Color(0xff004D89);
   static Color primaryAppColor2 = const Color(0xff004D89);
+  static Color primaryAppColorTitle = const Color(0xb2004d89);
+  static Color primaryAppColorTitle2 = const Color(0xcc004d89);
+  static Color tabUnselectText1 = const Color(0xff00508d);
   static Color bottomLabel = const Color(0xff3B436F);
   static Color categoryText = const Color(0xff38408B);
   static Color title = const Color(0xff2F377A);
@@ -15,6 +18,8 @@ class AppColors {
   static Color dialogText = const Color(0xff757DA6);
   static Color tabUnselectText = const Color(0xff7A83B2);
   static Color degreeText = const Color(0xff8696BB);
+  static Color degreeText1 = const Color(0xB3454545);
+  static Color degreeText2 = const Color(0xFF757575);
   static Color serviceDot = const Color(0xff8292B7);
   static Color ratingMessage = const Color(0xff8A8EB1);
   static Color receiveMsg = const Color(0xff5D6184);
@@ -33,6 +38,8 @@ class AppColors {
   static Color loginBorder = const Color(0xffA7A7A7);
   static Color loginText = const Color(0xff3E4673);
   static Color google = const Color(0xffBDDFF9);
+  static Color containerBg = const Color(0xffe4f3ff);
+  static Color containerBg1 = const Color(0xffc9e7ff);
   static Color user = const Color(0xffD5D7EC);
   static Color message1 = const Color(0xff2C8DE6);
   static Color message2 = const Color(0xff4173F3);
@@ -46,6 +53,8 @@ class AppColors {
   static Color notificationTitle = const Color(0xff34D20C);
   static Color callReceive = const Color(0xff22C108);
   static Color greenBox = const Color(0xffE0FDDF);
+  static Color greenBox1 = const Color(0x2605eb00);
+  static Color greenBoxText = const Color(0xff038700);
   static Color redBox = const Color(0xffFFEEF0);
   static Color notificationTitle2 = const Color(0xffF01A41);
   static Color rating = const Color(0xffFFA722);
@@ -85,6 +94,7 @@ class AppColors {
   static Color accountLogin = const Color(0xff606060);
   static Color registrationDes = const Color(0xff677089);
   static Color divider = const Color(0xffF4F4F4);
+  static Color divider1 = const Color(0x4D000000);
   static Color bottomSheetDivider = const Color(0xffEBEEF5);
   static Color black = const Color(0xff000000);
   static Color transparent = Colors.transparent;
