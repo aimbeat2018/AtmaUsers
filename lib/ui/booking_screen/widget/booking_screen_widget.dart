@@ -127,7 +127,8 @@ class BookingBottomView extends StatelessWidget {
                   height: Get.height * 0.06,
                   width: Get.width * 0.90,
                   borderRadius: 11,
-                  gradientColor: [AppColors.call1, AppColors.call2],
+                  color: AppColors.primaryAppColor2,
+                  // gradientColor: [AppColors.call1, AppColors.call2],
                   text: EnumLocale.txtConfirmBooking.name.tr,
                   textStyle: FontStyle.fontStyleW600(
                     fontSize: 15,
@@ -153,16 +154,16 @@ class BookingInfoView extends StatelessWidget {
       builder: (logic) {
         return Container(
           decoration: BoxDecoration(
-            boxShadow: [
-              BoxShadow(
-                color: AppColors.black.withOpacity(0.1),
-                offset: const Offset(
-                  0.8,
-                  0.8,
-                ),
-                blurRadius: 5.0,
-              ),
-            ],
+            // boxShadow: [
+            //   BoxShadow(
+            //     color: AppColors.black.withOpacity(0.1),
+            //     offset: const Offset(
+            //       0.8,
+            //       0.8,
+            //     ),
+            //     blurRadius: 5.0,
+            //   ),
+            // ],
             color: AppColors.containerBg,
           ),
           margin: const EdgeInsets.only(bottom: 12),
@@ -428,7 +429,7 @@ class BookingSlotView extends StatelessWidget {
                       ),
                       Text(
                         "TO",
-                        style: FontStyle.fontStyleW600(
+                        style: FontStyle.fontStyleW500(
                           fontSize: 17,
                           fontColor: AppColors.degreeText2,
                         ),
@@ -504,7 +505,7 @@ class BookingSlotView extends StatelessWidget {
                             ),
                             Text(
                               "TO",
-                              style: FontStyle.fontStyleW600(
+                              style: FontStyle.fontStyleW500(
                                 fontSize: 17,
                                 fontColor: AppColors.degreeText2,
                               ),
@@ -959,17 +960,17 @@ class BookingPatientView extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10.0),
             color: AppColors.containerBg,
-            boxShadow: [
-              BoxShadow(
-                color: AppColors.black.withOpacity(0.08),
-                offset: const Offset(
-                  0.5,
-                  0.8,
-                ),
-                blurRadius: 3.0,
-                spreadRadius: 0.2,
-              ),
-            ],
+            // boxShadow: [
+            //   BoxShadow(
+            //     color: AppColors.black.withOpacity(0.08),
+            //     offset: const Offset(
+            //       0.5,
+            //       0.8,
+            //     ),
+            //     blurRadius: 3.0,
+            //     spreadRadius: 0.2,
+            //   ),
+            // ],
           ),
           child: Theme(
             data: Theme.of(context).copyWith(dividerColor: AppColors.transparent),
@@ -1086,6 +1087,7 @@ class BookingProblemView extends StatelessWidget {
                 ),
               ).paddingOnly(left: 12, bottom: 12),
               CustomTextField(
+                cursorColor: Colors.black,
                 filled: true,
                 fillColor: AppColors.containerBg,
                 controller: logic.problemController,
@@ -1145,8 +1147,8 @@ class BookingUploadPhotoView extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Image.asset(
-                          AppAsset.icUpload,
-                          height: 40,
+                          AppAsset.icUpload1,
+                          height: 30,
                           width: 40,
                           color: AppColors.black,
                         ),
@@ -1165,52 +1167,54 @@ class BookingUploadPhotoView extends StatelessWidget {
                 ),
                 logic.imageFileList?.isEmpty == true
                     ? const SizedBox()
-                    : SizedBox(
-                        width: 230,
-                        height: Get.height * 0.15,
-                        child: ListView.builder(
-                          itemCount: logic.imageFileList!.length >= 5 ? 5 : logic.imageFileList!.length,
-                          scrollDirection: Axis.horizontal,
-                          shrinkWrap: true,
-                          physics: const BouncingScrollPhysics(),
-                          itemBuilder: (context, index) {
-                            return Stack(
-                              children: [
-                                Container(
-                                  height: Get.height * 0.15,
-                                  width: Get.width * 0.3,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(16),
-                                    image: DecorationImage(
-                                      image: FileImage(File(logic.imageFileList![index].path)),
-                                      fit: BoxFit.cover,
+                    : Expanded(
+                      child: SizedBox(
+                          width: 230,
+                          height: Get.height * 0.15,
+                          child: ListView.builder(
+                            itemCount: logic.imageFileList!.length >= 5 ? 5 : logic.imageFileList!.length,
+                            scrollDirection: Axis.horizontal,
+                            shrinkWrap: true,
+                            physics: const BouncingScrollPhysics(),
+                            itemBuilder: (context, index) {
+                              return Stack(
+                                children: [
+                                  Container(
+                                    height: Get.height * 0.15,
+                                    width: Get.width * 0.3,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(16),
+                                      image: DecorationImage(
+                                        image: FileImage(File(logic.imageFileList![index].path)),
+                                        fit: BoxFit.cover,
+                                      ),
                                     ),
-                                  ),
-                                ).paddingOnly(left: 5),
-                                Positioned(
-                                  left: Get.width * 0.23,
-                                  top: 5,
-                                  child: GetBuilder<BookingScreenController>(
-                                    id: Constant.idRemoveImage,
-                                    builder: (logic) {
-                                      return InkWell(
-                                        onTap: () {
-                                          logic.onRemoveImage(index);
-                                        },
-                                        child: Image.asset(
-                                          AppAsset.icClose,
-                                          height: 25,
-                                          width: 25,
-                                        ),
-                                      );
-                                    },
-                                  ),
-                                )
-                              ],
-                            );
-                          },
+                                  ).paddingOnly(left: 5),
+                                  Positioned(
+                                    left: Get.width * 0.23,
+                                    top: 5,
+                                    child: GetBuilder<BookingScreenController>(
+                                      id: Constant.idRemoveImage,
+                                      builder: (logic) {
+                                        return InkWell(
+                                          onTap: () {
+                                            logic.onRemoveImage(index);
+                                          },
+                                          child: Image.asset(
+                                            AppAsset.icClose,
+                                            height: 25,
+                                            width: 25,
+                                          ),
+                                        );
+                                      },
+                                    ),
+                                  )
+                                ],
+                              );
+                            },
+                          ),
                         ),
-                      ),
+                    ),
               ],
             );
           },

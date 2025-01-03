@@ -777,6 +777,19 @@ class HomeBannerView extends StatelessWidget {
   }
 }
 
+
+/// =================== Lab test =================== ///
+class LabTestView extends StatelessWidget {
+  const LabTestView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Image.asset(AppAsset.labTestImg);
+  }
+}
+
+
+
 /// =================== Specialist Title =================== ///
 class HomeSpecialistTitleView extends StatelessWidget {
   const HomeSpecialistTitleView({super.key});
@@ -858,8 +871,7 @@ class HomeTabBarView extends StatelessWidget {
         return DefaultTabController(
           length: logic.addData?.length ?? 0,
           child: logic.isLoading
-              ? Shimmers.homeTabShimmer()
-              : TabBar(
+              ? Shimmers.homeTabShimmer() : TabBar(
                   controller: logic.tabController,
                   tabs: logic.addData?.map<Tab>((category) {
                         return Tab(
@@ -871,7 +883,8 @@ class HomeTabBarView extends StatelessWidget {
                     fontSize: 13.5,
                     fontColor: AppColors.white,
                   ),
-                  physics: const BouncingScrollPhysics(
+                  physics:
+                  const BouncingScrollPhysics(
                       parent: AlwaysScrollableScrollPhysics()),
                   padding:
                       const EdgeInsets.symmetric(horizontal: 16, vertical: 10),

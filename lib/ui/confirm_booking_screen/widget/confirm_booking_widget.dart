@@ -121,7 +121,8 @@ class ConfirmBookingBottomView extends StatelessWidget {
                       height: Get.height * 0.06,
                       width: Get.width * 0.90,
                       borderRadius: 11,
-                      gradientColor: [AppColors.call1, AppColors.call2],
+                      color: AppColors.primaryAppColor2,
+                      // gradientColor: [AppColors.call1, AppColors.call2],
                       text: EnumLocale.txtPayNow.name.tr,
                       textStyle: FontStyle.fontStyleW600(
                         fontSize: 16,
@@ -151,7 +152,7 @@ class ConfirmBookingBottomView extends StatelessWidget {
                     "$currency ${walletAmount?.toStringAsFixed(2)}",
                     style: FontStyle.fontStyleW600(
                       fontSize: 12,
-                      fontColor: AppColors.title,
+                      fontColor: AppColors.primaryAppColor2,
                     ),
                   );
                 },
@@ -631,10 +632,11 @@ class ConfirmBookingBottomSheetView extends StatelessWidget {
                         },
                         height: Get.height * 0.065,
                         width: Get.width * 0.93,
-                        gradientColor: [
-                          AppColors.call1,
-                          AppColors.call2,
-                        ],
+                        color: AppColors.primaryAppColor2,
+                        // gradientColor: [
+                        //   AppColors.call1,
+                        //   AppColors.call2,
+                        // ],
                         borderRadius: 12,
                         text: EnumLocale.txtRechargeNow.name.tr,
                         textStyle: FontStyle.fontStyleW600(
@@ -662,17 +664,17 @@ class ConfirmBookingInfoView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        boxShadow: [
-          BoxShadow(
-            color: AppColors.black.withOpacity(0.1),
-            offset: const Offset(
-              0.8,
-              0.8,
-            ),
-            blurRadius: 5.0,
-          ),
-        ],
-        color: AppColors.white,
+        // boxShadow: [
+        //   BoxShadow(
+        //     color: AppColors.black.withOpacity(0.1),
+        //     offset: const Offset(
+        //       0.8,
+        //       0.8,
+        //     ),
+        //     blurRadius: 5.0,
+        //   ),
+        // ],
+        color: AppColors.containerBg,
       ),
       child: GetBuilder<ConfirmBookingController>(
         builder: (logic) {
@@ -707,15 +709,15 @@ class ConfirmBookingInfoView extends StatelessWidget {
                   children: [
                     Text(
                       logic.doctorName ?? "",
-                      style: FontStyle.fontStyleW700(
+                      style: FontStyle.fontStyleW600(
                         fontSize: 15,
-                        fontColor: AppColors.title,
+                        fontColor: AppColors.primaryAppColor2,
                       ),
                     ),
                     Container(
                       decoration: BoxDecoration(
-                        color: AppColors.specialistBox,
-                        borderRadius: BorderRadius.circular(4),
+                        color: AppColors.containerBg1,
+                        borderRadius: BorderRadius.circular(8),
                       ),
                       child: Padding(
                         padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 10),
@@ -723,7 +725,7 @@ class ConfirmBookingInfoView extends StatelessWidget {
                           logic.doctorDesignation ?? "",
                           style: FontStyle.fontStyleW500(
                             fontSize: 12,
-                            fontColor: AppColors.specialist,
+                            fontColor: AppColors.primaryAppColorTitle2,
                           ),
                         ),
                       ),
@@ -732,7 +734,7 @@ class ConfirmBookingInfoView extends StatelessWidget {
                       logic.doctorDegree ?? "",
                       style: FontStyle.fontStyleW500(
                         fontSize: 14,
-                        fontColor: AppColors.degreeText,
+                        fontColor: AppColors.primaryAppColorTitle,
                       ),
                     ),
                   ],
@@ -756,12 +758,22 @@ class ConfirmBookingAppointmentView extends StatelessWidget {
       height: Get.height * 0.18,
       width: Get.width,
       decoration: BoxDecoration(
-        color: AppColors.specialistBox,
+        color: AppColors.white,
         borderRadius: BorderRadius.circular(16),
         border: Border.all(
           color: AppColors.boxBorder,
           width: 1.5,
         ),
+        boxShadow: [
+          BoxShadow(
+            color: AppColors.black.withOpacity(0.1),
+            offset: const Offset(
+              3.0,
+              3.0,
+            ),
+            blurRadius: 8.0,
+          ), //BoxShadow
+        ],
       ),
       child: GetBuilder<ConfirmBookingController>(
         builder: (logic) {
@@ -771,7 +783,7 @@ class ConfirmBookingAppointmentView extends StatelessWidget {
                 height: Get.height * 0.062,
                 width: Get.width,
                 decoration: BoxDecoration(
-                  color: AppColors.scheduleBox,
+                  color: AppColors.containerBg,
                   borderRadius: const BorderRadius.only(
                     topLeft: Radius.circular(16),
                     topRight: Radius.circular(16),
@@ -783,12 +795,13 @@ class ConfirmBookingAppointmentView extends StatelessWidget {
                       AppAsset.icAppointmentFilled,
                       height: 28,
                       width: 28,
+                      color: AppColors.black,
                     ).paddingOnly(left: 12, right: 15),
                     Text(
                       EnumLocale.txtAppointmentSchedule.name.tr,
                       style: FontStyle.fontStyleW700(
                         fontSize: 15,
-                        fontColor: AppColors.title,
+                        fontColor: AppColors.black,
                       ),
                     )
                   ],
@@ -893,7 +906,7 @@ class ConfirmBookingPaymentView extends StatelessWidget {
                 height: Get.height * 0.055,
                 width: Get.width,
                 decoration: BoxDecoration(
-                  color: AppColors.scheduleBox,
+                  color: AppColors.containerBg,
                   borderRadius: const BorderRadius.only(
                     topLeft: Radius.circular(16),
                     topRight: Radius.circular(16),
@@ -905,12 +918,13 @@ class ConfirmBookingPaymentView extends StatelessWidget {
                       AppAsset.icWallet,
                       height: 28,
                       width: 28,
+                      color: AppColors.black,
                     ).paddingOnly(left: 12, right: 15),
                     Text(
                       EnumLocale.txtPaymentAmount.name.tr,
                       style: FontStyle.fontStyleW700(
                         fontSize: 15,
-                        fontColor: AppColors.title,
+                        fontColor:  AppColors.black,
                       ),
                     )
                   ],
@@ -920,7 +934,8 @@ class ConfirmBookingPaymentView extends StatelessWidget {
                 Container(
                   height: Get.height * 0.063,
                   decoration: BoxDecoration(
-                    color: i.isOdd ? AppColors.specialistBox2 : AppColors.specialistBox,
+                      color:AppColors.white,
+                    // color: i.isOdd ? AppColors.specialistBox2 : AppColors.specialistBox,
                   ),
                   margin: const EdgeInsets.only(bottom: 3),
                   padding: const EdgeInsets.only(left: 15, right: 15),
@@ -945,42 +960,45 @@ class ConfirmBookingPaymentView extends StatelessWidget {
                     ],
                   ),
                 ),
-              Container(
-                height: Get.height * 0.065,
-                width: Get.width,
-                decoration: BoxDecoration(
-                  borderRadius: const BorderRadius.only(
-                    bottomRight: Radius.circular(16),
-                    bottomLeft: Radius.circular(16),
-                  ),
-                  gradient: LinearGradient(
-                    colors: [
-                      AppColors.primaryAppColor1,
-                      AppColors.primaryAppColor2,
-                    ],
-                    begin: Alignment.centerLeft,
-                    end: Alignment.centerRight,
-                  ),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      EnumLocale.txtPayableAmount.name.tr,
-                      style: FontStyle.fontStyleW500(
-                        fontSize: 14,
-                        fontColor: AppColors.white,
-                      ),
+              Padding(
+                padding: const EdgeInsets.only(top:7.0),
+                child: Container(
+                  height: Get.height * 0.065,
+                  width: Get.width,
+                  decoration: BoxDecoration(
+                    borderRadius: const BorderRadius.only(
+                      bottomRight: Radius.circular(14),
+                      bottomLeft: Radius.circular(14),
                     ),
-                    Text(
-                      "$currency ${logic.withDiscountAmount}",
-                      style: FontStyle.fontStyleW700(
-                        fontSize: 16,
-                        fontColor: AppColors.white,
+                    gradient: LinearGradient(
+                      colors: [
+                        AppColors.primaryAppColor1,
+                        AppColors.primaryAppColor2,
+                      ],
+                      begin: Alignment.centerLeft,
+                      end: Alignment.centerRight,
+                    ),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        EnumLocale.txtPayableAmount.name.tr,
+                        style: FontStyle.fontStyleW500(
+                          fontSize: 14,
+                          fontColor: AppColors.white,
+                        ),
                       ),
-                    )
-                  ],
-                ).paddingOnly(left: 15, right: 15),
+                      Text(
+                        "$currency ${logic.withDiscountAmount}",
+                        style: FontStyle.fontStyleW700(
+                          fontSize: 16,
+                          fontColor: AppColors.white,
+                        ),
+                      )
+                    ],
+                  ).paddingOnly(left: 15, right: 15),
+                ),
               ),
             ],
           ),
@@ -1008,23 +1026,36 @@ class ConfirmBookingCouponView extends StatelessWidget {
             });
           },
           overlayColor: WidgetStatePropertyAll(AppColors.transparent),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              Image.asset(
-                AppAsset.icCoupon,
-                height: 25,
-                width: 25,
-              ),
-              Text(
-                EnumLocale.txtApplyCoupon.name.tr,
-                style: FontStyle.fontStyleW600(
-                  fontSize: 12.5,
-                  fontColor: AppColors.title,
+          child: Padding(
+            padding: const EdgeInsets.only(left: 210.0, right: 20.0, top:10.0),
+            child: Container(
+              decoration: BoxDecoration(
+                border: Border.all(
+                  color: AppColors.primaryAppColor1,
                 ),
-              ).paddingOnly(left: 10, right: 25)
-            ],
-          ).paddingOnly(top: 15, bottom: 20),
+                borderRadius: BorderRadius.circular(10.0)
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    AppAsset.icCoupon2,
+                    height: 25,
+                    width: 25,
+                    color: AppColors.black,
+                  ),
+                  const SizedBox(width: 5),
+                  Text(
+                    EnumLocale.txtApplyCoupon.name.tr,
+                    style: FontStyle.fontStyleW600(
+                      fontSize: 12.5,
+                      fontColor: AppColors.title,
+                    ),
+                  ),
+                ],
+              ).paddingOnly(top: 10, bottom: 10),
+            ),
+          ),
         );
       },
     );

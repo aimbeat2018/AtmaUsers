@@ -74,7 +74,7 @@ class _EasyMonthSwitcherState extends State<EasyMonthSwitcher> {
                 },
                 icon: Icon(
                   Icons.arrow_back_ios_rounded,
-                  color: _isFirstMonth ? Colors.grey : null,
+                  color: _isFirstMonth ? null : Colors.black,
                 ),
               ),
             ),
@@ -102,7 +102,7 @@ class _EasyMonthSwitcherState extends State<EasyMonthSwitcher> {
               },
               icon: Icon(
                 Icons.arrow_forward_ios_rounded,
-                color: _isLastMonth ? Colors.grey : null,
+                color: _isLastMonth ? null : Colors.black,
               ),
             ),
           ),

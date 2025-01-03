@@ -37,6 +37,7 @@ class AppAsset {
   static const icConfirm = "${getIconsPath}confirm.png";
   static const icCoupon = "${getIconsPath}coupon.png";
   static const icCoupon1 = "${getIconsPath}coupon_1.png";
+  static const icCoupon2 = "${getIconsPath}coupon2.png";
   static const icCross = "${getIconsPath}cross.png";
   static const icDeleteAccount = "${getIconsPath}delete_account.png";
   static const icDislike = "${getIconsPath}dislike.png";
@@ -104,6 +105,7 @@ class AppAsset {
   static const icSuccess = "${getIconsPath}success.png";
   static const icTerms = "${getIconsPath}terms.png";
   static const icUpload = "${getIconsPath}upload.png";
+  static const icUpload1 = "${getIconsPath}upload1.png";
   static const icUploadImage = "${getIconsPath}upload_image.png";
   static const icUserPlaceholder = "${getIconsPath}user_placeholder.png";
   static const icVCall = "${getIconsPath}v_call.png";
@@ -126,6 +128,7 @@ class AppAsset {
   static const imLocation = "${getImagesPath}location.png";
   static const imMan = "${getImagesPath}man.png";
   static const imWalletBox = "${getImagesPath}wallet_box.png";
+  static const labTestImg = "${getImagesPath}lab_test.png";
 
   /// =================== Country Icon =================== ///
   static const imChinese = "${getCountryPath}chinese.png";

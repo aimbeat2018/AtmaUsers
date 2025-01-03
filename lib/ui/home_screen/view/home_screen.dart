@@ -1,6 +1,7 @@
 import 'package:doctor/custom/dialog/exit_app_dialog.dart';
 import 'package:doctor/ui/home_screen/controller/home_screen_controller.dart';
 import 'package:doctor/ui/home_screen/widget/home_screen_widget.dart';
+import 'package:doctor/utils/app_asset.dart';
 import 'package:doctor/utils/app_color.dart';
 import 'package:doctor/utils/constant.dart';
 import 'package:flutter/material.dart';
@@ -58,10 +59,13 @@ class HomeScreen extends StatelessWidget {
                           (logic.getUpcomingAppointmentModel?.data?.length ?? 0) > 1
                               ? const MyAppointmentIndicator()
                               : const SizedBox(),
+                          SizedBox(height: 10,),
+                          const HomeBannerView(),
+                          SizedBox(height: 10,),
                           const HomeCategoryTitleView(),
                           const HomeCategoryView(),
                           SizedBox(height: 10,),
-                          const HomeBannerView(),
+                          const LabTestView(),
                           SizedBox(height: 10,),
                           const HomeSpecialistTitleView(),
                         ],

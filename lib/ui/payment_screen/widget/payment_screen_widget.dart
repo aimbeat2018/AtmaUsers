@@ -33,7 +33,7 @@ class PaymentTitleView extends StatelessWidget {
       EnumLocale.txtSelectPaymentMethod.name.tr,
       style: FontStyle.fontStyleW600(
         fontSize: 16.5,
-        fontColor: AppColors.title,
+        fontColor: AppColors.primaryAppColor2,
       ),
     ).paddingOnly(top: 15, left: 15, bottom: 15);
   }
@@ -320,7 +320,7 @@ class CashView extends StatelessWidget {
             height: Get.height * 0.085,
             width: Get.width,
             decoration: BoxDecoration(
-              color: AppColors.white,
+              color: AppColors.containerBg,
               borderRadius: BorderRadius.circular(14),
               boxShadow: [
                 BoxShadow(
@@ -421,7 +421,8 @@ class PaymentBottomView extends StatelessWidget {
                   height: Get.height * 0.06,
                   width: Get.width * 0.90,
                   borderRadius: 11,
-                  gradientColor: [AppColors.call1, AppColors.call2],
+                  color: AppColors.primaryAppColor2,
+                  // gradientColor: [AppColors.call1, AppColors.call2],
                   text: EnumLocale.txtPayNow.name.tr,
                   textStyle: FontStyle.fontStyleW600(
                     fontSize: 16,
