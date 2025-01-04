@@ -73,6 +73,7 @@ class AppColors {
   static Color disableSlot = const Color(0xffFFF5F5);
   static Color appointmentBorder = const Color(0xffF2F2F2);
   static Color disableSlotText = const Color(0xffEDB1B1);
+  static Color dateRedColor = const Color(0xff9d3825);
   static Color bannerIndicator = const Color(0xffD9DADD);
   static Color chatTextField = const Color(0xffFCFCFF);
   static Color border = const Color(0xffD1D3E5);
@@ -89,6 +90,7 @@ class AppColors {
   static Color viewMore = const Color(0xff9A9DA7);
   static Color time = const Color(0xff6D6D6F);
   static Color grey = const Color(0xff959595);
+  static Color grey1 = const Color(0x59000000);
   static Color description = const Color(0xff6C6C6E);
   static Color loginDes = const Color(0xff666666);
   static Color accountLogin = const Color(0xff606060);

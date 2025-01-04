@@ -41,60 +41,76 @@ class LanguageListView extends StatelessWidget {
                 logic.onChangeLanguage(languages[index], index);
                 logic.onLanguageSave();
               },
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    children: [
-                      /*Container(
-                        height: 46,
-                        width: 46,
-                        padding: const EdgeInsets.all(1.5),
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          border: Border.all(
-                            width: 1,
-                            color: AppColors.primaryAppColor1,
+              child: Container(
+                padding: const EdgeInsets.only(left: 10.0, right:10.0, top: 4.0),
+                margin:  const EdgeInsets.symmetric(vertical: 8.0),
+                decoration: BoxDecoration(
+                  color: AppColors.containerBg,
+                  borderRadius: BorderRadius.circular(6.0),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      Constant.countryList[index]["country"],
+                      style: FontStyle.fontStyleW600(
+                        fontSize: 15,
+                        fontColor: AppColors.title,
+                      ),
+                    ),
+                             /*     Row(
+                      children: [
+                        *//*Container(
+                          height: 46,
+                          width: 46,
+                          padding: const EdgeInsets.all(1.5),
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            border: Border.all(
+                              width: 1,
+                              color: AppColors.primaryAppColor1,
+                            ),
+                          ),
+                          clipBehavior: Clip.hardEdge,
+                          child: Image.asset(Constant.countryList[index]["image"]),
+                        ).paddingOnly(right: 8),*//*
+                        Text(
+                          Constant.countryList[index]["country"],
+                          style: FontStyle.fontStyleW600(
+                            fontSize: 15,
+                            fontColor: AppColors.title,
                           ),
                         ),
-                        clipBehavior: Clip.hardEdge,
-                        child: Image.asset(Constant.countryList[index]["image"]),
-                      ).paddingOnly(right: 8),*/
-                      Text(
-                        Constant.countryList[index]["country"],
-                        style: FontStyle.fontStyleW600(
-                          fontSize: 15,
-                          fontColor: AppColors.title,
+                      ],
+                    ),*/
+                    Container(
+                      height: Get.height * 0.06,
+                      width: Get.width * 0.06,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: logic.checkedValue == index ? AppColors.sortByBorder : AppColors.border,
+                          width: 1.3,
                         ),
+                        shape: BoxShape.circle,
                       ),
-                    ],
-                  ),
-                  Container(
-                    height: Get.height * 0.06,
-                    width: Get.width * 0.06,
-                    decoration: BoxDecoration(
-                      border: Border.all(
-                        color: logic.checkedValue == index ? AppColors.sortByBorder : AppColors.border,
-                        width: 1.3,
-                      ),
-                      shape: BoxShape.circle,
-                    ),
-                    padding: const EdgeInsets.all(1.5),
-                    child: logic.checkedValue == index
-                        ? Container(
-                            height: Get.height * 0.05,
-                            width: Get.width * 0.05,
-                            decoration: BoxDecoration(
-                              gradient: LinearGradient(
-                                colors: [AppColors.primaryAppColor1, AppColors.primaryAppColor2],
+                      padding: const EdgeInsets.all(1.5),
+                      child: logic.checkedValue == index
+                          ? Container(
+                              height: Get.height * 0.05,
+                              width: Get.width * 0.05,
+                              decoration: BoxDecoration(
+                                gradient: LinearGradient(
+                                  colors: [AppColors.primaryAppColor1, AppColors.primaryAppColor2],
+                                ),
+                                shape: BoxShape.circle,
                               ),
-                              shape: BoxShape.circle,
-                            ),
-                          )
-                        : const SizedBox.shrink(),
-                  ),
-                ],
-              ).paddingOnly(bottom: 15),
+                            )
+                          : const SizedBox.shrink(),
+                    ),
+                  ],
+                ).paddingOnly(bottom: 15),
+              ),
             );
           },
         );

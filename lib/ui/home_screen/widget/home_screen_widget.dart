@@ -784,7 +784,11 @@ class LabTestView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Image.asset(AppAsset.labTestImg);
+    return InkWell(
+      onTap:(){
+        Get.toNamed(AppRoutes.labTests);
+      },
+        child: Image.asset(AppAsset.labTestImg));
   }
 }
 

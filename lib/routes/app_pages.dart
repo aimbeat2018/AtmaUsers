@@ -33,6 +33,7 @@ import 'package:doctor/ui/confirm_booking_screen/binding/confirm_booking_binding
 import 'package:doctor/ui/confirm_booking_screen/view/confirm_booking_screen.dart';
 import 'package:doctor/ui/edit_profile_screen/binding/edit_profile_binding.dart';
 import 'package:doctor/ui/edit_profile_screen/view/edit_profile_screen.dart';
+import 'package:doctor/ui/events/view/events_screen.dart';
 import 'package:doctor/ui/forgot_password_screen/binding/forgot_password_binding.dart';
 import 'package:doctor/ui/forgot_password_screen/view/forgot_password_screen.dart';
 import 'package:doctor/ui/help_desk_history_screen/binding/help_desk_history_binding.dart';
@@ -43,6 +44,7 @@ import 'package:doctor/ui/history_screen/binding/history_screen_binding.dart';
 import 'package:doctor/ui/history_screen/view/history_screen.dart';
 import 'package:doctor/ui/home_screen/binding/home_screen_binding.dart';
 import 'package:doctor/ui/home_screen/view/home_screen.dart';
+import 'package:doctor/ui/lab_tests/view/lab_tests_screen.dart';
 import 'package:doctor/ui/language_screen/binding/language_screen_binding.dart';
 import 'package:doctor/ui/language_screen/view/language_screen.dart';
 import 'package:doctor/ui/login_screen/binding/login_screen_binding.dart';
@@ -333,6 +335,16 @@ class AppPages {
       name: AppRoutes.memberShip,
       page: () => const MembershipScreen(),
       binding: MembershipBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.events,
+      page: () => const EventsScreen(),
+      binding: MembershipBinding(), //change
+    ),
+    GetPage(
+      name: AppRoutes.labTests,
+      page: () => const LabTestsScreen(),
+      binding: MembershipBinding(), //change
     ),
     GetPage(
       name: AppRoutes.membershipCard,

@@ -17,7 +17,7 @@ class ProfileCustomTitle extends StatelessWidget {
           title,
           style: FontStyle.fontStyleW500(
             fontSize: 15,
-            fontColor: AppColors.textFieldTitle,
+            fontColor: AppColors.black,
           ),
         ).paddingOnly(left: 5, bottom: 10),
         Container(

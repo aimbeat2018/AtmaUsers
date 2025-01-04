@@ -9,6 +9,7 @@ import 'package:doctor/custom/profile/profile_custom_title.dart';
 import 'package:doctor/custom/profile/profile_menu.dart';
 import 'package:doctor/custom/progress_indicator/progress_dialog.dart';
 import 'package:doctor/routes/app_routes.dart';
+import 'package:doctor/ui/events/view/events_screen.dart';
 import 'package:doctor/ui/profile_screen/controller/profile_screen_controller.dart';
 import 'package:doctor/utils/api.dart';
 import 'package:doctor/utils/app_asset.dart';
@@ -99,9 +100,9 @@ class ProfileInfoView extends StatelessWidget {
                       Constant.storage.read("userName") ??
                           logic.getUserProfileModel?.user?.name ??
                           "",
-                      style: FontStyle.fontStyleW700(
+                      style: FontStyle.fontStyleW600(
                         fontSize: 16,
-                        fontColor: AppColors.title,
+                        fontColor: AppColors.primaryAppColor1,
                       ),
                     ),
                     Text(
@@ -110,7 +111,7 @@ class ProfileInfoView extends StatelessWidget {
                           "",
                       style: FontStyle.fontStyleW500(
                         fontSize: 14,
-                        fontColor: AppColors.degreeText,
+                        fontColor: AppColors.primaryAppColor1,
                       ),
                     ),
                     InkWell(
@@ -128,7 +129,7 @@ class ProfileInfoView extends StatelessWidget {
                       },
                       child: Container(
                         decoration: BoxDecoration(
-                          color: AppColors.specialistBox,
+                          color: AppColors.containerBg,
                           borderRadius: BorderRadius.circular(46),
                         ),
                         padding: const EdgeInsets.symmetric(
@@ -139,6 +140,7 @@ class ProfileInfoView extends StatelessWidget {
                               Image.asset(
                                 AppAsset.icEditProfile,
                                 height: 20,
+                                color: AppColors.primaryAppColor1,
                               ),
                               VerticalDivider(
                                 thickness: 1.5,
@@ -148,7 +150,7 @@ class ProfileInfoView extends StatelessWidget {
                                 EnumLocale.txtEditProfile.name.tr,
                                 style: FontStyle.fontStyleW600(
                                   fontSize: 13,
-                                  fontColor: AppColors.specialist,
+                                  fontColor: AppColors.primaryAppColor1,
                                 ),
                               ),
                             ],
@@ -180,6 +182,17 @@ class ProfileGeneralView extends StatelessWidget {
             title: EnumLocale.txtGeneral.name.tr,
             widget: Column(
               children: [
+                ProfileMenu(
+                  image: AppAsset.icMembershipOutline,
+                  text: /*EnumLocale.txtMembership.name.tr*/"Events",
+                  isArrow: true,
+                  onTap: () {
+                    // Navigator.push(context, MaterialPageRoute(builder: (context) => EventsScreen()));
+                      Get.toNamed(AppRoutes.events);
+                  },
+                ),
+                Divider(height: 1.5, color: AppColors.white)
+                    .paddingOnly(top: 15, bottom: 15),
                 ProfileMenu(
                   image: AppAsset.icMembershipOutline,
                   text: EnumLocale.txtMembership.name.tr,
@@ -257,12 +270,13 @@ class ProfileAccountView extends StatelessWidget {
                 isArrow: false,
                 leading: Switch(
                   value: logic.isSwitchOn,
-                  activeColor: AppColors.green,
-                  activeTrackColor: AppColors.categoryCircle,
+                  activeColor: AppColors.primaryAppColor1,
+                  activeTrackColor: AppColors.white,
                   inactiveThumbColor: AppColors.notificationTitle2,
                   inactiveTrackColor: AppColors.categoryCircle,
                   trackOutlineColor:
-                      WidgetStatePropertyAll(AppColors.switchBorder),
+                      WidgetStatePropertyAll(AppColors.primaryAppColor1),
+                  trackOutlineWidth: const WidgetStatePropertyAll(1.0),
                   trackColor: WidgetStatePropertyAll(AppColors.switchBox),
                   onChanged: (value) {
                     logic.onSwitch(value);

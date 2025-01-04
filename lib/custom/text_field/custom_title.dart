@@ -22,7 +22,7 @@ class CustomTitle extends StatelessWidget {
           title,
           style: FontStyle.fontStyleW500(
             fontSize: 15,
-            fontColor: AppColors.textFieldTitle,
+            fontColor: AppColors.black,
           ),
         ).paddingOnly(bottom: 12,left: 5),
         method

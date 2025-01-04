@@ -129,6 +129,7 @@ class AppAsset {
   static const imMan = "${getImagesPath}man.png";
   static const imWalletBox = "${getImagesPath}wallet_box.png";
   static const labTestImg = "${getImagesPath}lab_test.png";
+  static const liveEventImg = "${getImagesPath}live_events.png";
 
   /// =================== Country Icon =================== ///
   static const imChinese = "${getCountryPath}chinese.png";

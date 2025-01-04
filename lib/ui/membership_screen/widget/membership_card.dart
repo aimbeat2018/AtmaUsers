@@ -136,9 +136,10 @@ class MembershipCard extends StatelessWidget {
                               ),
                               Spacer(),
                               // Footer Info
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
+                              //changed to column from row
+                              Column(
+                                // mainAxisAlignment:
+                                //     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Row(
                                     children: [
@@ -148,6 +149,7 @@ class MembershipCard extends StatelessWidget {
                                           style: TextStyle(fontSize: 12)),
                                     ],
                                   ),
+                                  SizedBox(height: 5),
                                   Row(
                                     children: [
                                       Icon(Icons.web, size: 16),
@@ -158,6 +160,7 @@ class MembershipCard extends StatelessWidget {
                                       ),
                                     ],
                                   ),
+                                  SizedBox(height: 5),
                                   Row(
                                     children: [
                                       Icon(Icons.email, size: 16),

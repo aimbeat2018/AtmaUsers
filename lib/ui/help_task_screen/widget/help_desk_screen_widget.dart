@@ -36,7 +36,7 @@ class HelpDeskAppBarView extends StatelessWidget {
               shape: BoxShape.circle,
               color: AppColors.white,
             ),
-            child: Image.asset(AppAsset.icHistory).paddingAll(8),
+            child: Image.asset(AppAsset.icHistory, color: AppColors.primaryAppColor1).paddingAll(8),
           ).paddingOnly(right: 12),
         )
       ],
@@ -160,17 +160,17 @@ class HelpDeskTypeView extends StatelessWidget {
                   color: AppColors.categoryCircle,
                   borderRadius: BorderRadius.circular(8),
                   border: Border.all(
-                    color: logic.selectedType == index ? AppColors.title : AppColors.typeSelect,
+                    color: logic.selectedType == index ? AppColors.primaryAppColor1 : AppColors.typeSelect,
                     width: 1.2,
                   ),
                 ),
-                child: logic.selectedType == index ? Image.asset(AppAsset.icCheck).paddingAll(7) : const SizedBox(),
+                child: logic.selectedType == index ? Image.asset(AppAsset.icCheck, color: AppColors.primaryAppColor1).paddingAll(7) : const SizedBox(),
               ),
               Text(
                 logic.type[index],
                 style: FontStyle.fontStyleW600(
                   fontSize: 15,
-                  fontColor: AppColors.title,
+                  fontColor: AppColors.primaryAppColor1,
                 ),
               ).paddingOnly(left: 8)
             ],
@@ -213,7 +213,7 @@ class HelpDeskAddImageview extends StatelessWidget {
                     ),
                     child: Row(
                       children: [
-                        Image.asset(AppAsset.icClipImage, height: 25),
+                        Image.asset(AppAsset.icClipImage, height: 25, color: AppColors.primaryAppColor1),
                         VerticalDivider(
                           thickness: 1.5,
                           color: AppColors.verticalBorder,
@@ -224,7 +224,7 @@ class HelpDeskAddImageview extends StatelessWidget {
                           EnumLocale.txtBrowse.name.tr,
                           style: FontStyle.fontStyleW500(
                             fontSize: 14,
-                            fontColor: AppColors.title,
+                            fontColor: AppColors.primaryAppColor1,
                           ),
                         )
                       ],

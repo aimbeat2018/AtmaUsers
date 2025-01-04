@@ -44,6 +44,8 @@ class AppRoutes {
   static const String language = '/language';
   static const String myWallet = '/myWallet';
   static const String memberShip = '/membership';
+  static const String events = '/events';
+  static const String labTests = '/labTests';
   static const String history = '/history';
   static const String payment = '/payment';
   static const String membershipCard = '/membershipCard';
