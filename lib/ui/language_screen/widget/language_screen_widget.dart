@@ -61,7 +61,8 @@ class LanguageListView extends StatelessWidget {
                     ),
                              /*     Row(
                       children: [
-                        *//*Container(
+                        */
+                    /*Container(
                           height: 46,
                           width: 46,
                           padding: const EdgeInsets.all(1.5),
@@ -74,7 +75,8 @@ class LanguageListView extends StatelessWidget {
                           ),
                           clipBehavior: Clip.hardEdge,
                           child: Image.asset(Constant.countryList[index]["image"]),
-                        ).paddingOnly(right: 8),*//*
+                        ).paddingOnly(right: 8),*/
+                    /*
                         Text(
                           Constant.countryList[index]["country"],
                           style: FontStyle.fontStyleW600(

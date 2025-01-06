@@ -16,6 +16,10 @@ class LabTestsScreen extends StatelessWidget {
           children: [
             SearchTestType(),
             MostSearchedTitleView(),
+            MostSearchedCategoryView(),
+            RecommendedByExpertsTitle(),
+            RecommendedByExpertItems(),
+            RecommendedByExpertBottomView(),
           ],
         ),
       ),

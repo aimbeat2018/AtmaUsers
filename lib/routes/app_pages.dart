@@ -1,4 +1,5 @@
 import 'package:doctor/routes/app_routes.dart';
+import 'package:doctor/ui/add_new_address/view/add_new_address_screen.dart';
 import 'package:doctor/ui/add_number_screen/binding/add_number_binding.dart';
 import 'package:doctor/ui/add_number_screen/view/add_number_screen.dart';
 import 'package:doctor/ui/add_patient_screen/binding/add_patient_binding.dart';
@@ -344,6 +345,11 @@ class AppPages {
     GetPage(
       name: AppRoutes.labTests,
       page: () => const LabTestsScreen(),
+      binding: MembershipBinding(), //change
+    ),
+    GetPage(
+      name: AppRoutes.addAddress,
+      page: () => const AddNewAddressScreen(),
       binding: MembershipBinding(), //change
     ),
     GetPage(

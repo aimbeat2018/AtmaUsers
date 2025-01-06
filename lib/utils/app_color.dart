@@ -43,6 +43,7 @@ class AppColors {
   static Color user = const Color(0xffD5D7EC);
   static Color message1 = const Color(0xff2C8DE6);
   static Color message2 = const Color(0xff4173F3);
+  static Color containerBlue = const Color(0xff4663ac);
   static Color online = const Color(0xffEBFFED);
   static Color onlineText = const Color(0xff12A82A);
   static Color green = const Color(0xff14B717);
@@ -100,5 +101,7 @@ class AppColors {
   static Color bottomSheetDivider = const Color(0xffEBEEF5);
   static Color black = const Color(0xff000000);
   static Color transparent = Colors.transparent;
+  static Color containerGrey = const Color(0xffededed);
+  static Color dividerGrey = const Color(0xff3a3a3a);
   static Color atmaTextColor = const Color(0xffFFC1C7);
 }
