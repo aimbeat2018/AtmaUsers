@@ -43,6 +43,7 @@ class AppAsset {
   static const icDislike = "${getIconsPath}dislike.png";
   static const icDoctorPlaceholder = "${getIconsPath}doctor_placeholder.png";
   static const icEditProfile = "${getIconsPath}edit_profile.png";
+  static const icEditAdd = "${getIconsPath}edit.png";
   static const icExperience = "${getIconsPath}experience.png";
   static const icExpertise = "${getIconsPath}expertise.png";
   static const icEyeUnVisible = "${getIconsPath}eyeUnVisible.png";
@@ -64,6 +65,7 @@ class AppAsset {
   static const icLike = "${getIconsPath}like.png";
   static const icLocation = "${getIconsPath}location.png";
   static const icLocationFilled = "${getIconsPath}location_filled.png";
+  static const icLocationFilled2 = "${getIconsPath}location_filled2.png";
   static const icLogOut = "${getIconsPath}log_out.png";
   static const icLogo = "${getIconsPath}logo.png";
   static const icMedClipFilled = "${getIconsPath}med_clip_filled.png";
@@ -131,6 +133,7 @@ class AppAsset {
   static const labTestImg = "${getImagesPath}lab_test.png";
   static const liveEventImg = "${getImagesPath}live_events.png";
   static const medicineImg = "${getImagesPath}medicine.png";
+  static const availableLabsImg = "${getImagesPath}available_labs.png";
 
   /// =================== Country Icon =================== ///
   static const imChinese = "${getCountryPath}chinese.png";

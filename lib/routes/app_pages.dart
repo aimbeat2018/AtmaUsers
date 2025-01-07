@@ -1,5 +1,6 @@
 import 'package:doctor/routes/app_routes.dart';
 import 'package:doctor/ui/add_new_address/view/add_new_address_screen.dart';
+import 'package:doctor/ui/add_new_address/view/address_details_screen.dart';
 import 'package:doctor/ui/add_number_screen/binding/add_number_binding.dart';
 import 'package:doctor/ui/add_number_screen/view/add_number_screen.dart';
 import 'package:doctor/ui/add_patient_screen/binding/add_patient_binding.dart';
@@ -45,6 +46,7 @@ import 'package:doctor/ui/history_screen/binding/history_screen_binding.dart';
 import 'package:doctor/ui/history_screen/view/history_screen.dart';
 import 'package:doctor/ui/home_screen/binding/home_screen_binding.dart';
 import 'package:doctor/ui/home_screen/view/home_screen.dart';
+import 'package:doctor/ui/lab_tests/available_labs/view/available_labs_screen.dart';
 import 'package:doctor/ui/lab_tests/view/lab_tests_screen.dart';
 import 'package:doctor/ui/language_screen/binding/language_screen_binding.dart';
 import 'package:doctor/ui/language_screen/view/language_screen.dart';
@@ -349,7 +351,17 @@ class AppPages {
     ),
     GetPage(
       name: AppRoutes.addAddress,
+      page: () => const AddressDetailsScreen(),
+      binding: MembershipBinding(), //change
+    ),
+    GetPage(
+      name: AppRoutes.newAddress,
       page: () => const AddNewAddressScreen(),
+      binding: MembershipBinding(), //change
+    ),
+    GetPage(
+      name: AppRoutes.availableLabs,
+      page: () => const AvailableLabsScreen(),
       binding: MembershipBinding(), //change
     ),
     GetPage(

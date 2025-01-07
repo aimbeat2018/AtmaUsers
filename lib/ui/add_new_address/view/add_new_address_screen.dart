@@ -9,14 +9,13 @@ class AddNewAddressScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        flexibleSpace: const AddNewAddressAppBarView(),
+        flexibleSpace: const NewAddressAppBarView(),
       ),
-      body: const SingleChildScrollView(
+      body: SingleChildScrollView(
         child: Column(
           children: [
-            AddNewAddressButton(),
-            SaveAddressTitle(),
-            SelectAddress(),
+            NewAddressFields(),
+            NewAddressBottomView(),
           ],
         ),
       ),

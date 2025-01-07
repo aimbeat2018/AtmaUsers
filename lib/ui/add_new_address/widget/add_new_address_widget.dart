@@ -1,179 +1,295 @@
 import 'package:doctor/custom/app_bar/custom_app_bar.dart';
-import 'package:doctor/ui/lab_tests/widgets/lab_tests_widgets.dart';
-import 'package:doctor/ui/language_screen/controller/language_screen_controller.dart';
+import 'package:doctor/custom/app_button/primary_app_button.dart';
+import 'package:doctor/custom/text_field/custom_text_field.dart';
+import 'package:doctor/custom/text_field/custom_title.dart';
+import 'package:doctor/custom/upper_case_formatter/upper_case_formatter_class.dart';
+import 'package:doctor/routes/app_routes.dart';
 import 'package:doctor/utils/app_color.dart';
-import 'package:doctor/utils/constant.dart';
 import 'package:doctor/utils/enums.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_utils/src/extensions/internacionalization.dart';
-import 'package:doctor/utils/font_style.dart';
 import 'package:get/get_utils/src/extensions/widget_extensions.dart';
+import 'package:doctor/utils/font_style.dart';
 
-class AddNewAddressAppBarView extends StatelessWidget {
-  const AddNewAddressAppBarView({super.key});
+class NewAddressAppBarView extends StatelessWidget {
+  const NewAddressAppBarView({super.key});
 
   @override
   Widget build(BuildContext context) {
     return CustomAppBar(
-    title: EnumLocale.txtAddressDetails.name.tr,
-    showLeadingIcon: true,
+      title: EnumLocale.txtNewAddress.name.tr,
+      showLeadingIcon: true,
     );
   }
 }
-class AddNewAddressButton extends StatelessWidget {
-  const AddNewAddressButton({super.key});
+
+class NewAddressFields extends StatefulWidget {
+  const NewAddressFields({super.key});
+
+  @override
+  State<NewAddressFields> createState() => _NewAddressFieldsState();
+}
+
+class _NewAddressFieldsState extends State<NewAddressFields> {
+
+  final TextEditingController buildingNameController = TextEditingController();
+
+  final TextEditingController landmarkController = TextEditingController();
+
+  final TextEditingController areaController = TextEditingController();
+
+  final TextEditingController pinCodeController = TextEditingController();
+
+  final TextEditingController districtController = TextEditingController();
+
+  final TextEditingController stateController = TextEditingController();
+
+  final TextEditingController countryController = TextEditingController();
+
+  bool defaultAddressCheckbox = true;
+  String selectedAddressType = "Home";
+
+  List<String> addressTypes = [
+    "Home",
+    "Office",
+    'Default',
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
-          child: Container(
-            width: double.infinity,
-            padding: const EdgeInsets.all(15.0),
+        AddressCustomTitle(
+          title: EnumLocale.txtAddressType.name.tr,
+          method: Container(
+            padding: const EdgeInsets.symmetric(vertical: 3.0),
+            width: MediaQuery.of(context).size.width,
             decoration: BoxDecoration(
-              color: AppColors.containerBlue,
-              borderRadius: BorderRadius.circular(8.0),
+              color: AppColors.appBarBg,
+              borderRadius: BorderRadius.circular(10.0),
             ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  EnumLocale.txtAddNewAddress.name.tr,
-                  style: FontStyle.fontStyleW400(
-                  fontSize: 14,
-                  fontColor: AppColors.white,
-                ),),
-                Icon(Icons.add_circle_outline, color: Colors.white),
-              ],
+            child: DropdownButtonHideUnderline(
+              child: ButtonTheme(
+                alignedDropdown: true,
+                child: DropdownButton(
+                    borderRadius: BorderRadius.circular(10.0),
+                    padding: const EdgeInsets.only(right: 10.0),
+                    // isDense: true,
+                    isExpanded: true,
+                    dropdownColor: Colors.white,
+                    style: FontStyle.fontStyleW500(
+                      fontSize: 13,
+                      fontColor: AppColors.primaryAppColor1,
+                    ),
+                    value: selectedAddressType.isNotEmpty
+                        ? selectedAddressType
+                        : null,
+                    icon: Icon(
+                      Icons.keyboard_arrow_down_sharp,
+                      color: AppColors.primaryAppColor1,
+                    ),
+                    items: addressTypes.map((items) {
+                      return DropdownMenuItem(
+                        value: items,
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 5.0),
+                          child: Text(
+                            items,
+                            style: FontStyle.fontStyleW500(
+                              fontSize: 14,
+                              fontColor: AppColors.primaryAppColor1,
+                            ),
+                          ),
+                        ),
+                      );
+                    }).toList(),
+                    onChanged: (String? newValue) {
+                      setState(() {
+                        selectedAddressType = newValue!;
+                      });
+                    }),
+              ),
             ),
           ),
-        ),
+        ).paddingOnly(bottom: 20, top:20.0),
+        AddressCustomTitle(
+          title: EnumLocale.txtFlat.name.tr,
+          method: CustomTextField(
+            controller: buildingNameController,
+            filled: true,
+            fillColor: AppColors.appBarBg,
+            cursorColor: AppColors.title,
+            fontColor: AppColors.title,
+            fontSize: 15,
+            textInputAction: TextInputAction.next,
+            inputFormatters: [UpperCaseTextFormatter()],
+          ),
+        ).paddingOnly(bottom: 20),
+        AddressCustomTitle(
+          title: EnumLocale.txtLandmark.name.tr,
+          method: CustomTextField(
+            controller: landmarkController,
+            filled: true,
+            fillColor: AppColors.appBarBg,
+            cursorColor: AppColors.title,
+            fontColor: AppColors.title,
+            fontSize: 15,
+            textInputAction: TextInputAction.next,
+            inputFormatters: [UpperCaseTextFormatter()],
+          ),
+        ).paddingOnly(bottom: 20),
+        AddressCustomTitle(
+          title: EnumLocale.txtArea.name.tr,
+          method: CustomTextField(
+            controller: areaController,
+            filled: true,
+            fillColor: AppColors.appBarBg,
+            cursorColor: AppColors.title,
+            fontColor: AppColors.title,
+            fontSize: 15,
+            textInputAction: TextInputAction.next,
+            inputFormatters: [UpperCaseTextFormatter()],
+          ),
+        ).paddingOnly(bottom: 20),
+        AddressCustomTitle(
+          title: EnumLocale.txtPincode.name.tr,
+          method: CustomTextField(
+            controller: pinCodeController,
+            filled: true,
+            fillColor: AppColors.appBarBg,
+            cursorColor: AppColors.title,
+            fontColor: AppColors.title,
+            fontSize: 15,
+            textInputAction: TextInputAction.next,
+            inputFormatters: [UpperCaseTextFormatter()],
+          ),
+        ).paddingOnly(bottom: 20),
+        AddressCustomTitle(
+          title: EnumLocale.txtDistrict.name.tr,
+          method: CustomTextField(
+            controller: districtController,
+            filled: true,
+            fillColor: AppColors.appBarBg,
+            cursorColor: AppColors.title,
+            fontColor: AppColors.title,
+            fontSize: 15,
+            textInputAction: TextInputAction.next,
+            inputFormatters: [UpperCaseTextFormatter()],
+          ),
+        ).paddingOnly(bottom: 20),
+        AddressCustomTitle(
+          title: EnumLocale.txtState.name.tr,
+          method: CustomTextField(
+            controller: stateController,
+            filled: true,
+            fillColor: AppColors.appBarBg,
+            cursorColor: AppColors.title,
+            fontColor: AppColors.title,
+            fontSize: 15,
+            textInputAction: TextInputAction.next,
+            inputFormatters: [UpperCaseTextFormatter()],
+          ),
+        ).paddingOnly(bottom: 20),
+        AddressCustomTitle(
+          title: EnumLocale.txtCountry.name.tr,
+          method: CustomTextField(
+            controller: countryController,
+            filled: true,
+            fillColor: AppColors.appBarBg,
+            cursorColor: AppColors.title,
+            fontColor: AppColors.title,
+            fontSize: 15,
+            textInputAction: TextInputAction.next,
+            inputFormatters: [UpperCaseTextFormatter()],
+          ),
+        ).paddingOnly(bottom: 20),
+        Row(children: [
+          Transform.scale(
+            scale: 1.2,
+            child: Checkbox(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(5.0),
+              ),
+              side: WidgetStateBorderSide.resolveWith((states) => BorderSide(
+                    color: AppColors.black,
+                    width: 1.5,
+                  )),
+              activeColor: AppColors.black,
+              value: defaultAddressCheckbox,
+              onChanged: (bool? value) {
+                setState(() {
+                  defaultAddressCheckbox = value!;
+                });
+              },
+            ),
+          ),
+          Text(
+            EnumLocale.txtDefaultAddress.name.tr,
+            style: FontStyle.fontStyleW400(
+              fontSize: 14,
+              fontColor: AppColors.black,
+            ),
+          )
+        ]),
       ],
-    );
+    ).paddingOnly(left: 13, right: 13);
   }
 }
 
-class SaveAddressTitle extends StatelessWidget {
-  const SaveAddressTitle({super.key});
+class NewAddressBottomView extends StatelessWidget {
+  const NewAddressBottomView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return IntrinsicHeight(
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          VerticalDivider(
-            indent: 14,
-            endIndent: 2,
-            thickness: 3,
-            color: AppColors.primaryAppColor1,
-          ).paddingOnly(left: 15),
-          Text(
-            EnumLocale.txtSaveAddress.name.tr,
-            style: FontStyle.fontStyleW600(
-              fontSize: 17,
-              fontColor: AppColors.black,
+    return Padding(
+      padding: const EdgeInsets.only(top: 120.0),
+      child: Container(
+        height: Get.height * 0.1,
+        width: Get.width,
+        decoration: BoxDecoration(
+          color: AppColors.white,
+          boxShadow: [
+            BoxShadow(
+              color: AppColors.black.withOpacity(0.1),
+              offset: const Offset(
+                3.0,
+                3.0,
+              ),
+              blurRadius: 8.0,
+            ), //BoxShadow
+          ],
+        ),
+        padding: const EdgeInsets.only(left: 15, right: 15),
+        child: Row(
+          // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            GestureDetector(
+              onTap: () {
+                Get.toNamed(AppRoutes.addAddress);
+              },
+              child: PrimaryAppButton(
+                height: Get.height * 0.062,
+                width: Get.width * 0.92,
+                borderRadius: 11,
+                gradientColor: [
+                  AppColors.primaryAppColor1,
+                  AppColors.primaryAppColor2
+                ],
+                widget: RichText(
+                  text: TextSpan(
+                    text: '${EnumLocale.txtSaveAddress1.name.tr} ',
+                    style: FontStyle.fontStyleW500(
+                      fontSize: 16,
+                      fontColor: AppColors.white,
+                    ),
+                  ),
+                ),
+              ),
             ),
-          ).paddingOnly(top: 15, left: 0, right: 15),
-        ],
+          ],
+        ),
       ),
     );
   }
 }
-
-class SelectAddress extends StatefulWidget {
-  const SelectAddress({super.key});
-
-  @override
-  State<SelectAddress> createState() => _SelectAddressState();
-}
-
-class _SelectAddressState extends State<SelectAddress> {
-
-  // int selectedValue = 1;
-  final addType = ["Default", "Home", "Office"];
-  String? selectedValue;
-  changeSelectedIndex(v) {
-    setState(() {
-      selectedValue = v;
-    });
-  }
-  @override
-  Widget build(BuildContext context) {
-          return ListView.builder(
-            padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 14),
-            itemCount: addType.length,
-            scrollDirection: Axis.vertical,
-            shrinkWrap: true,
-            physics: const NeverScrollableScrollPhysics(),
-            itemBuilder: (context, index) {
-              return RadioListTile(
-                fillColor: WidgetStateProperty.resolveWith((states) {
-                  // active
-                  if (states.contains(WidgetState.selected)) {
-                    return AppColors.primaryAppColor1;
-                  }
-                  // inactive
-                  return AppColors.primaryAppColor1;
-                }),
-                value: addType[index],
-                groupValue: selectedValue,
-                selected: selectedValue == addType[index],
-                onChanged: changeSelectedIndex,
-                title: Container(
-                    padding:
-                    const EdgeInsets.only(left: 10.0, top: 12.0, bottom: 12.0),
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                        color: AppColors.containerBg,
-                        border: Border.all(
-                          width: 1.0,
-                          color: AppColors.primaryAppColor1,
-                        ),
-                        borderRadius: BorderRadius.circular(5.0)),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "${EnumLocale.txtTestType.name.tr} : Blood Test",
-                                style: FontStyle.fontStyleW600(
-                                  fontSize: 14,
-                                  fontColor: AppColors.primaryAppColor1,
-                                ),
-                              ),
-                              Text(
-                                "${EnumLocale.txtConstDoctor.name.tr} : Blood Test",
-                                style: FontStyle.fontStyleW400(
-                                  fontSize: 13,
-                                  fontColor: AppColors.black,
-                                ),
-                              ),
-                              Text(
-                                "${EnumLocale.txtCollection.name.tr} : Blood Test",
-                                style: FontStyle.fontStyleW400(
-                                  fontSize: 13,
-                                  fontColor: AppColors.primaryAppColor1,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        IconButton(
-                            onPressed: () {},
-                            icon: Icon(Icons.delete,
-                                color: AppColors.primaryAppColor1)),
-                      ],
-                    )),
-              );
-            },
-          );
-    }
-}
-

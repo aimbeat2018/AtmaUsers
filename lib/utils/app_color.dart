@@ -6,6 +6,7 @@ class AppColors {
   static Color primaryAppColorTitle = const Color(0xb2004d89);
   static Color primaryAppColorTitle2 = const Color(0xcc004d89);
   static Color tabUnselectText1 = const Color(0xff00508d);
+  static Color textFieldTitleColor = const Color(0xff005da5);
   static Color bottomLabel = const Color(0xff3B436F);
   static Color categoryText = const Color(0xff38408B);
   static Color title = const Color(0xff2F377A);
@@ -61,6 +62,7 @@ class AppColors {
   static Color rating = const Color(0xffFFA722);
   static Color review = const Color(0xffF19914);
   static Color yellowBg = const Color(0xffFEF0D4);
+  static Color yellowTitle = const Color(0xffffcc18);
   static Color appBarBg = const Color(0xffDBEFFF);
   static Color notificationBox = const Color(0xffF4FFF3);
   static Color notificationBox2 = const Color(0xffFEF7F7);

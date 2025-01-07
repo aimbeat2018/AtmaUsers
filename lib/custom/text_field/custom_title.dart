@@ -30,3 +30,32 @@ class CustomTitle extends StatelessWidget {
     );
   }
 }
+
+
+class AddressCustomTitle extends StatelessWidget {
+  final String title;
+  final Widget method;
+
+  const AddressCustomTitle({
+    super.key,
+    required this.title,
+    required this.method,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          title,
+          style: FontStyle.fontStyleW400(
+            fontSize: 15,
+            fontColor: AppColors.textFieldTitleColor,
+          ),
+        ).paddingOnly(bottom: 12,left: 5),
+        method
+      ],
+    );
+  }
+}

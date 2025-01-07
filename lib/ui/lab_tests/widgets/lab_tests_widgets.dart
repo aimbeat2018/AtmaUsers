@@ -267,16 +267,6 @@ List checkListItems = [
     "value": false,
     "title": "Thursday",
   },
-  {
-    "id": 5,
-    "value": false,
-    "title": "Friday",
-  },
-  {
-    "id": 6,
-    "value": false,
-    "title": "Saturday",
-  },
 ];
 
 // class RecommendedTestList extends StatelessWidget {
