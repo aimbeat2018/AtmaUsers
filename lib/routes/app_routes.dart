@@ -51,5 +51,6 @@ class AppRoutes {
   static const String availableLabs = '/availableLabs';
   static const String history = '/history';
   static const String payment = '/payment';
+  static const String orderDetails = '/orderDetails';
   static const String membershipCard = '/membershipCard';
 }

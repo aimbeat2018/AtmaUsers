@@ -65,7 +65,7 @@ class ConfirmBookingBottomView extends StatelessWidget {
                 builder: (logic) {
                   return GestureDetector(
                     onTap: () {
-                      if (walletAmount! < (logic.withDiscountAmount ?? 0)) {
+                      if (/*walletAmount!*/ 300 < (logic.withDiscountAmount ?? 0)) {
                         showModalBottomSheet(
                           isScrollControlled: true,
                           context: context,

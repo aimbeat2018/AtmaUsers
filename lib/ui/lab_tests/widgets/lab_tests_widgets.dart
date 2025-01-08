@@ -142,6 +142,7 @@ class MostSearchedCategoryItem extends StatelessWidget {
   const MostSearchedCategoryItem({super.key, required this.index});
 
   final String medicineImg = AppAsset.medicineImg;
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(

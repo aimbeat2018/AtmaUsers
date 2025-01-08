@@ -105,5 +105,7 @@ class AppColors {
   static Color transparent = Colors.transparent;
   static Color containerGrey = const Color(0xffededed);
   static Color dividerGrey = const Color(0xff3a3a3a);
+  static Color dividerGrey2 = const Color(0xff5c5c5c);
+  static Color textGrey = const Color(0xff6b6b6b);
   static Color atmaTextColor = const Color(0xffFFC1C7);
 }

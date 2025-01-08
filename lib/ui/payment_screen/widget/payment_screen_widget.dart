@@ -1,5 +1,6 @@
 import 'package:doctor/custom/app_bar/custom_app_bar.dart';
 import 'package:doctor/custom/app_button/primary_app_button.dart';
+import 'package:doctor/routes/app_routes.dart';
 import 'package:doctor/ui/payment_screen/controller/payment_screen_controller.dart';
 import 'package:doctor/utils/app_asset.dart';
 import 'package:doctor/utils/app_color.dart';
@@ -416,8 +417,9 @@ class PaymentBottomView extends StatelessWidget {
               children: [
                 PrimaryAppButton(
                   onTap: () {
-                    logic.onSelectPaymentMethod(context);
-                  },
+                    // logic.onSelectPaymentMethod(context);
+                    Get.toNamed(AppRoutes.orderDetails);
+                    },
                   height: Get.height * 0.06,
                   width: Get.width * 0.90,
                   borderRadius: 11,

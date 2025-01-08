@@ -68,6 +68,7 @@ import 'package:doctor/ui/notification_screen/binding/notification_binding.dart'
 import 'package:doctor/ui/notification_screen/view/notification_screen.dart';
 import 'package:doctor/ui/number_otp_screen/binding/number_otp_binding.dart';
 import 'package:doctor/ui/number_otp_screen/view/number_otp_screen.dart';
+import 'package:doctor/ui/order_details/view/order_details_screen.dart';
 import 'package:doctor/ui/payment_screen/binding/payment_screen_binding.dart';
 import 'package:doctor/ui/payment_screen/view/payment_screen.dart';
 import 'package:doctor/ui/personal_chat_screen/binding/personal_chat_binding.dart';
@@ -362,7 +363,12 @@ class AppPages {
     GetPage(
       name: AppRoutes.availableLabs,
       page: () => const AvailableLabsScreen(),
-      binding: MembershipBinding(), //change
+      binding: ConfirmBookingBinding(), //changed for payment screen
+    ),
+    GetPage(
+      name: AppRoutes.orderDetails,
+      page: () => const OrderDetailsScreen(),
+      binding: ConfirmBookingBinding(), //change
     ),
     GetPage(
       name: AppRoutes.membershipCard,

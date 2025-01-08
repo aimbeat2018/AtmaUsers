@@ -121,6 +121,7 @@ class AppAsset {
   static const icWalletOutline = "${getIconsPath}wallet_outline.png";
   static const icMembershipOutline = "${getIconsPath}membership.png";
   static const icWorkingTime = "${getIconsPath}working_time.png";
+  static const icCheckGreen = "${getIconsPath}check_green.png";
 
   /// =================== Images =================== ///
   static const imDoctor = "${getImagesPath}doctor.png";
@@ -133,6 +134,7 @@ class AppAsset {
   static const labTestImg = "${getImagesPath}lab_test.png";
   static const liveEventImg = "${getImagesPath}live_events.png";
   static const medicineImg = "${getImagesPath}medicine.png";
+  static const orderTitleBackImg = "${getImagesPath}order_header.png";
   static const availableLabsImg = "${getImagesPath}available_labs.png";
 
   /// =================== Country Icon =================== ///
