@@ -28,6 +28,7 @@ class AppAsset {
   static const icChatFilled = "${getIconsPath}chat_filled.png";
   static const icChatOutline = "${getIconsPath}chat_outline.png";
   static const icCheck = "${getIconsPath}check.png";
+  static const icCheckBlue = "${getIconsPath}blue_check.png";
   static const icClip = "${getIconsPath}clip.png";
   static const icClipImage = "${getIconsPath}clipImage.png";
   static const icClock = "${getIconsPath}clock.png";
@@ -132,8 +133,10 @@ class AppAsset {
   static const imMan = "${getImagesPath}man.png";
   static const imWalletBox = "${getImagesPath}wallet_box.png";
   static const labTestImg = "${getImagesPath}lab_test.png";
+  static const pharmacyBookingImg = "${getImagesPath}pharmacy_booking.png";
   static const liveEventImg = "${getImagesPath}live_events.png";
   static const medicineImg = "${getImagesPath}medicine.png";
+  static const medicineImg1 = "${getImagesPath}medicine2.png";
   static const orderTitleBackImg = "${getImagesPath}order_header.png";
   static const availableLabsImg = "${getImagesPath}available_labs.png";
 

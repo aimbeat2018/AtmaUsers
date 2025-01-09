@@ -41,10 +41,12 @@ class AppColors {
   static Color google = const Color(0xffBDDFF9);
   static Color containerBg = const Color(0xffe4f3ff);
   static Color containerBg1 = const Color(0xffc9e7ff);
+  static Color containerBg2 = const Color(0xffbddffa);
   static Color user = const Color(0xffD5D7EC);
   static Color message1 = const Color(0xff2C8DE6);
   static Color message2 = const Color(0xff4173F3);
   static Color containerBlue = const Color(0xff4663ac);
+  static Color addButton = const Color(0xff85a8e8);
   static Color online = const Color(0xffEBFFED);
   static Color onlineText = const Color(0xff12A82A);
   static Color green = const Color(0xff14B717);

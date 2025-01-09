@@ -792,6 +792,20 @@ class LabTestView extends StatelessWidget {
   }
 }
 
+/// =================== Pharmacy Booking =================== ///
+class PharmacyBookingView extends StatelessWidget {
+  const PharmacyBookingView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+        onTap:(){
+          Get.toNamed(AppRoutes.pharmacyBooking);
+        },
+        child: Image.asset(AppAsset.pharmacyBookingImg)
+    );
+  }
+}
 
 
 /// =================== Specialist Title =================== ///

@@ -73,6 +73,8 @@ import 'package:doctor/ui/payment_screen/binding/payment_screen_binding.dart';
 import 'package:doctor/ui/payment_screen/view/payment_screen.dart';
 import 'package:doctor/ui/personal_chat_screen/binding/personal_chat_binding.dart';
 import 'package:doctor/ui/personal_chat_screen/view/personal_chat_screen.dart';
+import 'package:doctor/ui/pharmacy_booking/view/medicine_details_screen.dart';
+import 'package:doctor/ui/pharmacy_booking/view/pharmacy_booking_screen.dart';
 import 'package:doctor/ui/profile_screen/binding/profile_screen_binding.dart';
 import 'package:doctor/ui/profile_screen/view/profile_screen.dart';
 import 'package:doctor/ui/rating_screen/binding/rating_screen_binding.dart';
@@ -351,6 +353,11 @@ class AppPages {
       binding: MembershipBinding(), //change
     ),
     GetPage(
+      name: AppRoutes.pharmacyBooking,
+      page: () => const PharmacyBookingScreen(),
+      binding: MembershipBinding(), //change
+    ),
+    GetPage(
       name: AppRoutes.addAddress,
       page: () => const AddressDetailsScreen(),
       binding: MembershipBinding(), //change
@@ -358,6 +365,11 @@ class AppPages {
     GetPage(
       name: AppRoutes.newAddress,
       page: () => const AddNewAddressScreen(),
+      binding: MembershipBinding(), //change
+    ),
+    GetPage(
+      name: AppRoutes.medicineDetails,
+      page: () => const MedicineDetailsScreen(),
       binding: MembershipBinding(), //change
     ),
     GetPage(

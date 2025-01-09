@@ -126,19 +126,158 @@ class OrderSummaryView extends StatelessWidget {
                     fontSize: 17,
                     fontColor: AppColors.black,
                   ),
-                ).paddingOnly(top: 15, left: 0, right: 15),
+                ).paddingOnly(top: 15, left: 5),
               ],
             ),
           ),
         ),
         Container(
           width: double.infinity,
-          height: 60,
+          // height: 100,
           decoration: BoxDecoration(
               color: AppColors.containerBg,
               borderRadius: BorderRadius.circular(10.0),
           ),
-        ),
+          child: Column(
+            children: [
+              Container(
+                width: double.infinity,
+                height: 40,
+                decoration: BoxDecoration(
+                  color: AppColors.containerBg2,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(10),
+                    topRight: Radius.circular(10),
+                  )
+                  // borderRadius: BorderRadius.circular(10.0),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      EnumLocale.txtProducts.name.tr,
+                      style: FontStyle.fontStyleW600(
+                        fontSize: 14,
+                        fontColor: AppColors.primaryAppColor1,
+                      ),
+                    ),
+                    Text(
+                      EnumLocale.txtPrice.name.tr,
+                      style: FontStyle.fontStyleW600(
+                        fontSize: 14,
+                        fontColor: AppColors.primaryAppColor1,
+                      ),
+                    ),
+                  ],
+                ).paddingOnly(top: 3, left: 10, right: 10),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text(
+                    "Moov Cool Therapy Gel",
+                    style: FontStyle.fontStyleW600(
+                      fontSize: 14,
+                      fontColor: AppColors.primaryAppColor1,
+                    ),
+                  ),
+                  Text(
+                    "₹${200}",
+                    style: FontStyle.fontStyleW600(
+                      fontSize: 14,
+                      fontColor: AppColors.primaryAppColor1,
+                    ),
+                  ),
+                ],
+              ).paddingOnly(top: 7, left: 10, right: 10),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                // crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text(
+                    "Revital H for Women Tablet",
+                    style: FontStyle.fontStyleW600(
+                      fontSize: 14,
+                      fontColor: AppColors.primaryAppColor1,
+                    ),
+                  ),
+                  Text(
+                    "₹${310}",
+                    style: FontStyle.fontStyleW600(
+                      fontSize: 14,
+                      fontColor: AppColors.primaryAppColor1,
+                    ),
+                  ),
+                ],
+              ).paddingOnly(top: 7, left: 10, right: 10),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text(
+                    "Revital H for Women Tablet",
+                    style: FontStyle.fontStyleW600(
+                      fontSize: 14,
+                      fontColor: AppColors.primaryAppColor1,
+                    ),
+                  ),
+                  Text(
+                    "₹${310}",
+                    style: FontStyle.fontStyleW600(
+                      fontSize: 14,
+                      fontColor: AppColors.primaryAppColor1,
+                    ),
+                  ),
+                ],
+              ).paddingOnly(top: 7, left: 10, right: 10),
+              Divider(
+                indent: 10,
+                endIndent: 10,
+                color: AppColors.dividerGrey2,
+              ).paddingOnly(top: 10),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    '${EnumLocale.txtGst.name.tr} (18%)',
+                    style: FontStyle.fontStyleW500(
+                      fontSize: 15,
+                      fontColor: AppColors.primaryAppColor1,
+                    ),
+                  ),
+                  Text(
+                    '₹ 1475',
+                    style: FontStyle.fontStyleW500(
+                      fontSize: 15,
+                      fontColor: AppColors.primaryAppColor1,
+                    ),
+                  ),
+                ],
+              ).paddingOnly(top: 10, left: 15, right: 15),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    EnumLocale.txtTotal.name.tr,
+                    style: FontStyle.fontStyleW600(
+                      fontSize: 16,
+                      fontColor: AppColors.primaryAppColor1,
+                    ),
+                  ),
+                  Text(
+                    '₹ 1475',
+                    style: FontStyle.fontStyleW600(
+                      fontSize: 16,
+                      fontColor: AppColors.primaryAppColor1,
+                    ),
+                  ),
+                ],
+              ).paddingOnly(top: 10, left: 15, right: 15, bottom: 5),
+            ],
+          ),
+        ).paddingOnly(top: 15, left:15, right:15),
       ],
     );
   }

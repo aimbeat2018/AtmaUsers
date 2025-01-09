@@ -67,6 +67,8 @@ class HomeScreen extends StatelessWidget {
                           SizedBox(height: 10,),
                           const LabTestView(),
                           SizedBox(height: 10,),
+                          PharmacyBookingView(),
+                          SizedBox(height: 10,),
                           const HomeSpecialistTitleView(),
                         ],
                       ),

@@ -175,7 +175,7 @@ class MostSearchedCategoryItem extends StatelessWidget {
               fontSize: 13,
               fontColor: AppColors.categoryText,
             ),
-          )
+          ),
         ],
       ),
     );
