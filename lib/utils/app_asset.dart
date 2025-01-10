@@ -123,6 +123,8 @@ class AppAsset {
   static const icMembershipOutline = "${getIconsPath}membership.png";
   static const icWorkingTime = "${getIconsPath}working_time.png";
   static const icCheckGreen = "${getIconsPath}check_green.png";
+  static const icPrescription = "${getIconsPath}prescription.png";
+  static const icPdf= "${getIconsPath}pdf.png";
 
   /// =================== Images =================== ///
   static const imDoctor = "${getImagesPath}doctor.png";

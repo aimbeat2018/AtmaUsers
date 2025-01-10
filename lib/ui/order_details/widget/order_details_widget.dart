@@ -24,28 +24,48 @@ class OrderSuccessfulTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Stack(
+      alignment: Alignment.center,
       children: [
-        Container(
-          width: double.infinity,
-          height: 254,
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage(AppAsset.orderTitleBackImg),
+        Image.asset(AppAsset.orderTitleBackImg),
+        Positioned(
+            left: 0,
+            right: 0,
+            top: 60,
+            child: Image.asset(AppAsset.icCheckGreen, height: 70)),
+        Positioned.fill(
+          left:0,
+          right:0,
+          top:40,
+          child: Align(
+            alignment: Alignment.center,
+            child: Text(
+              EnumLocale.txtThanksForOrder.name.tr,
+              style: FontStyle.fontStyleW400(
+                fontSize: 18,
+                fontColor: AppColors.white,
+              ),
             ),
           ),
-          child: Column(
-            children: [
-              Image.asset(AppAsset.icCheckGreen, height: 70)
-                  .paddingOnly(top: 50),
-              Text(
-                EnumLocale.txtThanksForOrder.name.tr,
-                style: FontStyle.fontStyleW400(
-                  fontSize: 18,
-                  fontColor: AppColors.white,
-                ),
-              ).paddingOnly(top: 10),
-            ],
+        ),
+        Positioned(
+          left: 120,
+          right: 120,
+          bottom: 5,
+          child: Container(
+            alignment: Alignment.center,
+            padding: const EdgeInsets.symmetric(vertical: 5.0),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(5.0),
+              color: AppColors.lightBlue,
+            ),
+            child: Text(
+              "${EnumLocale.txtOrderId.name.tr}. : 1234",
+              style: FontStyle.fontStyleW500(
+                fontSize: 14,
+                fontColor: AppColors.black,
+              ),
+            ),
           ),
         ),
       ],
@@ -135,8 +155,8 @@ class OrderSummaryView extends StatelessWidget {
           width: double.infinity,
           // height: 100,
           decoration: BoxDecoration(
-              color: AppColors.containerBg,
-              borderRadius: BorderRadius.circular(10.0),
+            color: AppColors.containerBg,
+            borderRadius: BorderRadius.circular(10.0),
           ),
           child: Column(
             children: [
@@ -144,13 +164,13 @@ class OrderSummaryView extends StatelessWidget {
                 width: double.infinity,
                 height: 40,
                 decoration: BoxDecoration(
-                  color: AppColors.containerBg2,
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(10),
-                    topRight: Radius.circular(10),
-                  )
-                  // borderRadius: BorderRadius.circular(10.0),
-                ),
+                    color: AppColors.containerBg2,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(10),
+                      topRight: Radius.circular(10),
+                    )
+                    // borderRadius: BorderRadius.circular(10.0),
+                    ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -277,7 +297,7 @@ class OrderSummaryView extends StatelessWidget {
               ).paddingOnly(top: 10, left: 15, right: 15, bottom: 5),
             ],
           ),
-        ).paddingOnly(top: 15, left:15, right:15),
+        ).paddingOnly(top: 15, left: 15, right: 15),
       ],
     );
   }

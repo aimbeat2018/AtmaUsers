@@ -50,6 +50,8 @@ class AppRoutes {
   static const String addAddress = '/addAddress';
   static const String newAddress = '/newAddress';
   static const String medicineDetails = '/medicineDetails';
+  static const String myCart = '/myCart';
+  static const String myPrescription = '/myPrescription';
   static const String availableLabs = '/availableLabs';
   static const String history = '/history';
   static const String payment = '/payment';

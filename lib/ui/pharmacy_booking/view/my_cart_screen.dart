@@ -11,6 +11,14 @@ class MyCartScreen extends StatelessWidget {
         automaticallyImplyLeading: false,
         flexibleSpace: const MyyCartAppBarView(),
       ),
+      bottomSheet: MyCartBottomView(),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            MyCartListView(),
+          ],
+        ),
+      ),
     );
   }
 }

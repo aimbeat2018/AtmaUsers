@@ -62,6 +62,7 @@ import 'package:doctor/ui/membership_screen/view/user_membership_card.dart';
 import 'package:doctor/ui/membership_screen/widget/membership_card.dart';
 import 'package:doctor/ui/my_appointment_screen/binding/my_appointment_binding.dart';
 import 'package:doctor/ui/my_appointment_screen/view/my_appointment_screen.dart';
+import 'package:doctor/ui/my_prescription/view/my_prescription_screen.dart';
 import 'package:doctor/ui/my_wallet_screen/binding/my_wallet_binding.dart';
 import 'package:doctor/ui/my_wallet_screen/view/my_wallet_screen.dart';
 import 'package:doctor/ui/notification_screen/binding/notification_binding.dart';
@@ -74,6 +75,7 @@ import 'package:doctor/ui/payment_screen/view/payment_screen.dart';
 import 'package:doctor/ui/personal_chat_screen/binding/personal_chat_binding.dart';
 import 'package:doctor/ui/personal_chat_screen/view/personal_chat_screen.dart';
 import 'package:doctor/ui/pharmacy_booking/view/medicine_details_screen.dart';
+import 'package:doctor/ui/pharmacy_booking/view/my_cart_screen.dart';
 import 'package:doctor/ui/pharmacy_booking/view/pharmacy_booking_screen.dart';
 import 'package:doctor/ui/profile_screen/binding/profile_screen_binding.dart';
 import 'package:doctor/ui/profile_screen/view/profile_screen.dart';
@@ -372,6 +374,16 @@ class AppPages {
       page: () => const MedicineDetailsScreen(),
       binding: MembershipBinding(), //change
     ),
+    GetPage(
+      name: AppRoutes.myCart,
+      page: () => const MyCartScreen(),
+          binding:ConfirmBookingBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.myPrescription,
+      page: () => const MyPrescriptionScreen(),
+      binding: ConfirmBookingBinding(),
+    ),  //changed for payment screen
     GetPage(
       name: AppRoutes.availableLabs,
       page: () => const AvailableLabsScreen(),

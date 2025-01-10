@@ -59,6 +59,7 @@ class AppColors {
   static Color greenBox = const Color(0xffE0FDDF);
   static Color greenBox1 = const Color(0x2605eb00);
   static Color greenBoxText = const Color(0xff038700);
+  static Color lightBlue = const Color(0xff49d7fa);
   static Color redBox = const Color(0xffFFEEF0);
   static Color notificationTitle2 = const Color(0xffF01A41);
   static Color rating = const Color(0xffFFA722);
@@ -109,5 +110,7 @@ class AppColors {
   static Color dividerGrey = const Color(0xff3a3a3a);
   static Color dividerGrey2 = const Color(0xff5c5c5c);
   static Color textGrey = const Color(0xff6b6b6b);
+  static Color dotGrey = const Color(0xff737373);
+  static Color containerGrey1 = const Color(0xfff3f3f3);
   static Color atmaTextColor = const Color(0xffFFC1C7);
 }

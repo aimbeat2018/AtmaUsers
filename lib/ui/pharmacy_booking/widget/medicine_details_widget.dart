@@ -1,5 +1,6 @@
 import 'package:doctor/custom/app_bar/custom_app_bar.dart';
 import 'package:doctor/custom/app_button/primary_app_button.dart';
+import 'package:doctor/routes/app_routes.dart';
 import 'package:doctor/utils/app_asset.dart';
 import 'package:doctor/utils/app_color.dart';
 import 'package:doctor/utils/enums.dart';
@@ -137,7 +138,9 @@ class _MedicineAddToCartState extends State<MedicineAddToCart> {
         ),
         Center(
           child: PrimaryAppButton(
-            onTap: () {},
+            onTap: () {
+              Get.toNamed(AppRoutes.myCart);
+            },
             height: Get.height * 0.062,
             width: Get.width * 0.92,
             borderRadius: 11,
@@ -338,13 +341,16 @@ class MedicineDescription extends StatelessWidget {
             ],
           ),
         ),
-        Text("Crocin Advance 500mg Tablet helps relieve pain and fever by blocking the release"
-            " of certain chemical messengers responsible for fever and pain. It is used to treat headaches,"
-            " migraine, toothaches, sore throats, period (menstrual) pains, arthritis, muscle aches, "
-            "and the common cold", style: FontStyle.fontStyleW400(
-          fontSize: 14,
-          fontColor: AppColors.black,
-        ),).paddingOnly(top:10.0, left:10.0, right:10.0, bottom: 10.0),
+        Text(
+          "Crocin Advance 500mg Tablet helps relieve pain and fever by blocking the release"
+          " of certain chemical messengers responsible for fever and pain. It is used to treat headaches,"
+          " migraine, toothaches, sore throats, period (menstrual) pains, arthritis, muscle aches, "
+          "and the common cold",
+          style: FontStyle.fontStyleW400(
+            fontSize: 14,
+            fontColor: AppColors.black,
+          ),
+        ).paddingOnly(top: 10.0, left: 10.0, right: 10.0, bottom: 10.0),
       ],
     );
   }
