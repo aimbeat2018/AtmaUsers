@@ -134,38 +134,55 @@ class SearchResultView extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Align(
-                      alignment:Alignment.topRight,
+                      alignment: Alignment.topRight,
                       child: PopupMenuButton(
-                        color: AppColors.white,
-                          icon: Icon(Icons.more_vert,color: Colors.black), // add this line
+                          color: AppColors.white,
+                          icon: Icon(Icons.more_vert,
+                              color: Colors.black), // add this line
                           itemBuilder: (_) => <PopupMenuItem<String>>[
-                            PopupMenuItem<String>(
-                                child: Container(
-                                    width: 100,
-                                    child: Text(
-                                      EnumLocale.txtView.name.tr,
-                                      style: TextStyle(color: AppColors.black),
-                                    )),
-                                value: 'view'),
-
-
-                          ],
+                                PopupMenuItem<String>(
+                                    child: Container(
+                                        width: 100,
+                                        child: Text(
+                                          EnumLocale.txtView.name.tr,
+                                          style:
+                                              TextStyle(color: AppColors.black),
+                                        )),
+                                    value: 'view'),
+                                PopupMenuItem<String>(
+                                    child: Container(
+                                        width: 100,
+                                        child: Text(
+                                          EnumLocale.txtDownload.name.tr,
+                                          style:
+                                              TextStyle(color: AppColors.black),
+                                        )),
+                                    value: 'Download'),
+                                PopupMenuItem<String>(
+                                    child: Container(
+                                        width: 100,
+                                        child: Text(
+                                          EnumLocale.txtDelete.name.tr,
+                                          style:
+                                              TextStyle(color: AppColors.black),
+                                        )),
+                                    value: 'Delete'),
+                              ],
                           onSelected: (index) async {
                             switch (index) {
                               case 'report':
-                              // showDialog(
-                              //     barrierDismissible: true,
-                              //     context: context,
-                              //     builder: (context) => ReportUser(
-                              //       currentUser: widget.sender,
-                              //       seconduser: widget.second,
-                              //     )).then((value) => Navigator.pop(ct))
+                                // showDialog(
+                                //     barrierDismissible: true,
+                                //     context: context,
+                                //     builder: (context) => ReportUser(
+                                //       currentUser: widget.sender,
+                                //       seconduser: widget.second,
+                                //     )).then((value) => Navigator.pop(ct))
                                 break;
                             }
                           }),
                     ),
                     Image.asset(AppAsset.icPdf, height: 50),
-
                   ],
                 ),
               );

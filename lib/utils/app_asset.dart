@@ -122,8 +122,10 @@ class AppAsset {
   static const icWalletOutline = "${getIconsPath}wallet_outline.png";
   static const icMembershipOutline = "${getIconsPath}membership.png";
   static const icWorkingTime = "${getIconsPath}working_time.png";
+  static const icDelivery = "${getIconsPath}delivery_icon.png";
   static const icCheckGreen = "${getIconsPath}check_green.png";
   static const icPrescription = "${getIconsPath}prescription.png";
+  static const icInvoices = "${getIconsPath}invoices.png";
   static const icPdf= "${getIconsPath}pdf.png";
 
   /// =================== Images =================== ///
@@ -139,6 +141,11 @@ class AppAsset {
   static const liveEventImg = "${getImagesPath}live_events.png";
   static const medicineImg = "${getImagesPath}medicine.png";
   static const medicineImg1 = "${getImagesPath}medicine2.png";
+  static const opdConsultation = "${getImagesPath}opd_consultation.png";
+  static const advInvoices = "${getImagesPath}adv_invoices.png";
+  static const procedureInvoices = "${getImagesPath}procedure_invoices.png";
+  static const labReceipts = "${getImagesPath}lab_receipts.png";
+  static const pharmacy = "${getImagesPath}pharmacy.png";
   static const orderTitleBackImg = "${getImagesPath}order_header.png";
   static const availableLabsImg = "${getImagesPath}available_labs.png";
 

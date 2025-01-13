@@ -46,6 +46,7 @@ import 'package:doctor/ui/history_screen/binding/history_screen_binding.dart';
 import 'package:doctor/ui/history_screen/view/history_screen.dart';
 import 'package:doctor/ui/home_screen/binding/home_screen_binding.dart';
 import 'package:doctor/ui/home_screen/view/home_screen.dart';
+import 'package:doctor/ui/invoices/view/invoices_screen.dart';
 import 'package:doctor/ui/lab_tests/available_labs/view/available_labs_screen.dart';
 import 'package:doctor/ui/lab_tests/view/lab_tests_screen.dart';
 import 'package:doctor/ui/language_screen/binding/language_screen_binding.dart';
@@ -62,6 +63,7 @@ import 'package:doctor/ui/membership_screen/view/user_membership_card.dart';
 import 'package:doctor/ui/membership_screen/widget/membership_card.dart';
 import 'package:doctor/ui/my_appointment_screen/binding/my_appointment_binding.dart';
 import 'package:doctor/ui/my_appointment_screen/view/my_appointment_screen.dart';
+import 'package:doctor/ui/my_orders/view/my_orders_screen.dart';
 import 'package:doctor/ui/my_prescription/view/my_prescription_screen.dart';
 import 'package:doctor/ui/my_wallet_screen/binding/my_wallet_binding.dart';
 import 'package:doctor/ui/my_wallet_screen/view/my_wallet_screen.dart';
@@ -383,7 +385,12 @@ class AppPages {
       name: AppRoutes.myPrescription,
       page: () => const MyPrescriptionScreen(),
       binding: ConfirmBookingBinding(),
-    ),  //changed for payment screen
+    ),
+    GetPage(
+      name: AppRoutes.myOrder,
+      page: () => const MyOrdersScreen(),
+      binding: ConfirmBookingBinding(),
+    ), //change binding
     GetPage(
       name: AppRoutes.availableLabs,
       page: () => const AvailableLabsScreen(),
@@ -392,6 +399,11 @@ class AppPages {
     GetPage(
       name: AppRoutes.orderDetails,
       page: () => const OrderDetailsScreen(),
+      binding: ConfirmBookingBinding(), //change
+    ),
+    GetPage(
+      name: AppRoutes.invoices,
+      page: () => const InvoicesScreen(),
       binding: ConfirmBookingBinding(), //change
     ),
     GetPage(

@@ -205,6 +205,28 @@ class ProfileGeneralView extends StatelessWidget {
                 Divider(height: 1.5, color: AppColors.white)
                     .paddingOnly(top: 15, bottom: 15),
                 ProfileMenu(
+                  image: AppAsset.icInvoices,
+                  text: EnumLocale.txtInvoices.name.tr,
+                  isArrow: true,
+                  onTap: () {
+                    // Navigator.push(context, MaterialPageRoute(builder: (context) => EventsScreen()));
+                    Get.toNamed(AppRoutes.invoices);
+                  },
+                ),
+                Divider(height: 1.5, color: AppColors.white)
+                    .paddingOnly(top: 15, bottom: 15),
+                ProfileMenu(
+                  image: AppAsset.icInvoices,
+                  text: EnumLocale.txtMyOrder.name.tr,
+                  isArrow: true,
+                  onTap: () {
+                    // Navigator.push(context, MaterialPageRoute(builder: (context) => EventsScreen()));
+                    Get.toNamed(AppRoutes.myOrder);
+                  },
+                ),
+                Divider(height: 1.5, color: AppColors.white)
+                    .paddingOnly(top: 15, bottom: 15),
+                ProfileMenu(
                   image: AppAsset.icMembershipOutline,
                   text: EnumLocale.txtMembership.name.tr,
                   isArrow: true,

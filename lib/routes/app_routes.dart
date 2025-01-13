@@ -52,9 +52,11 @@ class AppRoutes {
   static const String medicineDetails = '/medicineDetails';
   static const String myCart = '/myCart';
   static const String myPrescription = '/myPrescription';
+  static const String myOrder = '/myOrder';
   static const String availableLabs = '/availableLabs';
   static const String history = '/history';
   static const String payment = '/payment';
   static const String orderDetails = '/orderDetails';
+  static const String invoices = '/invoices';
   static const String membershipCard = '/membershipCard';
 }
