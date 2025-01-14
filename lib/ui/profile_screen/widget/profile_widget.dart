@@ -183,6 +183,16 @@ class ProfileGeneralView extends StatelessWidget {
             widget: Column(
               children: [
                 ProfileMenu(
+                  image: AppAsset.icProfileOutlined,
+                  text:  EnumLocale.txtMyProfile.name.tr,
+                  isArrow: true,
+                  onTap: () {
+                    Get.toNamed(AppRoutes.myProfile);
+                  },
+                ),
+                Divider(height: 1.5, color: AppColors.white)
+                    .paddingOnly(top: 15, bottom: 15),
+                ProfileMenu(
                   image: AppAsset.icMembershipOutline,
                   text: /*EnumLocale.txtMembership.name.tr*/"Events",
                   isArrow: true,
@@ -216,7 +226,7 @@ class ProfileGeneralView extends StatelessWidget {
                 Divider(height: 1.5, color: AppColors.white)
                     .paddingOnly(top: 15, bottom: 15),
                 ProfileMenu(
-                  image: AppAsset.icInvoices,
+                  image: AppAsset.icOrders,
                   text: EnumLocale.txtMyOrder.name.tr,
                   isArrow: true,
                   onTap: () {
@@ -227,12 +237,36 @@ class ProfileGeneralView extends StatelessWidget {
                 Divider(height: 1.5, color: AppColors.white)
                     .paddingOnly(top: 15, bottom: 15),
                 ProfileMenu(
+                  image: AppAsset.icAddresses,
+                  text: EnumLocale.txtMyAddresses.name.tr,
+                  isArrow: true,
+                  onTap: () {
+                    // Navigator.push(context, MaterialPageRoute(builder: (context) => EventsScreen()));
+                    Get.toNamed(AppRoutes.addAddress);
+                    // arguments: {
+                    //   'from':"profile address",
+                    // });
+                    },
+                ),
+                Divider(height: 1.5, color: AppColors.white)
+                    .paddingOnly(top: 15, bottom: 15),
+                ProfileMenu(
+                  image: AppAsset.icMyCart,
+                  text: EnumLocale.txtMyCart.name.tr,
+                  isArrow: true,
+                  onTap: () {
+                    Get.toNamed(AppRoutes.myCart);
+                  },
+                ),
+                Divider(height: 1.5, color: AppColors.white)
+                    .paddingOnly(top: 15, bottom: 15),
+                ProfileMenu(
                   image: AppAsset.icMembershipOutline,
-                  text: EnumLocale.txtMembership.name.tr,
+                  text: EnumLocale.txtPrivilegeCard.name.tr,
                   isArrow: true,
                   onTap: () {
                     logic.getUserProfileModel!.membership! == 0 ||
-                            logic.getUserProfileModel!.membership! == 2
+                            logic.getUserProfileModel!.membership! == 2  //0 - not found & 2- expire
                         ? Get.toNamed(AppRoutes.memberShip)
                         : Get.toNamed(AppRoutes.membershipCard);
                   },
@@ -240,8 +274,8 @@ class ProfileGeneralView extends StatelessWidget {
                 Divider(height: 1.5, color: AppColors.white)
                     .paddingOnly(top: 15, bottom: 15),
                 ProfileMenu(
-                  image: AppAsset.icWalletOutline,
-                  text: EnumLocale.txtMyWallet.name.tr,
+                  image: AppAsset.icWalletHistory,
+                  text: EnumLocale.txtMyWalletHistory.name.tr,
                   isArrow: true,
                   onTap: () {
                     Get.toNamed(AppRoutes.myWallet);

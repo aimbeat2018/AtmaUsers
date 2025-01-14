@@ -59,4 +59,5 @@ class AppRoutes {
   static const String orderDetails = '/orderDetails';
   static const String invoices = '/invoices';
   static const String membershipCard = '/membershipCard';
+  static const String myProfile = '/myProfile';
 }

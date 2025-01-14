@@ -15,7 +15,6 @@ class MembershipScreen extends StatelessWidget {
         child: Column(
           children: [
             MembershipPackagesListView(),
-
           ],
         ),
       ),

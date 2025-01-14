@@ -121,8 +121,13 @@ class AppAsset {
   static const icWalletMinus = "${getIconsPath}wallet_minus.png";
   static const icWalletOutline = "${getIconsPath}wallet_outline.png";
   static const icMembershipOutline = "${getIconsPath}membership.png";
+  static const icProfileOutlined = "${getIconsPath}profile_outlined.png";
   static const icWorkingTime = "${getIconsPath}working_time.png";
   static const icDelivery = "${getIconsPath}delivery_icon.png";
+  static const icOrders = "${getIconsPath}order.png";
+  static const icAddresses = "${getIconsPath}address.png";
+  static const icWalletHistory = "${getIconsPath}wallet2.png";
+  static const icMyCart = "${getIconsPath}my_cart.png";
   static const icCheckGreen = "${getIconsPath}check_green.png";
   static const icPrescription = "${getIconsPath}prescription.png";
   static const icInvoices = "${getIconsPath}invoices.png";

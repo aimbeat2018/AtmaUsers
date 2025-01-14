@@ -13,6 +13,7 @@ enum EnumLocale {
   txtDownload,
   txtInvoices,
   txtMyOrder,
+  txtMyAddresses,
   txtDelete,
   txtSearch,
   txtPrescriptionByExperts,
@@ -22,6 +23,7 @@ enum EnumLocale {
   txtPackages,
   txtCompany,
   txtPrescription,
+  txtPrivilegeCard,
   txtMedicineType,
   txtSearchBooking,
   txtSpecialistDoctors,
@@ -137,6 +139,7 @@ enum EnumLocale {
   txtEditProfile,
   txtGeneral,
   txtMyWallet,
+  txtMyWalletHistory,
   txtMembership,
   txtMyPrescription,
   txtEvents, //

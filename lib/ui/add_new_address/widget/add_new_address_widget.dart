@@ -266,7 +266,10 @@ class NewAddressBottomView extends StatelessWidget {
           children: [
             GestureDetector(
               onTap: () {
-                Get.toNamed(AppRoutes.addAddress);
+                Get.toNamed(AppRoutes.addAddress,
+                   /* arguments: {
+                  'from':"add address",
+                }*/);
               },
               child: PrimaryAppButton(
                 height: Get.height * 0.062,

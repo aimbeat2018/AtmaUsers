@@ -1,9 +1,14 @@
 import 'package:doctor/ui/add_new_address/widget/address_details_widgets.dart';
 import 'package:flutter/material.dart';
 
-class AddressDetailsScreen extends StatelessWidget {
+class AddressDetailsScreen extends StatefulWidget {
   const AddressDetailsScreen({super.key});
 
+  @override
+  State<AddressDetailsScreen> createState() => _AddressDetailsScreenState();
+}
+
+class _AddressDetailsScreenState extends State<AddressDetailsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -11,7 +16,7 @@ class AddressDetailsScreen extends StatelessWidget {
         automaticallyImplyLeading: false,
         flexibleSpace: const AddNewAddressAppBarView(),
       ),
-      body: const SingleChildScrollView(
+      body:  SingleChildScrollView(
         child: Column(
           children: [
             AddNewAddressButton(),

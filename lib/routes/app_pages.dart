@@ -65,6 +65,7 @@ import 'package:doctor/ui/my_appointment_screen/binding/my_appointment_binding.d
 import 'package:doctor/ui/my_appointment_screen/view/my_appointment_screen.dart';
 import 'package:doctor/ui/my_orders/view/my_orders_screen.dart';
 import 'package:doctor/ui/my_prescription/view/my_prescription_screen.dart';
+import 'package:doctor/ui/my_profile/view/my_profile_screen.dart';
 import 'package:doctor/ui/my_wallet_screen/binding/my_wallet_binding.dart';
 import 'package:doctor/ui/my_wallet_screen/view/my_wallet_screen.dart';
 import 'package:doctor/ui/notification_screen/binding/notification_binding.dart';
@@ -404,6 +405,11 @@ class AppPages {
     GetPage(
       name: AppRoutes.invoices,
       page: () => const InvoicesScreen(),
+      binding: ConfirmBookingBinding(), //change
+    ),
+    GetPage(
+      name: AppRoutes.myProfile,
+      page: () => const MyProfileScreen(),
       binding: ConfirmBookingBinding(), //change
     ),
     GetPage(

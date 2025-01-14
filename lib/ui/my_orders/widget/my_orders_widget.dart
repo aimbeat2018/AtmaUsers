@@ -108,7 +108,7 @@ class MyOrdersItemView extends StatelessWidget {
                                   ).paddingOnly(left: 10.0, top:5.0),
                                   InkWell(
                                     onTap: (){
-
+                                      Get.toNamed(AppRoutes.orderDetails);
                                     },
                                     child: Container(
                                         padding: const EdgeInsets.only(top: 4.0, bottom: 4.0, left: 5.0, right: 5.0),
@@ -137,18 +137,35 @@ class MyOrdersItemView extends StatelessWidget {
                   children: [
                     Row(
                       children: [
-                        Image.asset(AppAsset.icDelivery, height: 20),
-                        Text("${EnumLocale.txtDeliveredOn.name.tr}18.08.2024, 20:35"),
+                        Image.asset(AppAsset.icDelivery, height: 15),
+                        const SizedBox(width: 5.0),
+                        Text("${EnumLocale.txtDeliveredOn.name.tr}18.08.2024, 20:35",
+                          style: FontStyle.fontStyleW500(
+                          fontSize: 11,
+                          fontColor: AppColors.blueColor,
+                        ),),
                       ],
                     ),
-                    Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10.0),
+                    const SizedBox(width: 5.0),
+                    Expanded(
+                      child: Container(
+                        padding: const EdgeInsets.all(5.0),
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(15.0),
+                          border: Border.all(
+                            color: AppColors.borderColor,
+                          ),
+                        ),
+                        child: Text("${EnumLocale.txtOrderId.name.tr} #M2Z4-VVY2",
+                          style: FontStyle.fontStyleW500(
+                          fontSize: 11,
+                          fontColor: AppColors.containerBlue,
+                        ),),
                       ),
-                      child: Text("Ss"),
                     ),
                   ],
-                ),
+                ).paddingOnly(top:5.0, bottom: 5.0, left: 10.0, right: 10.0),
               ],
             ),
           ).paddingOnly(top:10.0),

@@ -44,8 +44,16 @@ class MyWalletBalanceView extends StatelessWidget {
           margin: const EdgeInsets.all(15),
           padding: const EdgeInsets.all(15),
           decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.topRight,
+              colors: [
+                AppColors.primaryAppColor1,
+                AppColors.lightBlue1,
+              ],
+            ),
             borderRadius: BorderRadius.circular(16),
-            color: AppColors.categoryCircle,
+            // color: AppColors.categoryCircle,
             border: Border.all(
               width: 1.2,
               color: AppColors.border.withOpacity(0.3),
@@ -63,7 +71,7 @@ class MyWalletBalanceView extends StatelessWidget {
                 EnumLocale.txtAvailableBalance.name.tr,
                 style: FontStyle.fontStyleW500(
                   fontSize: 16,
-                  fontColor: AppColors.tabUnselectText,
+                  fontColor: AppColors.appBarBg,
                 ),
               ),
               logic.isLoading
@@ -72,7 +80,7 @@ class MyWalletBalanceView extends StatelessWidget {
                       "$currency $walletAmount",
                       style: FontStyle.fontStyleW700(
                         fontSize: 27,
-                        fontColor: AppColors.title,
+                        fontColor: AppColors.white,
                       ),
                     ),
             ],
@@ -87,7 +95,8 @@ class MyWalletBalanceView extends StatelessWidget {
 class MyWalletButtonView extends StatelessWidget {
   MyWalletButtonView({super.key});
 
-  ConfirmBookingController confirmBookingController = Get.put(ConfirmBookingController());
+  ConfirmBookingController confirmBookingController =
+      Get.put(ConfirmBookingController());
 
   @override
   Widget build(BuildContext context) {

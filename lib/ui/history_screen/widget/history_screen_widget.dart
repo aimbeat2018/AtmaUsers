@@ -55,7 +55,8 @@ class HistoryTitleView extends StatelessWidget {
                       color: AppColors.specialistBox,
                       borderRadius: BorderRadius.circular(6),
                     ),
-                    padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 10),
+                    padding:
+                        const EdgeInsets.symmetric(vertical: 8, horizontal: 10),
                     child: Row(
                       children: [
                         Text(
@@ -145,9 +146,9 @@ class HistoryListItemView extends StatelessWidget {
       // height: Get.height * 0.1,
       width: Get.width,
       decoration: BoxDecoration(
-        color: AppColors.white,
+        color: AppColors.containerBg,
         borderRadius: BorderRadius.circular(14),
-        border: Border.all(width: 0.8, color: AppColors.divider),
+        border: Border.all(width: 0.8, color: AppColors.primaryAppColor1),
         boxShadow: [
           BoxShadow(
             color: AppColors.black.withOpacity(0.15),
@@ -164,68 +165,85 @@ class HistoryListItemView extends StatelessWidget {
       child: GetBuilder<HistoryScreenController>(
         id: Constant.idProgressView,
         builder: (logic) {
-          DateTime parsedDate = DateFormat("yyyy-MM-dd").parse(logic.getHistory[index].date ?? "");
-          logic.historyDate = DateFormat("dd/MM/yyyy").format(parsedDate);
+          DateTime parsedDate = DateFormat("yyyy-MM-dd")
+              .parse(logic.getHistory[index].date ?? "");
+          logic.historyDate = DateFormat("   d \n MMM").format(parsedDate);
           logic.date.add(logic.historyDate);
 
-          return Row(
-            children: [
-              Container(
-                height: Get.height * 0.08,
-                width: Get.width * 0.16,
-                decoration: BoxDecoration(
-                  color: logic.getHistory[index].type == 1 ? AppColors.greenBox : AppColors.redBox,
-                  borderRadius: BorderRadius.circular(12),
+          return IntrinsicHeight(
+            child: Row(
+              children: [
+                Text("${logic.date[index]}", style: FontStyle.fontStyleW600(
+                  fontSize: 16,
+                  fontColor: AppColors.primaryAppColor1,
+                ),),
+                VerticalDivider(
+                  indent: 10,
+                  endIndent: 10,
+                  thickness: 0.5,
+                  color: AppColors.dividerGrey,
                 ),
-                child: Image.asset(
-                  logic.getHistory[index].type == 1 ? AppAsset.icWalletAdd : AppAsset.icWalletMinus,
-                ).paddingAll(7),
-              ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    logic.getHistory[index].type == 1 ? EnumLocale.txtAddWallet.name.tr : EnumLocale.txtPayDoctor.name.tr,
-                    style: FontStyle.fontStyleW600(
-                      fontSize: 15,
-                      fontColor: logic.getHistory[index].type == 1 ? AppColors.walletGreen : AppColors.notificationTitle2,
+                  // Image.asset(
+                  //   logic.getHistory[index].type == 1
+                  //       ? AppAsset.icWalletAdd
+                  //       : AppAsset.icWalletMinus,
+                  // ).paddingAll(7),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      logic.getHistory[index].type == 1
+                          ? EnumLocale.txtAddWallet.name.tr
+                          : EnumLocale.txtPayDoctor.name.tr,
+                      style: FontStyle.fontStyleW600(
+                        fontSize: 15,
+                        fontColor: AppColors.primaryAppColor1,
+                        // logic.getHistory[index].type == 1 ? AppColors.walletGreen : AppColors.notificationTitle2,
+                      ),
                     ),
-                  ),
-                  Text(
-                    "#${logic.getHistory[index].uniqueId}",
-                    style: FontStyle.fontStyleW500(
-                      fontSize: 14,
-                      fontColor: AppColors.degreeText,
+                    Text(
+                      "#${logic.getHistory[index].uniqueId}",
+                      style: FontStyle.fontStyleW500(
+                        fontSize: 14,
+                        fontColor: AppColors.textGrey1,
+                      ),
                     ),
-                  ),
-                  Text(
-                    "${logic.date[index]} ${logic.getHistory[index].time}",
-                    style: FontStyle.fontStyleW500(
-                      fontSize: 12,
-                      fontColor: AppColors.degreeText,
+                   /* Text(
+                      "${logic.date[index]} ${logic.getHistory[index].time}",
+                      style: FontStyle.fontStyleW500(
+                        fontSize: 12,
+                        fontColor: AppColors.degreeText,
+                      ),
+                    ),*/
+                  ],
+                ).paddingOnly(top: 10, bottom: 10, left: 10),
+                const Spacer(),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    Text(
+                      logic.getHistory[index].type == 1
+                          ? "+ ${logic.getHistory[index].amount}"
+                          : "- ${logic.getHistory[index].amount}",
+                      style: FontStyle.fontStyleW600(
+                        fontSize: 15,
+                        fontColor: logic.getHistory[index].type == 1
+                            ? AppColors.greenText
+                            : AppColors.redText,
+                      ),
                     ),
-                  ),
-                ],
-              ).paddingOnly(top: 10, bottom: 10, left: 10),
-              const Spacer(),
-              Container(
-                padding: const EdgeInsets.symmetric(horizontal: 13, vertical: 8),
-                decoration: BoxDecoration(
-                  color: logic.getHistory[index].type == 1 ? AppColors.greenBox : AppColors.redBox,
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: Text(
-                  logic.getHistory[index].type == 1
-                      ? "+ ${logic.getHistory[index].amount}"
-                      : "- ${logic.getHistory[index].amount}",
-                  style: FontStyle.fontStyleW600(
-                    fontSize: 15,
-                    fontColor: logic.getHistory[index].type == 1 ? AppColors.walletGreen : AppColors.notificationTitle2,
-                  ),
-                ),
-              )
-            ],
+                    Text(
+                      "#${logic.getHistory[index].uniqueId}",
+                      style: FontStyle.fontStyleW500(
+                        fontSize: 14,
+                        fontColor: AppColors.textGrey1,
+                      ),
+                    ),
+                  ],
+                ).paddingOnly(top:10),
+              ],
+            ),
           );
         },
       ),
