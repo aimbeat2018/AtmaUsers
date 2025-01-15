@@ -17,6 +17,8 @@ class UserMembershipCard extends StatelessWidget {
         child: Column(
           children: [
             MembershipCard(),
+            MembershipCardDownloadButton(),
+
 
           ],
         ),

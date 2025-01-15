@@ -11,6 +11,11 @@ class MyProfileScreen extends StatelessWidget {
         automaticallyImplyLeading: false,
         flexibleSpace: const MyProfileAppBarView(),
       ),
+      body: Column(
+        children: [
+          MyProfileFormView(),
+        ],
+      ),
     );
   }
 }

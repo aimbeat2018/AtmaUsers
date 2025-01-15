@@ -24,6 +24,7 @@ enum EnumLocale {
   txtCompany,
   txtPrescription,
   txtPrivilegeCard,
+  txtReferAndEarn,
   txtMedicineType,
   txtSearchBooking,
   txtSpecialistDoctors,

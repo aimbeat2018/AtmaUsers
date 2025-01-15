@@ -132,6 +132,11 @@ class AppAsset {
   static const icPrescription = "${getIconsPath}prescription.png";
   static const icInvoices = "${getIconsPath}invoices.png";
   static const icPdf= "${getIconsPath}pdf.png";
+  static const icPhone = "${getIconsPath}phone.png";
+  static const icWeb = "${getIconsPath}web.png";
+  static const icMail = "${getIconsPath}email.png";
+  static const icRefer = "${getIconsPath}refer.png";
+  static const icInvite = "${getIconsPath}invite.png";
 
   /// =================== Images =================== ///
   static const imDoctor = "${getImagesPath}doctor.png";
@@ -153,6 +158,8 @@ class AppAsset {
   static const pharmacy = "${getImagesPath}pharmacy.png";
   static const orderTitleBackImg = "${getImagesPath}order_header.png";
   static const availableLabsImg = "${getImagesPath}available_labs.png";
+  static const cardBgImg = "${getImagesPath}card_bg.png";
+  static const referAndEarnImg = "${getImagesPath}refer_and_earn.png";
 
   /// =================== Country Icon =================== ///
   static const imChinese = "${getCountryPath}chinese.png";

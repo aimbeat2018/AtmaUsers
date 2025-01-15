@@ -60,6 +60,7 @@ class AppColors {
   static Color greenBox1 = const Color(0x2605eb00);
   static Color greenBoxText = const Color(0xff038700);
   static Color greenText = const Color(0xff2fb600);
+  static Color greenCardText = const Color(0xff0b6705);
   static Color lightBlue = const Color(0xff49d7fa);
   static Color lightBlue1 = const Color(0xff46beff);
   static Color redBox = const Color(0xffFFEEF0);
@@ -83,6 +84,7 @@ class AppColors {
   static Color appointmentBorder = const Color(0xffF2F2F2);
   static Color disableSlotText = const Color(0xffEDB1B1);
   static Color dateRedColor = const Color(0xff9d3825);
+  static Color cardRed = const Color(0xff993938);
   static Color bannerIndicator = const Color(0xffD9DADD);
   static Color chatTextField = const Color(0xffFCFCFF);
   static Color border = const Color(0xffD1D3E5);

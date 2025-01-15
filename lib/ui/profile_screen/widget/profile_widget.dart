@@ -262,6 +262,16 @@ class ProfileGeneralView extends StatelessWidget {
                     .paddingOnly(top: 15, bottom: 15),
                 ProfileMenu(
                   image: AppAsset.icMembershipOutline,
+                  text: "Refer and Earn"/*EnumLocale.txtPrivilegeCard.name.tr*/,
+                  isArrow: true,
+                  onTap: () {
+                        Get.toNamed(AppRoutes.referAndEarn);
+                  },
+                ),
+                Divider(height: 1.5, color: AppColors.white)
+                    .paddingOnly(top: 15, bottom: 15),
+                ProfileMenu(
+                  image: AppAsset.icMembershipOutline,
                   text: EnumLocale.txtPrivilegeCard.name.tr,
                   isArrow: true,
                   onTap: () {
@@ -352,16 +362,16 @@ class ProfileAccountView extends StatelessWidget {
               );
             },
           ),
-          Divider(height: 1.5, color: AppColors.white)
-              .paddingOnly(top: 15, bottom: 15),
-          ProfileMenu(
-            image: AppAsset.icLanguage,
-            text: EnumLocale.txtLanguage.name.tr,
-            isArrow: true,
-            onTap: () {
-              Get.toNamed(AppRoutes.language);
-            },
-          ),
+          // Divider(height: 1.5, color: AppColors.white)
+          //     .paddingOnly(top: 15, bottom: 15),
+          // ProfileMenu(
+          //   image: AppAsset.icLanguage,
+          //   text: EnumLocale.txtLanguage.name.tr,
+          //   isArrow: true,
+          //   onTap: () {
+          //     Get.toNamed(AppRoutes.language);
+          //   },
+          // ),
           Divider(height: 1.5, color: AppColors.white)
               .paddingOnly(top: 15, bottom: 15),
           GetBuilder<ProfileScreenController>(

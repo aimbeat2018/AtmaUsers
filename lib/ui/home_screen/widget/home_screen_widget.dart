@@ -6,6 +6,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:doctor/custom/bottom_sheet/upcoming_appointment_bottom_sheet.dart';
 import 'package:doctor/custom/no_data_found/no_data_found.dart';
 import 'package:doctor/routes/app_routes.dart';
+import 'package:doctor/ui/help_task_screen/controller/help_desk_screen_controller.dart';
 import 'package:doctor/ui/home_screen/controller/home_screen_controller.dart';
 import 'package:doctor/ui/home_screen/model/get_all_doctor_model.dart';
 import 'package:doctor/ui/home_screen/model/get_all_doctor_service_model.dart';
@@ -565,11 +566,12 @@ class HomeCategoryTitleView extends StatelessWidget {
                 endIndent: 2,
                 thickness: 3,
                 color: AppColors.primaryAppColor1,
-              ).paddingOnly(left:15),
+              ).paddingOnly(left: 15),
               Text(
-                EnumLocale.txtCategories.name.tr,
+                "Book Appointment & Consultant",
+                // EnumLocale.txtCategories.name.tr,
                 style: FontStyle.fontStyleW600(
-                  fontSize: 17,
+                  fontSize: 14,
                   fontColor: AppColors.black,
                 ),
               ).paddingOnly(top: 15, left: 0, right: 15),
@@ -777,7 +779,6 @@ class HomeBannerView extends StatelessWidget {
   }
 }
 
-
 /// =================== Lab test =================== ///
 class LabTestView extends StatelessWidget {
   const LabTestView({super.key});
@@ -785,9 +786,9 @@ class LabTestView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap:(){
-        Get.toNamed(AppRoutes.labTests);
-      },
+        onTap: () {
+          Get.toNamed(AppRoutes.labTests);
+        },
         child: Image.asset(AppAsset.labTestImg));
   }
 }
@@ -799,14 +800,155 @@ class PharmacyBookingView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-        onTap:(){
+        onTap: () {
           Get.toNamed(AppRoutes.pharmacyBooking);
         },
-        child: Image.asset(AppAsset.pharmacyBookingImg)
-    );
+        child: Image.asset(AppAsset.pharmacyBookingImg));
   }
 }
 
+/// =================== Medicine =================== ///
+class MedicineTitleView extends StatelessWidget {
+  const MedicineTitleView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        IntrinsicHeight(
+          child: Row(
+            children: [
+              VerticalDivider(
+                indent: 2,
+                endIndent: 1,
+                thickness: 3,
+                color: AppColors.primaryAppColor1,
+              ),
+              Text(
+                "Medicine you are looking for",
+                style: FontStyle.fontStyleW600(
+                  fontSize: 15,
+                  fontColor: AppColors.title,
+                ),
+              ),
+            ],
+          ),
+        ),
+        GestureDetector(
+          onTap: () {
+            Get.toNamed(
+              AppRoutes.topSpecialist,
+              // arguments: [logic.getAllServiceModel?.data],
+            );
+          },
+          child: Text(
+            "View All",
+            style: FontStyle.fontStyleW500(
+              fontSize: 12,
+              fontColor: AppColors.tabUnselectText,
+              decorationColor: AppColors.tabUnselectText,
+            ),
+          ),
+        )
+      ],
+    ).paddingOnly(top: 15, left: 15, right: 15);
+    ;
+  }
+}
+
+class MedicineItemView extends StatelessWidget {
+  const MedicineItemView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: Get.height * 0.24,
+      child: ListView.builder(
+        itemCount: 4,
+        scrollDirection: Axis.horizontal,
+        shrinkWrap: true,
+        physics: const ScrollPhysics(),
+        itemBuilder: (context, index) {
+          return MedicineListView(index: index);
+        },
+      ),
+    ).paddingOnly(bottom: 20);
+  }
+}
+
+class MedicineListView extends StatelessWidget {
+  final int index;
+
+  const MedicineListView({super.key, required this.index});
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: () {
+        Get.toNamed(AppRoutes.medicineDetails);
+      },
+      child: Container(
+        width: 200,
+        decoration: BoxDecoration(
+          color: AppColors.primaryAppColor1,
+          borderRadius: BorderRadius.circular(10.0),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Container(
+              width: double.infinity,
+              padding: const EdgeInsets.only(top: 30, bottom: 30),
+              decoration: BoxDecoration(
+                color: AppColors.white,
+                borderRadius: BorderRadius.circular(5.0),
+              ),
+              child: Image.asset(AppAsset.medicineImg1, height: 60),
+            ).paddingOnly(left: 8, right: 8, top: 8),
+            Text(
+              "Crocin Advance (500 mg)",
+              style: FontStyle.fontStyleW600(
+                fontSize: 13,
+                fontColor: AppColors.white,
+              ),
+            ),
+            Row(
+              children: [
+                Expanded(
+                  child: Text(
+                    "₹ 50.00",
+                    style: FontStyle.fontStyleW500(
+                      fontSize: 15,
+                      fontColor: AppColors.black,
+                      textDecoration: TextDecoration.lineThrough,
+                      decorationColor: AppColors.black,
+                    ),
+                  ).paddingOnly(left: 10.0, top: 5.0),
+                ),
+                Expanded(
+                  child: Container(
+                      // padding: const EdgeInsets.only(top: 4.0, bottom: 4.0, left: 50.0, right: 50.0),
+                      decoration: BoxDecoration(
+                        color: AppColors.white,
+                        borderRadius: BorderRadius.circular(5.0),
+                      ),
+                      child: Text(EnumLocale.txtAddedToCart.name.tr,
+                        style: FontStyle.fontStyleW600(
+                          fontSize: 11,
+                          fontColor: AppColors.primaryAppColor1,
+                        ),).paddingOnly(right: 2.0)
+                  ).paddingOnly(left: 25.0, right: 25.0),
+                ),
+              ],
+            ),
+
+          ],
+        ),
+      ).paddingOnly(top: 10, left: 10, right: 10),
+    );
+  }
+}
 
 /// =================== Specialist Title =================== ///
 class HomeSpecialistTitleView extends StatelessWidget {
@@ -889,7 +1031,8 @@ class HomeTabBarView extends StatelessWidget {
         return DefaultTabController(
           length: logic.addData?.length ?? 0,
           child: logic.isLoading
-              ? Shimmers.homeTabShimmer() : TabBar(
+              ? Shimmers.homeTabShimmer()
+              : TabBar(
                   controller: logic.tabController,
                   tabs: logic.addData?.map<Tab>((category) {
                         return Tab(
@@ -901,8 +1044,7 @@ class HomeTabBarView extends StatelessWidget {
                     fontSize: 13.5,
                     fontColor: AppColors.white,
                   ),
-                  physics:
-                  const BouncingScrollPhysics(
+                  physics: const BouncingScrollPhysics(
                       parent: AlwaysScrollableScrollPhysics()),
                   padding:
                       const EdgeInsets.symmetric(horizontal: 16, vertical: 10),

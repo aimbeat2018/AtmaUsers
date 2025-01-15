@@ -86,6 +86,7 @@ import 'package:doctor/ui/rating_screen/binding/rating_screen_binding.dart';
 import 'package:doctor/ui/rating_screen/view/rating_screen.dart';
 import 'package:doctor/ui/re-schedule_screen/binding/schedule_binding.dart';
 import 'package:doctor/ui/re-schedule_screen/view/schedule_screen.dart';
+import 'package:doctor/ui/refer_and_earn/view/refer_and_earn_screen.dart';
 import 'package:doctor/ui/registration_screen/binding/registration_binding.dart';
 import 'package:doctor/ui/registration_screen/view/registration_screen.dart';
 import 'package:doctor/ui/saved_doctor_screen/binding/saved_doctor_binding.dart';
@@ -380,7 +381,7 @@ class AppPages {
     GetPage(
       name: AppRoutes.myCart,
       page: () => const MyCartScreen(),
-          binding:ConfirmBookingBinding(),
+      binding: ConfirmBookingBinding(),
     ),
     GetPage(
       name: AppRoutes.myPrescription,
@@ -410,6 +411,11 @@ class AppPages {
     GetPage(
       name: AppRoutes.myProfile,
       page: () => const MyProfileScreen(),
+      binding: ConfirmBookingBinding(), //change
+    ),
+    GetPage(
+      name: AppRoutes.referAndEarn,
+      page: () => const ReferAndEarnScreen(),
       binding: ConfirmBookingBinding(), //change
     ),
     GetPage(

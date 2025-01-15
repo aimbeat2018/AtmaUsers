@@ -27,7 +27,7 @@ class MembershipBarView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomAppBar(
-      title: EnumLocale.txtMembership.name.tr,
+      title: EnumLocale.txtPrivilegeCard.name.tr,
       showLeadingIcon: true,
     );
   }
