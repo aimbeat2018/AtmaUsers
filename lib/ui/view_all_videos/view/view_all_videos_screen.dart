@@ -1,20 +1,20 @@
-import 'package:doctor/ui/my_profile/widget/my_profile_widget.dart';
+import 'package:doctor/ui/view_all_videos/widget/view_all_videos_widget.dart';
 import 'package:flutter/material.dart';
 
-class MyProfileScreen extends StatelessWidget {
-  const MyProfileScreen({super.key});
+class ViewAllVideosScreen extends StatelessWidget {
+  const ViewAllVideosScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:AppBar(
+      appBar: AppBar(
         automaticallyImplyLeading: false,
-        flexibleSpace: const MyProfileAppBarView(),
+        flexibleSpace: const ViewAllVideosAppBarView(),
       ),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            PersonalDetailsView(),
+            ViewAllVideosItemView(),
           ],
         ),
       ),

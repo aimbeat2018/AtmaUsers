@@ -1,25 +1,18 @@
-import 'dart:developer';
-
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:doctor/custom/app_bar/custom_app_bar.dart';
 import 'package:doctor/custom/app_button/primary_app_button.dart';
-import 'package:doctor/custom/dialog/payment_confirm_dialog.dart';
-import 'package:doctor/custom/progress_indicator/progress_dialog.dart';
-import 'package:doctor/routes/app_routes.dart';
 import 'package:doctor/ui/confirm_booking_screen/controller/confirm_booking_controller.dart';
 import 'package:doctor/ui/confirm_booking_screen/widget/confirm_booking_widget.dart';
 import 'package:doctor/utils/app_asset.dart';
 import 'package:doctor/utils/app_color.dart';
 import 'package:doctor/utils/constant.dart';
 import 'package:doctor/utils/enums.dart';
-import 'package:doctor/utils/global_variables.dart';
-import 'package:doctor/utils/shimmers.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_utils/src/extensions/internacionalization.dart';
 import 'package:doctor/utils/font_style.dart';
 import 'package:get/get_utils/src/extensions/widget_extensions.dart';
-import 'package:intl/intl.dart';
+
 
 class LabTestsAppBarView extends StatelessWidget {
   const LabTestsAppBarView({super.key});

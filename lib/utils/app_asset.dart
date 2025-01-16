@@ -160,6 +160,7 @@ class AppAsset {
   static const availableLabsImg = "${getImagesPath}available_labs.png";
   static const cardBgImg = "${getImagesPath}card_bg.png";
   static const referAndEarnImg = "${getImagesPath}refer_and_earn.png";
+  static const yogaImg = "${getImagesPath}yoga.png";
 
   /// =================== Country Icon =================== ///
   static const imChinese = "${getCountryPath}chinese.png";

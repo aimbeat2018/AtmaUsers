@@ -40,7 +40,7 @@ class SearchTestType extends StatelessWidget {
         // logic.searchDoctorByName(text: text ?? "");
         return null;
       },
-      hintText: EnumLocale.txtSearchDoctor.name.tr,
+      hintText: "Search test type..",
       controller: /*logic.searchController*/ searchTestTypeController,
       fillColor: AppColors.white,
       hintTextSize: 13,

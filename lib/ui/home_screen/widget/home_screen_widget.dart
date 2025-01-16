@@ -837,11 +837,8 @@ class MedicineTitleView extends StatelessWidget {
         ),
         GestureDetector(
           onTap: () {
-            Get.toNamed(
-              AppRoutes.topSpecialist,
-              // arguments: [logic.getAllServiceModel?.data],
-            );
-          },
+            Get.toNamed(AppRoutes.viewAllMedicines);
+            },
           child: Text(
             "View All",
             style: FontStyle.fontStyleW500(
@@ -853,7 +850,6 @@ class MedicineTitleView extends StatelessWidget {
         )
       ],
     ).paddingOnly(top: 15, left: 15, right: 15);
-    ;
   }
 }
 
@@ -899,12 +895,12 @@ class MedicineListView extends StatelessWidget {
           children: [
             Container(
               width: double.infinity,
-              padding: const EdgeInsets.only(top: 30, bottom: 30),
+              padding: const EdgeInsets.only(top: 10, bottom: 10),
               decoration: BoxDecoration(
                 color: AppColors.white,
                 borderRadius: BorderRadius.circular(5.0),
               ),
-              child: Image.asset(AppAsset.medicineImg1, height: 60),
+              child: Image.asset(AppAsset.medicineImg1, height: 90),
             ).paddingOnly(left: 8, right: 8, top: 8),
             Text(
               "Crocin Advance (500 mg)",
@@ -912,40 +908,139 @@ class MedicineListView extends StatelessWidget {
                 fontSize: 13,
                 fontColor: AppColors.white,
               ),
-            ),
+            ).paddingOnly(top: 5),
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Expanded(
+                Text(
+                  "₹ 50.00",
+                  style: FontStyle.fontStyleW500(
+                    fontSize: 15,
+                    fontColor: AppColors.yellowText,
+                  ),
+                ).paddingOnly(left: 10.0, top: 5.0),
+                Container(
+                  padding: const EdgeInsets.only(
+                      top: 5.0, bottom: 5.0, left: 5.0, right: 5.0),
+                  decoration: BoxDecoration(
+                    color: AppColors.white,
+                    borderRadius: BorderRadius.circular(5.0),
+                  ),
                   child: Text(
-                    "₹ 50.00",
-                    style: FontStyle.fontStyleW500(
-                      fontSize: 15,
-                      fontColor: AppColors.black,
-                      textDecoration: TextDecoration.lineThrough,
-                      decorationColor: AppColors.black,
+                    EnumLocale.txtAddedToCart.name.tr,
+                    style: FontStyle.fontStyleW600(
+                      fontSize: 11,
+                      fontColor: AppColors.primaryAppColor1,
                     ),
-                  ).paddingOnly(left: 10.0, top: 5.0),
-                ),
-                Expanded(
-                  child: Container(
-                      // padding: const EdgeInsets.only(top: 4.0, bottom: 4.0, left: 50.0, right: 50.0),
-                      decoration: BoxDecoration(
-                        color: AppColors.white,
-                        borderRadius: BorderRadius.circular(5.0),
-                      ),
-                      child: Text(EnumLocale.txtAddedToCart.name.tr,
-                        style: FontStyle.fontStyleW600(
-                          fontSize: 11,
-                          fontColor: AppColors.primaryAppColor1,
-                        ),).paddingOnly(right: 2.0)
-                  ).paddingOnly(left: 25.0, right: 25.0),
-                ),
+                  ),
+                ).paddingOnly(right: 10.0),
               ],
-            ),
-
+            ).paddingOnly(top: 5.0),
           ],
         ),
       ).paddingOnly(top: 10, left: 10, right: 10),
+    );
+  }
+}
+
+/// =================== Videos from expert =================== ///
+///
+class VideosFromExpertTitleView extends StatelessWidget {
+  const VideosFromExpertTitleView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        IntrinsicHeight(
+          child: Row(
+            children: [
+              VerticalDivider(
+                indent: 2,
+                endIndent: 1,
+                thickness: 3,
+                color: AppColors.primaryAppColor1,
+              ),
+              Text(
+                "Videos from Experts",
+                style: FontStyle.fontStyleW600(
+                  fontSize: 15,
+                  fontColor: AppColors.title,
+                ),
+              ),
+            ],
+          ),
+        ),
+        GestureDetector(
+          onTap: () {
+            Get.toNamed(AppRoutes.viewAllVideos);
+          },
+          child: Text(
+            "View All",
+            style: FontStyle.fontStyleW500(
+              fontSize: 12,
+              fontColor: AppColors.tabUnselectText,
+              decorationColor: AppColors.tabUnselectText,
+            ),
+          ),
+        )
+      ],
+    ).paddingOnly(top: 5, left: 15, right: 15);
+  }
+}
+
+class VideosFromExpertItemView extends StatelessWidget {
+  const VideosFromExpertItemView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: Get.height * 0.15,
+      child: ListView.builder(
+        itemCount: 4,
+        scrollDirection: Axis.horizontal,
+        shrinkWrap: true,
+        physics: const ScrollPhysics(),
+        itemBuilder: (context, index) {
+          return VideosFromExpertListView(index: index);
+        },
+      ),
+    );
+  }
+}
+
+class VideosFromExpertListView extends StatelessWidget {
+  final int index;
+
+  const VideosFromExpertListView({super.key, required this.index});
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: () {
+        Get.toNamed(AppRoutes.videoPlayer);
+        },
+      child: Container(
+        width: 170,
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(AppAsset.yogaImg),
+          ),
+        ),
+        child: Align(
+          alignment: Alignment.center,
+          child: Container(
+            height: 35,
+            width: 35,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: AppColors.redButtonColor,
+            ),
+            child: Icon(Icons.play_arrow, color: AppColors.iconColor),
+          ),
+        ),
+      ).paddingOnly(left: 10),
     );
   }
 }

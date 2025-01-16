@@ -3,12 +3,8 @@ import 'package:doctor/utils/app_color.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:doctor/utils/font_style.dart';
-import '../../../custom/no_data_found/no_data_found.dart';
-import '../../../custom/waveClipper/wave_clipper.dart';
 import '../../../utils/app_asset.dart';
 import '../../../utils/constant.dart';
-import '../../../utils/enums.dart';
-import '../../../utils/shimmers.dart';
 import '../controller/membership_controller.dart';
 
 /// =================== List View =================== ///

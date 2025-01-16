@@ -66,10 +66,13 @@ class AppColors {
   static Color redBox = const Color(0xffFFEEF0);
   static Color notificationTitle2 = const Color(0xffF01A41);
   static Color redText = const Color(0xffe80000);
+  static Color redButtonColor = const Color(0xffe80000);
+  static Color iconColor = const Color(0xfffffcee);
   static Color rating = const Color(0xffFFA722);
   static Color review = const Color(0xffF19914);
   static Color yellowBg = const Color(0xffFEF0D4);
   static Color yellowTitle = const Color(0xffffcc18);
+  static Color yellowText = const Color(0xffffd363);
   static Color appBarBg = const Color(0xffDBEFFF);
   static Color notificationBox = const Color(0xffF4FFF3);
   static Color notificationBox2 = const Color(0xffFEF7F7);

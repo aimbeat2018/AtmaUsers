@@ -72,7 +72,12 @@ class HomeScreen extends StatelessWidget {
                           MedicineTitleView(),
                           SizedBox(height: 10),
                           MedicineItemView(),
-                          SizedBox(height: 10,),
+                          SizedBox(height: 10),
+                          VideosFromExpertTitleView(),
+                          SizedBox(height: 10),
+                          VideosFromExpertItemView(),
+                          /*VideosFromExpertItemView(),*/
+                          SizedBox(height: 10),
                           const HomeSpecialistTitleView(),
                         ],
                       ),

@@ -109,6 +109,8 @@ import 'package:doctor/ui/video_call_screen/binding/video_call_binding.dart';
 import 'package:doctor/ui/video_call_screen/view/video_call_screen.dart';
 import 'package:doctor/ui/video_player_screen/binding/video_player_binding.dart';
 import 'package:doctor/ui/video_player_screen/view/video_player_screen.dart';
+import 'package:doctor/ui/view_all_medicines/view/view_all_medicines_screen.dart';
+import 'package:doctor/ui/view_all_videos/view/view_all_videos_screen.dart';
 import 'package:get/get.dart';
 
 class AppPages {
@@ -422,6 +424,16 @@ class AppPages {
       name: AppRoutes.membershipCard,
       page: () => const UserMembershipCard(),
       binding: MembershipBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.viewAllMedicines,
+      page: () => const ViewAllMedicinesScreen(),
+      binding: MembershipBinding(), // change
+    ),
+    GetPage(
+      name: AppRoutes.viewAllVideos,
+      page: () => const ViewAllVideosScreen(),
+      binding: MembershipBinding(), // change
     ),
   ];
 }
