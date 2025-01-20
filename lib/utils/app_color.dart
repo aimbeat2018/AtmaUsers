@@ -61,6 +61,7 @@ class AppColors {
   static Color greenBoxText = const Color(0xff038700);
   static Color greenText = const Color(0xff2fb600);
   static Color greenCardText = const Color(0xff0b6705);
+  static Color buttonBack = const Color(0xff018994);
   static Color lightBlue = const Color(0xff49d7fa);
   static Color lightBlue1 = const Color(0xff46beff);
   static Color redBox = const Color(0xffFFEEF0);

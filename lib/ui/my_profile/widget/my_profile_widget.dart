@@ -1,12 +1,17 @@
+import 'dart:io';
+
 import 'package:doctor/custom/app_bar/custom_app_bar.dart';
+import 'package:doctor/custom/app_button/primary_app_button.dart';
 import 'package:doctor/custom/text_field/custom_text_field.dart';
 import 'package:doctor/custom/text_field/custom_title.dart';
 import 'package:doctor/custom/upper_case_formatter/upper_case_formatter_class.dart';
+import 'package:doctor/routes/app_routes.dart';
 import 'package:doctor/utils/app_color.dart';
 import 'package:doctor/utils/circle.dart';
 import 'package:doctor/utils/enums.dart';
 import 'package:doctor/utils/separator.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:get/get_utils/src/extensions/internacionalization.dart';
 import 'package:get/get_utils/src/extensions/widget_extensions.dart';
 import 'package:doctor/utils/font_style.dart';
@@ -31,19 +36,32 @@ class PersonalDetailsView extends StatefulWidget {
 }
 
 class _PersonalDetailsViewState extends State<PersonalDetailsView> {
-  final TextEditingController buildingNameController = TextEditingController();
 
-  final TextEditingController landmarkController = TextEditingController();
+  final TextEditingController firstNameController = TextEditingController();
 
-  final TextEditingController areaController = TextEditingController();
+  final TextEditingController middleNameController = TextEditingController();
 
-  final TextEditingController pinCodeController = TextEditingController();
+  final TextEditingController lastNameController = TextEditingController();
 
-  final TextEditingController districtController = TextEditingController();
+  final TextEditingController genderController = TextEditingController();
 
-  final TextEditingController stateController = TextEditingController();
+  final TextEditingController dateOfBirthController = TextEditingController();
 
-  final TextEditingController countryController = TextEditingController();
+  final TextEditingController mobileController = TextEditingController();
+
+  final TextEditingController emailController = TextEditingController();
+
+  final TextEditingController emergencyContactController = TextEditingController();
+
+  final TextEditingController bloodGroupController = TextEditingController();
+
+  final TextEditingController educationController = TextEditingController();
+
+  final TextEditingController religionController = TextEditingController();
+
+  final TextEditingController occupationController = TextEditingController();
+
+  final TextEditingController aadhaarController = TextEditingController();
 
   bool defaultAddressCheckbox = true;
   String selectedAddressType = "Home";
@@ -74,7 +92,8 @@ class _PersonalDetailsViewState extends State<PersonalDetailsView> {
            SizedBox(width: 2),
            CircleWithBorder(),
          ],
-       ),
+       ).paddingOnly(top:20, left:10, right: 10),
+          /*
         AddressCustomTitle(
           title: EnumLocale.txtAddressType.name.tr,
           method: Container(
@@ -128,10 +147,24 @@ class _PersonalDetailsViewState extends State<PersonalDetailsView> {
             ),
           ),
         ).paddingOnly(bottom: 20, top:20.0),
+*/
         AddressCustomTitle(
-          title: EnumLocale.txtFlat.name.tr,
+          title: "First Name",
           method: CustomTextField(
-            controller: buildingNameController,
+            controller: firstNameController,
+            filled: true,
+            fillColor: AppColors.appBarBg,
+            cursorColor: AppColors.title,
+            fontColor: AppColors.title,
+            fontSize: 15,
+            textInputAction: TextInputAction.next,
+            inputFormatters: [UpperCaseTextFormatter()],
+          ),
+        ).paddingOnly(bottom: 20, top:20),
+        AddressCustomTitle(
+          title: "Middle Name",
+          method: CustomTextField(
+            controller: middleNameController,
             filled: true,
             fillColor: AppColors.appBarBg,
             cursorColor: AppColors.title,
@@ -142,9 +175,9 @@ class _PersonalDetailsViewState extends State<PersonalDetailsView> {
           ),
         ).paddingOnly(bottom: 20),
         AddressCustomTitle(
-          title: EnumLocale.txtLandmark.name.tr,
+          title: "Last Name",
           method: CustomTextField(
-            controller: landmarkController,
+            controller: lastNameController,
             filled: true,
             fillColor: AppColors.appBarBg,
             cursorColor: AppColors.title,
@@ -155,9 +188,9 @@ class _PersonalDetailsViewState extends State<PersonalDetailsView> {
           ),
         ).paddingOnly(bottom: 20),
         AddressCustomTitle(
-          title: EnumLocale.txtArea.name.tr,
+          title: "Gender",
           method: CustomTextField(
-            controller: areaController,
+            controller: genderController,
             filled: true,
             fillColor: AppColors.appBarBg,
             cursorColor: AppColors.title,
@@ -168,9 +201,9 @@ class _PersonalDetailsViewState extends State<PersonalDetailsView> {
           ),
         ).paddingOnly(bottom: 20),
         AddressCustomTitle(
-          title: EnumLocale.txtPincode.name.tr,
+          title:"Date of Birth",
           method: CustomTextField(
-            controller: pinCodeController,
+            controller: dateOfBirthController,
             filled: true,
             fillColor: AppColors.appBarBg,
             cursorColor: AppColors.title,
@@ -181,9 +214,23 @@ class _PersonalDetailsViewState extends State<PersonalDetailsView> {
           ),
         ).paddingOnly(bottom: 20),
         AddressCustomTitle(
-          title: EnumLocale.txtDistrict.name.tr,
+          title: "Mobile No.",
           method: CustomTextField(
-            controller: districtController,
+            controller: mobileController,
+            filled: true,
+            fillColor: AppColors.appBarBg,
+            cursorColor: AppColors.title,
+            fontColor: AppColors.title,
+            fontSize: 15,
+            textInputAction: TextInputAction.next,
+            textInputType: TextInputType.number,
+            inputFormatters: [UpperCaseTextFormatter()],
+          ),
+        ).paddingOnly(bottom: 20),
+        AddressCustomTitle(
+          title: "Email",
+          method: CustomTextField(
+            controller: emailController,
             filled: true,
             fillColor: AppColors.appBarBg,
             cursorColor: AppColors.title,
@@ -194,9 +241,9 @@ class _PersonalDetailsViewState extends State<PersonalDetailsView> {
           ),
         ).paddingOnly(bottom: 20),
         AddressCustomTitle(
-          title: EnumLocale.txtState.name.tr,
+          title: "Emergency Contact",
           method: CustomTextField(
-            controller: stateController,
+            controller: emergencyContactController,
             filled: true,
             fillColor: AppColors.appBarBg,
             cursorColor: AppColors.title,
@@ -207,9 +254,9 @@ class _PersonalDetailsViewState extends State<PersonalDetailsView> {
           ),
         ).paddingOnly(bottom: 20),
         AddressCustomTitle(
-          title: EnumLocale.txtCountry.name.tr,
+          title: "Blood Group",
           method: CustomTextField(
-            controller: countryController,
+            controller: bloodGroupController,
             filled: true,
             fillColor: AppColors.appBarBg,
             cursorColor: AppColors.title,
@@ -219,7 +266,104 @@ class _PersonalDetailsViewState extends State<PersonalDetailsView> {
             inputFormatters: [UpperCaseTextFormatter()],
           ),
         ).paddingOnly(bottom: 20),
-        Row(children: [
+        AddressCustomTitle(
+          title: "Education",
+          method: CustomTextField(
+            controller: educationController,
+            filled: true,
+            fillColor: AppColors.appBarBg,
+            cursorColor: AppColors.title,
+            fontColor: AppColors.title,
+            fontSize: 15,
+            textInputAction: TextInputAction.next,
+            inputFormatters: [UpperCaseTextFormatter()],
+          ),
+        ).paddingOnly(bottom: 20),
+        AddressCustomTitle(
+          title: "Religion",
+          method: CustomTextField(
+            controller: religionController,
+            filled: true,
+            fillColor: AppColors.appBarBg,
+            cursorColor: AppColors.title,
+            fontColor: AppColors.title,
+            fontSize: 15,
+            textInputAction: TextInputAction.next,
+            inputFormatters: [UpperCaseTextFormatter()],
+          ),
+        ).paddingOnly(bottom: 20),
+        AddressCustomTitle(
+          title: "Occupation",
+          method: CustomTextField(
+            controller: occupationController,
+            filled: true,
+            fillColor: AppColors.appBarBg,
+            cursorColor: AppColors.title,
+            fontColor: AppColors.title,
+            fontSize: 15,
+            textInputAction: TextInputAction.next,
+            inputFormatters: [UpperCaseTextFormatter()],
+          ),
+        ).paddingOnly(bottom: 20),
+        AddressCustomTitle(
+          title: "Aadhaar No.",
+          method: CustomTextField(
+            controller: aadhaarController,
+            filled: true,
+            fillColor: AppColors.appBarBg,
+            cursorColor: AppColors.title,
+            fontColor: AppColors.title,
+            fontSize: 15,
+            textInputAction: TextInputAction.next,
+            inputFormatters: [UpperCaseTextFormatter()],
+          ),
+        ).paddingOnly(bottom: 20),
+        Row(
+          children: [
+            Expanded(
+              child: PrimaryAppButton(
+                onTap: () async {
+                  Get.back();
+
+                  // logic.searchDoctorByName(text: logic.searchController.text);
+                },
+                height: Get.height * 0.06,
+                width: Get.width,
+                gradientColor: [
+                  AppColors.buttonBack,
+                  AppColors.buttonBack,
+                ],
+                borderRadius: 12,
+                text: "Save",
+                textStyle: FontStyle.fontStyleW600(
+                  fontSize: 15,
+                  fontColor: AppColors.white,
+                ),
+              ).paddingOnly(bottom: Platform.isAndroid?20:25, left: 10, right: 10, top:20),
+            ),
+            Expanded(
+              child: PrimaryAppButton(
+                onTap: () async {
+                  Get.toNamed(AppRoutes.physicalDetails);
+                },
+                height: Get.height * 0.06,
+                width: Get.width,
+                gradientColor: [
+                  AppColors.primaryAppColor1,
+                  AppColors.primaryAppColor2,
+                ],
+                borderRadius: 12,
+                text: "Next",
+                textStyle: FontStyle.fontStyleW600(
+                  fontSize: 15,
+                  fontColor: AppColors.white,
+                ),
+              ).paddingOnly(bottom: Platform.isAndroid?20:25, left: 10, right: 10, top:20),
+            ),
+
+          ],
+        )
+        /* Row(children: [
           Transform.scale(
             scale: 1.2,
             child: Checkbox(
@@ -246,7 +390,7 @@ class _PersonalDetailsViewState extends State<PersonalDetailsView> {
               fontColor: AppColors.black,
             ),
           )
-        ]),
+        ]),*/
       ],
     ).paddingOnly(left: 13, right: 13);
   }

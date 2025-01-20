@@ -63,4 +63,5 @@ class AppRoutes {
   static const String referAndEarn = '/referAndEarn';
   static const String viewAllMedicines = '/viewAllMedicines';
   static const String viewAllVideos = '/viewAllVideos';
+  static const String physicalDetails = '/physicalDetails';
 }
