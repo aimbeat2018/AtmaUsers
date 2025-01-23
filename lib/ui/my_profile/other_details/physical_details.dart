@@ -248,7 +248,7 @@ class _PhysicalDetailsScreenState extends State<PhysicalDetailsScreen> {
               ),
             ).paddingOnly(bottom: 20),
             AddressCustomTitle(
-              title: EnumLocale.txtAddressType.name.tr,
+              title: "Medical History",
               method: Container(
                 padding: const EdgeInsets.symmetric(vertical: 3.0),
                 width: MediaQuery.of(context).size.width,
@@ -299,20 +299,6 @@ class _PhysicalDetailsScreenState extends State<PhysicalDetailsScreen> {
                   ),
                 ),
               ),
-            ).paddingOnly(bottom: 20, top:20.0),
-
-            AddressCustomTitle(
-              title: "Medical History",
-              method: CustomTextField(
-                controller: medicalHistoryController,
-                filled: true,
-                fillColor: AppColors.appBarBg,
-                cursorColor: AppColors.title,
-                fontColor: AppColors.title,
-                fontSize: 15,
-                textInputAction: TextInputAction.next,
-                inputFormatters: [UpperCaseTextFormatter()],
-              ),
             ).paddingOnly(bottom: 20),
             AddressCustomTitle(
               title: "Medical Other History",
@@ -342,28 +328,108 @@ class _PhysicalDetailsScreenState extends State<PhysicalDetailsScreen> {
             ).paddingOnly(bottom: 20),
             AddressCustomTitle(
               title: "Are you Taking Medicines?",
-              method: CustomTextField(
-                controller: medicalHistoryController,
-                filled: true,
-                fillColor: AppColors.appBarBg,
-                cursorColor: AppColors.title,
-                fontColor: AppColors.title,
-                fontSize: 15,
-                textInputAction: TextInputAction.next,
-                inputFormatters: [UpperCaseTextFormatter()],
+              method: Container(
+                padding: const EdgeInsets.symmetric(vertical: 3.0),
+                width: MediaQuery.of(context).size.width,
+                decoration: BoxDecoration(
+                  color: AppColors.appBarBg,
+                  borderRadius: BorderRadius.circular(10.0),
+                ),
+                child: DropdownButtonHideUnderline(
+                  child: ButtonTheme(
+                    alignedDropdown: true,
+                    child: DropdownButton(
+                        borderRadius: BorderRadius.circular(10.0),
+                        padding: const EdgeInsets.only(right: 10.0),
+                        // isDense: true,
+                        isExpanded: true,
+                        dropdownColor: Colors.white,
+                        style: FontStyle.fontStyleW500(
+                          fontSize: 13,
+                          fontColor: AppColors.primaryAppColor1,
+                        ),
+                        value: selectedTakingMedicines.isNotEmpty
+                            ? selectedTakingMedicines
+                            : null,
+                        icon: Icon(
+                          Icons.keyboard_arrow_down_sharp,
+                          color: AppColors.primaryAppColor1,
+                        ),
+                        items: takingMedicinesTypes.map((items) {
+                          return DropdownMenuItem(
+                            value: items,
+                            child: Padding(
+                              padding: const EdgeInsets.only(left: 5.0),
+                              child: Text(
+                                items,
+                                style: FontStyle.fontStyleW500(
+                                  fontSize: 14,
+                                  fontColor: AppColors.primaryAppColor1,
+                                ),
+                              ),
+                            ),
+                          );
+                        }).toList(),
+                        onChanged: (String? newValue) {
+                          setState(() {
+                            selectedTakingMedicines = newValue!;
+                          });
+                        }),
+                  ),
+                ),
               ),
             ).paddingOnly(bottom: 20),
             AddressCustomTitle(
               title: "Recent Exacerbations",
-              method: CustomTextField(
-                controller: medicalHistoryController,
-                filled: true,
-                fillColor: AppColors.appBarBg,
-                cursorColor: AppColors.title,
-                fontColor: AppColors.title,
-                fontSize: 15,
-                textInputAction: TextInputAction.next,
-                inputFormatters: [UpperCaseTextFormatter()],
+              method: Container(
+                padding: const EdgeInsets.symmetric(vertical: 3.0),
+                width: MediaQuery.of(context).size.width,
+                decoration: BoxDecoration(
+                  color: AppColors.appBarBg,
+                  borderRadius: BorderRadius.circular(10.0),
+                ),
+                child: DropdownButtonHideUnderline(
+                  child: ButtonTheme(
+                    alignedDropdown: true,
+                    child: DropdownButton(
+                        borderRadius: BorderRadius.circular(10.0),
+                        padding: const EdgeInsets.only(right: 10.0),
+                        // isDense: true,
+                        isExpanded: true,
+                        dropdownColor: Colors.white,
+                        style: FontStyle.fontStyleW500(
+                          fontSize: 13,
+                          fontColor: AppColors.primaryAppColor1,
+                        ),
+                        value: selectedRecentExacerbations.isNotEmpty
+                            ? selectedRecentExacerbations
+                            : null,
+                        icon: Icon(
+                          Icons.keyboard_arrow_down_sharp,
+                          color: AppColors.primaryAppColor1,
+                        ),
+                        items: recentExacerbationsTypes.map((items) {
+                          return DropdownMenuItem(
+                            value: items,
+                            child: Padding(
+                              padding: const EdgeInsets.only(left: 5.0),
+                              child: Text(
+                                items,
+                                style: FontStyle.fontStyleW500(
+                                  fontSize: 14,
+                                  fontColor: AppColors.primaryAppColor1,
+                                ),
+                              ),
+                            ),
+                          );
+                        }).toList(),
+                        onChanged: (String? newValue) {
+                          setState(() {
+                            selectedRecentExacerbations = newValue!;
+                          });
+                        }),
+                  ),
+                ),
               ),
             ).paddingOnly(bottom: 20),
             AddressCustomTitle(
@@ -449,9 +515,7 @@ class _PhysicalDetailsScreenState extends State<PhysicalDetailsScreen> {
                 Expanded(
                   child: PrimaryAppButton(
                     onTap: () async {
-                      Get.back();
 
-                      // logic.searchDoctorByName(text: logic.searchController.text);
                     },
                     height: Get.height * 0.06,
                     width: Get.width,
@@ -469,8 +533,8 @@ class _PhysicalDetailsScreenState extends State<PhysicalDetailsScreen> {
                 ),
                 Expanded(
                   child: PrimaryAppButton(
-                    onTap: () async {
-                      Get.toNamed(AppRoutes.physicalDetails);
+                    onTap: ()  {
+                      Get.toNamed(AppRoutes.insuranceDetails);
                     },
                     height: Get.height * 0.06,
                     width: Get.width,

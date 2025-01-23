@@ -7,6 +7,7 @@ class AppColors {
   static Color primaryAppColorTitle2 = const Color(0xcc004d89);
   static Color tabUnselectText1 = const Color(0xff00508d);
   static Color textFieldTitleColor = const Color(0xff005da5);
+  static Color profileTextColor = const Color(0xff1d5579);
   static Color bottomLabel = const Color(0xff3B436F);
   static Color categoryText = const Color(0xff38408B);
   static Color title = const Color(0xff2F377A);

@@ -65,8 +65,11 @@ import 'package:doctor/ui/my_appointment_screen/binding/my_appointment_binding.d
 import 'package:doctor/ui/my_appointment_screen/view/my_appointment_screen.dart';
 import 'package:doctor/ui/my_orders/view/my_orders_screen.dart';
 import 'package:doctor/ui/my_prescription/view/my_prescription_screen.dart';
+import 'package:doctor/ui/my_profile/other_details/documents.dart';
+import 'package:doctor/ui/my_profile/other_details/insurance_details.dart';
 import 'package:doctor/ui/my_profile/other_details/physical_details.dart';
 import 'package:doctor/ui/my_profile/view/my_profile_screen.dart';
+import 'package:doctor/ui/my_profile/view_profile/view/view_profile_screen.dart';
 import 'package:doctor/ui/my_wallet_screen/binding/my_wallet_binding.dart';
 import 'package:doctor/ui/my_wallet_screen/view/my_wallet_screen.dart';
 import 'package:doctor/ui/notification_screen/binding/notification_binding.dart';
@@ -441,5 +444,21 @@ class AppPages {
       page: () => const PhysicalDetailsScreen(),
       binding: MembershipBinding(), // change
     ),
+    GetPage(
+      name: AppRoutes.insuranceDetails,
+      page: () => const InsuranceDetailsScreen(),
+      binding: MembershipBinding(), // change
+    ),
+    GetPage(
+      name: AppRoutes.viewProfile,
+      page: () => const ViewProfileScreen(),
+      binding: MembershipBinding(), // change
+    ),
+    GetPage(
+      name: AppRoutes.uploadDocument,
+      page: () => const UploadDocument(),
+      binding: MembershipBinding(), // change
+    ),
+
   ];
 }

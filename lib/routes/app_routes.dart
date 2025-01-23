@@ -64,4 +64,7 @@ class AppRoutes {
   static const String viewAllMedicines = '/viewAllMedicines';
   static const String viewAllVideos = '/viewAllVideos';
   static const String physicalDetails = '/physicalDetails';
+  static const String insuranceDetails = '/insuranceDetails';
+  static const String uploadDocument = '/uploadDocument';
+  static const String viewProfile = '/viewProfile';
 }
