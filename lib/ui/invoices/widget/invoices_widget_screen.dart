@@ -1,5 +1,6 @@
 import 'package:doctor/custom/app_bar/custom_app_bar.dart';
 import 'package:doctor/custom/bottom_sheet/custom_bottom_sheet.dart';
+import 'package:doctor/ui/invoices/view_and_search_invoices.dart';
 import 'package:doctor/utils/app_asset.dart';
 import 'package:doctor/utils/app_color.dart';
 import 'package:doctor/utils/enums.dart';
@@ -44,40 +45,47 @@ class InvoicesItemView extends StatelessWidget {
         padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
         shrinkWrap: true,
         itemBuilder: (context, index) {
-          return Container(
-            decoration: BoxDecoration(
-              border: Border.all(
-                color: AppColors.black,
-                width: 0.4,
-              ),
-              borderRadius: BorderRadius.circular(10.0),
-              boxShadow: [
-                BoxShadow(
-                  color: AppColors.black.withOpacity(0.1),
-                  offset: const Offset(
-                    0.8,
-                    0.8,
-                  ),
-                  blurRadius: 5.0,
+          return InkWell(
+            onTap: (){
+              Navigator.push(context, MaterialPageRoute(builder:
+                  (context) => ViewAndSearchInvoices()));
+              // ViewAndSearchInvoices();
+            },
+            child: Container(
+              decoration: BoxDecoration(
+                border: Border.all(
+                  color: AppColors.black,
+                  width: 0.4,
                 ),
-              ],
-              color: AppColors.white,
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-               Image.asset(invoicesItems[index].img, height:80),
-                SizedBox(height: 15),
-                Text(
-                  textAlign: TextAlign.center,
-                  invoicesItems[index].title,
-                  style: FontStyle.fontStyleW500(
-                    fontSize: 14,
-                    fontColor: AppColors.primaryAppColor1,
+                borderRadius: BorderRadius.circular(10.0),
+                boxShadow: [
+                  BoxShadow(
+                    color: AppColors.black.withOpacity(0.1),
+                    offset: const Offset(
+                      0.8,
+                      0.8,
+                    ),
+                    blurRadius: 5.0,
                   ),
-                )
-              ],
+                ],
+                color: AppColors.white,
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                 Image.asset(invoicesItems[index].img, height:80),
+                  SizedBox(height: 15),
+                  Text(
+                    textAlign: TextAlign.center,
+                    invoicesItems[index].title,
+                    style: FontStyle.fontStyleW500(
+                      fontSize: 14,
+                      fontColor: AppColors.primaryAppColor1,
+                    ),
+                  )
+                ],
+              ),
             ),
           )/*.paddingOnly(top: 15, bottom: 15)*/;
         });

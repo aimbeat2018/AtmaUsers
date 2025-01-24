@@ -48,7 +48,7 @@ class MembershipPackagesListView extends StatelessWidget {
                 : NoDataFound(
                     image: AppAsset.icNoDataFound,
                     imageHeight: 150,
-                    text: EnumLocale.noDataFoundAppointment.name.tr,
+                    text: EnumLocale.noDataFoundPackage.name.tr,
                     padding: const EdgeInsets.only(top: 7),
                   ).paddingOnly(bottom: Get.height * 0.05, left: 15, right: 15)
             : Column(

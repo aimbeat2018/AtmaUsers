@@ -1084,7 +1084,7 @@ class HomeSpecialistTitleView extends StatelessWidget {
                 );
               },
               child: Text(
-                EnumLocale.txtViewMore.name.tr,
+                "View all",
                 style: FontStyle.fontStyleW500(
                   fontSize: 12,
                   fontColor: AppColors.tabUnselectText,

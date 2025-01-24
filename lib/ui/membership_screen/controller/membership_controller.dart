@@ -194,6 +194,7 @@ class MembershipController extends GetxController {
       if (response.statusCode == 200) {
         final jsonResponse = jsonDecode(response.body);
         getMembershipModel = GetMembershipModel.fromJson(jsonResponse);
+
         return getMembershipModel;
       }
 

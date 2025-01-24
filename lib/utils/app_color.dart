@@ -48,6 +48,7 @@ class AppColors {
   static Color message2 = const Color(0xff4173F3);
   static Color containerBlue = const Color(0xff4663ac);
   static Color addButton = const Color(0xff85a8e8);
+  static Color containerPurple = const Color(0xff646db2);
   static Color online = const Color(0xffEBFFED);
   static Color onlineText = const Color(0xff12A82A);
   static Color green = const Color(0xff14B717);

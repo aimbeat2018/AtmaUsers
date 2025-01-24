@@ -61,6 +61,8 @@ class GetMembershipData {
   String? _discount;
   String? _purchaseDate;
   String? _expiryDate;
+  String? _title;
+
 
   GetMembershipData({
     String? userName,
@@ -74,6 +76,7 @@ class GetMembershipData {
     String? discount,
     String? purchaseDate,
     String? expiryDate,
+    String? title,
   }) {
     _userName = userName;
     _age = age;
@@ -86,6 +89,7 @@ class GetMembershipData {
     _discount = discount;
     _purchaseDate = purchaseDate;
     _expiryDate = expiryDate;
+    _title =  title;
   }
 
   GetMembershipData copyWith({
@@ -100,6 +104,7 @@ class GetMembershipData {
     String? discount,
     String? purchaseDate,
     String? expiryDate,
+    String? title,
   }) =>
       GetMembershipData(
         userName: userName ?? _userName,
@@ -113,6 +118,7 @@ class GetMembershipData {
         discount: discount ?? _discount,
         purchaseDate: purchaseDate ?? _purchaseDate,
         expiryDate: expiryDate ?? _expiryDate,
+        title: title ?? _title,
       );
 
   String? get userName => _userName;
@@ -137,6 +143,8 @@ class GetMembershipData {
 
   String? get expiryDate => _expiryDate;
 
+  String? get title => _title;
+
   GetMembershipData.fromJson(Map<String, dynamic> json) {
     _userName = json['user_name'];
     _age = json['age'];
@@ -149,6 +157,7 @@ class GetMembershipData {
     _discount = json['discount'];
     _purchaseDate = json['purchase_date'];
     _expiryDate = json['expiry_date'];
+    _title = json['title'];
   }
 
   Map<String, dynamic> toJson() {
@@ -164,6 +173,7 @@ class GetMembershipData {
     data['discount'] = _discount;
     data['purchase_date'] = _purchaseDate;
     data['expiry_date'] = _expiryDate;
+    data['title'] = _title;
     return data;
   }
 }

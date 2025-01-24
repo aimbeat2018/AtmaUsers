@@ -27,6 +27,7 @@
     <application
         android:usesCleartextTraffic="true"
         android:name="${applicationName}"
+        android:requestLegacyExternalStorage="true"
         android:icon="@mipmap/ic_launcher"
         android:label="Atma">
         <activity

@@ -78,7 +78,7 @@ class SavedDoctorListItemView extends StatelessWidget {
             );
           },
           child: Container(
-            height: Get.height * 0.16,
+            height: Get.height * 0.17,
             decoration: BoxDecoration(
               color: AppColors.white,
               borderRadius: BorderRadius.circular(18),
@@ -105,13 +105,17 @@ class SavedDoctorListItemView extends StatelessWidget {
                         ),
                         clipBehavior: Clip.hardEdge,
                         child: CachedNetworkImage(
-                          imageUrl: logic.getAllSavedDoctorModel?.data?[index].image ?? "",
+                          imageUrl: logic
+                                  .getAllSavedDoctorModel?.data?[index].image ??
+                              "",
                           fit: BoxFit.cover,
                           placeholder: (context, url) {
-                            return Image.asset(AppAsset.icDoctorPlaceholder).paddingAll(10);
+                            return Image.asset(AppAsset.icDoctorPlaceholder)
+                                .paddingAll(10);
                           },
                           errorWidget: (context, url, error) {
-                            return Image.asset(AppAsset.icDoctorPlaceholder).paddingAll(10);
+                            return Image.asset(AppAsset.icDoctorPlaceholder)
+                                .paddingAll(10);
                           },
                         ),
                       ).paddingOnly(top: 9),
@@ -125,7 +129,9 @@ class SavedDoctorListItemView extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(
-                                  logic.getAllSavedDoctorModel?.data?[index].name ?? "",
+                                  logic.getAllSavedDoctorModel?.data?[index]
+                                          .name ??
+                                      "",
                                   style: FontStyle.fontStyleW600(
                                     fontSize: 15.5,
                                     fontColor: AppColors.title,
@@ -149,7 +155,9 @@ class SavedDoctorListItemView extends StatelessWidget {
                               ],
                             ),
                             Text(
-                              logic.getAllSavedDoctorModel?.data?[index].degree?.join(", ") ?? "",
+                              logic.getAllSavedDoctorModel?.data?[index].degree
+                                      ?.join(", ") ??
+                                  "",
                               style: FontStyle.fontStyleW500(
                                 fontSize: 13,
                                 fontColor: AppColors.degreeText,

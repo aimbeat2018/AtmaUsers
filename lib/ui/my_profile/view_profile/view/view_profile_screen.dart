@@ -22,6 +22,7 @@ class _ViewProfileScreenState extends State<ViewProfileScreen> {
         child: Column(
           children: [
             const MyProfileBackgroundView(),
+            ViewProfileListViewItems(),
 
           ],
         ),
