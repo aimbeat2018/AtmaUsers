@@ -37,7 +37,7 @@ class GetUserProfileModel {
 
 class User {
   String? id;
-  int? uniqueId;
+  String? uniqueId;
   String? name;
   String? image;
   String? email;

@@ -89,78 +89,81 @@ class ProfileInfoView extends StatelessWidget {
                   },
                 ),
               ),
-              Container(
-                height: Get.height * 0.12,
-                padding: const EdgeInsets.only(top: 6, bottom: 6),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      Constant.storage.read("userName") ??
-                          logic.getUserProfileModel?.user?.name ??
-                          "",
-                      style: FontStyle.fontStyleW600(
-                        fontSize: 16,
-                        fontColor: AppColors.primaryAppColor1,
-                      ),
-                    ),
-                    Text(
-                      Constant.storage.read("userEmail") ??
-                          logic.getUserProfileModel?.user?.email ??
-                          "",
-                      style: FontStyle.fontStyleW500(
-                        fontSize: 14,
-                        fontColor: AppColors.primaryAppColor1,
-                      ),
-                    ),
-                    InkWell(
-                      overlayColor:
-                          WidgetStatePropertyAll(AppColors.transparent),
-                      onTap: () {
-                        Get.toNamed(AppRoutes.editProfile, arguments: [
-                          logic.getUserProfileModel?.user?.name,
-                          logic.getUserProfileModel?.user?.email,
-                          logic.getUserProfileModel?.user?.mobile,
-                          logic.getUserProfileModel?.user?.country,
-                          logic.getUserProfileModel?.user?.gender,
-                          logic.getUserProfileModel?.user?.dob,
-                        ]);
-                      },
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: AppColors.containerBg,
-                          borderRadius: BorderRadius.circular(46),
+              Expanded(
+                child: Container(
+                  height: Get.height * 0.12,
+                  padding: const EdgeInsets.only(top: 6, bottom: 6),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        Constant.storage.read("userName") ??
+                            logic.getUserProfileModel?.user?.name ??
+                            "",
+                        style: FontStyle.fontStyleW600(
+                          fontSize: 16,
+                          fontColor: AppColors.primaryAppColor1,
                         ),
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 8, horizontal: 10),
-                        child: IntrinsicHeight(
-                          child: Row(
-                            children: [
-                              Image.asset(
-                                AppAsset.icEditProfile,
-                                height: 20,
-                                color: AppColors.primaryAppColor1,
-                              ),
-                              VerticalDivider(
-                                thickness: 1.5,
-                                color: AppColors.verticalBorder,
-                              ),
-                              Text(
-                                EnumLocale.txtEditProfile.name.tr,
-                                style: FontStyle.fontStyleW600(
-                                  fontSize: 13,
-                                  fontColor: AppColors.primaryAppColor1,
+                      ),
+                      Text(
+                        maxLines: 1,
+                        Constant.storage.read("userEmail") ??
+                            logic.getUserProfileModel?.user?.email ??
+                            "",
+                        style: FontStyle.fontStyleW500(
+                          fontSize: 13,
+                          fontColor: AppColors.primaryAppColor1,
+                        ),
+                      ),
+                      InkWell(
+                        overlayColor:
+                            WidgetStatePropertyAll(AppColors.transparent),
+                        onTap: () {
+                          Get.toNamed(AppRoutes.editProfile, arguments: [
+                            logic.getUserProfileModel?.user?.name,
+                            logic.getUserProfileModel?.user?.email,
+                            logic.getUserProfileModel?.user?.mobile,
+                            logic.getUserProfileModel?.user?.country,
+                            logic.getUserProfileModel?.user?.gender,
+                            logic.getUserProfileModel?.user?.dob,
+                          ]);
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: AppColors.containerBg,
+                            borderRadius: BorderRadius.circular(46),
+                          ),
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 8, horizontal: 10),
+                          child: IntrinsicHeight(
+                            child: Row(
+                              children: [
+                                Image.asset(
+                                  AppAsset.icEditProfile,
+                                  height: 20,
+                                  color: AppColors.primaryAppColor1,
                                 ),
-                              ),
-                            ],
+                                VerticalDivider(
+                                  thickness: 1.5,
+                                  color: AppColors.verticalBorder,
+                                ),
+                                Text(
+                                  EnumLocale.txtEditProfile.name.tr,
+                                  style: FontStyle.fontStyleW600(
+                                    fontSize: 13,
+                                    fontColor: AppColors.primaryAppColor1,
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                  ],
-                ),
-              ).paddingOnly(top: 15, bottom: 15)
+                    ],
+                  ),
+                ).paddingOnly(top: 15, bottom: 15),
+              )
             ],
           ),
         );

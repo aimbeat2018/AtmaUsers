@@ -1,6 +1,6 @@
 class ApiConstant {
-  static const BASE_URL =
-      "https://app.atmaprimehealthcare.com/"; // Enter your base URL like :: http://182.168.20.243:5000/
+  static const BASE_URL = "https://admin.atmaprimehealthcare.com/" ;
+     /* "https://app.atmaprimehealthcare.com/"; */// Enter your base URL like :: http://182.168.20.243:5000/
   static const SECRET_KEY =
       "JIICGbfFkpwq01wQOfDNGEaKAdqGjJDC"; // Enter your key like :: ssf45sd1fs5d1sdf1s56165s15sdf1s
 

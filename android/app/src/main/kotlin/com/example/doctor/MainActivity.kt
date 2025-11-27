@@ -1,4 +1,4 @@
-package com.incodes.patient
+package com.atma.patient
 
 import io.flutter.embedding.android.FlutterFragmentActivity
 

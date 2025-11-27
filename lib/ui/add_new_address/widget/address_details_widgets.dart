@@ -35,7 +35,7 @@ class AddNewAddressButton extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
           child: InkWell(
-            onTap: (){
+            onTap: () {
               Get.toNamed(AppRoutes.newAddress);
             },
             child: Container(
@@ -110,10 +110,14 @@ class _SelectAddressState extends State<SelectAddress> {
       selectedValue = v;
     });
   }
+
   List<AddressModel> addressData = [
-    AddressModel('Default', "1904, Haware Infotech Park, Vashi, Navi Mumbai, Maharashtra, 400703"),
-    AddressModel('Home', "319 Nav Kirti Building Opp Railway Station East, Bhayandar East 401105"),
-    AddressModel('Office', "02, Godrej Business District, Block ,Pirojshanagar, Vikhroli West, Mumbai, Maharashtra 400079"),
+    AddressModel('Default',
+        "1904, Haware Infotech Park, Vashi, Navi Mumbai, Maharashtra, 400703"),
+    AddressModel('Home',
+        "319 Nav Kirti Building Opp Railway Station East, Bhayandar East 401105"),
+    AddressModel('Office',
+        "02, Godrej Business District, Block ,Pirojshanagar, Vikhroli West, Mumbai, Maharashtra 400079"),
   ];
   @override
   Widget build(BuildContext context) {
@@ -124,8 +128,7 @@ class _SelectAddressState extends State<SelectAddress> {
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
       itemBuilder: (context, index) {
-          return
-            RadioListTile(
+        return RadioListTile(
           fillColor: WidgetStateProperty.resolveWith((states) {
             // active
             if (states.contains(WidgetState.selected)) {
@@ -188,8 +191,7 @@ class _SelectAddressState extends State<SelectAddress> {
                     child: Column(
                       children: [
                         InkWell(
-                          onTap:(){
-                          },
+                            onTap: () {},
                             child: Image.asset(AppAsset.icEditAdd, height: 18)),
                         IconButton(
                             onPressed: () {},
@@ -206,7 +208,6 @@ class _SelectAddressState extends State<SelectAddress> {
   }
 }
 
-
 class AddressModel {
   final String title;
   final String address;
@@ -214,14 +215,13 @@ class AddressModel {
   AddressModel(this.title, this.address);
 }
 
-
 class CheckAvailableLabsBottomView extends StatelessWidget {
   const CheckAvailableLabsBottomView({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top:120.0),
+      padding: const EdgeInsets.only(top: 120.0),
       child: Container(
         height: Get.height * 0.1,
         width: Get.width,

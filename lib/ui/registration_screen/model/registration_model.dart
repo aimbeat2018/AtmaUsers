@@ -38,7 +38,8 @@ class RegistrationModel {
 
 class User {
   String? id;
-  int? uniqueId;
+  // int? uniqueId;
+  String? uniqueId;
   String? name;
   String? image;
   String? email;
