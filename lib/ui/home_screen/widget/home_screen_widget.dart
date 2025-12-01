@@ -1207,6 +1207,8 @@ class GeneralSpecialistView extends StatelessWidget {
       id: Constant.idProgressView,
       builder: (logic) {
         return SingleChildScrollView(
+          // physics: NeverScrollableScrollPhysics(),
+
           child: logic.isLoading1
               ? Shimmers.homeTabBarShimmer()
               : logic.tabController?.index == 0

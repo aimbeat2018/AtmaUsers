@@ -67,4 +67,7 @@ class AppRoutes {
   static const String insuranceDetails = '/insuranceDetails';
   static const String uploadDocument = '/uploadDocument';
   static const String viewProfile = '/viewProfile';
+
+  static const String kiosk = '/kiosk';
+
 }

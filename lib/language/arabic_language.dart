@@ -13,6 +13,7 @@ final Map<String, String> ardz = <String, String>{
   EnumLocale.txtBestSpecialist.name: "أفضل متخصص",
   EnumLocale.txtViewMore.name: "عرض المزيد",
   EnumLocale.txtApplyFilters.name: "تطبيق مرشحات البحث",
+  EnumLocale.textMyRequest.name:"میری درخواست",
   EnumLocale.txtGender.name: "جنس",
   EnumLocale.txtRatings.name: "التقييمات",
   EnumLocale.txtConsultationFees.name: "رسوم الاستشارة",

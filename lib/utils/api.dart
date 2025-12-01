@@ -1,3 +1,5 @@
+import 'package:flutter/cupertino.dart';
+
 class ApiConstant {
   static const BASE_URL = "https://admin.atmaprimehealthcare.com/" ;
      /* "https://app.atmaprimehealthcare.com/"; */// Enter your base URL like :: http://182.168.20.243:5000/
@@ -39,6 +41,10 @@ class ApiConstant {
   static const getAppointmentInformation = "user/appointment/getAppointment?";
   static const getUpcomingAppointment = "doctor/appointment/upcomingBookings?";
 
+
+  static const getKioskList = "user/dashboard/get-all-kiosk?";
+  static const sendAppointmentRequest ="user/appointment/send-appointment-request";
+  static const appointmentRequestList="user/appointment/get-user-appointment-request";
   /// =================== Med Clips(Videos) =================== ///
   static const getAllVideo = "user/video/doctorVideos?";
   static const likeOrDislikeVideo = "user/video/likeOrDislikeOfVideo?";

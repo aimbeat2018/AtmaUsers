@@ -1,3 +1,5 @@
+import 'package:flutter/cupertino.dart';
+
 class AppAsset {
   static const getIconsPath = "assets/icons/";
   static const getImagesPath = "assets/images/";
@@ -6,6 +8,7 @@ class AppAsset {
   static const getAudioPath = "assets/audio/";
 
   /// =================== Icons =================== ///
+
   static const icAboutMe = "${getIconsPath}about_me.png";
   static const icAddPatient = "${getIconsPath}add_patient.png";
   static const icAppMaintenance = "${getIconsPath}app_maintenance.png";

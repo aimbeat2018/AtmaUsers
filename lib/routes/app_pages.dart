@@ -117,6 +117,9 @@ import 'package:doctor/ui/view_all_medicines/view/view_all_medicines_screen.dart
 import 'package:doctor/ui/view_all_videos/view/view_all_videos_screen.dart';
 import 'package:get/get.dart';
 
+import '../ui/book_appointment/binding/kisakosatelite_screen_binding.dart';
+import '../ui/book_appointment/view/kiosk_list.screen.dart';
+
 class AppPages {
   static List<GetPage> list = [
     GetPage(
@@ -458,6 +461,11 @@ class AppPages {
       name: AppRoutes.uploadDocument,
       page: () => const UploadDocument(),
       binding: MembershipBinding(), // change
+    ),
+    GetPage(
+      name: AppRoutes.kiosk,
+      page: () =>  KioskListScreen(),
+      binding: KisakosateliteScreenBinding(), // change
     ),
 
   ];

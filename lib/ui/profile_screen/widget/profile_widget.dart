@@ -24,6 +24,8 @@ import 'package:get/get.dart';
 import 'package:rate_my_app/rate_my_app.dart';
 import 'package:share_plus/share_plus.dart';
 
+import '../../book_appointment/view/appointment_request_list.dart';
+
 /// =================== App Bar =================== ///
 class ProfileAppBarView extends StatelessWidget {
   const ProfileAppBarView({super.key});
@@ -191,6 +193,17 @@ class ProfileGeneralView extends StatelessWidget {
                   isArrow: true,
                   onTap: () {
                     Get.toNamed(AppRoutes.myProfile);
+                  },
+                ),
+                Divider(height: 1.5, color: AppColors.white)
+                    .paddingOnly(top: 15, bottom: 15),
+                ProfileMenu(
+                  image: AppAsset.icAppointmentFilled,
+                  text:  "Appointment Request",
+                  isArrow: true,
+                  onTap: () {
+                    Get.to(AppointmentListScreen());
+                    // Get.toNamed(AppRoutes.myProfile);
                   },
                 ),
                 Divider(height: 1.5, color: AppColors.white)
