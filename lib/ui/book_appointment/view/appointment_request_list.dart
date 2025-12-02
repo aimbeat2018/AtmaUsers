@@ -1,7 +1,9 @@
+import 'package:doctor/custom/no_data_found/no_data_found.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../controller/appointment_request.dart';
+import '../../../utils/api.dart';
+import '../controller/appointment_list_request_controller.dart';
 
 class AppointmentListScreen extends StatefulWidget {
   @override
@@ -10,7 +12,7 @@ class AppointmentListScreen extends StatefulWidget {
 
 class _AppointmentListScreenState extends State<AppointmentListScreen> {
 
-
+  AppointmentController appointmentController=Get.put(AppointmentController( ));
 
   // Example controller data
   final List<Map<String, dynamic>> appointmentList = [
@@ -42,117 +44,133 @@ class _AppointmentListScreenState extends State<AppointmentListScreen> {
     }
   ];
 
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    appointmentController.fetchUserAppointments();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("میری درخواست", style: TextStyle(color: Colors.white)),
+        title: Text("Appointment List", style: TextStyle(color: Colors.white)),
         backgroundColor: Colors.blueAccent,
       ),
-      body: ListView.builder(
-        itemCount: appointmentList.length,
-        padding: const EdgeInsets.all(12),
-        itemBuilder: (context, index) {
-          final item = appointmentList[index];
+      body:Obx(() {
+        if(appointmentController.isLoading.value){
+          return Center(child: CircularProgressIndicator(),);
+        }else if(appointmentController.appointmentList.value.data!.isEmpty){
+          return Text("No Data Found");
+        }else{
+         return ListView.builder(
+            itemCount: appointmentList.length,
+            padding: const EdgeInsets.all(12),
+            itemBuilder: (context, index) {
+              final item = appointmentController.appointmentList.value.data![index];
 
-          return Card(
-            margin: const EdgeInsets.symmetric(vertical: 10),
-            elevation: 3,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(12),
-            ),
-            child: Padding(
-              padding: const EdgeInsets.all(14.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-
-                  /// Hospital Name
-                  Row(
+              return Card(
+                margin: const EdgeInsets.symmetric(vertical: 10),
+                elevation: 3,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(14.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Icon(Icons.local_hospital, color: Colors.blue, size: 28),
-                      SizedBox(width: 10),
-                      Expanded(
-                        child: Text(
-                          item['kiosk']['hospital_name'] ?? "",
-                          style: TextStyle(
-                            fontSize: 17,
-                            fontWeight: FontWeight.w600,
+
+                      /// Hospital Name
+                      Row(
+                        children: [
+                          Icon(Icons.local_hospital, color: Colors.blue, size: 28),
+                          SizedBox(width: 10),
+                          Expanded(
+                            child: Text(
+                              item.kiosk!.hospitalName.toString(),
+                              style: TextStyle(
+                                fontSize: 17,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+
+                      SizedBox(height: 10),
+
+                      /// Address
+                      Text(
+                        "${item.kiosk!.flatNo}, ${item.kiosk!.laneRoad}, ${item.kiosk!.nearBy}, ${item.kiosk!.pincode}",
+                        style: TextStyle(fontSize: 14, color: Colors.grey[700]),
+                      ),
+
+                      SizedBox(height: 12),
+
+                      /// Appointment Date
+                      Row(
+                        children: [
+                          Icon(Icons.calendar_month, color: Colors.green),
+                          SizedBox(width: 8),
+                          Text(
+                            item.appointmentDate.toString(),
+                            style: TextStyle(fontSize: 15),
+                          ),
+                        ],
+                      ),
+
+                      SizedBox(height: 8),
+
+                      /// Note
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Icon(Icons.notes, color: Colors.orange),
+                          SizedBox(width: 8),
+                          Expanded(
+                            child: Text(
+                              item.note.toString(),
+                              style: TextStyle(fontSize: 14),
+                            ),
+                          ),
+                        ],
+                      ),
+
+                      SizedBox(height: 12),
+
+                      /// Status Chip
+                      Align(
+                        alignment: Alignment.centerRight,
+                        child: Container(
+                          padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                          decoration: BoxDecoration(
+                            color: item.status == "pending"
+                                ? Colors.orange.shade100
+                                : Colors.green.shade100,
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: Text(
+                            item.status.toString(),
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: item.status == "pending"
+                                  ? Colors.orange
+                                  : Colors.green,
+                            ),
                           ),
                         ),
                       ),
                     ],
                   ),
-
-                  SizedBox(height: 10),
-
-                  /// Address
-                  Text(
-                    "${item['kiosk']['flat_no']}, ${item['kiosk']['lane_road']}, ${item['kiosk']['near_by']}, ${item['kiosk']['pincode']}",
-                    style: TextStyle(fontSize: 14, color: Colors.grey[700]),
-                  ),
-
-                  SizedBox(height: 12),
-
-                  /// Appointment Date
-                  Row(
-                    children: [
-                      Icon(Icons.calendar_month, color: Colors.green),
-                      SizedBox(width: 8),
-                      Text(
-                        "تاریخ: ${item['appointmentDate']}",
-                        style: TextStyle(fontSize: 15),
-                      ),
-                    ],
-                  ),
-
-                  SizedBox(height: 8),
-
-                  /// Note
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Icon(Icons.notes, color: Colors.orange),
-                      SizedBox(width: 8),
-                      Expanded(
-                        child: Text(
-                          "نوٹ: ${item['note']}",
-                          style: TextStyle(fontSize: 14),
-                        ),
-                      ),
-                    ],
-                  ),
-
-                  SizedBox(height: 12),
-
-                  /// Status Chip
-                  Align(
-                    alignment: Alignment.centerRight,
-                    child: Container(
-                      padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-                      decoration: BoxDecoration(
-                        color: item['status'] == "pending"
-                            ? Colors.orange.shade100
-                            : Colors.green.shade100,
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      child: Text(
-                        item['status'] == "pending" ? "زیرِ التواء" : "منظور شدہ",
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: item['status'] == "pending"
-                              ? Colors.orange
-                              : Colors.green,
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
+                ),
+              );
+            },
           );
-        },
-      ),
+        }
+      },)
     );
   }
 }

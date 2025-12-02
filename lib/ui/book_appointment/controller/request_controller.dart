@@ -1,7 +1,7 @@
 import 'dart:developer';
 import 'package:doctor/utils/utils.dart';
 import 'package:get/get.dart';
-import '../service/request_service.dart';
+import '../service/send_request_service.dart';
 
 
 class AppointmentController extends GetxController {

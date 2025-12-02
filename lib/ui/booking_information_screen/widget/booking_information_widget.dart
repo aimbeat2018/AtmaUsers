@@ -65,10 +65,12 @@ class BookingInfoDoctorDataView extends StatelessWidget {
                     ),
                     margin: const EdgeInsets.all(12),
                     child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+                        /// IMAGE
                         Container(
-                          height: Get.height * 0.125,
-                          width: Get.width * 0.27,
+                          width: Get.width * 0.25, // responsive width
+                          height: Get.width * 0.25, // keep square shape
                           margin: const EdgeInsets.all(13),
                           decoration: BoxDecoration(
                             color: AppColors.placeholder,
@@ -76,59 +78,83 @@ class BookingInfoDoctorDataView extends StatelessWidget {
                           ),
                           clipBehavior: Clip.hardEdge,
                           child: CachedNetworkImage(
-                            imageUrl: logic.getAppointmentInformationModel?.data?.doctor?.image ?? "",
+                            imageUrl:
+                            logic.getAppointmentInformationModel?.data?.doctor?.image ?? "",
                             fit: BoxFit.cover,
-                            placeholder: (context, url) {
-                              return Image.asset(AppAsset.icDoctorPlaceholder).paddingAll(10);
-                            },
-                            errorWidget: (context, url, error) {
-                              return Image.asset(AppAsset.icDoctorPlaceholder).paddingAll(10);
-                            },
+                            placeholder: (context, url) => Image.asset(
+                              AppAsset.icDoctorPlaceholder,
+                              fit: BoxFit.cover,
+                            ),
+                            errorWidget: (context, url, error) => Image.asset(
+                              AppAsset.icDoctorPlaceholder,
+                              fit: BoxFit.cover,
+                            ),
                           ),
                         ),
-                        Container(
-                          height: Get.height * 0.125,
-                          padding: const EdgeInsets.only(top: 10, bottom: 10),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                logic.getAppointmentInformationModel?.data?.doctor?.name ?? "",
-                                style: FontStyle.fontStyleW700(
-                                  fontSize: 16,
-                                  fontColor: AppColors.title,
+
+                        /// RIGHT SIDE CONTENT
+                        Expanded(
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 13),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                /// Doctor Name
+                                Text(
+                                  logic.getAppointmentInformationModel?.data?.doctor?.name ?? "",
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: FontStyle.fontStyleW700(
+                                    fontSize: 16,
+                                    fontColor: AppColors.title,
+                                  ),
                                 ),
-                              ),
-                              Container(
-                                decoration: BoxDecoration(
-                                  color: AppColors.specialistBox,
-                                  borderRadius: BorderRadius.circular(4),
-                                ),
-                                child: Padding(
-                                  padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 10),
+
+                                const SizedBox(height: 6),
+
+                                /// Designation tag
+                                Container(
+                                  padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 10),
+                                  decoration: BoxDecoration(
+                                    color: AppColors.specialistBox,
+                                    borderRadius: BorderRadius.circular(4),
+                                  ),
                                   child: Text(
-                                    logic.getAppointmentInformationModel?.data?.doctor?.designation ?? "",
+                                    logic.getAppointmentInformationModel
+                                        ?.data?.doctor?.designation ??
+                                        "",
+                                    maxLines: 1,
+                                    overflow: TextOverflow.ellipsis,
                                     style: FontStyle.fontStyleW500(
                                       fontSize: 12,
                                       fontColor: AppColors.specialist,
                                     ),
                                   ),
                                 ),
-                              ),
-                              Text(
-                                logic.getAppointmentInformationModel?.data?.doctor?.degree?.join(", ") ?? "",
-                                style: FontStyle.fontStyleW500(
-                                  fontSize: 15,
-                                  fontColor: AppColors.degreeText,
+
+                                const SizedBox(height: 6),
+
+                                /// Degree (wraps on small screens)
+                                Text(
+                                  logic.getAppointmentInformationModel?.data?.doctor?.degree
+                                      ?.join(", ") ??
+                                      "",
+                                  maxLines: 2,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: FontStyle.fontStyleW500(
+                                    fontSize: 14,
+                                    fontColor: AppColors.degreeText,
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
-                        ).paddingOnly(top: 15, bottom: 15)
+                        ),
                       ],
-                    ),
-                  );
+                    )
+
+            );
           },
         ),
       ],

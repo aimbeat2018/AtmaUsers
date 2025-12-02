@@ -1,16 +1,20 @@
 import 'package:get/get.dart';
+
 import '../model/appointment_request_model.dart';
 import '../service/appointment_request_list.dart';
 
-
-
 class AppointmentController extends GetxController {
-  final AppointmentService service;
-
-  AppointmentController({required this.service});
+  late final AppointmentService service;
 
   var isLoading = false.obs;
-  var appointmentList = AppointmentRequestModel().obs;
+  var appointmentList = AppointmentRequestModel().obs; // Stores full model
+
+  @override
+  void onInit() {
+    service = AppointmentService();
+    fetchUserAppointments();
+    super.onInit();
+  }
 
   Future<void> fetchUserAppointments() async {
     try {
@@ -18,11 +22,11 @@ class AppointmentController extends GetxController {
 
       final response = await service.getUserAppointments();
 
-      if (response != null && response.status!) {
+      if (response != null && response.status == true) {
         appointmentList.value = response;
       } else {
-        // appointmentList.clear();
-        print(response?.message ?? "No data");
+        appointmentList.value = AppointmentRequestModel(); // empty model
+        print(response?.message ?? "No data received");
       }
     } catch (e) {
       print("Error fetching appointments: $e");
@@ -30,5 +34,4 @@ class AppointmentController extends GetxController {
       isLoading.value = false;
     }
   }
-
 }

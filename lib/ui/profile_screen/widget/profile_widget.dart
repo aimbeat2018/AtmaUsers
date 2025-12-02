@@ -199,24 +199,24 @@ class ProfileGeneralView extends StatelessWidget {
                     .paddingOnly(top: 15, bottom: 15),
                 ProfileMenu(
                   image: AppAsset.icAppointmentFilled,
-                  text:  "Appointment Request",
+                  text:  "My Request",
                   isArrow: true,
                   onTap: () {
                     Get.to(AppointmentListScreen());
                     // Get.toNamed(AppRoutes.myProfile);
                   },
                 ),
-                Divider(height: 1.5, color: AppColors.white)
-                    .paddingOnly(top: 15, bottom: 15),
-                ProfileMenu(
-                  image: AppAsset.icMembershipOutline,
-                  text: /*EnumLocale.txtMembership.name.tr*/"Events",
-                  isArrow: true,
-                  onTap: () {
-                    // Navigator.push(context, MaterialPageRoute(builder: (context) => EventsScreen()));
-                      Get.toNamed(AppRoutes.events);
-                  },
-                ),
+                // Divider(height: 1.5, color: AppColors.white)
+                //     .paddingOnly(top: 15, bottom: 15),
+                // ProfileMenu(
+                //   image: AppAsset.icMembershipOutline,
+                //   text: /*EnumLocale.txtMembership.name.tr*/"Events",
+                //   isArrow: true,
+                //   onTap: () {
+                //     // Navigator.push(context, MaterialPageRoute(builder: (context) => EventsScreen()));
+                //       Get.toNamed(AppRoutes.events);
+                //   },
+                // ),
                 Divider(height: 1.5, color: AppColors.white)
                     .paddingOnly(top: 15, bottom: 15),
                 ProfileMenu(
@@ -228,28 +228,28 @@ class ProfileGeneralView extends StatelessWidget {
                     Get.toNamed(AppRoutes.myPrescription);
                   },
                 ),
-                Divider(height: 1.5, color: AppColors.white)
-                    .paddingOnly(top: 15, bottom: 15),
-                ProfileMenu(
-                  image: AppAsset.icInvoices,
-                  text: EnumLocale.txtInvoices.name.tr,
-                  isArrow: true,
-                  onTap: () {
-                    // Navigator.push(context, MaterialPageRoute(builder: (context) => EventsScreen()));
-                    Get.toNamed(AppRoutes.invoices);
-                  },
-                ),
-                Divider(height: 1.5, color: AppColors.white)
-                    .paddingOnly(top: 15, bottom: 15),
-                ProfileMenu(
-                  image: AppAsset.icOrders,
-                  text: EnumLocale.txtMyOrder.name.tr,
-                  isArrow: true,
-                  onTap: () {
-                    // Navigator.push(context, MaterialPageRoute(builder: (context) => EventsScreen()));
-                    Get.toNamed(AppRoutes.myOrder);
-                  },
-                ),
+                // Divider(height: 1.5, color: AppColors.white)
+                //     .paddingOnly(top: 15, bottom: 15),
+                // ProfileMenu(
+                //   image: AppAsset.icInvoices,
+                //   text: EnumLocale.txtInvoices.name.tr,
+                //   isArrow: true,
+                //   onTap: () {
+                //     // Navigator.push(context, MaterialPageRoute(builder: (context) => EventsScreen()));
+                //     Get.toNamed(AppRoutes.invoices);
+                //   },
+                // ),
+                // Divider(height: 1.5, color: AppColors.white)
+                //     .paddingOnly(top: 15, bottom: 15),
+                // ProfileMenu(
+                //   image: AppAsset.icOrders,
+                //   text: EnumLocale.txtMyOrder.name.tr,
+                //   isArrow: true,
+                //   onTap: () {
+                //     // Navigator.push(context, MaterialPageRoute(builder: (context) => EventsScreen()));
+                //     Get.toNamed(AppRoutes.myOrder);
+                //   },
+                // ),
                 Divider(height: 1.5, color: AppColors.white)
                     .paddingOnly(top: 15, bottom: 15),
                 ProfileMenu(
@@ -264,26 +264,26 @@ class ProfileGeneralView extends StatelessWidget {
                     // });
                     },
                 ),
-                Divider(height: 1.5, color: AppColors.white)
-                    .paddingOnly(top: 15, bottom: 15),
-                ProfileMenu(
-                  image: AppAsset.icMyCart,
-                  text: EnumLocale.txtMyCart.name.tr,
-                  isArrow: true,
-                  onTap: () {
-                    Get.toNamed(AppRoutes.myCart);
-                  },
-                ),
-                Divider(height: 1.5, color: AppColors.white)
-                    .paddingOnly(top: 15, bottom: 15),
-                ProfileMenu(
-                  image: AppAsset.icMembershipOutline,
-                  text: "Refer and Earn"/*EnumLocale.txtPrivilegeCard.name.tr*/,
-                  isArrow: true,
-                  onTap: () {
-                        Get.toNamed(AppRoutes.referAndEarn);
-                  },
-                ),
+                // Divider(height: 1.5, color: AppColors.white)
+                //     .paddingOnly(top: 15, bottom: 15),
+                // ProfileMenu(
+                //   image: AppAsset.icMyCart,
+                //   text: EnumLocale.txtMyCart.name.tr,
+                //   isArrow: true,
+                //   onTap: () {
+                //     Get.toNamed(AppRoutes.myCart);
+                //   },
+                // ),
+                // Divider(height: 1.5, color: AppColors.white)
+                //     .paddingOnly(top: 15, bottom: 15),
+                // ProfileMenu(
+                //   image: AppAsset.icMembershipOutline,
+                //   text: "Refer and Earn"/*EnumLocale.txtPrivilegeCard.name.tr*/,
+                //   isArrow: true,
+                //   onTap: () {
+                //         Get.toNamed(AppRoutes.referAndEarn);
+                //   },
+                // ),
                 Divider(height: 1.5, color: AppColors.white)
                     .paddingOnly(top: 15, bottom: 15),
                 ProfileMenu(
@@ -297,26 +297,26 @@ class ProfileGeneralView extends StatelessWidget {
                         : Get.toNamed(AppRoutes.membershipCard);
                   },
                 ),
-                Divider(height: 1.5, color: AppColors.white)
-                    .paddingOnly(top: 15, bottom: 15),
-                ProfileMenu(
-                  image: AppAsset.icWalletHistory,
-                  text: EnumLocale.txtMyWalletHistory.name.tr,
-                  isArrow: true,
-                  onTap: () {
-                    Get.toNamed(AppRoutes.myWallet);
-                  },
-                ),
-                Divider(height: 1.5, color: AppColors.white)
-                    .paddingOnly(top: 15, bottom: 15),
-                ProfileMenu(
-                  image: AppAsset.icSaved,
-                  text: EnumLocale.txtSavedDoctor.name.tr,
-                  isArrow: true,
-                  onTap: () {
-                    Get.toNamed(AppRoutes.savedDoctor);
-                  },
-                ),
+                // Divider(height: 1.5, color: AppColors.white)
+                //     .paddingOnly(top: 15, bottom: 15),
+                // ProfileMenu(
+                //   image: AppAsset.icWalletHistory,
+                //   text: EnumLocale.txtMyWalletHistory.name.tr,
+                //   isArrow: true,
+                //   onTap: () {
+                //     Get.toNamed(AppRoutes.myWallet);
+                //   },
+                // ),
+                // Divider(height: 1.5, color: AppColors.white)
+                //     .paddingOnly(top: 15, bottom: 15),
+                // ProfileMenu(
+                //   image: AppAsset.icSaved,
+                //   text: EnumLocale.txtSavedDoctor.name.tr,
+                //   isArrow: true,
+                //   onTap: () {
+                //     Get.toNamed(AppRoutes.savedDoctor);
+                //   },
+                // ),
                 Divider(height: 1.5, color: AppColors.white)
                     .paddingOnly(top: 15, bottom: 15),
                 ProfileMenu(
@@ -327,16 +327,16 @@ class ProfileGeneralView extends StatelessWidget {
                     Get.toNamed(AppRoutes.myAppointment);
                   },
                 ),
-                Divider(height: 1.5, color: AppColors.white)
-                    .paddingOnly(top: 15, bottom: 15),
-                ProfileMenu(
-                  image: AppAsset.icAddPatient,
-                  text: "Add Patients",
-                  isArrow: true,
-                  onTap: () {
-                    Get.toNamed(AppRoutes.addPatient);
-                  },
-                ),
+                // Divider(height: 1.5, color: AppColors.white)
+                //     .paddingOnly(top: 15, bottom: 15),
+                // ProfileMenu(
+                //   image: AppAsset.icAddPatient,
+                //   text: "Add Patients",
+                //   isArrow: true,
+                //   onTap: () {
+                //     Get.toNamed(AppRoutes.addPatient);
+                //   },
+                // ),
               ],
             ),
           ).paddingOnly(bottom: 20);
@@ -388,59 +388,59 @@ class ProfileAccountView extends StatelessWidget {
           //     Get.toNamed(AppRoutes.language);
           //   },
           // ),
-          Divider(height: 1.5, color: AppColors.white)
-              .paddingOnly(top: 15, bottom: 15),
-          GetBuilder<ProfileScreenController>(
-            builder: (logic) {
-              return ProfileMenu(
-                image: AppAsset.icRate,
-                text: EnumLocale.txtRateUs.name.tr,
-                isArrow: true,
-                onTap: () async {
-                  logic.rateMyApp.reset();
-
-                  logic.rateMyApp.init().then((_) {
-                    logic.rateMyApp.showRateDialog(
-                      context,
-                      title: EnumLocale.txtRateThisApp.name.tr,
-                      message: EnumLocale.desRateUs.name.tr,
-                      rateButton: EnumLocale.txtRATE.name.tr,
-                      noButton: EnumLocale.txtNoTHANKS.name.tr,
-                      laterButton: EnumLocale.txtMayBeLater.name.tr,
-                      listener: (button) {
-                        switch (button) {
-                          case RateMyAppDialogButton.rate:
-                            log('Clicked on Rate');
-                            break;
-                          case RateMyAppDialogButton.later:
-                            log('Clicked on Later');
-                            break;
-                          case RateMyAppDialogButton.no:
-                            log('Clicked on No');
-                            break;
-                        }
-                        return true;
-                      },
-                      dialogStyle: DialogStyle(
-                        messageStyle: FontStyle.fontStyleW500(
-                            fontSize: 15,
-                            fontColor: AppColors.primaryAppColor1),
-                        titleStyle: FontStyle.fontStyleW600(
-                            fontSize: 20,
-                            fontColor: AppColors.primaryAppColor1),
-                        titleAlign: TextAlign.center,
-                        dialogShape: ContinuousRectangleBorder(
-                          borderRadius: BorderRadius.circular(100),
-                        ),
-                      ),
-                      onDismissed: () => logic.rateMyApp
-                          .callEvent(RateMyAppEventType.laterButtonPressed),
-                    );
-                  });
-                },
-              );
-            },
-          ),
+          // Divider(height: 1.5, color: AppColors.white)
+          //     .paddingOnly(top: 15, bottom: 15),
+          // GetBuilder<ProfileScreenController>(
+          //   builder: (logic) {
+          //     return ProfileMenu(
+          //       image: AppAsset.icRate,
+          //       text: EnumLocale.txtRateUs.name.tr,
+          //       isArrow: true,
+          //       onTap: () async {
+          //         logic.rateMyApp.reset();
+          //
+          //         logic.rateMyApp.init().then((_) {
+          //           logic.rateMyApp.showRateDialog(
+          //             context,
+          //             title: EnumLocale.txtRateThisApp.name.tr,
+          //             message: EnumLocale.desRateUs.name.tr,
+          //             rateButton: EnumLocale.txtRATE.name.tr,
+          //             noButton: EnumLocale.txtNoTHANKS.name.tr,
+          //             laterButton: EnumLocale.txtMayBeLater.name.tr,
+          //             listener: (button) {
+          //               switch (button) {
+          //                 case RateMyAppDialogButton.rate:
+          //                   log('Clicked on Rate');
+          //                   break;
+          //                 case RateMyAppDialogButton.later:
+          //                   log('Clicked on Later');
+          //                   break;
+          //                 case RateMyAppDialogButton.no:
+          //                   log('Clicked on No');
+          //                   break;
+          //               }
+          //               return true;
+          //             },
+          //             dialogStyle: DialogStyle(
+          //               messageStyle: FontStyle.fontStyleW500(
+          //                   fontSize: 15,
+          //                   fontColor: AppColors.primaryAppColor1),
+          //               titleStyle: FontStyle.fontStyleW600(
+          //                   fontSize: 20,
+          //                   fontColor: AppColors.primaryAppColor1),
+          //               titleAlign: TextAlign.center,
+          //               dialogShape: ContinuousRectangleBorder(
+          //                 borderRadius: BorderRadius.circular(100),
+          //               ),
+          //             ),
+          //             onDismissed: () => logic.rateMyApp
+          //                 .callEvent(RateMyAppEventType.laterButtonPressed),
+          //           );
+          //         });
+          //       },
+          //     );
+          //   },
+          // ),
           Divider(height: 1.5, color: AppColors.white)
               .paddingOnly(top: 15, bottom: 15),
           ProfileMenu(
@@ -519,35 +519,35 @@ class ProfileAboutView extends StatelessWidget {
               );
             },
           ),
-          Divider(height: 1.5, color: AppColors.white)
-              .paddingOnly(top: 15, bottom: 15),
-          GetBuilder<ProfileScreenController>(
-            id: Constant.idProgressView,
-            builder: (logic) {
-              return ProfileMenu(
-                onTap: () {
-                  Get.dialog(
-                    barrierColor: AppColors.black.withOpacity(0.8),
-                    ProgressDialog(
-                      inAsyncCall: logic.isLoading1,
-                      child: Dialog(
-                        backgroundColor: AppColors.transparent,
-                        shadowColor: Colors.transparent,
-                        surfaceTintColor: Colors.transparent,
-                        elevation: 0,
-                        child: const DeleteAccountDialog(),
-                      ),
-                    ),
-                  );
-                },
-                image: AppAsset.icDeleteAccount,
-                text: EnumLocale.txtDeleteAccount.name.tr,
-                isArrow: false,
-                iconColor: AppColors.notificationTitle2,
-                textColor: AppColors.notificationTitle2,
-              );
-            },
-          ),
+          // Divider(height: 1.5, color: AppColors.white)
+          //     .paddingOnly(top: 15, bottom: 15),
+          // GetBuilder<ProfileScreenController>(
+          //   id: Constant.idProgressView,
+          //   builder: (logic) {
+          //     return ProfileMenu(
+          //       onTap: () {
+          //         Get.dialog(
+          //           barrierColor: AppColors.black.withOpacity(0.8),
+          //           ProgressDialog(
+          //             inAsyncCall: logic.isLoading1,
+          //             child: Dialog(
+          //               backgroundColor: AppColors.transparent,
+          //               shadowColor: Colors.transparent,
+          //               surfaceTintColor: Colors.transparent,
+          //               elevation: 0,
+          //               child: const DeleteAccountDialog(),
+          //             ),
+          //           ),
+          //         );
+          //       },
+          //       image: AppAsset.icDeleteAccount,
+          //       text: EnumLocale.txtDeleteAccount.name.tr,
+          //       isArrow: false,
+          //       iconColor: AppColors.notificationTitle2,
+          //       textColor: AppColors.notificationTitle2,
+          //     );
+          //   },
+          // ),
         ],
       ),
     );

@@ -51,6 +51,7 @@ class _KioskListScreenState extends State<SatelliteListScreen> {
               padding: const EdgeInsets.all(8.0),
               child: Column(
                 children: [
+                  SizedBox(height: 20,),
                   /// 🔍 SEARCH FIELD (Active API Search)
                   TextFormField(
                     controller: controller.controller,
@@ -78,7 +79,7 @@ class _KioskListScreenState extends State<SatelliteListScreen> {
                     ),
                   ),
 
-                  const SizedBox(height: 10),
+                  const SizedBox(height: 15),
 
                   /// 🔵 LIST VIEW (API DATA)
                   Expanded(

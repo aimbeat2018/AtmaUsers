@@ -67,15 +67,15 @@ class BottomBarView extends StatelessWidget {
                 //   selectedImage: AppAsset.icMedClipFilled,
                 //   unSelectedImage: AppAsset.icMedClipOutline,
                 // ),
+                // bottomBarItemView(
+                //   index: 2,
+                //   selectIndex: logic.selectIndex,
+                //   text: EnumLocale.txtChat.name.tr,
+                //   selectedImage: AppAsset.icChatFilled,
+                //   unSelectedImage: AppAsset.icChatOutline,
+                // ),
                 bottomBarItemView(
                   index: 2,
-                  selectIndex: logic.selectIndex,
-                  text: EnumLocale.txtChat.name.tr,
-                  selectedImage: AppAsset.icChatFilled,
-                  unSelectedImage: AppAsset.icChatOutline,
-                ),
-                bottomBarItemView(
-                  index: 3,
                   selectIndex: logic.selectIndex,
                   text: EnumLocale.txtProfile.name.tr,
                   selectedImage: AppAsset.icProfileFilled,

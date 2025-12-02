@@ -9,6 +9,7 @@ class AppointmentService {
 
   AppointmentService({required this.baseUrl});
 
+
   Future<Map<String, dynamic>?> sendAppointmentRequest({
     required Map<String, dynamic> body,
   }) async {

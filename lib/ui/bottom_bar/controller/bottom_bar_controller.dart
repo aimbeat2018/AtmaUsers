@@ -17,9 +17,10 @@ class BottomBarController extends GetxController {
   final pages = [
     const HomeScreen(),
     const AppointmentScreen(),
-    // const MedClipsScreen(),
-    const ChatScreen(),
     const ProfileScreen(),
+    // const MedClipsScreen(),
+    // const ChatScreen(),
+
   ];
 
   @override
@@ -29,7 +30,7 @@ class BottomBarController extends GetxController {
   }
 
   onClick(value) async {
-    if (value == 3) {
+    if (value == 2) {
       profileScreenController.onGetUserProfileApiCall();
 
       if (profileScreenController.getUserProfileModel?.status == true) {

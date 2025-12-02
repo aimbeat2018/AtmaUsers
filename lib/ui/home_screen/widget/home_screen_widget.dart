@@ -23,6 +23,8 @@ import 'package:intl/intl.dart';
 import 'package:scroll_page_view/scroll_page.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
+import '../../../utils/api.dart';
+
 /// =================== App Bar =================== ///
 class HomeAppBarView extends StatelessWidget {
   const HomeAppBarView({super.key});
@@ -767,7 +769,7 @@ class HomeBannerView extends StatelessWidget {
                                     }
                                   }
                                 },
-                                child: logic.imageView(image),
+                                child: logic.imageView( ApiConstant.BASE_URL +image),
                               );
                             },
                           ).toList() ??

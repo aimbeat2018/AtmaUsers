@@ -367,38 +367,48 @@ class PendingAppointmentListItemView extends StatelessWidget {
                                 ),
                               ),
                             ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  logic.getPending[index].doctor?.degree?.join(", ") ?? "",
-                                  style: FontStyle.fontStyleW500(
-                                    fontSize: 14,
-                                    fontColor: AppColors.degreeText,
-                                  ),
+                        Row(
+                          children: [
+                            /// DEGREE TEXT (Flexible to avoid overflow)
+                            Expanded(
+                              child: Text(
+                                logic.getPending[index].doctor?.degree?.join(", ") ?? "",
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
+                                style: FontStyle.fontStyleW500(
+                                  fontSize: 14,
+                                  fontColor: AppColors.degreeText,
                                 ),
-                                Container(
-                                  decoration: BoxDecoration(
-                                    color: logic.getPending[index].type == 1 ? AppColors.online : AppColors.specialistBox,
-                                    borderRadius: BorderRadius.circular(4),
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 10),
-                                    child: Text(
-                                      logic.getPending[index].type == 1
-                                          ? EnumLocale.txtOnline.name.tr
-                                          : EnumLocale.txtAtClinic.name.tr,
-                                      style: FontStyle.fontStyleW600(
-                                        fontSize: 13,
-                                        fontColor:
-                                            logic.getPending[index].type == 1 ? AppColors.onlineText : AppColors.tabUnselectText,
-                                      ),
-                                    ),
-                                  ),
+                              ),
+                            ),
+
+                            const SizedBox(width: 10),
+
+                            /// TYPE CONTAINER (fixed width based on text)
+                            Container(
+                              padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 10),
+                              decoration: BoxDecoration(
+                                color: logic.getPending[index].type == 1
+                                    ? AppColors.online
+                                    : AppColors.specialistBox,
+                                borderRadius: BorderRadius.circular(4),
+                              ),
+                              child: Text(
+                                logic.getPending[index].type == 1
+                                    ? EnumLocale.txtOnline.name.tr
+                                    : EnumLocale.txtAtClinic.name.tr,
+                                style: FontStyle.fontStyleW600(
+                                  fontSize: 13,
+                                  fontColor: logic.getPending[index].type == 1
+                                      ? AppColors.onlineText
+                                      : AppColors.tabUnselectText,
                                 ),
-                              ],
+                              ),
                             ),
                           ],
+                        )
+
+                        ],
                         ).paddingOnly(left: 10, top: 5, bottom: 5),
                       )
                     ],
