@@ -1,4 +1,5 @@
 import 'package:doctor/custom/no_data_found/no_data_found.dart';
+import 'package:doctor/utils/app_color.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -14,35 +15,35 @@ class _AppointmentListScreenState extends State<AppointmentListScreen> {
 
   AppointmentController appointmentController=Get.put(AppointmentController( ));
 
-  // Example controller data
-  final List<Map<String, dynamic>> appointmentList = [
-    {
-      "_id": "6927fd8bf72a87ee06209019",
-      "note": "Testing Request",
-      "appointmentDate": "26-11-2025",
-      "status": "pending",
-      "kiosk": {
-        "hospital_name": "ATMA 4 You Metabolic Clinics- Kandivali",
-        "flat_no": "4/5 A",
-        "lane_road": "SHIVAJI ROAD",
-        "near_by": "THAKUR INTERNATIONAL SCHOOL",
-        "pincode": 400067
-      }
-    },
-    {
-      "_id": "6927fd8bf72a87ee06209020",
-      "note": "Follow-up Check",
-      "appointmentDate": "30-11-2025",
-      "status": "approved",
-      "kiosk": {
-        "hospital_name": "City Health Hospital",
-        "flat_no": "12-B",
-        "lane_road": "MG Road",
-        "near_by": "City Park",
-        "pincode": 400012
-      }
-    }
-  ];
+  // // Example controller data
+  // final List<Map<String, dynamic>> appointmentList = [
+  //   {
+  //     "_id": "6927fd8bf72a87ee06209019",
+  //     "note": "Testing Request",
+  //     "appointmentDate": "26-11-2025",
+  //     "status": "pending",
+  //     "kiosk": {
+  //       "hospital_name": "ATMA 4 You Metabolic Clinics- Kandivali",
+  //       "flat_no": "4/5 A",
+  //       "lane_road": "SHIVAJI ROAD",
+  //       "near_by": "THAKUR INTERNATIONAL SCHOOL",
+  //       "pincode": 400067
+  //     }
+  //   },
+  //   {
+  //     "_id": "6927fd8bf72a87ee06209020",
+  //     "note": "Follow-up Check",
+  //     "appointmentDate": "30-11-2025",
+  //     "status": "approved",
+  //     "kiosk": {
+  //       "hospital_name": "City Health Hospital",
+  //       "flat_no": "12-B",
+  //       "lane_road": "MG Road",
+  //       "near_by": "City Park",
+  //       "pincode": 400012
+  //     }
+  //   }
+  // ];
 
 
   @override
@@ -56,8 +57,16 @@ class _AppointmentListScreenState extends State<AppointmentListScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Appointment List", style: TextStyle(color: Colors.white)),
-        backgroundColor: Colors.blueAccent,
+        leading: GestureDetector(
+          onTap: (){
+            Get.back();
+          },
+          child: Icon(Icons.arrow_back,color: Colors.white,),
+        ),
+        title: Text("Appointment List", style: TextStyle(color: Colors.white,fontSize: 19,
+        fontWeight: FontWeight.w600
+        ),),
+        backgroundColor: AppColors.primaryAppColor1,
       ),
       body:Obx(() {
         if(appointmentController.isLoading.value){
@@ -66,19 +75,19 @@ class _AppointmentListScreenState extends State<AppointmentListScreen> {
           return Text("No Data Found");
         }else{
          return ListView.builder(
-            itemCount: appointmentList.length,
-            padding: const EdgeInsets.all(12),
+            itemCount: appointmentController.appointmentList.value.data!.length,
+            padding: const EdgeInsets.only(left: 12,right:12,bottom: 60),
             itemBuilder: (context, index) {
               final item = appointmentController.appointmentList.value.data![index];
 
-              return Card(
+              return Card(color: Colors.white70,
                 margin: const EdgeInsets.symmetric(vertical: 10),
                 elevation: 3,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.all(14.0),
+                  padding: const EdgeInsets.all(10.0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -86,7 +95,7 @@ class _AppointmentListScreenState extends State<AppointmentListScreen> {
                       /// Hospital Name
                       Row(
                         children: [
-                          Icon(Icons.local_hospital, color: Colors.blue, size: 28),
+                          Icon(Icons.local_hospital, color: AppColors.primaryAppColor1, size: 28),
                           SizedBox(width: 10),
                           Expanded(
                             child: Text(
@@ -94,6 +103,27 @@ class _AppointmentListScreenState extends State<AppointmentListScreen> {
                               style: TextStyle(
                                 fontSize: 17,
                                 fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ),
+                          Align(
+                            alignment: Alignment.centerRight,
+                            child: Container(
+                              padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                              decoration: BoxDecoration(
+                                color: item.status == "pending"
+                                    ? Colors.orange.shade100
+                                    : Colors.green.shade100,
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              child: Text(
+                                item.status.toString(),
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: item.status == "pending"
+                                      ? Colors.orange
+                                      : Colors.green,
+                                ),
                               ),
                             ),
                           ),
@@ -139,30 +169,10 @@ class _AppointmentListScreenState extends State<AppointmentListScreen> {
                         ],
                       ),
 
-                      SizedBox(height: 12),
+
 
                       /// Status Chip
-                      Align(
-                        alignment: Alignment.centerRight,
-                        child: Container(
-                          padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-                          decoration: BoxDecoration(
-                            color: item.status == "pending"
-                                ? Colors.orange.shade100
-                                : Colors.green.shade100,
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          child: Text(
-                            item.status.toString(),
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: item.status == "pending"
-                                  ? Colors.orange
-                                  : Colors.green,
-                            ),
-                          ),
-                        ),
-                      ),
+
                     ],
                   ),
                 ),

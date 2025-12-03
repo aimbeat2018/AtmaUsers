@@ -9,7 +9,7 @@ import 'package:doctor/utils/constant.dart';
 import 'package:doctor/utils/enums.dart';
 import 'package:doctor/utils/global_variables.dart';
 import 'package:doctor/utils/utils.dart';
-import 'package:flutter_stripe/flutter_stripe.dart';
+// import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 
@@ -23,13 +23,13 @@ class StripeService {
     String? stripeURL,
     bool? isTest,
   }) async {
-    Stripe.merchantIdentifier = 'merchant.flutter.stripe.test';
+    // Stripe.merchantIdentifier = 'merchant.flutter.stripe.test';
 
-    await Stripe.instance.applySettings().catchError((e) {
-      Utils.showToast(Get.context!, e.toString());
-      paymentScreenController.isLoading = false;
-      throw e.toString();
-    });
+    // await Stripe.instance.applySettings().catchError((e) {
+    //   Utils.showToast(Get.context!, e.toString());
+    //   paymentScreenController.isLoading = false;
+    //   throw e.toString();
+    // });
 
     this.stripeURL = stripeURL ?? "";
     this.isTest = isTest ?? false;
@@ -69,54 +69,54 @@ class StripeService {
         paymentScreenController.isLoading = true;
         log("Stripe Payment Res :: $res");
 
-        SetupPaymentSheetParameters setupPaymentSheetParameters = SetupPaymentSheetParameters(
-          paymentIntentClientSecret: res.clientSecret,
-          appearance: PaymentSheetAppearance(
-            colors: PaymentSheetAppearanceColors(
-              primary: AppColors.primaryAppColor2,
-            ),
-          ),
-          applePay: const PaymentSheetApplePay(
-            merchantCountryCode: Constant.stripeMerchantCountryCode,
-          ),
-          googlePay: PaymentSheetGooglePay(
-            merchantCountryCode: Constant.stripeMerchantCountryCode,
-            testEnv: isTest,
-          ),
-          merchantDisplayName: EnumLocale.txtAppName.name.tr,
-          customerId: userId.toString(),
-          billingDetails: BillingDetails(name: userName, email: userEmail),
-        );
+        // SetupPaymentSheetParameters setupPaymentSheetParameters = SetupPaymentSheetParameters(
+        //   paymentIntentClientSecret: res.clientSecret,
+        //   appearance: PaymentSheetAppearance(
+        //     colors: PaymentSheetAppearanceColors(
+        //       primary: AppColors.primaryAppColor2,
+        //     ),
+        //   ),
+        //   applePay: const PaymentSheetApplePay(
+        //     merchantCountryCode: Constant.stripeMerchantCountryCode,
+        //   ),
+        //   googlePay: PaymentSheetGooglePay(
+        //     merchantCountryCode: Constant.stripeMerchantCountryCode,
+        //     testEnv: isTest,
+        //   ),
+        //   merchantDisplayName: EnumLocale.txtAppName.name.tr,
+          // customerId: userId.toString(),
+        //   // billingDetails: BillingDetails(name: userName, email: userEmail),
+        // );
 
-        await Stripe.instance.initPaymentSheet(paymentSheetParameters: setupPaymentSheetParameters).then((value) async {
-          await Stripe.instance.presentPaymentSheet().then((value) async {
-            log("Enter In Stripe Payment Method");
+        // await Stripe.instance.initPaymentSheet(paymentSheetParameters: setupPaymentSheetParameters).then((value) async {
+        //   await Stripe.instance.presentPaymentSheet().then((value) async {
+        //     log("Enter In Stripe Payment Method");
 
-            await paymentScreenController.onLoadWalletApiCall(
-              userId: Constant.storage.read("userId"),
-              amount: paymentScreenController.amount.toString(),
-              paymentGateway: (paymentScreenController.selectPayment + 1).toString(),
-              couponId: couponId ?? "",
-            );
+          //   await paymentScreenController.onLoadWalletApiCall(
+          //     userId: Constant.storage.read("userId"),
+          //     amount: paymentScreenController.amount.toString(),
+          //     paymentGateway: (paymentScreenController.selectPayment + 1).toString(),
+          //     couponId: couponId ?? "",
+          //   );
+          //
+          //   if (paymentScreenController.loadWalletModel?.status == true) {
+          //     paymentScreenController.onPayment();
+          //     Utils.showToast(Get.context!, paymentScreenController.loadWalletModel?.message ?? "");
+          //   } else {
+          //     Utils.showToast(Get.context!, paymentScreenController.loadWalletModel?.message ?? "");
+          //   }
+          // }).catchError((e) {
+          //   log("Error In Stripe Method :: $e");
+          // });
 
-            if (paymentScreenController.loadWalletModel?.status == true) {
-              paymentScreenController.onPayment();
-              Utils.showToast(Get.context!, paymentScreenController.loadWalletModel?.message ?? "");
-            } else {
-              Utils.showToast(Get.context!, paymentScreenController.loadWalletModel?.message ?? "");
-            }
-          }).catchError((e) {
-            log("Error In Stripe Method :: $e");
-          });
-
-          log("Stripe Method onComplete");
-        }).catchError((e) {
-          log("Something Went Wrong in Stripe :: $e");
+        //   log("Stripe Method onComplete");
+        // }).catchError((e) {
+        //   log("Something Went Wrong in Stripe :: $e");
 
           paymentScreenController.isLoading = false;
 
           throw 'Something Went Wrong !!';
-        });
+        // });
       } else if (response.statusCode == 401) {
         log("Error During Stripe Payment");
         paymentScreenController.isLoading = false;

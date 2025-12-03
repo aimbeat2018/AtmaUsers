@@ -2,16 +2,14 @@ import 'package:doctor/custom/dialog/exit_app_dialog.dart';
 import 'package:doctor/routes/app_routes.dart';
 import 'package:doctor/ui/home_screen/controller/home_screen_controller.dart';
 import 'package:doctor/ui/home_screen/widget/home_screen_widget.dart';
-import 'package:doctor/utils/app_asset.dart';
 import 'package:doctor/utils/app_color.dart';
 import 'package:doctor/utils/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:doctor/utils/font_style.dart';
 import '../../book_appointment/controller/kisakosatelite_controller.dart';
-import '../../book_appointment/view/kiosk_list.screen.dart';
-import '../../appointment_screen/view/appointment_screen.dart';
 import '../../book_appointment/view/satellite_list_screen.dart';
+
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -44,8 +42,8 @@ class _HomeScreenState extends State<HomeScreen> {
       },
       child: Scaffold(
         backgroundColor: AppColors.white,
-        appBar: const PreferredSize(
-          preferredSize: Size.fromHeight(200),
+        appBar:  PreferredSize(
+          preferredSize: Size.fromHeight(MediaQuery.of(context).size.height * 0.15),
           child: HomeAppBarView(),
         ),
         body: GetBuilder<HomeScreenController>(
@@ -58,6 +56,7 @@ class _HomeScreenState extends State<HomeScreen> {
               },
               onRefresh: () => logic.onRefresh(),
               child: NestedScrollView(
+                physics: NeverScrollableScrollPhysics(),
                 headerSliverBuilder: (context, innerBoxIsScrolled) {
                   return [
                     SliverList(
@@ -162,27 +161,27 @@ class _HomeScreenState extends State<HomeScreen> {
                             ],
                           ),
                           SizedBox(height: 10),
-                          SizedBox(height: 10,),
                           const HomeCategoryTitleView(),
                           const HomeCategoryView(),
-                          SizedBox(height: 10),
-                          const LabTestView(),
-                          SizedBox(height: 10),
-                          PharmacyBookingView(),
-                          SizedBox(height: 10),
-                          MedicineTitleView(),
-                          SizedBox(height: 10),
-                          MedicineItemView(),
-                          SizedBox(height: 10),
-                          VideosFromExpertTitleView(),
-                          SizedBox(height: 10),
-                          VideosFromExpertItemView(),
-                          /*VideosFromExpertItemView(),*/
-                          SizedBox(height: 10),
-                          const HomeSpecialistTitleView(),
+
+                          // const LabTestView(),
+                          // SizedBox(height: 10),
+                          // PharmacyBookingView(),
+                          // SizedBox(height: 10),
+                          // MedicineTitleView(),
+                          // SizedBox(height: 10),
+                          // MedicineItemView(),
+                          // SizedBox(height: 10),
+                          // VideosFromExpertTitleView(),
+                          // SizedBox(height: 10),
+                          // VideosFromExpertItemView(),
+                          //  VideosFromExpertItemView(),
+                          // SizedBox(height: 10),
+                          // const HomeSpecialistTitleView(),
                         ],
                       ),
                     ),
+
                   ];
                 },
                 body: const HomeTabView(),

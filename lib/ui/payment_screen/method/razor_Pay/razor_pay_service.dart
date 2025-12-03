@@ -8,10 +8,10 @@ import 'package:doctor/utils/global_variables.dart';
 import 'package:doctor/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:razorpay_flutter/razorpay_flutter.dart';
+// import 'package:razorpay_flutter/razorpay_flutter.dart';
 
 class RazorPayService {
-  static late Razorpay razorPay;
+  // static late Razorpay razorPay;
   static late String razorKeys;
   String? amount;
   String? userId;
@@ -30,10 +30,10 @@ class RazorPayService {
     required String couponId,
     Function(Map<String, dynamic>)? onComplete,
   }) {
-    razorPay = Razorpay();
-    razorPay.on(Razorpay.EVENT_PAYMENT_SUCCESS, handlePaymentSuccess);
-    razorPay.on(Razorpay.EVENT_PAYMENT_ERROR, handlePaymentError);
-    razorPay.on(Razorpay.EVENT_EXTERNAL_WALLET, handleExternalWallet);
+    // razorPay = Razorpay();
+    // razorPay.on(Razorpay.EVENT_PAYMENT_SUCCESS, handlePaymentSuccess);
+    // razorPay.on(Razorpay.EVENT_PAYMENT_ERROR, handlePaymentError);
+    // razorPay.on(Razorpay.EVENT_EXTERNAL_WALLET, handleExternalWallet);
     razorKeys = razorKey;
     this.onComplete = onComplete;
     this.userId = userId;
@@ -42,29 +42,29 @@ class RazorPayService {
     this.paymentGateway = paymentGateway;
   }
 
-  Future handlePaymentSuccess(PaymentSuccessResponse response) async {
-    await paymentScreenController.onLoadWalletApiCall(
-      userId: Constant.storage.read("userId"),
-      amount: paymentScreenController.amount!,
-      paymentGateway: paymentGateway!,
-      couponId: couponId!,
-    );
-
-    if (paymentScreenController.loadWalletModel?.status == true) {
-      paymentScreenController.onPayment();
-      Utils.showToast(Get.context!, paymentScreenController.loadWalletModel?.message ?? "");
-    } else {
-      Utils.showToast(Get.context!, paymentScreenController.loadWalletModel?.message ?? "");
-    }
-  }
-
-  void handlePaymentError(PaymentFailureResponse response) {
-    Utils.showToast(Get.context!, response.message ?? "");
-  }
-
-  void handleExternalWallet(ExternalWalletResponse response) {
-    Utils.showToast(Get.context!, "External Wallet: ${response.walletName!}");
-  }
+  // Future handlePaymentSuccess(PaymentSuccessResponse response) async {
+  //   await paymentScreenController.onLoadWalletApiCall(
+  //     userId: Constant.storage.read("userId"),
+  //     amount: paymentScreenController.amount!,
+  //     paymentGateway: paymentGateway!,
+  //     couponId: couponId!,
+  //   );
+  //
+  //   if (paymentScreenController.loadWalletModel?.status == true) {
+  //     paymentScreenController.onPayment();
+  //     Utils.showToast(Get.context!, paymentScreenController.loadWalletModel?.message ?? "");
+  //   } else {
+  //     Utils.showToast(Get.context!, paymentScreenController.loadWalletModel?.message ?? "");
+  //   }
+  // }
+  //
+  // void handlePaymentError(PaymentFailureResponse response) {
+  //   Utils.showToast(Get.context!, response.message ?? "");
+  // }
+  //
+  // void handleExternalWallet(ExternalWalletResponse response) {
+  //   Utils.showToast(Get.context!, "External Wallet: ${response.walletName!}");
+  // }
 
   void razorPayCheckout() async {
     String userEmail = Constant.storage.read('userEmail') ?? "";
@@ -86,7 +86,7 @@ class RazorPayService {
       }
     };
     try {
-      razorPay.open(options);
+      // razorPay.open(options);
     } catch (e) {
       debugPrint(e.toString());
     }

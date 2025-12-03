@@ -4,7 +4,7 @@ import 'dart:developer';
 import 'package:doctor/socket/socket_constants.dart';
 import 'package:doctor/socket/socket_manager.dart';
 import 'package:doctor/utils/constant.dart';
-import 'package:flutter_ringtone_player/flutter_ringtone_player.dart';
+// import 'package:flutter_ringtone_player/flutter_ringtone_player.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
@@ -21,13 +21,13 @@ class CallReceiveController extends GetxController {
   void onInit() async {
     await getDataFromArgs();
 
-    FlutterRingtonePlayer().play(
-      android: AndroidSounds.ringtone,
-      ios: IosSounds.glass,
-      looping: true,
-      volume: 0.1,
-      asAlarm: false,
-    );
+    // FlutterRingtonePlayer().play(
+    //   android: AndroidSounds.ringtone,
+    //   ios: IosSounds.glass,
+    //   looping: true,
+    //   volume: 0.1,
+    //   asAlarm: false,
+    // );
 
     timer = Timer(const Duration(seconds: 30), () {
       DateTime now = DateTime.now();
@@ -66,7 +66,7 @@ class CallReceiveController extends GetxController {
     log("Call Receive Close");
     CallReceiveController().dispose();
 
-    FlutterRingtonePlayer().stop();
+    // FlutterRingtonePlayer().stop();
     timer?.cancel();
 
     super.onClose();

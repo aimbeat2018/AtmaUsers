@@ -1110,8 +1110,8 @@ class HomeTabView extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Column(
       children: [
-        HomeTabBarView(),
-        HomeTabBarItemView(),
+        // HomeTabBarView(),
+        // HomeTabBarItemView(),
       ],
     );
   }

@@ -13,7 +13,7 @@ import 'package:doctor/utils/font_style.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
-import 'package:vibration/vibration.dart';
+// import 'package:vibration/vibration.dart';
 import 'package:video_player/video_player.dart';
 
 class PreviewReelsView extends StatefulWidget {
@@ -206,7 +206,7 @@ class _PreviewReelsViewState extends State<PreviewReelsView> with SingleTickerPr
       customChanges["like"]++;
 
       isShowLikeAnimation.value = true;
-      Vibration.vibrate(duration: 50, amplitude: 128);
+      // Vibration.vibrate(duration: 50, amplitude: 128);
       await 1200.milliseconds.delay();
       isShowLikeAnimation.value = false;
 

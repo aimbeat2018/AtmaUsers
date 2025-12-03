@@ -12,7 +12,7 @@ import 'package:doctor/utils/constant.dart';
 import 'package:doctor/utils/global_variables.dart';
 import 'package:doctor/utils/utils.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_stripe/flutter_stripe.dart';
+// import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:http/http.dart' as http;
 import 'package:get/get.dart';
 
@@ -28,8 +28,8 @@ class PaymentScreenController extends GetxController {
   void onInit() async {
     await getDataFromArgs();
 
-    Stripe.publishableKey = stripePublishKey ?? "";
-    await Stripe.instance.applySettings();
+    // Stripe.publishableKey = stripePublishKey ?? "";
+    // await Stripe.instance.applySettings();
     super.onInit();
   }
 

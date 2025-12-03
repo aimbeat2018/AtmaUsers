@@ -24,7 +24,9 @@ import 'package:get/get.dart';
 import 'package:rate_my_app/rate_my_app.dart';
 import 'package:share_plus/share_plus.dart';
 
+import '../../book_appointment/controller/get_patient_report_controller.dart';
 import '../../book_appointment/view/appointment_request_list.dart';
+import '../../book_appointment/view/get_patient_report_screen.dart';
 
 /// =================== App Bar =================== ///
 class ProfileAppBarView extends StatelessWidget {
@@ -203,6 +205,19 @@ class ProfileGeneralView extends StatelessWidget {
                   isArrow: true,
                   onTap: () {
                     Get.to(AppointmentListScreen());
+                    // Get.toNamed(AppRoutes.myProfile);
+                  },
+                ),
+                Divider(height: 1.5, color: AppColors.white)
+                    .paddingOnly(top: 15, bottom: 15),
+                ProfileMenu(
+                  image: AppAsset.icImage,
+                  text:  "My Report",
+                  isArrow: true,
+                  onTap: () {
+                    final PatientReportController patientReportController = Get.put(PatientReportController());
+                    patientReportController.fetchPatientReport();
+                    Get.to(GetPatientReportScreen());
                     // Get.toNamed(AppRoutes.myProfile);
                   },
                 ),

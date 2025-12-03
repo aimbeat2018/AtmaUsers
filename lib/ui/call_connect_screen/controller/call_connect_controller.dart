@@ -5,7 +5,7 @@ import 'package:doctor/socket/socket_constants.dart';
 import 'package:doctor/socket/socket_manager.dart';
 import 'package:doctor/utils/app_asset.dart';
 import 'package:doctor/utils/constant.dart';
-import 'package:flutter_ringtone_player/flutter_ringtone_player.dart';
+// import 'package:flutter_ringtone_player/flutter_ringtone_player.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
@@ -21,12 +21,12 @@ class CallConnectController extends GetxController {
   void onInit() async {
     await getDataFromArgs();
 
-    FlutterRingtonePlayer().play(
-      fromAsset: AppAsset.outgoingRingtoneAudio,
-      looping: true,
-      volume: 0.1,
-      asAlarm: false,
-    );
+    // FlutterRingtonePlayer().play(
+    //   fromAsset: AppAsset.outgoingRingtoneAudio,
+    //   looping: true,
+    //   volume: 0.1,
+    //   asAlarm: false,
+    // );
 
     timer = Timer(const Duration(seconds: 30), () {
       DateTime now = DateTime.now();
@@ -65,7 +65,7 @@ class CallConnectController extends GetxController {
   void onClose() {
     log("Call Connect Close");
     CallConnectController().dispose();
-    FlutterRingtonePlayer().stop();
+    // FlutterRingtonePlayer().stop();
     timer?.cancel();
 
     super.onClose();

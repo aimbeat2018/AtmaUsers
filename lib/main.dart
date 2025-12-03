@@ -16,7 +16,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_ringtone_player/flutter_ringtone_player.dart';
+// import 'package:flutter_ringtone_player/flutter_ringtone_player.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:intl/intl.dart';
@@ -104,7 +104,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
 
     if (Constant.storage.read("isVideoCall") == true) {
       if (state == AppLifecycleState.paused) {
-        FlutterRingtonePlayer().stop();
+        // FlutterRingtonePlayer().stop();
 
         DateTime now = DateTime.now();
         String time = DateFormat("M/dd/yyyy, HH:mm:ss a").format(now);

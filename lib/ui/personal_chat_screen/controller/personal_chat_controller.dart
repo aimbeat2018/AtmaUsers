@@ -19,7 +19,7 @@ import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:video_thumbnail/video_thumbnail.dart';
+// import 'package:video_thumbnail/video_thumbnail.dart';
 
 class PersonalChatController extends GetxController {
   dynamic args = Get.arguments;
@@ -280,16 +280,16 @@ class PersonalChatController extends GetxController {
     int height = (Get.height * 0.2).toInt();
     tempPath = (await getTemporaryDirectory()).path;
 
-    final videoThumbnail = await VideoThumbnail.thumbnailFile(
-      video: videoUrl,
-      imageFormat: ImageFormat.JPEG,
-      maxHeight: height,
-      timeMs: -1,
-      quality: 100,
-    );
+    // final videoThumbnail = await VideoThumbnail.thumbnailFile(
+    //   video: videoUrl,
+    //   // imageFormat: ImageFormat.JPEG,
+    //   maxHeight: height,
+    //   timeMs: -1,
+    //   quality: 100,
+    // );
 
-    log("Video Thumbnail :: $videoThumbnail");
-    return videoThumbnail;
+  //   log("Video Thumbnail :: $videoThumbnail");
+  //   return videoThumbnail;
   }
 
   /// =================== API Calling =================== ///

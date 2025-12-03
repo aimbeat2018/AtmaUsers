@@ -41,7 +41,7 @@ class ApiConstant {
   static const getAppointmentInformation = "user/appointment/getAppointment?";
   static const getUpcomingAppointment = "doctor/appointment/upcomingBookings?";
 
-
+  static const getPatientReport= "admin/patient/report/get-patient-reports";
   static const getKioskList = "user/dashboard/get-all-kiosk?";
   static const sendAppointmentRequest ="user/appointment/send-appointment-request";
   static const appointmentRequestList="user/appointment/get-user-appointment-request";
